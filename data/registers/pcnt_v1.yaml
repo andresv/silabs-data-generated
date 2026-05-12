@@ -1,0 +1,411 @@
+block/Pcnt:
+  description: PCNT peripheral.
+  items:
+  - name: ipversion
+    description: No Description.
+    byte_offset: 0
+    access: Read
+    fieldset: regs::Ipversion
+  - name: en
+    description: No Description.
+    byte_offset: 4
+    fieldset: regs::En
+  - name: swrst
+    description: No Description.
+    byte_offset: 8
+    fieldset: regs::Swrst
+  - name: cfg
+    description: No Description.
+    byte_offset: 12
+    fieldset: regs::Cfg
+  - name: ctrl
+    description: No Description.
+    byte_offset: 16
+    fieldset: regs::Ctrl
+  - name: cmd
+    description: No Description.
+    byte_offset: 20
+    access: Write
+    fieldset: regs::Cmd
+  - name: status
+    description: No Description.
+    byte_offset: 24
+    access: Read
+    fieldset: regs::Status
+  - name: if_
+    description: No Description.
+    byte_offset: 28
+    fieldset: regs::If
+  - name: ien
+    description: No Description.
+    byte_offset: 32
+    fieldset: regs::Ien
+  - name: cnt
+    description: No Description.
+    byte_offset: 36
+    access: Read
+    fieldset: regs::Cnt
+  - name: auxcnt
+    description: No Description.
+    byte_offset: 40
+    access: Read
+    fieldset: regs::Auxcnt
+  - name: top
+    description: No Description.
+    byte_offset: 44
+    fieldset: regs::Top
+  - name: topb
+    description: No Description.
+    byte_offset: 48
+    fieldset: regs::Topb
+  - name: ovsctrl
+    description: No Description.
+    byte_offset: 52
+    fieldset: regs::Ovsctrl
+  - name: syncbusy
+    description: No Description.
+    byte_offset: 56
+    access: Read
+    fieldset: regs::Syncbusy
+  - name: lock
+    description: No Description.
+    byte_offset: 60
+    access: Write
+    fieldset: regs::Lock
+fieldset/regs::Auxcnt:
+  description: No Description.
+  fields:
+  - name: auxcnt
+    description: Auxiliary Counter Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::Cfg:
+  description: No Description.
+  fields:
+  - name: mode
+    description: Mode Select.
+    bit_offset: 0
+    bit_size: 3
+    enum: vals::Mode
+  - name: debughalt
+    description: Debug Mode Halt Enable.
+    bit_offset: 4
+    bit_size: 1
+  - name: filten
+    description: Enable Digital Pulse Width Filter.
+    bit_offset: 5
+    bit_size: 1
+  - name: hyst
+    description: Enable Hysteresis.
+    bit_offset: 6
+    bit_size: 1
+  - name: s0prsen
+    description: S0IN PRS Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: s1prsen
+    description: S1IN PRS Enable.
+    bit_offset: 9
+    bit_size: 1
+fieldset/regs::Cmd:
+  description: No Description.
+  fields:
+  - name: corerst
+    description: PCNT Clock Domain Reset.
+    bit_offset: 0
+    bit_size: 1
+  - name: cntrst
+    description: CNT Reset.
+    bit_offset: 1
+    bit_size: 1
+  - name: auxcntrst
+    description: AUXCNT Reset.
+    bit_offset: 2
+    bit_size: 1
+  - name: lcntim
+    description: Load CNT Immediately.
+    bit_offset: 4
+    bit_size: 1
+  - name: startcnt
+    description: Start Main Counter.
+    bit_offset: 8
+    bit_size: 1
+  - name: startauxcnt
+    description: Start Aux Counter.
+    bit_offset: 9
+    bit_size: 1
+  - name: stopcnt
+    description: Stop Main Counter.
+    bit_offset: 10
+    bit_size: 1
+  - name: stopauxcnt
+    description: Stop Aux Counter.
+    bit_offset: 11
+    bit_size: 1
+fieldset/regs::Cnt:
+  description: No Description.
+  fields:
+  - name: cnt
+    description: Counter Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::Ctrl:
+  description: No Description.
+  fields:
+  - name: s1cdir
+    description: Count Direction Determined By S1.
+    bit_offset: 0
+    bit_size: 1
+  - name: cntdir
+    description: Non-Quadrature Mode Counter Direction Co.
+    bit_offset: 1
+    bit_size: 1
+    enum: vals::Cntdir
+  - name: edge
+    description: Edge Select.
+    bit_offset: 2
+    bit_size: 1
+    enum: vals::Edge
+  - name: cntev
+    description: Controls When the Counter Counts.
+    bit_offset: 4
+    bit_size: 2
+    enum: vals::Cntev
+  - name: auxcntev
+    description: Controls When the Aux Counter Counts.
+    bit_offset: 6
+    bit_size: 2
+    enum: vals::Auxcntev
+fieldset/regs::En:
+  description: No Description.
+  fields:
+  - name: en
+    description: PCNT Module Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: disabling
+    description: Disablement busy status.
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::Ien:
+  description: No Description.
+  fields:
+  - name: uf
+    description: Underflow Interrupt Read Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: of
+    description: Overflow Interrupt Read Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: dircng
+    description: Direction Change Detect Interrupt Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: auxof
+    description: Auxiliary Overflow Interrupt Read Flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: oqsterr
+    description: Oversampling Quad State Err Int Flag.
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::If:
+  description: No Description.
+  fields:
+  - name: uf
+    description: Underflow Interrupt Read Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: of
+    description: Overflow Interrupt Read Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: dircng
+    description: Direction Change Detect Interrupt Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: auxof
+    description: Auxiliary Overflow Interrupt Read Flag.
+    bit_offset: 3
+    bit_size: 1
+  - name: oqsterr
+    description: Oversampling Quad State Err Int Flag.
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::Ipversion:
+  description: No Description.
+  fields:
+  - name: ipversion
+    description: IP VERSION.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Lock:
+  description: No Description.
+  fields:
+  - name: pcntlockkey
+    description: Configuration Lock Key.
+    bit_offset: 0
+    bit_size: 16
+    enum: vals::Pcntlockkey
+fieldset/regs::Ovsctrl:
+  description: No Description.
+  fields:
+  - name: filtlen
+    description: Configure Filter Length for Inputs S0IN.
+    bit_offset: 0
+    bit_size: 8
+  - name: flutterrm
+    description: Flutter Remove.
+    bit_offset: 12
+    bit_size: 1
+fieldset/regs::Status:
+  description: No Description.
+  fields:
+  - name: dir
+    description: Current Counter Direction.
+    bit_offset: 0
+    bit_size: 1
+    enum: vals::Dir
+  - name: topbv
+    description: TOP Buffer Valid.
+    bit_offset: 1
+    bit_size: 1
+  - name: pcntlockstatus
+    description: Lock Status.
+    bit_offset: 2
+    bit_size: 1
+  - name: cntrunning
+    description: Main Counter running status.
+    bit_offset: 3
+    bit_size: 1
+  - name: auxcntrunning
+    description: Aux Counter running status.
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::Swrst:
+  description: No Description.
+  fields:
+  - name: swrst
+    description: Software reset command.
+    bit_offset: 0
+    bit_size: 1
+  - name: resetting
+    description: Software reset busy status.
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::Syncbusy:
+  description: No Description.
+  fields:
+  - name: ctrl
+    description: CTRL Register Busy.
+    bit_offset: 0
+    bit_size: 1
+  - name: cmd
+    description: CMD Register Busy.
+    bit_offset: 1
+    bit_size: 1
+  - name: top
+    description: TOP Register Busy.
+    bit_offset: 2
+    bit_size: 1
+  - name: topb
+    description: TOPB Register Busy.
+    bit_offset: 3
+    bit_size: 1
+  - name: ovsctrl
+    description: OVSCTRL Register Busy.
+    bit_offset: 4
+    bit_size: 1
+fieldset/regs::Top:
+  description: No Description.
+  fields:
+  - name: top
+    description: Counter Top Value.
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::Topb:
+  description: No Description.
+  fields:
+  - name: topb
+    description: Counter Top Buffer Register.
+    bit_offset: 0
+    bit_size: 16
+enum/vals::Auxcntev:
+  bit_size: 2
+  variants:
+  - name: Both
+    description: Counts up on both up-count and down-count events.
+    value: 0
+  - name: Down
+    description: Counts up on down-count events.
+    value: 2
+  - name: Up
+    description: Counts up on up-count events.
+    value: 1
+enum/vals::Cntdir:
+  bit_size: 1
+  variants:
+  - name: Down
+    description: Down counter mode.
+    value: 1
+  - name: Up
+    description: Up counter mode.
+    value: 0
+enum/vals::Cntev:
+  bit_size: 2
+  variants:
+  - name: Both
+    description: Counts up on up-count and down on down-count events.
+    value: 0
+  - name: Down
+    description: Only counts down on down-count events.
+    value: 2
+  - name: Up
+    description: Only counts up on up-count events.
+    value: 1
+enum/vals::Dir:
+  bit_size: 1
+  variants:
+  - name: Down
+    description: Down counter mode.
+    value: 1
+  - name: Up
+    description: Up counter mode (clockwise in EXTCLKQUAD mode with the EDGE bit in PCNTn_CTRL set to 0).
+    value: 0
+enum/vals::Edge:
+  bit_size: 1
+  variants:
+  - name: Neg
+    description: Negative edges on the PCNTn_S0IN inputs are counted in OVSSINGLE mode. Inverts the PCNTn_S1IN input in OVSSINGLE and EXTCLKSINGLE modes.
+    value: 1
+  - name: Pos
+    description: Positive edges on the PCNTn_S0IN inputs are counted in OVSSINGLE mode. Does not invert PCNTn_S1IN input in OVSSINGLE and EXTCLKSINGLE modes.
+    value: 0
+enum/vals::Mode:
+  bit_size: 3
+  variants:
+  - name: Extclkquad
+    description: Externally clocked quadrature decoder mode (available in EM0-EM3).
+    value: 2
+  - name: Extclksingle
+    description: Externally clocked single input counter mode (available in EM0-EM3).
+    value: 1
+  - name: Ovsquad1x
+    description: EM23GRPACLK oversampling quadrature decoder 1X mode (available in EM0-EM3).
+    value: 3
+  - name: Ovsquad2x
+    description: EM23GRPACLK oversampling quadrature decoder 2X mode (available in EM0-EM3).
+    value: 4
+  - name: Ovsquad4x
+    description: EM23GRPACLK oversampling quadrature decoder 4X mode (available in EM0-EM3).
+    value: 5
+  - name: Ovssingle
+    description: Single input EM23GRPACLK oversampling mode (available in EM0-EM3).
+    value: 0
+enum/vals::Pcntlockkey:
+  bit_size: 16
+  variants:
+  - name: Unlock
+    description: Write to unock PCNT lockable registers.
+    value: 42976

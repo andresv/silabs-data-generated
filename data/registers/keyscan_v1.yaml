@@ -1,0 +1,369 @@
+block/Keyscan:
+  description: KEYSCAN peripheral.
+  items:
+  - name: ipversion
+    description: IPVERSION.
+    byte_offset: 0
+    access: Read
+    fieldset: regs::Ipversion
+  - name: en
+    description: Enable.
+    byte_offset: 4
+    fieldset: regs::En
+  - name: swrst
+    description: Software Reset.
+    byte_offset: 8
+    fieldset: regs::Swrst
+  - name: cfg
+    description: Config.
+    byte_offset: 12
+    fieldset: regs::Cfg
+  - name: cmd
+    description: Command.
+    byte_offset: 16
+    access: Write
+    fieldset: regs::Cmd
+  - name: delay
+    description: Delay.
+    byte_offset: 20
+    fieldset: regs::Delay
+  - name: status
+    description: Status.
+    byte_offset: 24
+    access: Read
+    fieldset: regs::Status
+  - name: if_
+    description: Interrupt Flags.
+    byte_offset: 28
+    fieldset: regs::If
+  - name: ien
+    description: Interrupt Enables.
+    byte_offset: 32
+    fieldset: regs::Ien
+fieldset/regs::Cfg:
+  description: Config.
+  fields:
+  - name: clkdiv
+    description: Clock Divider.
+    bit_offset: 0
+    bit_size: 18
+  - name: singlepress
+    description: Single Press.
+    bit_offset: 20
+    bit_size: 1
+    enum: vals::Singlepress
+  - name: autostart
+    description: Automatically Start.
+    bit_offset: 22
+    bit_size: 1
+  - name: numrows
+    description: Number of Rows.
+    bit_offset: 24
+    bit_size: 3
+    enum: vals::Numrows
+  - name: numcols
+    description: Number of Columns.
+    bit_offset: 28
+    bit_size: 3
+fieldset/regs::Cmd:
+  description: Command.
+  fields:
+  - name: keyscanstart
+    description: Keyscan Start.
+    bit_offset: 0
+    bit_size: 1
+  - name: keyscanstop
+    description: Keyscan Stop.
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::Delay:
+  description: Delay.
+  fields:
+  - name: scandly
+    description: Scan Delay.
+    bit_offset: 8
+    bit_size: 4
+    enum: vals::Scandly
+  - name: debdly
+    description: Debounce Delay.
+    bit_offset: 16
+    bit_size: 4
+    enum: vals::Debdly
+  - name: stabdly
+    description: Row stable Delay.
+    bit_offset: 24
+    bit_size: 4
+    enum: vals::Stabdly
+fieldset/regs::En:
+  description: Enable.
+  fields:
+  - name: en
+    description: Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: disabling
+    description: Disablement busy status.
+    bit_offset: 1
+    bit_size: 1
+fieldset/regs::Ien:
+  description: Interrupt Enables.
+  fields:
+  - name: nokey
+    description: No Key was pressed.
+    bit_offset: 0
+    bit_size: 1
+  - name: key
+    description: A Key was pressed.
+    bit_offset: 1
+    bit_size: 1
+  - name: scanned
+    description: Completed Scanning.
+    bit_offset: 2
+    bit_size: 1
+  - name: wakeup
+    description: Wake up.
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::If:
+  description: Interrupt Flags.
+  fields:
+  - name: nokey
+    description: No key was pressed.
+    bit_offset: 0
+    bit_size: 1
+  - name: key
+    description: A key was pressed.
+    bit_offset: 1
+    bit_size: 1
+  - name: scanned
+    description: Completed scan.
+    bit_offset: 2
+    bit_size: 1
+  - name: wakeup
+    description: Wake up.
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::Ipversion:
+  description: IPVERSION.
+  fields:
+  - name: ipversion
+    description: IPVERSION.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Status:
+  description: Status.
+  fields:
+  - name: row
+    description: Row detection.
+    bit_offset: 0
+    bit_size: 6
+  - name: running
+    description: Running.
+    bit_offset: 16
+    bit_size: 1
+  - name: col
+    description: Column Latched.
+    bit_offset: 24
+    bit_size: 3
+  - name: nokey
+    description: No Key pressed status.
+    bit_offset: 30
+    bit_size: 1
+  - name: syncbusy
+    description: Sync Busy.
+    bit_offset: 31
+    bit_size: 1
+fieldset/regs::Swrst:
+  description: Software Reset.
+  fields:
+  - name: swrst
+    description: Software reset command.
+    bit_offset: 0
+    bit_size: 1
+  - name: resetting
+    description: Software reset busy status.
+    bit_offset: 1
+    bit_size: 1
+enum/vals::Debdly:
+  bit_size: 4
+  variants:
+  - name: Debdly10
+    description: 10ms Debounce Delay.
+    value: 4
+  - name: Debdly12
+    description: 12ms Debounce Delay.
+    value: 5
+  - name: Debdly14
+    description: 14ms Debounce Delay.
+    value: 6
+  - name: Debdly16
+    description: 16ms Debounce Delay.
+    value: 7
+  - name: Debdly18
+    description: 18ms Debounce Delay.
+    value: 8
+  - name: Debdly2
+    description: 2ms Debounce Delay.
+    value: 0
+  - name: Debdly20
+    description: 20ms Debounce Delay.
+    value: 9
+  - name: Debdly22
+    description: 22ms Debounce Delay.
+    value: 10
+  - name: Debdly24
+    description: 24ms Debounce Delay.
+    value: 11
+  - name: Debdly26
+    description: 26ms Debounce Delay.
+    value: 12
+  - name: Debdly28
+    description: 28ms Debounce Delay.
+    value: 13
+  - name: Debdly30
+    description: 30ms Debounce Delay.
+    value: 14
+  - name: Debdly32
+    description: 32ms Debounce Delay.
+    value: 15
+  - name: Debdly4
+    description: 4ms Debounce Delay.
+    value: 1
+  - name: Debdly6
+    description: 6ms Debounce Delay.
+    value: 2
+  - name: Debdly8
+    description: 8ms Debounce Delay.
+    value: 3
+enum/vals::Numrows:
+  bit_size: 3
+  variants:
+  - name: Row3
+    description: 3 Rows.
+    value: 2
+  - name: Row4
+    description: 4 Rows.
+    value: 3
+  - name: Row5
+    description: 5 Rows.
+    value: 4
+  - name: Row6
+    description: 6 Rows.
+    value: 5
+  - name: Rsv1
+    description: 1 Row is not supported; defaults to 3 instead.
+    value: 0
+  - name: Rsv2
+    description: 2 Rows are not supported; defaults to 3 instead.
+    value: 1
+enum/vals::Scandly:
+  bit_size: 4
+  variants:
+  - name: Scandly10
+    description: 10ms Scan Delay.
+    value: 4
+  - name: Scandly12
+    description: 12ms Scan Delay.
+    value: 5
+  - name: Scandly14
+    description: 14ms Scan Delay.
+    value: 6
+  - name: Scandly16
+    description: 16ms Scan Delay.
+    value: 7
+  - name: Scandly18
+    description: 18ms Scan Delay.
+    value: 8
+  - name: Scandly2
+    description: 2ms Scan Delay.
+    value: 0
+  - name: Scandly20
+    description: 20ms Scan Delay.
+    value: 9
+  - name: Scandly22
+    description: 22ms Scan Delay.
+    value: 10
+  - name: Scandly24
+    description: 24ms Scan Delay.
+    value: 11
+  - name: Scandly26
+    description: 26ms Scan Delay.
+    value: 12
+  - name: Scandly28
+    description: 28ms Scan Delay.
+    value: 13
+  - name: Scandly30
+    description: 30ms Scan Delay.
+    value: 14
+  - name: Scandly32
+    description: 32ms Scan Delay.
+    value: 15
+  - name: Scandly4
+    description: 4ms Scan Delay.
+    value: 1
+  - name: Scandly6
+    description: 6ms Scan Delay.
+    value: 2
+  - name: Scandly8
+    description: 8ms Scan Delay.
+    value: 3
+enum/vals::Singlepress:
+  bit_size: 1
+  variants:
+  - name: Multipress
+    description: After KEYIF is set and then cleared, scanning will continue. This can give multiple interrupts for the same key press, but allow multiple key presses to be detected. To use this mode for multi-key detection, the ISR should update a section of memory of COLNUM bytes on each interrupt, until key release is detected. After key release, the section of memory where key presses are recorded can be processed.
+    value: 0
+  - name: Singlepress
+    description: After KEYIF has been set and cleared, it will not set again until no key press is detected. This allows faster response since the ISR can start processing data as soon as the KEYIF is set.
+    value: 1
+enum/vals::Stabdly:
+  bit_size: 4
+  variants:
+  - name: Stabdly10
+    description: 10ms Row Stable Delay.
+    value: 4
+  - name: Stabdly12
+    description: 12ms Row Stable Delay.
+    value: 5
+  - name: Stabdly14
+    description: 14ms Row Stable Delay.
+    value: 6
+  - name: Stabdly16
+    description: 16ms Row Stable Delay.
+    value: 7
+  - name: Stabdly18
+    description: 18ms Row Stable Delay.
+    value: 8
+  - name: Stabdly2
+    description: 2ms Row Stable Delay.
+    value: 0
+  - name: Stabdly20
+    description: 20ms Row Stable Delay.
+    value: 9
+  - name: Stabdly22
+    description: 22ms Row Stable Delay.
+    value: 10
+  - name: Stabdly24
+    description: 24ms Row Stable Delay.
+    value: 11
+  - name: Stabdly26
+    description: 26ms Row Stable Delay.
+    value: 12
+  - name: Stabdly28
+    description: 28ms Row Stable Delay.
+    value: 13
+  - name: Stabdly30
+    description: 30ms Row Stable Delay.
+    value: 14
+  - name: Stabdly32
+    description: 32ms Row Stable Delay.
+    value: 15
+  - name: Stabdly4
+    description: 4ms Row Stable Delay.
+    value: 1
+  - name: Stabdly6
+    description: 6ms Row Stable Delay.
+    value: 2
+  - name: Stabdly8
+    description: 8ms Row Stable Delay.
+    value: 3

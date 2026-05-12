@@ -1,0 +1,355 @@
+block/Buram:
+  description: BURAM peripheral.
+  items:
+  - name: ret0_reg
+    description: No Description.
+    byte_offset: 0
+    fieldset: regs::Ret0Reg
+  - name: ret1_reg
+    description: No Description.
+    byte_offset: 4
+    fieldset: regs::Ret1Reg
+  - name: ret2_reg
+    description: No Description.
+    byte_offset: 8
+    fieldset: regs::Ret2Reg
+  - name: ret3_reg
+    description: No Description.
+    byte_offset: 12
+    fieldset: regs::Ret3Reg
+  - name: ret4_reg
+    description: No Description.
+    byte_offset: 16
+    fieldset: regs::Ret4Reg
+  - name: ret5_reg
+    description: No Description.
+    byte_offset: 20
+    fieldset: regs::Ret5Reg
+  - name: ret6_reg
+    description: No Description.
+    byte_offset: 24
+    fieldset: regs::Ret6Reg
+  - name: ret7_reg
+    description: No Description.
+    byte_offset: 28
+    fieldset: regs::Ret7Reg
+  - name: ret8_reg
+    description: No Description.
+    byte_offset: 32
+    fieldset: regs::Ret8Reg
+  - name: ret9_reg
+    description: No Description.
+    byte_offset: 36
+    fieldset: regs::Ret9Reg
+  - name: ret10_reg
+    description: No Description.
+    byte_offset: 40
+    fieldset: regs::Ret10Reg
+  - name: ret11_reg
+    description: No Description.
+    byte_offset: 44
+    fieldset: regs::Ret11Reg
+  - name: ret12_reg
+    description: No Description.
+    byte_offset: 48
+    fieldset: regs::Ret12Reg
+  - name: ret13_reg
+    description: No Description.
+    byte_offset: 52
+    fieldset: regs::Ret13Reg
+  - name: ret14_reg
+    description: No Description.
+    byte_offset: 56
+    fieldset: regs::Ret14Reg
+  - name: ret15_reg
+    description: No Description.
+    byte_offset: 60
+    fieldset: regs::Ret15Reg
+  - name: ret16_reg
+    description: No Description.
+    byte_offset: 64
+    fieldset: regs::Ret16Reg
+  - name: ret17_reg
+    description: No Description.
+    byte_offset: 68
+    fieldset: regs::Ret17Reg
+  - name: ret18_reg
+    description: No Description.
+    byte_offset: 72
+    fieldset: regs::Ret18Reg
+  - name: ret19_reg
+    description: No Description.
+    byte_offset: 76
+    fieldset: regs::Ret19Reg
+  - name: ret20_reg
+    description: No Description.
+    byte_offset: 80
+    fieldset: regs::Ret20Reg
+  - name: ret21_reg
+    description: No Description.
+    byte_offset: 84
+    fieldset: regs::Ret21Reg
+  - name: ret22_reg
+    description: No Description.
+    byte_offset: 88
+    fieldset: regs::Ret22Reg
+  - name: ret23_reg
+    description: No Description.
+    byte_offset: 92
+    fieldset: regs::Ret23Reg
+  - name: ret24_reg
+    description: No Description.
+    byte_offset: 96
+    fieldset: regs::Ret24Reg
+  - name: ret25_reg
+    description: No Description.
+    byte_offset: 100
+    fieldset: regs::Ret25Reg
+  - name: ret26_reg
+    description: No Description.
+    byte_offset: 104
+    fieldset: regs::Ret26Reg
+  - name: ret27_reg
+    description: No Description.
+    byte_offset: 108
+    fieldset: regs::Ret27Reg
+  - name: ret28_reg
+    description: No Description.
+    byte_offset: 112
+    fieldset: regs::Ret28Reg
+  - name: ret29_reg
+    description: No Description.
+    byte_offset: 116
+    fieldset: regs::Ret29Reg
+  - name: ret30_reg
+    description: No Description.
+    byte_offset: 120
+    fieldset: regs::Ret30Reg
+  - name: ret31_reg
+    description: No Description.
+    byte_offset: 124
+    fieldset: regs::Ret31Reg
+fieldset/regs::Ret0Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret10Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret11Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret12Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret13Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret14Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret15Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret16Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret17Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret18Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret19Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret1Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret20Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret21Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret22Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret23Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret24Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret25Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret26Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret27Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret28Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret29Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret2Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret30Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret31Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret3Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret4Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret5Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret6Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret7Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret8Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Ret9Reg:
+  description: No Description.
+  fields:
+  - name: retreg
+    description: Latch based Retention register.
+    bit_offset: 0
+    bit_size: 32

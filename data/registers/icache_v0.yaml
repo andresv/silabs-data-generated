@@ -1,0 +1,176 @@
+block/Icache:
+  description: ICACHE peripheral.
+  items:
+  - name: ipversion
+    description: The read only IPVERSION field gives the version for this module. There may be minor software changes required for modules with different values of IPVERSION.
+    byte_offset: 0
+    access: Read
+    fieldset: regs::Ipversion
+  - name: ctrl
+    description: No Description.
+    byte_offset: 4
+    fieldset: regs::Ctrl
+  - name: pchits
+    description: No Description.
+    byte_offset: 8
+    access: Read
+    fieldset: regs::Pchits
+  - name: pcmisses
+    description: No Description.
+    byte_offset: 12
+    access: Read
+    fieldset: regs::Pcmisses
+  - name: pcahits
+    description: No Description.
+    byte_offset: 16
+    access: Read
+    fieldset: regs::Pcahits
+  - name: status
+    description: No Description.
+    byte_offset: 20
+    access: Read
+    fieldset: regs::Status
+  - name: cmd
+    description: No Description.
+    byte_offset: 24
+    access: Write
+    fieldset: regs::Cmd
+  - name: lpmode
+    description: No Description.
+    byte_offset: 28
+    fieldset: regs::Lpmode
+  - name: if_
+    description: No Description.
+    byte_offset: 32
+    fieldset: regs::If
+  - name: ien
+    description: No Description.
+    byte_offset: 36
+    fieldset: regs::Ien
+fieldset/regs::Cmd:
+  description: No Description.
+  fields:
+  - name: flush
+    description: Flush.
+    bit_offset: 0
+    bit_size: 1
+  - name: startpc
+    description: Start Performance Counters.
+    bit_offset: 1
+    bit_size: 1
+  - name: stoppc
+    description: Stop Performance Counters.
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::Ctrl:
+  description: No Description.
+  fields:
+  - name: cachedis
+    description: Cache Disable.
+    bit_offset: 0
+    bit_size: 1
+  - name: usempu
+    description: Use MPU.
+    bit_offset: 1
+    bit_size: 1
+  - name: autoflushdis
+    description: Automatic Flushing Disable.
+    bit_offset: 2
+    bit_size: 1
+fieldset/regs::Ien:
+  description: No Description.
+  fields:
+  - name: hitof
+    description: Hit Overflow Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: missof
+    description: Miss Overflow Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: ahitof
+    description: Advanced Hit Overflow Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: ramerror
+    description: RAM error Interrupt Enable.
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::If:
+  description: No Description.
+  fields:
+  - name: hitof
+    description: Hit Overflow Interrupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: missof
+    description: Miss Overflow Interrupt Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: ahitof
+    description: Advanced Hit Overflow Interrupt Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: ramerror
+    description: RAM error Interrupt Flag.
+    bit_offset: 8
+    bit_size: 1
+fieldset/regs::Ipversion:
+  description: The read only IPVERSION field gives the version for this module. There may be minor software changes required for modules with different values of IPVERSION.
+  fields:
+  - name: ipversion
+    description: IP version ID.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Lpmode:
+  description: No Description.
+  fields:
+  - name: lplevel
+    description: Low Power Level.
+    bit_offset: 0
+    bit_size: 2
+    enum: vals::Lplevel
+  - name: nestfactor
+    description: Low Power Nest Factor.
+    bit_offset: 4
+    bit_size: 4
+fieldset/regs::Pcahits:
+  description: No Description.
+  fields:
+  - name: pcahits
+    description: Performance Counter Advanced Hits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Pchits:
+  description: No Description.
+  fields:
+  - name: pchits
+    description: Performance Counter Hits.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Pcmisses:
+  description: No Description.
+  fields:
+  - name: pcmisses
+    description: Performance Counter Misses.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Status:
+  description: No Description.
+  fields:
+  - name: pcrunning
+    description: PC Running.
+    bit_offset: 0
+    bit_size: 1
+enum/vals::Lplevel:
+  bit_size: 2
+  variants:
+  - name: Advanced
+    description: Advanced buffering mode, where the cache uses the fetch pattern to predict highly accessed data and store it in low-energy memory.
+    value: 1
+  - name: Basic
+    description: Base instruction cache functionality.
+    value: 0
+  - name: Minactivity
+    description: Minimum activity mode, which allows the cache to minimize activity in logic that it predicts has a low probability being used. This mode can introduce wait-states into the instruction fetch stream when the cache exits one of its low-activity states. The number of wait-states introduced is small, but users running with 0-wait-state memory and wishing to reduce the variability that the cache might introduce with additional wait-states may wish to lower the cache low-power level. Note, this mode includes the advanced buffering mode functionality.
+    value: 3

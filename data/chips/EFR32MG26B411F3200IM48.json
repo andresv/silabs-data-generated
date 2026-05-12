@@ -1,0 +1,1822 @@
+{
+  "chip": {
+    "name": "EFR32MG26B411F3200IM48",
+    "core": "Cortex-M33",
+    "fpu": false,
+    "mpu": false,
+    "trustzone": false,
+    "memory": [
+      {
+        "id": "IROM1",
+        "start": 134217728,
+        "size": 3276800,
+        "access": "rx"
+      },
+      {
+        "id": "IRAM1",
+        "start": 536870912,
+        "size": 524288,
+        "access": "rwx"
+      }
+    ],
+    "flash_algo": "Flash/GECKOS2C3.FLM",
+    "svd": "SVD/EFR32MG26/EFR32MG26B411F3200IM48.svd",
+    "package": "IM48"
+  },
+  "peripherals": [
+    {
+      "name": "ACMP0_NS",
+      "base_address": 1493204992,
+      "version": "2",
+      "kind": "acmp",
+      "register_version": "v2",
+      "block": "ACMP"
+    },
+    {
+      "name": "ACMP0_S",
+      "base_address": 1224769536,
+      "version": "2",
+      "kind": "acmp",
+      "register_version": "v2",
+      "block": "ACMP"
+    },
+    {
+      "name": "ACMP1_NS",
+      "base_address": 1493221376,
+      "version": "2",
+      "kind": "acmp",
+      "register_version": "v2",
+      "block": "ACMP"
+    },
+    {
+      "name": "ACMP1_S",
+      "base_address": 1224785920,
+      "version": "2",
+      "kind": "acmp",
+      "register_version": "v2",
+      "block": "ACMP"
+    },
+    {
+      "name": "AMUXCP0_NS",
+      "base_address": 1493303296,
+      "version": "2",
+      "kind": "amuxcp",
+      "register_version": "v2",
+      "block": "AMUXCP"
+    },
+    {
+      "name": "AMUXCP0_S",
+      "base_address": 1224867840,
+      "version": "2",
+      "kind": "amuxcp",
+      "register_version": "v2",
+      "block": "AMUXCP"
+    },
+    {
+      "name": "BURAM_NS",
+      "base_address": 1342717952,
+      "version": "0",
+      "kind": "buram",
+      "register_version": "v0",
+      "block": "BURAM"
+    },
+    {
+      "name": "BURAM_S",
+      "base_address": 1074282496,
+      "version": "0",
+      "kind": "buram",
+      "register_version": "v0",
+      "block": "BURAM"
+    },
+    {
+      "name": "BURTC_NS",
+      "base_address": 1342226432,
+      "version": "1",
+      "kind": "burtc",
+      "register_version": "v1",
+      "block": "BURTC"
+    },
+    {
+      "name": "BURTC_S",
+      "base_address": 1073790976,
+      "version": "1",
+      "kind": "burtc",
+      "register_version": "v1",
+      "block": "BURTC"
+    },
+    {
+      "name": "CMU_NS",
+      "base_address": 1342210048,
+      "version": "7",
+      "kind": "cmu",
+      "register_version": "v7",
+      "block": "CMU"
+    },
+    {
+      "name": "CMU_S",
+      "base_address": 1073774592,
+      "version": "7",
+      "kind": "cmu",
+      "register_version": "v7",
+      "block": "CMU"
+    },
+    {
+      "name": "DCDC_NS",
+      "base_address": 1342799872,
+      "version": "2",
+      "kind": "dcdc",
+      "register_version": "v2",
+      "block": "DCDC"
+    },
+    {
+      "name": "DCDC_S",
+      "base_address": 1074364416,
+      "version": "2",
+      "kind": "dcdc",
+      "register_version": "v2",
+      "block": "DCDC"
+    },
+    {
+      "name": "DMEM0_NS",
+      "base_address": 1342652416,
+      "version": "2",
+      "kind": "dmem",
+      "register_version": "v2",
+      "block": "DMEM"
+    },
+    {
+      "name": "DMEM0_S",
+      "base_address": 1074216960,
+      "version": "2",
+      "kind": "dmem",
+      "register_version": "v2",
+      "block": "DMEM"
+    },
+    {
+      "name": "DMEM1_NS",
+      "base_address": 1342668800,
+      "version": "2",
+      "kind": "dmem",
+      "register_version": "v2",
+      "block": "DMEM"
+    },
+    {
+      "name": "DMEM1_S",
+      "base_address": 1074233344,
+      "version": "2",
+      "kind": "dmem",
+      "register_version": "v2",
+      "block": "DMEM"
+    },
+    {
+      "name": "DPLL0_NS",
+      "base_address": 1342291968,
+      "version": "1",
+      "kind": "dpll",
+      "register_version": "v1",
+      "block": "DPLL"
+    },
+    {
+      "name": "DPLL0_S",
+      "base_address": 1073856512,
+      "version": "1",
+      "kind": "dpll",
+      "register_version": "v1",
+      "block": "DPLL"
+    },
+    {
+      "name": "EMU_NS",
+      "base_address": 1342193664,
+      "version": "3",
+      "kind": "emu",
+      "register_version": "v3",
+      "block": "EMU"
+    },
+    {
+      "name": "EMU_S",
+      "base_address": 1073758208,
+      "version": "3",
+      "kind": "emu",
+      "register_version": "v3",
+      "block": "EMU"
+    },
+    {
+      "name": "EUSART0_NS",
+      "base_address": 1526792192,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2_lf",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART0_S",
+      "base_address": 1258356736,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART1_NS",
+      "base_address": 1342750720,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART1_S",
+      "base_address": 1074315264,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART2_NS",
+      "base_address": 1342767104,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART2_S",
+      "base_address": 1074331648,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART3_NS",
+      "base_address": 1342783488,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "EUSART3_S",
+      "base_address": 1074348032,
+      "version": "2",
+      "kind": "eusart",
+      "register_version": "v2",
+      "block": "EUSART"
+    },
+    {
+      "name": "FSRCO_NS",
+      "base_address": 1342275584,
+      "version": "0",
+      "kind": "fsrco",
+      "register_version": "v0",
+      "block": "FSRCO"
+    },
+    {
+      "name": "FSRCO_S",
+      "base_address": 1073840128,
+      "version": "0",
+      "kind": "fsrco",
+      "register_version": "v0",
+      "block": "FSRCO"
+    },
+    {
+      "name": "GPCRC_NS",
+      "base_address": 1342734336,
+      "version": "0",
+      "kind": "gpcrc",
+      "register_version": "v0",
+      "block": "GPCRC"
+    },
+    {
+      "name": "GPCRC_S",
+      "base_address": 1074298880,
+      "version": "0",
+      "kind": "gpcrc",
+      "register_version": "v0",
+      "block": "GPCRC"
+    },
+    {
+      "name": "GPIO_NS",
+      "base_address": 1342423040,
+      "version": "7",
+      "kind": "gpio",
+      "register_version": "v7",
+      "block": "GPIO"
+    },
+    {
+      "name": "GPIO_S",
+      "base_address": 1073987584,
+      "version": "7",
+      "kind": "gpio",
+      "register_version": "v7",
+      "block": "GPIO"
+    },
+    {
+      "name": "HFRCO0_NS",
+      "base_address": 1342242816,
+      "version": "2",
+      "kind": "hfrco",
+      "register_version": "v2",
+      "block": "HFRCO"
+    },
+    {
+      "name": "HFRCO0_S",
+      "base_address": 1073807360,
+      "version": "2",
+      "kind": "hfrco",
+      "register_version": "v2",
+      "block": "HFRCO"
+    },
+    {
+      "name": "HFRCOEM23_NS",
+      "base_address": 1509949440,
+      "version": "2",
+      "kind": "hfrcoem",
+      "register_version": "v2",
+      "block": "HFRCOEM"
+    },
+    {
+      "name": "HFRCOEM23_S",
+      "base_address": 1241513984,
+      "version": "2",
+      "kind": "hfrcoem",
+      "register_version": "v2",
+      "block": "HFRCOEM"
+    },
+    {
+      "name": "HFXO0_NS",
+      "base_address": 1509965824,
+      "version": "3",
+      "kind": "hfxo",
+      "register_version": "v3",
+      "block": "HFXO"
+    },
+    {
+      "name": "HFXO0_S",
+      "base_address": 1241530368,
+      "version": "3",
+      "kind": "hfxo",
+      "register_version": "v3",
+      "block": "HFXO"
+    },
+    {
+      "name": "HOSTMAILBOX_NS",
+      "base_address": 1342816256,
+      "version": "0",
+      "kind": "hostmailbox",
+      "register_version": "v0",
+      "block": "HOSTMAILBOX"
+    },
+    {
+      "name": "HOSTMAILBOX_S",
+      "base_address": 1074380800,
+      "version": "0",
+      "kind": "hostmailbox",
+      "register_version": "v0",
+      "block": "HOSTMAILBOX"
+    },
+    {
+      "name": "I2C0_NS",
+      "base_address": 1526726656,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C0_S",
+      "base_address": 1258291200,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C1_NS",
+      "base_address": 1342898176,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C1_S",
+      "base_address": 1074462720,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C2_NS",
+      "base_address": 1342914560,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C2_S",
+      "base_address": 1074479104,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C3_NS",
+      "base_address": 1342930944,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "I2C3_S",
+      "base_address": 1074495488,
+      "version": "0",
+      "kind": "i2c",
+      "register_version": "v0",
+      "block": "I2C"
+    },
+    {
+      "name": "IADC0_NS",
+      "base_address": 1493188608,
+      "version": "3",
+      "kind": "iadc",
+      "register_version": "v3",
+      "block": "IADC"
+    },
+    {
+      "name": "IADC0_S",
+      "base_address": 1224753152,
+      "version": "3",
+      "kind": "iadc",
+      "register_version": "v3",
+      "block": "IADC"
+    },
+    {
+      "name": "ICACHE0_NS",
+      "base_address": 1342390272,
+      "version": "0",
+      "kind": "icache",
+      "register_version": "v0",
+      "block": "ICACHE"
+    },
+    {
+      "name": "ICACHE0_S",
+      "base_address": 1073954816,
+      "version": "0",
+      "kind": "icache",
+      "register_version": "v0",
+      "block": "ICACHE"
+    },
+    {
+      "name": "KEYSCAN_NS",
+      "base_address": 1342357504,
+      "version": "1",
+      "kind": "keyscan",
+      "register_version": "v1",
+      "block": "KEYSCAN"
+    },
+    {
+      "name": "KEYSCAN_S",
+      "base_address": 1073922048,
+      "version": "1",
+      "kind": "keyscan",
+      "register_version": "v1",
+      "block": "KEYSCAN"
+    },
+    {
+      "name": "LCDRF_NS",
+      "base_address": 1342963712,
+      "version": "0",
+      "kind": "lcdrf",
+      "register_version": "v0",
+      "block": "LCDRF"
+    },
+    {
+      "name": "LCDRF_S",
+      "base_address": 1074528256,
+      "version": "0",
+      "kind": "lcdrf",
+      "register_version": "v0",
+      "block": "LCDRF"
+    },
+    {
+      "name": "LCD_NS",
+      "base_address": 1342947328,
+      "version": "3",
+      "kind": "lcd",
+      "register_version": "v3",
+      "block": "LCD"
+    },
+    {
+      "name": "LCD_S",
+      "base_address": 1074511872,
+      "version": "3",
+      "kind": "lcd",
+      "register_version": "v3",
+      "block": "LCD"
+    },
+    {
+      "name": "LDMAXBAR_NS",
+      "base_address": 1342455808,
+      "version": "7",
+      "kind": "ldmaxbar",
+      "register_version": "v7",
+      "block": "LDMAXBAR"
+    },
+    {
+      "name": "LDMAXBAR_S",
+      "base_address": 1074020352,
+      "version": "7",
+      "kind": "ldmaxbar",
+      "register_version": "v7",
+      "block": "LDMAXBAR"
+    },
+    {
+      "name": "LDMA_NS",
+      "base_address": 1342439424,
+      "version": "0",
+      "kind": "ldma",
+      "register_version": "v0",
+      "block": "LDMA"
+    },
+    {
+      "name": "LDMA_S",
+      "base_address": 1074003968,
+      "version": "0",
+      "kind": "ldma",
+      "register_version": "v0",
+      "block": "LDMA"
+    },
+    {
+      "name": "LETIMER0_NS",
+      "base_address": 1493172224,
+      "version": "1",
+      "kind": "letimer",
+      "register_version": "v1",
+      "block": "LETIMER"
+    },
+    {
+      "name": "LETIMER0_S",
+      "base_address": 1224736768,
+      "version": "1",
+      "kind": "letimer",
+      "register_version": "v1",
+      "block": "LETIMER"
+    },
+    {
+      "name": "LFRCO_NS",
+      "base_address": 1342324736,
+      "version": "2",
+      "kind": "lfrco",
+      "register_version": "v2",
+      "block": "LFRCO"
+    },
+    {
+      "name": "LFRCO_S",
+      "base_address": 1073889280,
+      "version": "2",
+      "kind": "lfrco",
+      "register_version": "v2",
+      "block": "LFRCO"
+    },
+    {
+      "name": "LFXO_NS",
+      "base_address": 1342308352,
+      "version": "1",
+      "kind": "lfxo",
+      "register_version": "v1",
+      "block": "LFXO"
+    },
+    {
+      "name": "LFXO_S",
+      "base_address": 1073872896,
+      "version": "1",
+      "kind": "lfxo",
+      "register_version": "v1",
+      "block": "LFXO"
+    },
+    {
+      "name": "MSC_NS",
+      "base_address": 1342373888,
+      "version": "9",
+      "kind": "msc",
+      "register_version": "v9",
+      "block": "MSC"
+    },
+    {
+      "name": "MSC_S",
+      "base_address": 1073938432,
+      "version": "9",
+      "kind": "msc",
+      "register_version": "v9",
+      "block": "MSC"
+    },
+    {
+      "name": "PCNT0_NS",
+      "base_address": 1493368832,
+      "version": "1",
+      "kind": "pcnt",
+      "register_version": "v1",
+      "block": "PCNT"
+    },
+    {
+      "name": "PCNT0_S",
+      "base_address": 1224933376,
+      "version": "1",
+      "kind": "pcnt",
+      "register_version": "v1",
+      "block": "PCNT"
+    },
+    {
+      "name": "PRS_NS",
+      "base_address": 1342406656,
+      "version": "6",
+      "kind": "prs",
+      "register_version": "v6",
+      "block": "PRS"
+    },
+    {
+      "name": "PRS_S",
+      "base_address": 1073971200,
+      "version": "6",
+      "kind": "prs",
+      "register_version": "v6",
+      "block": "PRS"
+    },
+    {
+      "name": "RADIOAES_NS",
+      "base_address": 1409286144,
+      "version": "1",
+      "kind": "radioaes",
+      "register_version": "v1",
+      "block": "RADIOAES"
+    },
+    {
+      "name": "RADIOAES_S",
+      "base_address": 1140850688,
+      "version": "1",
+      "kind": "radioaes",
+      "register_version": "v1",
+      "block": "RADIOAES"
+    },
+    {
+      "name": "SEMAILBOX_NS_HOST",
+      "base_address": 1543503872,
+      "version": "1",
+      "kind": "semailbox_ns_host",
+      "register_version": "v1",
+      "block": "SEMAILBOX_NS_HOST"
+    },
+    {
+      "name": "SEMAILBOX_S_HOST",
+      "base_address": 1275068416,
+      "version": "1",
+      "kind": "semailbox_s_host",
+      "register_version": "v1",
+      "block": "SEMAILBOX_S_HOST"
+    },
+    {
+      "name": "SMU_NS",
+      "base_address": 1409318912,
+      "version": "7",
+      "kind": "smu",
+      "register_version": "v7",
+      "block": "SMU"
+    },
+    {
+      "name": "SMU_NS_CFGNS",
+      "base_address": 1409335296,
+      "version": "7",
+      "kind": "smu_ns_cfgns",
+      "register_version": "v7",
+      "block": "SMU_NS_CFGNS"
+    },
+    {
+      "name": "SMU_S",
+      "base_address": 1140883456,
+      "version": "7",
+      "kind": "smu",
+      "register_version": "v7",
+      "block": "SMU"
+    },
+    {
+      "name": "SMU_S_CFGNS",
+      "base_address": 1140899840,
+      "version": "7",
+      "kind": "smu_s_cfgns",
+      "register_version": "v7",
+      "block": "SMU_S_CFGNS"
+    },
+    {
+      "name": "SYSCFG_NS",
+      "base_address": 1342701568,
+      "version": "9",
+      "kind": "syscfg",
+      "register_version": "v9",
+      "block": "SYSCFG"
+    },
+    {
+      "name": "SYSCFG_NS_CFGNS",
+      "base_address": 1342685184,
+      "version": "9",
+      "kind": "syscfg_ns_cfgns",
+      "register_version": "v9",
+      "block": "SYSCFG_NS_CFGNS"
+    },
+    {
+      "name": "SYSCFG_S",
+      "base_address": 1074266112,
+      "version": "9",
+      "kind": "syscfg",
+      "register_version": "v9",
+      "block": "SYSCFG"
+    },
+    {
+      "name": "SYSCFG_S_CFGNS",
+      "base_address": 1074249728,
+      "version": "9",
+      "kind": "syscfg_s_cfgns",
+      "register_version": "v9",
+      "block": "SYSCFG_S_CFGNS"
+    },
+    {
+      "name": "SYSRTC0_NS",
+      "base_address": 1342881792,
+      "version": "1",
+      "kind": "sysrtc",
+      "register_version": "v1",
+      "block": "SYSRTC"
+    },
+    {
+      "name": "SYSRTC0_S",
+      "base_address": 1074446336,
+      "version": "1",
+      "kind": "sysrtc",
+      "register_version": "v1",
+      "block": "SYSRTC"
+    },
+    {
+      "name": "TIMER0_NS",
+      "base_address": 1342472192,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1_w",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER0_S",
+      "base_address": 1074036736,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER1_NS",
+      "base_address": 1342488576,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1_w",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER1_S",
+      "base_address": 1074053120,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER2_NS",
+      "base_address": 1342504960,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER2_S",
+      "base_address": 1074069504,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER3_NS",
+      "base_address": 1342521344,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER3_S",
+      "base_address": 1074085888,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER4_NS",
+      "base_address": 1342537728,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER4_S",
+      "base_address": 1074102272,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER5_NS",
+      "base_address": 1342554112,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER5_S",
+      "base_address": 1074118656,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER6_NS",
+      "base_address": 1342570496,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER6_S",
+      "base_address": 1074135040,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER7_NS",
+      "base_address": 1342586880,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER7_S",
+      "base_address": 1074151424,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER8_NS",
+      "base_address": 1342603264,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1_w",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER8_S",
+      "base_address": 1074167808,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER9_NS",
+      "base_address": 1342619648,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1_w",
+      "block": "TIMER"
+    },
+    {
+      "name": "TIMER9_S",
+      "base_address": 1074184192,
+      "version": "1",
+      "kind": "timer",
+      "register_version": "v1",
+      "block": "TIMER"
+    },
+    {
+      "name": "ULFRCO_NS",
+      "base_address": 1342341120,
+      "version": "1",
+      "kind": "ulfrco",
+      "register_version": "v1",
+      "block": "ULFRCO"
+    },
+    {
+      "name": "ULFRCO_S",
+      "base_address": 1073905664,
+      "version": "1",
+      "kind": "ulfrco",
+      "register_version": "v1",
+      "block": "ULFRCO"
+    },
+    {
+      "name": "USART0_NS",
+      "base_address": 1342832640,
+      "version": "0",
+      "kind": "usart",
+      "register_version": "v0",
+      "block": "USART"
+    },
+    {
+      "name": "USART0_S",
+      "base_address": 1074397184,
+      "version": "0",
+      "kind": "usart",
+      "register_version": "v0",
+      "block": "USART"
+    },
+    {
+      "name": "USART1_NS",
+      "base_address": 1342849024,
+      "version": "0",
+      "kind": "usart",
+      "register_version": "v0",
+      "block": "USART"
+    },
+    {
+      "name": "USART1_S",
+      "base_address": 1074413568,
+      "version": "0",
+      "kind": "usart",
+      "register_version": "v0",
+      "block": "USART"
+    },
+    {
+      "name": "USART2_NS",
+      "base_address": 1342865408,
+      "version": "0",
+      "kind": "usart",
+      "register_version": "v0",
+      "block": "USART"
+    },
+    {
+      "name": "USART2_S",
+      "base_address": 1074429952,
+      "version": "0",
+      "kind": "usart",
+      "register_version": "v0",
+      "block": "USART"
+    },
+    {
+      "name": "VDAC0_NS",
+      "base_address": 1493319680,
+      "version": "2",
+      "kind": "vdac",
+      "register_version": "v2",
+      "block": "VDAC"
+    },
+    {
+      "name": "VDAC0_S",
+      "base_address": 1224884224,
+      "version": "2",
+      "kind": "vdac",
+      "register_version": "v2",
+      "block": "VDAC"
+    },
+    {
+      "name": "VDAC1_NS",
+      "base_address": 1493336064,
+      "version": "2",
+      "kind": "vdac",
+      "register_version": "v2",
+      "block": "VDAC"
+    },
+    {
+      "name": "VDAC1_S",
+      "base_address": 1224900608,
+      "version": "2",
+      "kind": "vdac",
+      "register_version": "v2",
+      "block": "VDAC"
+    },
+    {
+      "name": "WDOG0_NS",
+      "base_address": 1526743040,
+      "version": "1",
+      "kind": "wdog",
+      "register_version": "v1",
+      "block": "WDOG"
+    },
+    {
+      "name": "WDOG0_S",
+      "base_address": 1258307584,
+      "version": "1",
+      "kind": "wdog",
+      "register_version": "v1",
+      "block": "WDOG"
+    },
+    {
+      "name": "WDOG1_NS",
+      "base_address": 1526759424,
+      "version": "1",
+      "kind": "wdog",
+      "register_version": "v1",
+      "block": "WDOG"
+    },
+    {
+      "name": "WDOG1_S",
+      "base_address": 1258323968,
+      "version": "1",
+      "kind": "wdog",
+      "register_version": "v1",
+      "block": "WDOG"
+    },
+    {
+      "name": "DEVINFO",
+      "base_address": 266371072,
+      "version": "0.0",
+      "kind": "devinfo",
+      "register_version": "v0_mg26",
+      "block": "DEVINFO"
+    }
+  ],
+  "interrupts": [
+    {
+      "name": "ACMP0",
+      "value": 56,
+      "description": null
+    },
+    {
+      "name": "ACMP0",
+      "value": 56,
+      "description": null
+    },
+    {
+      "name": "ACMP1",
+      "value": 57,
+      "description": null
+    },
+    {
+      "name": "ACMP1",
+      "value": 57,
+      "description": null
+    },
+    {
+      "name": "BURTC",
+      "value": 30,
+      "description": null
+    },
+    {
+      "name": "BURTC",
+      "value": 30,
+      "description": null
+    },
+    {
+      "name": "CMU",
+      "value": 63,
+      "description": null
+    },
+    {
+      "name": "CMU",
+      "value": 63,
+      "description": null
+    },
+    {
+      "name": "DCDC",
+      "value": 69,
+      "description": null
+    },
+    {
+      "name": "DCDC",
+      "value": 69,
+      "description": null
+    },
+    {
+      "name": "DPLL0",
+      "value": 67,
+      "description": null
+    },
+    {
+      "name": "DPLL0",
+      "value": 67,
+      "description": null
+    },
+    {
+      "name": "EMU",
+      "value": 3,
+      "description": null
+    },
+    {
+      "name": "EMUDG",
+      "value": 45,
+      "description": null
+    },
+    {
+      "name": "EMU",
+      "value": 3,
+      "description": null
+    },
+    {
+      "name": "EMUDG",
+      "value": 45,
+      "description": null
+    },
+    {
+      "name": "EUSART0_RX",
+      "value": 20,
+      "description": null
+    },
+    {
+      "name": "EUSART0_TX",
+      "value": 21,
+      "description": null
+    },
+    {
+      "name": "EUSART0_RX",
+      "value": 20,
+      "description": null
+    },
+    {
+      "name": "EUSART0_TX",
+      "value": 21,
+      "description": null
+    },
+    {
+      "name": "EUSART1_RX",
+      "value": 22,
+      "description": null
+    },
+    {
+      "name": "EUSART1_TX",
+      "value": 23,
+      "description": null
+    },
+    {
+      "name": "EUSART1_RX",
+      "value": 22,
+      "description": null
+    },
+    {
+      "name": "EUSART1_TX",
+      "value": 23,
+      "description": null
+    },
+    {
+      "name": "EUSART2_RX",
+      "value": 24,
+      "description": null
+    },
+    {
+      "name": "EUSART2_TX",
+      "value": 25,
+      "description": null
+    },
+    {
+      "name": "EUSART2_RX",
+      "value": 24,
+      "description": null
+    },
+    {
+      "name": "EUSART2_TX",
+      "value": 25,
+      "description": null
+    },
+    {
+      "name": "EUSART3_RX",
+      "value": 26,
+      "description": null
+    },
+    {
+      "name": "EUSART3_TX",
+      "value": 27,
+      "description": null
+    },
+    {
+      "name": "EUSART3_RX",
+      "value": 26,
+      "description": null
+    },
+    {
+      "name": "EUSART3_TX",
+      "value": 27,
+      "description": null
+    },
+    {
+      "name": "GPIO_ODD",
+      "value": 39,
+      "description": null
+    },
+    {
+      "name": "GPIO_EVEN",
+      "value": 40,
+      "description": null
+    },
+    {
+      "name": "GPIO_ODD",
+      "value": 39,
+      "description": null
+    },
+    {
+      "name": "GPIO_EVEN",
+      "value": 40,
+      "description": null
+    },
+    {
+      "name": "HFRCO0",
+      "value": 61,
+      "description": null
+    },
+    {
+      "name": "HFRCO0",
+      "value": 61,
+      "description": null
+    },
+    {
+      "name": "HFRCOEM23",
+      "value": 62,
+      "description": null
+    },
+    {
+      "name": "HFRCOEM23",
+      "value": 62,
+      "description": null
+    },
+    {
+      "name": "HFXO0",
+      "value": 60,
+      "description": null
+    },
+    {
+      "name": "HFXO0",
+      "value": 60,
+      "description": null
+    },
+    {
+      "name": "HOSTMAILBOX",
+      "value": 54,
+      "description": null
+    },
+    {
+      "name": "HOSTMAILBOX",
+      "value": 54,
+      "description": null
+    },
+    {
+      "name": "I2C0",
+      "value": 41,
+      "description": null
+    },
+    {
+      "name": "I2C0",
+      "value": 41,
+      "description": null
+    },
+    {
+      "name": "I2C1",
+      "value": 42,
+      "description": null
+    },
+    {
+      "name": "I2C1",
+      "value": 42,
+      "description": null
+    },
+    {
+      "name": "I2C2",
+      "value": 43,
+      "description": null
+    },
+    {
+      "name": "I2C2",
+      "value": 43,
+      "description": null
+    },
+    {
+      "name": "I2C3",
+      "value": 44,
+      "description": null
+    },
+    {
+      "name": "I2C3",
+      "value": 44,
+      "description": null
+    },
+    {
+      "name": "IADC",
+      "value": 65,
+      "description": null
+    },
+    {
+      "name": "IADC",
+      "value": 65,
+      "description": null
+    },
+    {
+      "name": "ICACHE0",
+      "value": 29,
+      "description": null
+    },
+    {
+      "name": "ICACHE0",
+      "value": 29,
+      "description": null
+    },
+    {
+      "name": "KEYSCAN",
+      "value": 85,
+      "description": null
+    },
+    {
+      "name": "KEYSCAN",
+      "value": 85,
+      "description": null
+    },
+    {
+      "name": "LCD",
+      "value": 92,
+      "description": null
+    },
+    {
+      "name": "LCD",
+      "value": 92,
+      "description": null
+    },
+    {
+      "name": "LDMA",
+      "value": 35,
+      "description": null
+    },
+    {
+      "name": "LDMA",
+      "value": 35,
+      "description": null
+    },
+    {
+      "name": "LETIMER0",
+      "value": 31,
+      "description": null
+    },
+    {
+      "name": "LETIMER0",
+      "value": 31,
+      "description": null
+    },
+    {
+      "name": "LFRCO",
+      "value": 37,
+      "description": null
+    },
+    {
+      "name": "LFRCO",
+      "value": 37,
+      "description": null
+    },
+    {
+      "name": "LFXO",
+      "value": 36,
+      "description": null
+    },
+    {
+      "name": "LFXO",
+      "value": 36,
+      "description": null
+    },
+    {
+      "name": "MSC",
+      "value": 66,
+      "description": null
+    },
+    {
+      "name": "MSC",
+      "value": 66,
+      "description": null
+    },
+    {
+      "name": "PCNT0",
+      "value": 70,
+      "description": null
+    },
+    {
+      "name": "PCNT0",
+      "value": 70,
+      "description": null
+    },
+    {
+      "name": "AES",
+      "value": 64,
+      "description": null
+    },
+    {
+      "name": "AES",
+      "value": 64,
+      "description": null
+    },
+    {
+      "name": "SEMBRX",
+      "value": 81,
+      "description": null
+    },
+    {
+      "name": "SEMBTX",
+      "value": 82,
+      "description": null
+    },
+    {
+      "name": "SEMBRX",
+      "value": 81,
+      "description": null
+    },
+    {
+      "name": "SEMBTX",
+      "value": 82,
+      "description": null
+    },
+    {
+      "name": "SMU_SECURE",
+      "value": 0,
+      "description": null
+    },
+    {
+      "name": "SMU_S_PRIVILEGED",
+      "value": 1,
+      "description": null
+    },
+    {
+      "name": "SMU_SECURE",
+      "value": 0,
+      "description": null
+    },
+    {
+      "name": "SMU_S_PRIVILEGED",
+      "value": 1,
+      "description": null
+    },
+    {
+      "name": "SMU_SECURE",
+      "value": 0,
+      "description": null
+    },
+    {
+      "name": "SMU_S_PRIVILEGED",
+      "value": 1,
+      "description": null
+    },
+    {
+      "name": "SMU_SECURE",
+      "value": 0,
+      "description": null
+    },
+    {
+      "name": "SMU_S_PRIVILEGED",
+      "value": 1,
+      "description": null
+    },
+    {
+      "name": "SYSCFG",
+      "value": 32,
+      "description": null
+    },
+    {
+      "name": "SW0",
+      "value": 71,
+      "description": null
+    },
+    {
+      "name": "SW1",
+      "value": 72,
+      "description": null
+    },
+    {
+      "name": "SW2",
+      "value": 73,
+      "description": null
+    },
+    {
+      "name": "SW3",
+      "value": 74,
+      "description": null
+    },
+    {
+      "name": "SYSCFG",
+      "value": 32,
+      "description": null
+    },
+    {
+      "name": "SW0",
+      "value": 71,
+      "description": null
+    },
+    {
+      "name": "SW1",
+      "value": 72,
+      "description": null
+    },
+    {
+      "name": "SW2",
+      "value": 73,
+      "description": null
+    },
+    {
+      "name": "SW3",
+      "value": 74,
+      "description": null
+    },
+    {
+      "name": "SYSCFG",
+      "value": 32,
+      "description": null
+    },
+    {
+      "name": "SW0",
+      "value": 71,
+      "description": null
+    },
+    {
+      "name": "SW1",
+      "value": 72,
+      "description": null
+    },
+    {
+      "name": "SW2",
+      "value": 73,
+      "description": null
+    },
+    {
+      "name": "SW3",
+      "value": 74,
+      "description": null
+    },
+    {
+      "name": "SYSCFG",
+      "value": 32,
+      "description": null
+    },
+    {
+      "name": "SW0",
+      "value": 71,
+      "description": null
+    },
+    {
+      "name": "SW1",
+      "value": 72,
+      "description": null
+    },
+    {
+      "name": "SW2",
+      "value": 73,
+      "description": null
+    },
+    {
+      "name": "SW3",
+      "value": 74,
+      "description": null
+    },
+    {
+      "name": "SYSRTC_APP",
+      "value": 83,
+      "description": null
+    },
+    {
+      "name": "SYSRTC_SEQ",
+      "value": 84,
+      "description": null
+    },
+    {
+      "name": "SYSRTC_APP",
+      "value": 83,
+      "description": null
+    },
+    {
+      "name": "SYSRTC_SEQ",
+      "value": 84,
+      "description": null
+    },
+    {
+      "name": "TIMER0",
+      "value": 4,
+      "description": null
+    },
+    {
+      "name": "TIMER0",
+      "value": 4,
+      "description": null
+    },
+    {
+      "name": "TIMER1",
+      "value": 5,
+      "description": null
+    },
+    {
+      "name": "TIMER1",
+      "value": 5,
+      "description": null
+    },
+    {
+      "name": "TIMER2",
+      "value": 6,
+      "description": null
+    },
+    {
+      "name": "TIMER2",
+      "value": 6,
+      "description": null
+    },
+    {
+      "name": "TIMER3",
+      "value": 7,
+      "description": null
+    },
+    {
+      "name": "TIMER3",
+      "value": 7,
+      "description": null
+    },
+    {
+      "name": "TIMER4",
+      "value": 8,
+      "description": null
+    },
+    {
+      "name": "TIMER4",
+      "value": 8,
+      "description": null
+    },
+    {
+      "name": "TIMER5",
+      "value": 9,
+      "description": null
+    },
+    {
+      "name": "TIMER5",
+      "value": 9,
+      "description": null
+    },
+    {
+      "name": "TIMER6",
+      "value": 10,
+      "description": null
+    },
+    {
+      "name": "TIMER6",
+      "value": 10,
+      "description": null
+    },
+    {
+      "name": "TIMER7",
+      "value": 11,
+      "description": null
+    },
+    {
+      "name": "TIMER7",
+      "value": 11,
+      "description": null
+    },
+    {
+      "name": "TIMER8",
+      "value": 12,
+      "description": null
+    },
+    {
+      "name": "TIMER8",
+      "value": 12,
+      "description": null
+    },
+    {
+      "name": "TIMER9",
+      "value": 13,
+      "description": null
+    },
+    {
+      "name": "TIMER9",
+      "value": 13,
+      "description": null
+    },
+    {
+      "name": "ULFRCO",
+      "value": 38,
+      "description": null
+    },
+    {
+      "name": "ULFRCO",
+      "value": 38,
+      "description": null
+    },
+    {
+      "name": "USART0_RX",
+      "value": 14,
+      "description": null
+    },
+    {
+      "name": "USART0_TX",
+      "value": 15,
+      "description": null
+    },
+    {
+      "name": "USART0_RX",
+      "value": 14,
+      "description": null
+    },
+    {
+      "name": "USART0_TX",
+      "value": 15,
+      "description": null
+    },
+    {
+      "name": "USART1_RX",
+      "value": 16,
+      "description": null
+    },
+    {
+      "name": "USART1_TX",
+      "value": 17,
+      "description": null
+    },
+    {
+      "name": "USART1_RX",
+      "value": 16,
+      "description": null
+    },
+    {
+      "name": "USART1_TX",
+      "value": 17,
+      "description": null
+    },
+    {
+      "name": "USART2_RX",
+      "value": 18,
+      "description": null
+    },
+    {
+      "name": "USART2_TX",
+      "value": 19,
+      "description": null
+    },
+    {
+      "name": "USART2_RX",
+      "value": 18,
+      "description": null
+    },
+    {
+      "name": "USART2_TX",
+      "value": 19,
+      "description": null
+    },
+    {
+      "name": "VDAC0",
+      "value": 88,
+      "description": null
+    },
+    {
+      "name": "VDAC0",
+      "value": 88,
+      "description": null
+    },
+    {
+      "name": "VDAC1",
+      "value": 89,
+      "description": null
+    },
+    {
+      "name": "VDAC1",
+      "value": 89,
+      "description": null
+    },
+    {
+      "name": "WDOG0",
+      "value": 58,
+      "description": null
+    },
+    {
+      "name": "WDOG0",
+      "value": 58,
+      "description": null
+    },
+    {
+      "name": "WDOG1",
+      "value": 59,
+      "description": null
+    },
+    {
+      "name": "WDOG1",
+      "value": 59,
+      "description": null
+    }
+  ]
+}

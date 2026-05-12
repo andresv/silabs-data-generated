@@ -1,0 +1,189 @@
+block/Gpcrc:
+  description: GPCRC peripheral.
+  items:
+  - name: ipversion
+    description: No Description.
+    byte_offset: 0
+    access: Read
+    fieldset: regs::Ipversion
+  - name: en
+    description: No Description.
+    byte_offset: 4
+    fieldset: regs::En
+  - name: ctrl
+    description: No Description.
+    byte_offset: 8
+    fieldset: regs::Ctrl
+  - name: cmd
+    description: No Description.
+    byte_offset: 12
+    access: Write
+    fieldset: regs::Cmd
+  - name: init
+    description: No Description.
+    byte_offset: 16
+    fieldset: regs::Init
+  - name: poly
+    description: No Description.
+    byte_offset: 20
+    fieldset: regs::Poly
+  - name: inputdata
+    description: No Description.
+    byte_offset: 24
+    access: Write
+    fieldset: regs::Inputdata
+  - name: inputdatahword
+    description: No Description.
+    byte_offset: 28
+    access: Write
+    fieldset: regs::Inputdatahword
+  - name: inputdatabyte
+    description: No Description.
+    byte_offset: 32
+    access: Write
+    fieldset: regs::Inputdatabyte
+  - name: data
+    description: No Description.
+    byte_offset: 36
+    access: Read
+    fieldset: regs::Data
+  - name: datarev
+    description: No Description.
+    byte_offset: 40
+    access: Read
+    fieldset: regs::Datarev
+  - name: databyterev
+    description: No Description.
+    byte_offset: 44
+    access: Read
+    fieldset: regs::Databyterev
+fieldset/regs::Cmd:
+  description: No Description.
+  fields:
+  - name: init
+    description: Initialization Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::Ctrl:
+  description: No Description.
+  fields:
+  - name: polysel
+    description: Polynomial Select.
+    bit_offset: 4
+    bit_size: 1
+    enum: vals::Polysel
+  - name: bytemode
+    description: Byte Mode Enable.
+    bit_offset: 8
+    bit_size: 1
+  - name: bitreverse
+    description: Byte-level Bit Reverse Enable.
+    bit_offset: 9
+    bit_size: 1
+    enum: vals::Bitreverse
+  - name: bytereverse
+    description: Byte Reverse Mode.
+    bit_offset: 10
+    bit_size: 1
+    enum: vals::Bytereverse
+  - name: autoinit
+    description: Auto Init Enable.
+    bit_offset: 13
+    bit_size: 1
+fieldset/regs::Data:
+  description: No Description.
+  fields:
+  - name: data
+    description: CRC Data Register.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Databyterev:
+  description: No Description.
+  fields:
+  - name: databyterev
+    description: Data Byte Reverse Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Datarev:
+  description: No Description.
+  fields:
+  - name: datarev
+    description: Data Reverse Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::En:
+  description: No Description.
+  fields:
+  - name: en
+    description: CRC Enable.
+    bit_offset: 0
+    bit_size: 1
+fieldset/regs::Init:
+  description: No Description.
+  fields:
+  - name: init
+    description: CRC Initialization Value.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Inputdata:
+  description: No Description.
+  fields:
+  - name: inputdata
+    description: Input Data for 32-bit.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Inputdatabyte:
+  description: No Description.
+  fields:
+  - name: inputdatabyte
+    description: Input Data for 8-bit.
+    bit_offset: 0
+    bit_size: 8
+fieldset/regs::Inputdatahword:
+  description: No Description.
+  fields:
+  - name: inputdatahword
+    description: Input Data for 16-bit.
+    bit_offset: 0
+    bit_size: 16
+fieldset/regs::Ipversion:
+  description: No Description.
+  fields:
+  - name: ipversion
+    description: IP Version ID.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Poly:
+  description: No Description.
+  fields:
+  - name: poly
+    description: CRC Polynomial Value.
+    bit_offset: 0
+    bit_size: 16
+enum/vals::Bitreverse:
+  bit_size: 1
+  variants:
+  - name: Normal
+    description: No reverse.
+    value: 0
+  - name: Reversed
+    description: Reverse bit order in each byte.
+    value: 1
+enum/vals::Bytereverse:
+  bit_size: 1
+  variants:
+  - name: Normal
+    description: 'No reverse: B3, B2, B1, B0.'
+    value: 0
+  - name: Reversed
+    description: 'Reverse byte order. For 32-bit: B0, B1, B2, B3; For 16-bit: 0, 0, B0, B1.'
+    value: 1
+enum/vals::Polysel:
+  bit_size: 1
+  variants:
+  - name: Crc16
+    description: 16-bit CRC programmable polynomial selected.
+    value: 1
+  - name: Crc32
+    description: CRC-32 (0x04C11DB7) polynomial selected.
+    value: 0

@@ -1,0 +1,93 @@
+block/Hostmailbox:
+  description: HOSTMAILBOX peripheral.
+  items:
+  - name: msgptr0
+    description: No Description.
+    byte_offset: 0
+    fieldset: regs::Msgptr0
+  - name: msgptr1
+    description: No Description.
+    byte_offset: 4
+    fieldset: regs::Msgptr1
+  - name: msgptr2
+    description: No Description.
+    byte_offset: 8
+    fieldset: regs::Msgptr2
+  - name: msgptr3
+    description: No Description.
+    byte_offset: 12
+    fieldset: regs::Msgptr3
+  - name: if_
+    description: No Description.
+    byte_offset: 64
+    fieldset: regs::If
+  - name: ien
+    description: No Description.
+    byte_offset: 68
+    fieldset: regs::Ien
+fieldset/regs::Ien:
+  description: No Description.
+  fields:
+  - name: mboxien0
+    description: Mailbox Interrupt Enable.
+    bit_offset: 0
+    bit_size: 1
+  - name: mboxien1
+    description: Mailbox Interrupt Enable.
+    bit_offset: 1
+    bit_size: 1
+  - name: mboxien2
+    description: Mailbox Interrupt Enable.
+    bit_offset: 2
+    bit_size: 1
+  - name: mboxien3
+    description: Mailbox Interrupt Enable.
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::If:
+  description: No Description.
+  fields:
+  - name: mboxif0
+    description: Mailbox Interupt Flag.
+    bit_offset: 0
+    bit_size: 1
+  - name: mboxif1
+    description: Mailbox Interupt Flag.
+    bit_offset: 1
+    bit_size: 1
+  - name: mboxif2
+    description: Mailbox Interupt Flag.
+    bit_offset: 2
+    bit_size: 1
+  - name: mboxif3
+    description: Mailbox Interupt Flag.
+    bit_offset: 3
+    bit_size: 1
+fieldset/regs::Msgptr0:
+  description: No Description.
+  fields:
+  - name: ptr
+    description: Pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Msgptr1:
+  description: No Description.
+  fields:
+  - name: ptr
+    description: Pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Msgptr2:
+  description: No Description.
+  fields:
+  - name: ptr
+    description: Pointer.
+    bit_offset: 0
+    bit_size: 32
+fieldset/regs::Msgptr3:
+  description: No Description.
+  fields:
+  - name: ptr
+    description: Pointer.
+    bit_offset: 0
+    bit_size: 32

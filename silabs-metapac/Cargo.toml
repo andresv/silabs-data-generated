@@ -3,7 +3,7 @@
 
 [package]
 name = "silabs-metapac"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Generated Silicon Labs PAC. Do not edit by hand — regenerate via silabs-metapac-gen."

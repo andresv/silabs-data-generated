@@ -83,59 +83,81 @@ pub mod gpio_port {
 
 /// Cortex-M interrupt numbers (deduped by name).
 pub mod interrupts {
-    pub const ACMP0: u8 = 40;
-    pub const ACMP1: u8 = 41;
-    pub const BURTC: u8 = 17;
-    pub const CMU: u8 = 47;
-    pub const DCDC: u8 = 53;
-    pub const DPLL0: u8 = 51;
-    pub const EMU: u8 = 3;
-    pub const EMUDG: u8 = 29;
-    pub const EUSART0_RX: u8 = 11;
-    pub const EUSART0_TX: u8 = 12;
-    pub const EUSART1_RX: u8 = 13;
-    pub const EUSART1_TX: u8 = 14;
-    pub const GPIO_ODD: u8 = 25;
-    pub const GPIO_EVEN: u8 = 26;
-    pub const HFRCO0: u8 = 45;
-    pub const HFRCOEM23: u8 = 46;
-    pub const HFXO0: u8 = 44;
-    pub const HOSTMAILBOX: u8 = 38;
-    pub const I2C0: u8 = 27;
-    pub const I2C1: u8 = 28;
-    pub const IADC: u8 = 49;
-    pub const ICACHE0: u8 = 16;
-    pub const KEYSCAN: u8 = 69;
-    pub const LDMA: u8 = 21;
-    pub const LETIMER0: u8 = 18;
-    pub const LFRCO: u8 = 23;
-    pub const LFXO: u8 = 22;
-    pub const MSC: u8 = 50;
-    pub const PCNT0: u8 = 54;
-    pub const AES: u8 = 48;
-    pub const SEMBRX: u8 = 65;
-    pub const SEMBTX: u8 = 66;
     pub const SMU_SECURE: u8 = 0;
     pub const SMU_S_PRIVILEGED: u8 = 1;
-    pub const SYSCFG: u8 = 19;
-    pub const SW0: u8 = 55;
-    pub const SW1: u8 = 56;
-    pub const SW2: u8 = 57;
-    pub const SW3: u8 = 58;
-    pub const SYSRTC_APP: u8 = 67;
-    pub const SYSRTC_SEQ: u8 = 68;
+    pub const SMU_NS_PRIVILEGED: u8 = 2;
+    pub const EMU: u8 = 3;
     pub const TIMER0: u8 = 4;
     pub const TIMER1: u8 = 5;
     pub const TIMER2: u8 = 6;
     pub const TIMER3: u8 = 7;
     pub const TIMER4: u8 = 8;
-    pub const ULFRCO: u8 = 24;
     pub const USART0_RX: u8 = 9;
     pub const USART0_TX: u8 = 10;
-    pub const VDAC0: u8 = 72;
-    pub const VDAC1: u8 = 73;
+    pub const EUSART0_RX: u8 = 11;
+    pub const EUSART0_TX: u8 = 12;
+    pub const EUSART1_RX: u8 = 13;
+    pub const EUSART1_TX: u8 = 14;
+    pub const ICACHE0: u8 = 16;
+    pub const BURTC: u8 = 17;
+    pub const LETIMER0: u8 = 18;
+    pub const SYSCFG: u8 = 19;
+    pub const MPAHBRAM: u8 = 20;
+    pub const LDMA: u8 = 21;
+    pub const LFXO: u8 = 22;
+    pub const LFRCO: u8 = 23;
+    pub const ULFRCO: u8 = 24;
+    pub const GPIO_ODD: u8 = 25;
+    pub const GPIO_EVEN: u8 = 26;
+    pub const I2C0: u8 = 27;
+    pub const I2C1: u8 = 28;
+    pub const EMUDG: u8 = 29;
+    pub const AGC: u8 = 30;
+    pub const BUFC: u8 = 31;
+    pub const FRC_PRI: u8 = 32;
+    pub const FRC: u8 = 33;
+    pub const MODEM: u8 = 34;
+    pub const PROTIMER: u8 = 35;
+    pub const RAC_RSM: u8 = 36;
+    pub const RAC_SEQ: u8 = 37;
+    pub const HOSTMAILBOX: u8 = 38;
+    pub const SYNTH: u8 = 39;
+    pub const ACMP0: u8 = 40;
+    pub const ACMP1: u8 = 41;
     pub const WDOG0: u8 = 42;
     pub const WDOG1: u8 = 43;
+    pub const HFXO0: u8 = 44;
+    pub const HFRCO0: u8 = 45;
+    pub const HFRCOEM23: u8 = 46;
+    pub const CMU: u8 = 47;
+    pub const AES: u8 = 48;
+    pub const IADC: u8 = 49;
+    pub const MSC: u8 = 50;
+    pub const DPLL0: u8 = 51;
+    pub const EMUEFP: u8 = 52;
+    pub const DCDC: u8 = 53;
+    pub const PCNT0: u8 = 54;
+    pub const SW0: u8 = 55;
+    pub const SW1: u8 = 56;
+    pub const SW2: u8 = 57;
+    pub const SW3: u8 = 58;
+    pub const KERNEL0: u8 = 59;
+    pub const KERNEL1: u8 = 60;
+    pub const M33CTI0: u8 = 61;
+    pub const M33CTI1: u8 = 62;
+    pub const FPUEXH: u8 = 63;
+    pub const SETAMPERHOST: u8 = 64;
+    pub const SEMBRX: u8 = 65;
+    pub const SEMBTX: u8 = 66;
+    pub const SYSRTC_APP: u8 = 67;
+    pub const SYSRTC_SEQ: u8 = 68;
+    pub const KEYSCAN: u8 = 69;
+    pub const RFECA0: u8 = 70;
+    pub const RFECA1: u8 = 71;
+    pub const VDAC0: u8 = 72;
+    pub const VDAC1: u8 = 73;
+    pub const AHB2AHB0: u8 = 74;
+    pub const AHB2AHB1: u8 = 75;
 }
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
@@ -144,6 +166,7 @@ pub mod interrupts {
 pub enum Interrupt {
     SMU_SECURE = 0,
     SMU_S_PRIVILEGED = 1,
+    SMU_NS_PRIVILEGED = 2,
     EMU = 3,
     TIMER0 = 4,
     TIMER1 = 5,
@@ -160,6 +183,7 @@ pub enum Interrupt {
     BURTC = 17,
     LETIMER0 = 18,
     SYSCFG = 19,
+    MPAHBRAM = 20,
     LDMA = 21,
     LFXO = 22,
     LFRCO = 23,
@@ -169,7 +193,16 @@ pub enum Interrupt {
     I2C0 = 27,
     I2C1 = 28,
     EMUDG = 29,
+    AGC = 30,
+    BUFC = 31,
+    FRC_PRI = 32,
+    FRC = 33,
+    MODEM = 34,
+    PROTIMER = 35,
+    RAC_RSM = 36,
+    RAC_SEQ = 37,
     HOSTMAILBOX = 38,
+    SYNTH = 39,
     ACMP0 = 40,
     ACMP1 = 41,
     WDOG0 = 42,
@@ -182,19 +215,30 @@ pub enum Interrupt {
     IADC = 49,
     MSC = 50,
     DPLL0 = 51,
+    EMUEFP = 52,
     DCDC = 53,
     PCNT0 = 54,
     SW0 = 55,
     SW1 = 56,
     SW2 = 57,
     SW3 = 58,
+    KERNEL0 = 59,
+    KERNEL1 = 60,
+    M33CTI0 = 61,
+    M33CTI1 = 62,
+    FPUEXH = 63,
+    SETAMPERHOST = 64,
     SEMBRX = 65,
     SEMBTX = 66,
     SYSRTC_APP = 67,
     SYSRTC_SEQ = 68,
     KEYSCAN = 69,
+    RFECA0 = 70,
+    RFECA1 = 71,
     VDAC0 = 72,
     VDAC1 = 73,
+    AHB2AHB0 = 74,
+    AHB2AHB1 = 75,
 }
 
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
@@ -207,6 +251,7 @@ mod _vectors {
     unsafe extern "C" {
         fn SMU_SECURE();
         fn SMU_S_PRIVILEGED();
+        fn SMU_NS_PRIVILEGED();
         fn EMU();
         fn TIMER0();
         fn TIMER1();
@@ -223,6 +268,7 @@ mod _vectors {
         fn BURTC();
         fn LETIMER0();
         fn SYSCFG();
+        fn MPAHBRAM();
         fn LDMA();
         fn LFXO();
         fn LFRCO();
@@ -232,7 +278,16 @@ mod _vectors {
         fn I2C0();
         fn I2C1();
         fn EMUDG();
+        fn AGC();
+        fn BUFC();
+        fn FRC_PRI();
+        fn FRC();
+        fn MODEM();
+        fn PROTIMER();
+        fn RAC_RSM();
+        fn RAC_SEQ();
         fn HOSTMAILBOX();
+        fn SYNTH();
         fn ACMP0();
         fn ACMP1();
         fn WDOG0();
@@ -245,19 +300,30 @@ mod _vectors {
         fn IADC();
         fn MSC();
         fn DPLL0();
+        fn EMUEFP();
         fn DCDC();
         fn PCNT0();
         fn SW0();
         fn SW1();
         fn SW2();
         fn SW3();
+        fn KERNEL0();
+        fn KERNEL1();
+        fn M33CTI0();
+        fn M33CTI1();
+        fn FPUEXH();
+        fn SETAMPERHOST();
         fn SEMBRX();
         fn SEMBTX();
         fn SYSRTC_APP();
         fn SYSRTC_SEQ();
         fn KEYSCAN();
+        fn RFECA0();
+        fn RFECA1();
         fn VDAC0();
         fn VDAC1();
+        fn AHB2AHB0();
+        fn AHB2AHB1();
     }
 
     pub union Vector {
@@ -267,10 +333,10 @@ mod _vectors {
 
     #[unsafe(link_section = ".vector_table.interrupts")]
     #[unsafe(no_mangle)]
-    pub static __INTERRUPTS: [Vector; 74] = [
+    pub static __INTERRUPTS: [Vector; 76] = [
         Vector { _handler: SMU_SECURE },
         Vector { _handler: SMU_S_PRIVILEGED },
-        Vector { _reserved: 0 },
+        Vector { _handler: SMU_NS_PRIVILEGED },
         Vector { _handler: EMU },
         Vector { _handler: TIMER0 },
         Vector { _handler: TIMER1 },
@@ -288,7 +354,7 @@ mod _vectors {
         Vector { _handler: BURTC },
         Vector { _handler: LETIMER0 },
         Vector { _handler: SYSCFG },
-        Vector { _reserved: 0 },
+        Vector { _handler: MPAHBRAM },
         Vector { _handler: LDMA },
         Vector { _handler: LFXO },
         Vector { _handler: LFRCO },
@@ -298,16 +364,16 @@ mod _vectors {
         Vector { _handler: I2C0 },
         Vector { _handler: I2C1 },
         Vector { _handler: EMUDG },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: AGC },
+        Vector { _handler: BUFC },
+        Vector { _handler: FRC_PRI },
+        Vector { _handler: FRC },
+        Vector { _handler: MODEM },
+        Vector { _handler: PROTIMER },
+        Vector { _handler: RAC_RSM },
+        Vector { _handler: RAC_SEQ },
         Vector { _handler: HOSTMAILBOX },
-        Vector { _reserved: 0 },
+        Vector { _handler: SYNTH },
         Vector { _handler: ACMP0 },
         Vector { _handler: ACMP1 },
         Vector { _handler: WDOG0 },
@@ -320,28 +386,30 @@ mod _vectors {
         Vector { _handler: IADC },
         Vector { _handler: MSC },
         Vector { _handler: DPLL0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: EMUEFP },
         Vector { _handler: DCDC },
         Vector { _handler: PCNT0 },
         Vector { _handler: SW0 },
         Vector { _handler: SW1 },
         Vector { _handler: SW2 },
         Vector { _handler: SW3 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: KERNEL0 },
+        Vector { _handler: KERNEL1 },
+        Vector { _handler: M33CTI0 },
+        Vector { _handler: M33CTI1 },
+        Vector { _handler: FPUEXH },
+        Vector { _handler: SETAMPERHOST },
         Vector { _handler: SEMBRX },
         Vector { _handler: SEMBTX },
         Vector { _handler: SYSRTC_APP },
         Vector { _handler: SYSRTC_SEQ },
         Vector { _handler: KEYSCAN },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: RFECA0 },
+        Vector { _handler: RFECA1 },
         Vector { _handler: VDAC0 },
         Vector { _handler: VDAC1 },
+        Vector { _handler: AHB2AHB0 },
+        Vector { _handler: AHB2AHB1 },
     ];
 }
 

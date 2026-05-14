@@ -97,54 +97,10 @@ pub mod gpio_port {
 
 /// Cortex-M interrupt numbers (deduped by name).
 pub mod interrupts {
-    pub const ACMP0: u8 = 56;
-    pub const ACMP1: u8 = 57;
-    pub const BURTC: u8 = 30;
-    pub const CMU: u8 = 63;
-    pub const DCDC: u8 = 69;
-    pub const DPLL0: u8 = 67;
-    pub const EMU: u8 = 3;
-    pub const EMUDG: u8 = 45;
-    pub const EUSART0_RX: u8 = 20;
-    pub const EUSART0_TX: u8 = 21;
-    pub const EUSART1_RX: u8 = 22;
-    pub const EUSART1_TX: u8 = 23;
-    pub const EUSART2_RX: u8 = 24;
-    pub const EUSART2_TX: u8 = 25;
-    pub const EUSART3_RX: u8 = 26;
-    pub const EUSART3_TX: u8 = 27;
-    pub const GPIO_ODD: u8 = 39;
-    pub const GPIO_EVEN: u8 = 40;
-    pub const HFRCO0: u8 = 61;
-    pub const HFRCOEM23: u8 = 62;
-    pub const HFXO0: u8 = 60;
-    pub const HOSTMAILBOX: u8 = 54;
-    pub const I2C0: u8 = 41;
-    pub const I2C1: u8 = 42;
-    pub const I2C2: u8 = 43;
-    pub const I2C3: u8 = 44;
-    pub const IADC: u8 = 65;
-    pub const ICACHE0: u8 = 29;
-    pub const KEYSCAN: u8 = 85;
-    pub const LCD: u8 = 92;
-    pub const LDMA: u8 = 35;
-    pub const LETIMER0: u8 = 31;
-    pub const LFRCO: u8 = 37;
-    pub const LFXO: u8 = 36;
-    pub const MSC: u8 = 66;
-    pub const PCNT0: u8 = 70;
-    pub const AES: u8 = 64;
-    pub const SEMBRX: u8 = 81;
-    pub const SEMBTX: u8 = 82;
     pub const SMU_SECURE: u8 = 0;
     pub const SMU_S_PRIVILEGED: u8 = 1;
-    pub const SYSCFG: u8 = 32;
-    pub const SW0: u8 = 71;
-    pub const SW1: u8 = 72;
-    pub const SW2: u8 = 73;
-    pub const SW3: u8 = 74;
-    pub const SYSRTC_APP: u8 = 83;
-    pub const SYSRTC_SEQ: u8 = 84;
+    pub const SMU_NS_PRIVILEGED: u8 = 2;
+    pub const EMU: u8 = 3;
     pub const TIMER0: u8 = 4;
     pub const TIMER1: u8 = 5;
     pub const TIMER2: u8 = 6;
@@ -155,17 +111,84 @@ pub mod interrupts {
     pub const TIMER7: u8 = 11;
     pub const TIMER8: u8 = 12;
     pub const TIMER9: u8 = 13;
-    pub const ULFRCO: u8 = 38;
     pub const USART0_RX: u8 = 14;
     pub const USART0_TX: u8 = 15;
     pub const USART1_RX: u8 = 16;
     pub const USART1_TX: u8 = 17;
     pub const USART2_RX: u8 = 18;
     pub const USART2_TX: u8 = 19;
-    pub const VDAC0: u8 = 88;
-    pub const VDAC1: u8 = 89;
+    pub const EUSART0_RX: u8 = 20;
+    pub const EUSART0_TX: u8 = 21;
+    pub const EUSART1_RX: u8 = 22;
+    pub const EUSART1_TX: u8 = 23;
+    pub const EUSART2_RX: u8 = 24;
+    pub const EUSART2_TX: u8 = 25;
+    pub const EUSART3_RX: u8 = 26;
+    pub const EUSART3_TX: u8 = 27;
+    pub const ICACHE0: u8 = 29;
+    pub const BURTC: u8 = 30;
+    pub const LETIMER0: u8 = 31;
+    pub const SYSCFG: u8 = 32;
+    pub const MPAHBRAM0: u8 = 33;
+    pub const MPAHBRAM1: u8 = 34;
+    pub const LDMA: u8 = 35;
+    pub const LFXO: u8 = 36;
+    pub const LFRCO: u8 = 37;
+    pub const ULFRCO: u8 = 38;
+    pub const GPIO_ODD: u8 = 39;
+    pub const GPIO_EVEN: u8 = 40;
+    pub const I2C0: u8 = 41;
+    pub const I2C1: u8 = 42;
+    pub const I2C2: u8 = 43;
+    pub const I2C3: u8 = 44;
+    pub const EMUDG: u8 = 45;
+    pub const AGC: u8 = 46;
+    pub const BUFC: u8 = 47;
+    pub const FRC_PRI: u8 = 48;
+    pub const FRC: u8 = 49;
+    pub const MODEM: u8 = 50;
+    pub const PROTIMER: u8 = 51;
+    pub const RAC_RSM: u8 = 52;
+    pub const RAC_SEQ: u8 = 53;
+    pub const HOSTMAILBOX: u8 = 54;
+    pub const SYNTH: u8 = 55;
+    pub const ACMP0: u8 = 56;
+    pub const ACMP1: u8 = 57;
     pub const WDOG0: u8 = 58;
     pub const WDOG1: u8 = 59;
+    pub const HFXO0: u8 = 60;
+    pub const HFRCO0: u8 = 61;
+    pub const HFRCOEM23: u8 = 62;
+    pub const CMU: u8 = 63;
+    pub const AES: u8 = 64;
+    pub const IADC: u8 = 65;
+    pub const MSC: u8 = 66;
+    pub const DPLL0: u8 = 67;
+    pub const EMUEFP: u8 = 68;
+    pub const DCDC: u8 = 69;
+    pub const PCNT0: u8 = 70;
+    pub const SW0: u8 = 71;
+    pub const SW1: u8 = 72;
+    pub const SW2: u8 = 73;
+    pub const SW3: u8 = 74;
+    pub const KERNEL0: u8 = 75;
+    pub const KERNEL1: u8 = 76;
+    pub const M33CTI0: u8 = 77;
+    pub const M33CTI1: u8 = 78;
+    pub const FPUEXH: u8 = 79;
+    pub const SETAMPERHOST: u8 = 80;
+    pub const SEMBRX: u8 = 81;
+    pub const SEMBTX: u8 = 82;
+    pub const SYSRTC_APP: u8 = 83;
+    pub const SYSRTC_SEQ: u8 = 84;
+    pub const KEYSCAN: u8 = 85;
+    pub const RFECA0: u8 = 86;
+    pub const RFECA1: u8 = 87;
+    pub const VDAC0: u8 = 88;
+    pub const VDAC1: u8 = 89;
+    pub const AHB2AHB0: u8 = 90;
+    pub const AHB2AHB1: u8 = 91;
+    pub const LCD: u8 = 92;
 }
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
@@ -174,6 +197,7 @@ pub mod interrupts {
 pub enum Interrupt {
     SMU_SECURE = 0,
     SMU_S_PRIVILEGED = 1,
+    SMU_NS_PRIVILEGED = 2,
     EMU = 3,
     TIMER0 = 4,
     TIMER1 = 5,
@@ -203,6 +227,8 @@ pub enum Interrupt {
     BURTC = 30,
     LETIMER0 = 31,
     SYSCFG = 32,
+    MPAHBRAM0 = 33,
+    MPAHBRAM1 = 34,
     LDMA = 35,
     LFXO = 36,
     LFRCO = 37,
@@ -214,7 +240,16 @@ pub enum Interrupt {
     I2C2 = 43,
     I2C3 = 44,
     EMUDG = 45,
+    AGC = 46,
+    BUFC = 47,
+    FRC_PRI = 48,
+    FRC = 49,
+    MODEM = 50,
+    PROTIMER = 51,
+    RAC_RSM = 52,
+    RAC_SEQ = 53,
     HOSTMAILBOX = 54,
+    SYNTH = 55,
     ACMP0 = 56,
     ACMP1 = 57,
     WDOG0 = 58,
@@ -227,19 +262,30 @@ pub enum Interrupt {
     IADC = 65,
     MSC = 66,
     DPLL0 = 67,
+    EMUEFP = 68,
     DCDC = 69,
     PCNT0 = 70,
     SW0 = 71,
     SW1 = 72,
     SW2 = 73,
     SW3 = 74,
+    KERNEL0 = 75,
+    KERNEL1 = 76,
+    M33CTI0 = 77,
+    M33CTI1 = 78,
+    FPUEXH = 79,
+    SETAMPERHOST = 80,
     SEMBRX = 81,
     SEMBTX = 82,
     SYSRTC_APP = 83,
     SYSRTC_SEQ = 84,
     KEYSCAN = 85,
+    RFECA0 = 86,
+    RFECA1 = 87,
     VDAC0 = 88,
     VDAC1 = 89,
+    AHB2AHB0 = 90,
+    AHB2AHB1 = 91,
     LCD = 92,
 }
 
@@ -253,6 +299,7 @@ mod _vectors {
     unsafe extern "C" {
         fn SMU_SECURE();
         fn SMU_S_PRIVILEGED();
+        fn SMU_NS_PRIVILEGED();
         fn EMU();
         fn TIMER0();
         fn TIMER1();
@@ -282,6 +329,8 @@ mod _vectors {
         fn BURTC();
         fn LETIMER0();
         fn SYSCFG();
+        fn MPAHBRAM0();
+        fn MPAHBRAM1();
         fn LDMA();
         fn LFXO();
         fn LFRCO();
@@ -293,7 +342,16 @@ mod _vectors {
         fn I2C2();
         fn I2C3();
         fn EMUDG();
+        fn AGC();
+        fn BUFC();
+        fn FRC_PRI();
+        fn FRC();
+        fn MODEM();
+        fn PROTIMER();
+        fn RAC_RSM();
+        fn RAC_SEQ();
         fn HOSTMAILBOX();
+        fn SYNTH();
         fn ACMP0();
         fn ACMP1();
         fn WDOG0();
@@ -306,19 +364,30 @@ mod _vectors {
         fn IADC();
         fn MSC();
         fn DPLL0();
+        fn EMUEFP();
         fn DCDC();
         fn PCNT0();
         fn SW0();
         fn SW1();
         fn SW2();
         fn SW3();
+        fn KERNEL0();
+        fn KERNEL1();
+        fn M33CTI0();
+        fn M33CTI1();
+        fn FPUEXH();
+        fn SETAMPERHOST();
         fn SEMBRX();
         fn SEMBTX();
         fn SYSRTC_APP();
         fn SYSRTC_SEQ();
         fn KEYSCAN();
+        fn RFECA0();
+        fn RFECA1();
         fn VDAC0();
         fn VDAC1();
+        fn AHB2AHB0();
+        fn AHB2AHB1();
         fn LCD();
     }
 
@@ -332,7 +401,7 @@ mod _vectors {
     pub static __INTERRUPTS: [Vector; 93] = [
         Vector { _handler: SMU_SECURE },
         Vector { _handler: SMU_S_PRIVILEGED },
-        Vector { _reserved: 0 },
+        Vector { _handler: SMU_NS_PRIVILEGED },
         Vector { _handler: EMU },
         Vector { _handler: TIMER0 },
         Vector { _handler: TIMER1 },
@@ -363,8 +432,8 @@ mod _vectors {
         Vector { _handler: BURTC },
         Vector { _handler: LETIMER0 },
         Vector { _handler: SYSCFG },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: MPAHBRAM0 },
+        Vector { _handler: MPAHBRAM1 },
         Vector { _handler: LDMA },
         Vector { _handler: LFXO },
         Vector { _handler: LFRCO },
@@ -376,16 +445,16 @@ mod _vectors {
         Vector { _handler: I2C2 },
         Vector { _handler: I2C3 },
         Vector { _handler: EMUDG },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: AGC },
+        Vector { _handler: BUFC },
+        Vector { _handler: FRC_PRI },
+        Vector { _handler: FRC },
+        Vector { _handler: MODEM },
+        Vector { _handler: PROTIMER },
+        Vector { _handler: RAC_RSM },
+        Vector { _handler: RAC_SEQ },
         Vector { _handler: HOSTMAILBOX },
-        Vector { _reserved: 0 },
+        Vector { _handler: SYNTH },
         Vector { _handler: ACMP0 },
         Vector { _handler: ACMP1 },
         Vector { _handler: WDOG0 },
@@ -398,30 +467,30 @@ mod _vectors {
         Vector { _handler: IADC },
         Vector { _handler: MSC },
         Vector { _handler: DPLL0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: EMUEFP },
         Vector { _handler: DCDC },
         Vector { _handler: PCNT0 },
         Vector { _handler: SW0 },
         Vector { _handler: SW1 },
         Vector { _handler: SW2 },
         Vector { _handler: SW3 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: KERNEL0 },
+        Vector { _handler: KERNEL1 },
+        Vector { _handler: M33CTI0 },
+        Vector { _handler: M33CTI1 },
+        Vector { _handler: FPUEXH },
+        Vector { _handler: SETAMPERHOST },
         Vector { _handler: SEMBRX },
         Vector { _handler: SEMBTX },
         Vector { _handler: SYSRTC_APP },
         Vector { _handler: SYSRTC_SEQ },
         Vector { _handler: KEYSCAN },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: RFECA0 },
+        Vector { _handler: RFECA1 },
         Vector { _handler: VDAC0 },
         Vector { _handler: VDAC1 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: AHB2AHB0 },
+        Vector { _handler: AHB2AHB1 },
         Vector { _handler: LCD },
     ];
 }

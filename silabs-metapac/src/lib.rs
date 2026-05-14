@@ -77,6 +77,8 @@ compile_error!("a silabs-metapac chip feature must be enabled (e.g. --features e
 
 pub mod common;
 
+pub mod metadata;
+
 #[cfg(any(
     feature = "efr32mg24a010f1024im40",
     feature = "efr32mg24a010f1024im48",
@@ -145,7 +147,7 @@ pub mod common;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/acmp_v2.rs"]
+#[path = "peripherals/acmp_v2.rs"]
 pub mod acmp_v2;
 
 #[cfg(any(
@@ -175,7 +177,7 @@ pub mod acmp_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/amuxcp_v2.rs"]
+#[path = "peripherals/amuxcp_v2.rs"]
 pub mod amuxcp_v2;
 
 #[cfg(any(
@@ -246,7 +248,7 @@ pub mod amuxcp_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/buram_v0.rs"]
+#[path = "peripherals/buram_v0.rs"]
 pub mod buram_v0;
 
 #[cfg(any(
@@ -317,7 +319,7 @@ pub mod buram_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/burtc_v1.rs"]
+#[path = "peripherals/burtc_v1.rs"]
 pub mod burtc_v1;
 
 #[cfg(any(
@@ -363,7 +365,7 @@ pub mod burtc_v1;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/cmu_v3.rs"]
+#[path = "peripherals/cmu_v3.rs"]
 pub mod cmu_v3;
 
 #[cfg(any(
@@ -393,7 +395,7 @@ pub mod cmu_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/cmu_v7.rs"]
+#[path = "peripherals/cmu_v7.rs"]
 pub mod cmu_v7;
 
 #[cfg(any(
@@ -464,7 +466,7 @@ pub mod cmu_v7;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/dcdc_v2.rs"]
+#[path = "peripherals/dcdc_v2.rs"]
 pub mod dcdc_v2;
 
 #[cfg(any(
@@ -510,7 +512,7 @@ pub mod dcdc_v2;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/devinfo_v0_mg24.rs"]
+#[path = "peripherals/devinfo_v0_mg24.rs"]
 pub mod devinfo_v0_mg24;
 
 #[cfg(any(
@@ -540,7 +542,7 @@ pub mod devinfo_v0_mg24;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/devinfo_v0_mg26.rs"]
+#[path = "peripherals/devinfo_v0_mg26.rs"]
 pub mod devinfo_v0_mg26;
 
 #[cfg(any(
@@ -570,7 +572,7 @@ pub mod devinfo_v0_mg26;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/dmem_v2.rs"]
+#[path = "peripherals/dmem_v2.rs"]
 pub mod dmem_v2;
 
 #[cfg(any(
@@ -616,7 +618,7 @@ pub mod dmem_v2;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/dmem_v2_ws.rs"]
+#[path = "peripherals/dmem_v2_ws.rs"]
 pub mod dmem_v2_ws;
 
 #[cfg(any(
@@ -687,7 +689,7 @@ pub mod dmem_v2_ws;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/dpll_v1.rs"]
+#[path = "peripherals/dpll_v1.rs"]
 pub mod dpll_v1;
 
 #[cfg(any(
@@ -758,7 +760,7 @@ pub mod dpll_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/emu_v3.rs"]
+#[path = "peripherals/emu_v3.rs"]
 pub mod emu_v3;
 
 #[cfg(any(
@@ -829,7 +831,7 @@ pub mod emu_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/eusart_v2.rs"]
+#[path = "peripherals/eusart_v2.rs"]
 pub mod eusart_v2;
 
 #[cfg(any(
@@ -900,7 +902,7 @@ pub mod eusart_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/eusart_v2_lf.rs"]
+#[path = "peripherals/eusart_v2_lf.rs"]
 pub mod eusart_v2_lf;
 
 #[cfg(any(
@@ -971,7 +973,7 @@ pub mod eusart_v2_lf;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/fsrco_v0.rs"]
+#[path = "peripherals/fsrco_v0.rs"]
 pub mod fsrco_v0;
 
 #[cfg(any(
@@ -1042,7 +1044,7 @@ pub mod fsrco_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/gpcrc_v0.rs"]
+#[path = "peripherals/gpcrc_v0.rs"]
 pub mod gpcrc_v0;
 
 #[cfg(any(
@@ -1088,7 +1090,7 @@ pub mod gpcrc_v0;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/gpio_v3.rs"]
+#[path = "peripherals/gpio_v3.rs"]
 pub mod gpio_v3;
 
 #[cfg(any(
@@ -1118,7 +1120,7 @@ pub mod gpio_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/gpio_v7.rs"]
+#[path = "peripherals/gpio_v7.rs"]
 pub mod gpio_v7;
 
 #[cfg(any(
@@ -1189,7 +1191,7 @@ pub mod gpio_v7;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/hfrco_v2.rs"]
+#[path = "peripherals/hfrco_v2.rs"]
 pub mod hfrco_v2;
 
 #[cfg(any(
@@ -1260,7 +1262,7 @@ pub mod hfrco_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/hfrcoem_v2.rs"]
+#[path = "peripherals/hfrcoem_v2.rs"]
 pub mod hfrcoem_v2;
 
 #[cfg(any(
@@ -1331,7 +1333,7 @@ pub mod hfrcoem_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/hfxo_v3.rs"]
+#[path = "peripherals/hfxo_v3.rs"]
 pub mod hfxo_v3;
 
 #[cfg(any(
@@ -1402,7 +1404,7 @@ pub mod hfxo_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/hostmailbox_v0.rs"]
+#[path = "peripherals/hostmailbox_v0.rs"]
 pub mod hostmailbox_v0;
 
 #[cfg(any(
@@ -1473,7 +1475,7 @@ pub mod hostmailbox_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/i2c_v0.rs"]
+#[path = "peripherals/i2c_v0.rs"]
 pub mod i2c_v0;
 
 #[cfg(any(
@@ -1524,7 +1526,7 @@ pub mod i2c_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/iadc_v3.rs"]
+#[path = "peripherals/iadc_v3.rs"]
 pub mod iadc_v3;
 
 #[cfg(any(
@@ -1549,7 +1551,7 @@ pub mod iadc_v3;
     feature = "efr32mg26b521f3200im48",
     feature = "efr32mg26b521f3200im68"
 ))]
-#[path = "registers/iadc_v3_ha.rs"]
+#[path = "peripherals/iadc_v3_ha.rs"]
 pub mod iadc_v3_ha;
 
 #[cfg(any(
@@ -1620,7 +1622,7 @@ pub mod iadc_v3_ha;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/icache_v0.rs"]
+#[path = "peripherals/icache_v0.rs"]
 pub mod icache_v0;
 
 #[cfg(any(
@@ -1691,7 +1693,7 @@ pub mod icache_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/keyscan_v1.rs"]
+#[path = "peripherals/keyscan_v1.rs"]
 pub mod keyscan_v1;
 
 #[cfg(any(
@@ -1721,7 +1723,7 @@ pub mod keyscan_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/lcd_v3.rs"]
+#[path = "peripherals/lcd_v3.rs"]
 pub mod lcd_v3;
 
 #[cfg(any(
@@ -1751,7 +1753,7 @@ pub mod lcd_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/lcdrf_v0.rs"]
+#[path = "peripherals/lcdrf_v0.rs"]
 pub mod lcdrf_v0;
 
 #[cfg(any(
@@ -1822,7 +1824,7 @@ pub mod lcdrf_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/ldma_v0.rs"]
+#[path = "peripherals/ldma_v0.rs"]
 pub mod ldma_v0;
 
 #[cfg(any(
@@ -1868,7 +1870,7 @@ pub mod ldma_v0;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/ldmaxbar_v3.rs"]
+#[path = "peripherals/ldmaxbar_v3.rs"]
 pub mod ldmaxbar_v3;
 
 #[cfg(any(
@@ -1898,7 +1900,7 @@ pub mod ldmaxbar_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/ldmaxbar_v7.rs"]
+#[path = "peripherals/ldmaxbar_v7.rs"]
 pub mod ldmaxbar_v7;
 
 #[cfg(any(
@@ -1969,7 +1971,7 @@ pub mod ldmaxbar_v7;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/letimer_v1.rs"]
+#[path = "peripherals/letimer_v1.rs"]
 pub mod letimer_v1;
 
 #[cfg(any(
@@ -2040,7 +2042,7 @@ pub mod letimer_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/lfrco_v2.rs"]
+#[path = "peripherals/lfrco_v2.rs"]
 pub mod lfrco_v2;
 
 #[cfg(any(
@@ -2111,7 +2113,7 @@ pub mod lfrco_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/lfxo_v1.rs"]
+#[path = "peripherals/lfxo_v1.rs"]
 pub mod lfxo_v1;
 
 #[cfg(any(
@@ -2157,7 +2159,7 @@ pub mod lfxo_v1;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/msc_v3.rs"]
+#[path = "peripherals/msc_v3.rs"]
 pub mod msc_v3;
 
 #[cfg(any(
@@ -2187,7 +2189,7 @@ pub mod msc_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/msc_v9.rs"]
+#[path = "peripherals/msc_v9.rs"]
 pub mod msc_v9;
 
 #[cfg(any(
@@ -2196,7 +2198,7 @@ pub mod msc_v9;
     feature = "efr32mg24b220f1536im48",
     feature = "efr32mg24b310f1536im48"
 ))]
-#[path = "registers/mvp_v1.rs"]
+#[path = "peripherals/mvp_v1.rs"]
 pub mod mvp_v1;
 
 #[cfg(any(
@@ -2211,7 +2213,7 @@ pub mod mvp_v1;
     feature = "efr32mg26b520f3200im68",
     feature = "efr32mg26b610f3200im48"
 ))]
-#[path = "registers/mvp_v2.rs"]
+#[path = "peripherals/mvp_v2.rs"]
 pub mod mvp_v2;
 
 #[cfg(any(
@@ -2282,7 +2284,7 @@ pub mod mvp_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/pcnt_v1.rs"]
+#[path = "peripherals/pcnt_v1.rs"]
 pub mod pcnt_v1;
 
 #[cfg(any(
@@ -2328,7 +2330,7 @@ pub mod pcnt_v1;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/prs_v3.rs"]
+#[path = "peripherals/prs_v3.rs"]
 pub mod prs_v3;
 
 #[cfg(any(
@@ -2358,7 +2360,7 @@ pub mod prs_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/prs_v6.rs"]
+#[path = "peripherals/prs_v6.rs"]
 pub mod prs_v6;
 
 #[cfg(any(
@@ -2429,7 +2431,7 @@ pub mod prs_v6;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/radioaes_v1.rs"]
+#[path = "peripherals/radioaes_v1.rs"]
 pub mod radioaes_v1;
 
 #[cfg(any(
@@ -2475,7 +2477,7 @@ pub mod radioaes_v1;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/scratchpad_v0.rs"]
+#[path = "peripherals/scratchpad_v0.rs"]
 pub mod scratchpad_v0;
 
 #[cfg(any(
@@ -2546,7 +2548,7 @@ pub mod scratchpad_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/semailbox_ns_host_v1.rs"]
+#[path = "peripherals/semailbox_ns_host_v1.rs"]
 pub mod semailbox_ns_host_v1;
 
 #[cfg(any(
@@ -2617,7 +2619,7 @@ pub mod semailbox_ns_host_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/semailbox_s_host_v1.rs"]
+#[path = "peripherals/semailbox_s_host_v1.rs"]
 pub mod semailbox_s_host_v1;
 
 #[cfg(any(
@@ -2659,7 +2661,7 @@ pub mod semailbox_s_host_v1;
     feature = "efr32mg24b120f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/smu_v3.rs"]
+#[path = "peripherals/smu_v3.rs"]
 pub mod smu_v3;
 
 #[cfg(any(
@@ -2668,7 +2670,7 @@ pub mod smu_v3;
     feature = "efr32mg24b220f1536im48",
     feature = "efr32mg24b310f1536im48"
 ))]
-#[path = "registers/smu_v3_mvp.rs"]
+#[path = "peripherals/smu_v3_mvp.rs"]
 pub mod smu_v3_mvp;
 
 #[cfg(any(
@@ -2688,7 +2690,7 @@ pub mod smu_v3_mvp;
     feature = "efr32mg26b521f3200im68",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/smu_v7.rs"]
+#[path = "peripherals/smu_v7.rs"]
 pub mod smu_v7;
 
 #[cfg(any(
@@ -2703,7 +2705,7 @@ pub mod smu_v7;
     feature = "efr32mg26b520f3200im68",
     feature = "efr32mg26b610f3200im48"
 ))]
-#[path = "registers/smu_v7_mvp.rs"]
+#[path = "peripherals/smu_v7_mvp.rs"]
 pub mod smu_v7_mvp;
 
 #[cfg(any(
@@ -2745,7 +2747,7 @@ pub mod smu_v7_mvp;
     feature = "efr32mg24b120f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/smu_ns_cfgns_v3.rs"]
+#[path = "peripherals/smu_ns_cfgns_v3.rs"]
 pub mod smu_ns_cfgns_v3;
 
 #[cfg(any(
@@ -2754,7 +2756,7 @@ pub mod smu_ns_cfgns_v3;
     feature = "efr32mg24b220f1536im48",
     feature = "efr32mg24b310f1536im48"
 ))]
-#[path = "registers/smu_ns_cfgns_v3_mvp.rs"]
+#[path = "peripherals/smu_ns_cfgns_v3_mvp.rs"]
 pub mod smu_ns_cfgns_v3_mvp;
 
 #[cfg(any(
@@ -2774,7 +2776,7 @@ pub mod smu_ns_cfgns_v3_mvp;
     feature = "efr32mg26b521f3200im68",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/smu_ns_cfgns_v7.rs"]
+#[path = "peripherals/smu_ns_cfgns_v7.rs"]
 pub mod smu_ns_cfgns_v7;
 
 #[cfg(any(
@@ -2789,7 +2791,7 @@ pub mod smu_ns_cfgns_v7;
     feature = "efr32mg26b520f3200im68",
     feature = "efr32mg26b610f3200im48"
 ))]
-#[path = "registers/smu_ns_cfgns_v7_mvp.rs"]
+#[path = "peripherals/smu_ns_cfgns_v7_mvp.rs"]
 pub mod smu_ns_cfgns_v7_mvp;
 
 #[cfg(any(
@@ -2831,7 +2833,7 @@ pub mod smu_ns_cfgns_v7_mvp;
     feature = "efr32mg24b120f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/smu_s_cfgns_v3.rs"]
+#[path = "peripherals/smu_s_cfgns_v3.rs"]
 pub mod smu_s_cfgns_v3;
 
 #[cfg(any(
@@ -2840,7 +2842,7 @@ pub mod smu_s_cfgns_v3;
     feature = "efr32mg24b220f1536im48",
     feature = "efr32mg24b310f1536im48"
 ))]
-#[path = "registers/smu_s_cfgns_v3_mvp.rs"]
+#[path = "peripherals/smu_s_cfgns_v3_mvp.rs"]
 pub mod smu_s_cfgns_v3_mvp;
 
 #[cfg(any(
@@ -2860,7 +2862,7 @@ pub mod smu_s_cfgns_v3_mvp;
     feature = "efr32mg26b521f3200im68",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/smu_s_cfgns_v7.rs"]
+#[path = "peripherals/smu_s_cfgns_v7.rs"]
 pub mod smu_s_cfgns_v7;
 
 #[cfg(any(
@@ -2875,7 +2877,7 @@ pub mod smu_s_cfgns_v7;
     feature = "efr32mg26b520f3200im68",
     feature = "efr32mg26b610f3200im48"
 ))]
-#[path = "registers/smu_s_cfgns_v7_mvp.rs"]
+#[path = "peripherals/smu_s_cfgns_v7_mvp.rs"]
 pub mod smu_s_cfgns_v7_mvp;
 
 #[cfg(any(
@@ -2917,7 +2919,7 @@ pub mod smu_s_cfgns_v7_mvp;
     feature = "efr32mg24b120f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/syscfg_v3.rs"]
+#[path = "peripherals/syscfg_v3.rs"]
 pub mod syscfg_v3;
 
 #[cfg(any(
@@ -2926,7 +2928,7 @@ pub mod syscfg_v3;
     feature = "efr32mg24b220f1536im48",
     feature = "efr32mg24b310f1536im48"
 ))]
-#[path = "registers/syscfg_v3_mvp.rs"]
+#[path = "peripherals/syscfg_v3_mvp.rs"]
 pub mod syscfg_v3_mvp;
 
 #[cfg(any(
@@ -2946,7 +2948,7 @@ pub mod syscfg_v3_mvp;
     feature = "efr32mg26b521f3200im68",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/syscfg_v9.rs"]
+#[path = "peripherals/syscfg_v9.rs"]
 pub mod syscfg_v9;
 
 #[cfg(any(
@@ -2961,7 +2963,7 @@ pub mod syscfg_v9;
     feature = "efr32mg26b520f3200im68",
     feature = "efr32mg26b610f3200im48"
 ))]
-#[path = "registers/syscfg_v9_mvp.rs"]
+#[path = "peripherals/syscfg_v9_mvp.rs"]
 pub mod syscfg_v9_mvp;
 
 #[cfg(any(
@@ -3007,7 +3009,7 @@ pub mod syscfg_v9_mvp;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/syscfg_ns_cfgns_v3.rs"]
+#[path = "peripherals/syscfg_ns_cfgns_v3.rs"]
 pub mod syscfg_ns_cfgns_v3;
 
 #[cfg(any(
@@ -3037,7 +3039,7 @@ pub mod syscfg_ns_cfgns_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/syscfg_ns_cfgns_v9.rs"]
+#[path = "peripherals/syscfg_ns_cfgns_v9.rs"]
 pub mod syscfg_ns_cfgns_v9;
 
 #[cfg(any(
@@ -3083,7 +3085,7 @@ pub mod syscfg_ns_cfgns_v9;
     feature = "efr32mg24b310f1536im48",
     feature = "efr32mg24b610f1536im40"
 ))]
-#[path = "registers/syscfg_s_cfgns_v3.rs"]
+#[path = "peripherals/syscfg_s_cfgns_v3.rs"]
 pub mod syscfg_s_cfgns_v3;
 
 #[cfg(any(
@@ -3113,7 +3115,7 @@ pub mod syscfg_s_cfgns_v3;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/syscfg_s_cfgns_v9.rs"]
+#[path = "peripherals/syscfg_s_cfgns_v9.rs"]
 pub mod syscfg_s_cfgns_v9;
 
 #[cfg(any(
@@ -3184,7 +3186,7 @@ pub mod syscfg_s_cfgns_v9;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/sysrtc_v1.rs"]
+#[path = "peripherals/sysrtc_v1.rs"]
 pub mod sysrtc_v1;
 
 #[cfg(any(
@@ -3255,7 +3257,7 @@ pub mod sysrtc_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/timer_v1.rs"]
+#[path = "peripherals/timer_v1.rs"]
 pub mod timer_v1;
 
 #[cfg(any(
@@ -3326,7 +3328,7 @@ pub mod timer_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/timer_v1_w.rs"]
+#[path = "peripherals/timer_v1_w.rs"]
 pub mod timer_v1_w;
 
 #[cfg(any(
@@ -3397,7 +3399,7 @@ pub mod timer_v1_w;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/ulfrco_v1.rs"]
+#[path = "peripherals/ulfrco_v1.rs"]
 pub mod ulfrco_v1;
 
 #[cfg(any(
@@ -3468,7 +3470,7 @@ pub mod ulfrco_v1;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/usart_v0.rs"]
+#[path = "peripherals/usart_v0.rs"]
 pub mod usart_v0;
 
 #[cfg(any(
@@ -3539,7 +3541,7 @@ pub mod usart_v0;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/vdac_v2.rs"]
+#[path = "peripherals/vdac_v2.rs"]
 pub mod vdac_v2;
 
 #[cfg(any(
@@ -3610,8 +3612,3399 @@ pub mod vdac_v2;
     feature = "efr32mg26b610f3200im48",
     feature = "efr32mg26b611f2048im48"
 ))]
-#[path = "registers/wdog_v1.rs"]
+#[path = "peripherals/wdog_v1.rs"]
 pub mod wdog_v1;
+
+pub mod registers {
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod acmp_v2;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod amuxcp_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod buram_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod burtc_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod cmu_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod cmu_v7;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod dcdc_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod devinfo_v0_mg24;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod devinfo_v0_mg26;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod dmem_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod dmem_v2_ws;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod dpll_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod emu_v3;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod eusart_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod eusart_v2_lf;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod fsrco_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod gpcrc_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod gpio_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod gpio_v7;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod hfrco_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod hfrcoem_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod hfxo_v3;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod hostmailbox_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod i2c_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod iadc_v3;
+    #[cfg(any(
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68"
+    ))]
+    pub mod iadc_v3_ha;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod icache_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod keyscan_v1;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod lcd_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod lcdrf_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod ldma_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod ldmaxbar_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod ldmaxbar_v7;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod letimer_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod lfrco_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod lfxo_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod msc_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod msc_v9;
+    #[cfg(any(
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48"
+    ))]
+    pub mod mvp_v1;
+    #[cfg(any(
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b610f3200im48"
+    ))]
+    pub mod mvp_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod pcnt_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod prs_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod prs_v6;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod radioaes_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod scratchpad_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod semailbox_ns_host_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod semailbox_s_host_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod smu_v3;
+    #[cfg(any(
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48"
+    ))]
+    pub mod smu_v3_mvp;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod smu_v7;
+    #[cfg(any(
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b610f3200im48"
+    ))]
+    pub mod smu_v7_mvp;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod smu_ns_cfgns_v3;
+    #[cfg(any(
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48"
+    ))]
+    pub mod smu_ns_cfgns_v3_mvp;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod smu_ns_cfgns_v7;
+    #[cfg(any(
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b610f3200im48"
+    ))]
+    pub mod smu_ns_cfgns_v7_mvp;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod smu_s_cfgns_v3;
+    #[cfg(any(
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48"
+    ))]
+    pub mod smu_s_cfgns_v3_mvp;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod smu_s_cfgns_v7;
+    #[cfg(any(
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b610f3200im48"
+    ))]
+    pub mod smu_s_cfgns_v7_mvp;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod syscfg_v3;
+    #[cfg(any(
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48"
+    ))]
+    pub mod syscfg_v3_mvp;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod syscfg_v9;
+    #[cfg(any(
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b610f3200im48"
+    ))]
+    pub mod syscfg_v9_mvp;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod syscfg_ns_cfgns_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod syscfg_ns_cfgns_v9;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40"
+    ))]
+    pub mod syscfg_s_cfgns_v3;
+    #[cfg(any(
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod syscfg_s_cfgns_v9;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod sysrtc_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod timer_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod timer_v1_w;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod ulfrco_v1;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod usart_v0;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod vdac_v2;
+    #[cfg(any(
+        feature = "efr32mg24a010f1024im40",
+        feature = "efr32mg24a010f1024im48",
+        feature = "efr32mg24a010f1536gm40",
+        feature = "efr32mg24a010f1536gm48",
+        feature = "efr32mg24a010f1536im40",
+        feature = "efr32mg24a010f1536im48",
+        feature = "efr32mg24a010f768im40",
+        feature = "efr32mg24a010f768im48",
+        feature = "efr32mg24a020f1024im40",
+        feature = "efr32mg24a020f1024im48",
+        feature = "efr32mg24a020f1536gm40",
+        feature = "efr32mg24a020f1536gm48",
+        feature = "efr32mg24a020f1536im40",
+        feature = "efr32mg24a020f1536im48",
+        feature = "efr32mg24a020f768im40",
+        feature = "efr32mg24a021f1024im40",
+        feature = "efr32mg24a110f1024im48",
+        feature = "efr32mg24a110f1536gm48",
+        feature = "efr32mg24a111f1536gm48",
+        feature = "efr32mg24a120f1536gm48",
+        feature = "efr32mg24a121f1536gm48",
+        feature = "efr32mg24a410f1536im40",
+        feature = "efr32mg24a410f1536im48",
+        feature = "efr32mg24a420f1536im40",
+        feature = "efr32mg24a420f1536im48",
+        feature = "efr32mg24a610f1536im40",
+        feature = "efr32mg24a620f1536im40",
+        feature = "efr32mg24b010f1024im48",
+        feature = "efr32mg24b010f1536im40",
+        feature = "efr32mg24b010f1536im48",
+        feature = "efr32mg24b020f1024im48",
+        feature = "efr32mg24b020f1536im40",
+        feature = "efr32mg24b020f1536im48",
+        feature = "efr32mg24b110f1536gm48",
+        feature = "efr32mg24b110f1536im48",
+        feature = "efr32mg24b120f1536im48",
+        feature = "efr32mg24b210f1536im40",
+        feature = "efr32mg24b210f1536im48",
+        feature = "efr32mg24b220f1536im48",
+        feature = "efr32mg24b310f1536im48",
+        feature = "efr32mg24b610f1536im40",
+        feature = "efr32mg26b211f2048im68",
+        feature = "efr32mg26b211f3200im48",
+        feature = "efr32mg26b221f2048im68",
+        feature = "efr32mg26b221f3200im48",
+        feature = "efr32mg26b311f3200il136",
+        feature = "efr32mg26b410f3200im48",
+        feature = "efr32mg26b410f3200im68",
+        feature = "efr32mg26b411f3200im48",
+        feature = "efr32mg26b411f3200im68",
+        feature = "efr32mg26b420f3200im48",
+        feature = "efr32mg26b420f3200im68",
+        feature = "efr32mg26b421f3200im48",
+        feature = "efr32mg26b421f3200im68",
+        feature = "efr32mg26b510f3200il136",
+        feature = "efr32mg26b510f3200im48",
+        feature = "efr32mg26b510f3200im68",
+        feature = "efr32mg26b511f3200il136",
+        feature = "efr32mg26b511f3200im48",
+        feature = "efr32mg26b511f3200im68",
+        feature = "efr32mg26b520f3200im48",
+        feature = "efr32mg26b520f3200im68",
+        feature = "efr32mg26b521f3200im48",
+        feature = "efr32mg26b521f3200im68",
+        feature = "efr32mg26b610f3200im48",
+        feature = "efr32mg26b611f2048im48"
+    ))]
+    pub mod wdog_v1;
+}
 
 #[cfg(feature = "efr32mg24a010f1024im40")]
 pub mod chip {

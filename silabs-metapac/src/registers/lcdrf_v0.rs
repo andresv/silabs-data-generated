@@ -1,1 +1,141 @@
-# [doc = "LCDRF peripheral."] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Lcdrf { ptr : * mut u8 } unsafe impl Send for Lcdrf { } unsafe impl Sync for Lcdrf { } impl Lcdrf { # [inline (always)] pub const unsafe fn from_ptr (ptr : * mut ()) -> Self { Self { ptr : ptr as _ , } } # [inline (always)] pub const fn as_ptr (& self) -> * mut () { self . ptr as _ } # [doc = "No Description."] # [inline (always)] pub const fn rfimlcdctrl (self) -> crate :: common :: Reg < regs :: Rfimlcdctrl , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x0usize) as _) } } } pub mod regs { # [doc = "No Description."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Rfimlcdctrl (pub u32) ; impl Rfimlcdctrl { # [doc = "LCD Charge Pump XO Clock Enable."] # [must_use] # [inline (always)] pub const fn lcdcpxoen (& self) -> bool { let val = (self . 0 >> 0usize) & 0x01 ; val != 0 } # [doc = "LCD Charge Pump XO Clock Enable."] # [inline (always)] pub const fn set_lcdcpxoen (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize) ; } # [doc = "LCD Charge Pump XO Select."] # [must_use] # [inline (always)] pub const fn lcdcpxosel (& self) -> super :: vals :: Lcdcpxosel { let val = (self . 0 >> 1usize) & 0x01 ; super :: vals :: Lcdcpxosel :: from_bits (val as u8) } # [doc = "LCD Charge Pump XO Select."] # [inline (always)] pub const fn set_lcdcpxosel (& mut self , val : super :: vals :: Lcdcpxosel) { self . 0 = (self . 0 & ! (0x01 << 1usize)) | (((val . to_bits () as u32) & 0x01) << 1usize) ; } # [doc = "LCD Charge Pump XO Retime Enable."] # [must_use] # [inline (always)] pub const fn lcdcpxoretimeen (& self) -> bool { let val = (self . 0 >> 2usize) & 0x01 ; val != 0 } # [doc = "LCD Charge Pump XO Retime Enable."] # [inline (always)] pub const fn set_lcdcpxoretimeen (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize) ; } # [doc = "LCD Low Noise."] # [must_use] # [inline (always)] pub const fn lcdlownoise (& self) -> super :: vals :: Lcdlownoise { let val = (self . 0 >> 3usize) & 0x01 ; super :: vals :: Lcdlownoise :: from_bits (val as u8) } # [doc = "LCD Low Noise."] # [inline (always)] pub const fn set_lcdlownoise (& mut self , val : super :: vals :: Lcdlownoise) { self . 0 = (self . 0 & ! (0x01 << 3usize)) | (((val . to_bits () as u32) & 0x01) << 3usize) ; } # [doc = "LCD Comparator Dout."] # [must_use] # [inline (always)] pub const fn lcdcmpdout (& self) -> bool { let val = (self . 0 >> 4usize) & 0x01 ; val != 0 } # [doc = "LCD Comparator Dout."] # [inline (always)] pub const fn set_lcdcmpdout (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize) ; } } impl Default for Rfimlcdctrl { # [inline (always)] fn default () -> Rfimlcdctrl { Rfimlcdctrl (0) } } impl core :: fmt :: Debug for Rfimlcdctrl { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("Rfimlcdctrl") . field ("lcdcpxoen" , & self . lcdcpxoen ()) . field ("lcdcpxosel" , & self . lcdcpxosel ()) . field ("lcdcpxoretimeen" , & self . lcdcpxoretimeen ()) . field ("lcdlownoise" , & self . lcdlownoise ()) . field ("lcdcmpdout" , & self . lcdcmpdout ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for Rfimlcdctrl { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "Rfimlcdctrl {{ lcdcpxoen: {=bool:?}, lcdcpxosel: {:?}, lcdcpxoretimeen: {=bool:?}, lcdlownoise: {:?}, lcdcmpdout: {=bool:?} }}" , self . lcdcpxoen () , self . lcdcpxosel () , self . lcdcpxoretimeen () , self . lcdlownoise () , self . lcdcmpdout ()) } } } pub mod vals { # [repr (u8)] # [derive (Copy , Clone , Debug , Eq , PartialEq , Ord , PartialOrd)] # [cfg_attr (feature = "defmt" , derive (defmt :: Format))] pub enum Lcdcpxosel { # [doc = "Internal LCD CP 10Mhz RC oscillator."] Intrco = 0x0 , # [doc = "HFXO divided 4 clock."] Hfxodiv = 0x01 , } impl Lcdcpxosel { # [inline (always)] pub const fn from_bits (val : u8) -> Lcdcpxosel { unsafe { core :: mem :: transmute (val & 0x01) } } # [inline (always)] pub const fn to_bits (self) -> u8 { unsafe { core :: mem :: transmute (self) } } } impl From < u8 > for Lcdcpxosel { # [inline (always)] fn from (val : u8) -> Lcdcpxosel { Lcdcpxosel :: from_bits (val) } } impl From < Lcdcpxosel > for u8 { # [inline (always)] fn from (val : Lcdcpxosel) -> u8 { Lcdcpxosel :: to_bits (val) } } # [repr (u8)] # [derive (Copy , Clone , Debug , Eq , PartialEq , Ord , PartialOrd)] # [cfg_attr (feature = "defmt" , derive (defmt :: Format))] pub enum Lcdlownoise { # [doc = "Normal operation."] Normal = 0x0 , # [doc = "slows down slew rate to reduce RF interference at a cost of additional power consumption."] Slow = 0x01 , } impl Lcdlownoise { # [inline (always)] pub const fn from_bits (val : u8) -> Lcdlownoise { unsafe { core :: mem :: transmute (val & 0x01) } } # [inline (always)] pub const fn to_bits (self) -> u8 { unsafe { core :: mem :: transmute (self) } } } impl From < u8 > for Lcdlownoise { # [inline (always)] fn from (val : u8) -> Lcdlownoise { Lcdlownoise :: from_bits (val) } } impl From < Lcdlownoise > for u8 { # [inline (always)] fn from (val : Lcdlownoise) -> u8 { Lcdlownoise :: to_bits (val) } } }
+use crate::metadata::ir::*;
+
+pub static REGISTERS: IR = IR {
+    blocks: &[Block {
+        name: "Lcdrf",
+        extends: None,
+        description: Some("LCDRF peripheral."),
+        items: &[
+            BlockItem {
+                name: "rfimlcdctrl",
+                description: Some("No Description."),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Rfimlcdctrl"),
+                }),
+            },
+            BlockItem {
+                name: "rfimlcdctrl_set",
+                description: Some("No Description. (write-1-to-set alias)"),
+                array: None,
+                byte_offset: 4096,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Rfimlcdctrl"),
+                }),
+            },
+            BlockItem {
+                name: "rfimlcdctrl_clr",
+                description: Some("No Description. (write-1-to-clr alias)"),
+                array: None,
+                byte_offset: 8192,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Rfimlcdctrl"),
+                }),
+            },
+            BlockItem {
+                name: "rfimlcdctrl_tgl",
+                description: Some("No Description. (write-1-to-tgl alias)"),
+                array: None,
+                byte_offset: 12288,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Rfimlcdctrl"),
+                }),
+            },
+        ],
+    }],
+    fieldsets: &[FieldSet {
+        name: "Rfimlcdctrl",
+        extends: None,
+        description: Some("No Description."),
+        bit_size: 32,
+        fields: &[
+            Field {
+                name: "lcdcpxoen",
+                description: Some("LCD Charge Pump XO Clock Enable."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "lcdcpxosel",
+                description: Some("LCD Charge Pump XO Select."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                bit_size: 1,
+                array: None,
+                enumm: Some("Lcdcpxosel"),
+            },
+            Field {
+                name: "lcdcpxoretimeen",
+                description: Some("LCD Charge Pump XO Retime Enable."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "lcdlownoise",
+                description: Some("LCD Low Noise."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                bit_size: 1,
+                array: None,
+                enumm: Some("Lcdlownoise"),
+            },
+            Field {
+                name: "lcdcmpdout",
+                description: Some("LCD Comparator Dout."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+        ],
+    }],
+    enums: &[
+        Enum {
+            name: "Lcdcpxosel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Hfxodiv",
+                    description: Some("HFXO divided 4 clock."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Intrco",
+                    description: Some("Internal LCD CP 10Mhz RC oscillator."),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Lcdlownoise",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Normal",
+                    description: Some("Normal operation."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Slow",
+                    description: Some(
+                        "slows down slew rate to reduce RF interference at a cost of additional power consumption.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+    ],
+};

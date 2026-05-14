@@ -1,0 +1,1415 @@
+#[doc = "RADIOAES peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Radioaes {
+    ptr: *mut u8,
+}
+unsafe impl Send for Radioaes {}
+unsafe impl Sync for Radioaes {}
+impl Radioaes {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "Fetcher: Start address of data block. In direct mode, this register is written by the software. In scatter-gather mode, this register is updated after each processed descriptor."]
+    #[inline(always)]
+    pub const fn fetchaddr(self) -> crate::common::Reg<regs::Fetchaddr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "Fetcher: Length of data block. In direct mode, this register is written by the software. In scatter-gather mode, this register is not used."]
+    #[inline(always)]
+    pub const fn fetchlen(self) -> crate::common::Reg<regs::Fetchlen, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "Fetcher: User tag. In direct mode, this register is written by the software. In scatter-gather mode, this register is not used."]
+    #[inline(always)]
+    pub const fn fetchtag(self) -> crate::common::Reg<regs::Fetchtag, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "Pusher: Start address of data block (LSB). In direct mode, this register is written by the software. In scatter-gather mode, this register is updated after each processed descriptor."]
+    #[inline(always)]
+    pub const fn pushaddr(self) -> crate::common::Reg<regs::Pushaddr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "Pusher: Length of data block. In direct mode, this register is written by the software. In scatter-gather mode, this register is not used."]
+    #[inline(always)]
+    pub const fn pushlen(self) -> crate::common::Reg<regs::Pushlen, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "Interrupt enable."]
+    #[inline(always)]
+    pub const fn ien(self) -> crate::common::Reg<regs::Ien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "Interrupt flag register."]
+    #[inline(always)]
+    pub const fn if_(self) -> crate::common::Reg<regs::If, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "Writing a '1' clears the interrupt status. Writing a '0' has no effect."]
+    #[inline(always)]
+    pub const fn if_clr(self) -> crate::common::Reg<regs::IfClr, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "Control register, called CONFIG in Barco datasheet."]
+    #[inline(always)]
+    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "Command register for starting the fetcher and pusher."]
+    #[inline(always)]
+    pub const fn cmd(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "Status register."]
+    #[inline(always)]
+    pub const fn status(self) -> crate::common::Reg<regs::Status, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn incl_ips_hw_cfg(self) -> crate::common::Reg<regs::InclIpsHwCfg, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0400usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ba411e_hw_cfg_1(self) -> crate::common::Reg<regs::Ba411eHwCfg1, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0404usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ba411e_hw_cfg_2(self) -> crate::common::Reg<regs::Ba411eHwCfg2, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0408usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ba413_hw_cfg(self) -> crate::common::Reg<regs::Ba413HwCfg, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x040cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ba418_hw_cfg(self) -> crate::common::Reg<regs::Ba418HwCfg, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0410usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ba419_hw_cfg(self) -> crate::common::Reg<regs::Ba419HwCfg, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0414usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ba411eHwCfg1(pub u32);
+    impl Ba411eHwCfg1 {
+        #[doc = "AES Modes Supported."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_aes_modes_poss(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "AES Modes Supported."]
+        #[inline(always)]
+        pub const fn set_g_aes_modes_poss(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+        #[doc = "Generic g_CS value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_cs(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_CS value."]
+        #[inline(always)]
+        pub const fn set_g_cs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Generic g_UseMasking value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_use_masking(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_UseMasking value."]
+        #[inline(always)]
+        pub const fn set_g_use_masking(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Generic g_Keysize value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_keysize(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Generic g_Keysize value."]
+        #[inline(always)]
+        pub const fn set_g_keysize(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 24usize)) | (((val as u32) & 0x07) << 24usize);
+        }
+    }
+    impl Default for Ba411eHwCfg1 {
+        #[inline(always)]
+        fn default() -> Ba411eHwCfg1 {
+            Ba411eHwCfg1(0)
+        }
+    }
+    impl core::fmt::Debug for Ba411eHwCfg1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ba411eHwCfg1")
+                .field("g_aes_modes_poss", &self.g_aes_modes_poss())
+                .field("g_cs", &self.g_cs())
+                .field("g_use_masking", &self.g_use_masking())
+                .field("g_keysize", &self.g_keysize())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ba411eHwCfg1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ba411eHwCfg1 {{ g_aes_modes_poss: {=u16:?}, g_cs: {=bool:?}, g_use_masking: {=bool:?}, g_keysize: {=u8:?} }}",
+                self.g_aes_modes_poss(),
+                self.g_cs(),
+                self.g_use_masking(),
+                self.g_keysize()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ba411eHwCfg2(pub u32);
+    impl Ba411eHwCfg2 {
+        #[doc = "Generic g_CtrSize value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_ctr_size(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Generic g_CtrSize value."]
+        #[inline(always)]
+        pub const fn set_g_ctr_size(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Ba411eHwCfg2 {
+        #[inline(always)]
+        fn default() -> Ba411eHwCfg2 {
+            Ba411eHwCfg2(0)
+        }
+    }
+    impl core::fmt::Debug for Ba411eHwCfg2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ba411eHwCfg2")
+                .field("g_ctr_size", &self.g_ctr_size())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ba411eHwCfg2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ba411eHwCfg2 {{ g_ctr_size: {=u16:?} }}", self.g_ctr_size())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ba413HwCfg(pub u32);
+    impl Ba413HwCfg {
+        #[doc = "Generic g_HashMaskFunc value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_hash_mask_func(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Generic g_HashMaskFunc value."]
+        #[inline(always)]
+        pub const fn set_g_hash_mask_func(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "Generic g_HashPadding value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_hash_padding(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_HashPadding value."]
+        #[inline(always)]
+        pub const fn set_g_hash_padding(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Generic g_HMAC_enabled value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_hmac_enabled(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_HMAC_enabled value."]
+        #[inline(always)]
+        pub const fn set_g_hmac_enabled(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Generic g_HashVerifyDigest value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_hash_verify_digest(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_HashVerifyDigest value."]
+        #[inline(always)]
+        pub const fn set_g_hash_verify_digest(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+    }
+    impl Default for Ba413HwCfg {
+        #[inline(always)]
+        fn default() -> Ba413HwCfg {
+            Ba413HwCfg(0)
+        }
+    }
+    impl core::fmt::Debug for Ba413HwCfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ba413HwCfg")
+                .field("g_hash_mask_func", &self.g_hash_mask_func())
+                .field("g_hash_padding", &self.g_hash_padding())
+                .field("g_hmac_enabled", &self.g_hmac_enabled())
+                .field("g_hash_verify_digest", &self.g_hash_verify_digest())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ba413HwCfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ba413HwCfg {{ g_hash_mask_func: {=u8:?}, g_hash_padding: {=bool:?}, g_hmac_enabled: {=bool:?}, g_hash_verify_digest: {=bool:?} }}",
+                self.g_hash_mask_func(),
+                self.g_hash_padding(),
+                self.g_hmac_enabled(),
+                self.g_hash_verify_digest()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ba418HwCfg(pub u32);
+    impl Ba418HwCfg {
+        #[doc = "Generic g_Sha3CtxtEn value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_sha3ctxt_en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_Sha3CtxtEn value."]
+        #[inline(always)]
+        pub const fn set_g_sha3ctxt_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Ba418HwCfg {
+        #[inline(always)]
+        fn default() -> Ba418HwCfg {
+            Ba418HwCfg(0)
+        }
+    }
+    impl core::fmt::Debug for Ba418HwCfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ba418HwCfg")
+                .field("g_sha3ctxt_en", &self.g_sha3ctxt_en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ba418HwCfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ba418HwCfg {{ g_sha3ctxt_en: {=bool:?} }}", self.g_sha3ctxt_en())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ba419HwCfg(pub u32);
+    impl Ba419HwCfg {
+        #[doc = "Generic g_SM4ModesPoss value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_sm4modes_poss(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Generic g_SM4ModesPoss value."]
+        #[inline(always)]
+        pub const fn set_g_sm4modes_poss(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+    }
+    impl Default for Ba419HwCfg {
+        #[inline(always)]
+        fn default() -> Ba419HwCfg {
+            Ba419HwCfg(0)
+        }
+    }
+    impl core::fmt::Debug for Ba419HwCfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ba419HwCfg")
+                .field("g_sm4modes_poss", &self.g_sm4modes_poss())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ba419HwCfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ba419HwCfg {{ g_sm4modes_poss: {=u8:?} }}", self.g_sm4modes_poss())
+        }
+    }
+    #[doc = "Command register for starting the fetcher and pusher."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cmd(pub u32);
+    impl Cmd {
+        #[doc = "Start fetch."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn startfetcher(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start fetch."]
+        #[inline(always)]
+        pub const fn set_startfetcher(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Start push."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn startpusher(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start push."]
+        #[inline(always)]
+        pub const fn set_startpusher(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Cmd {
+        #[inline(always)]
+        fn default() -> Cmd {
+            Cmd(0)
+        }
+    }
+    impl core::fmt::Debug for Cmd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmd")
+                .field("startfetcher", &self.startfetcher())
+                .field("startpusher", &self.startpusher())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmd {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cmd {{ startfetcher: {=bool:?}, startpusher: {=bool:?} }}",
+                self.startfetcher(),
+                self.startpusher()
+            )
+        }
+    }
+    #[doc = "Control register, called CONFIG in Barco datasheet."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl(pub u32);
+    impl Ctrl {
+        #[doc = "Fetcher scatter/gather."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherscattergather(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Fetcher scatter/gather."]
+        #[inline(always)]
+        pub const fn set_fetcherscattergather(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Pusher scatter/gather."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherscattergather(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Pusher scatter/gather."]
+        #[inline(always)]
+        pub const fn set_pusherscattergather(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Stop fetcher."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stopfetcher(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stop fetcher."]
+        #[inline(always)]
+        pub const fn set_stopfetcher(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Stop pusher."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stoppusher(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stop pusher."]
+        #[inline(always)]
+        pub const fn set_stoppusher(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Software reset."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swreset(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software reset."]
+        #[inline(always)]
+        pub const fn set_swreset(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Ctrl {
+        #[inline(always)]
+        fn default() -> Ctrl {
+            Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl")
+                .field("fetcherscattergather", &self.fetcherscattergather())
+                .field("pusherscattergather", &self.pusherscattergather())
+                .field("stopfetcher", &self.stopfetcher())
+                .field("stoppusher", &self.stoppusher())
+                .field("swreset", &self.swreset())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ctrl {{ fetcherscattergather: {=bool:?}, pusherscattergather: {=bool:?}, stopfetcher: {=bool:?}, stoppusher: {=bool:?}, swreset: {=bool:?} }}",
+                self.fetcherscattergather(),
+                self.pusherscattergather(),
+                self.stopfetcher(),
+                self.stoppusher(),
+                self.swreset()
+            )
+        }
+    }
+    #[doc = "Fetcher: Start address of data block. In direct mode, this register is written by the software. In scatter-gather mode, this register is updated after each processed descriptor."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Fetchaddr(pub u32);
+    impl Fetchaddr {
+        #[doc = "Start address of data block."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn addr(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Start address of data block."]
+        #[inline(always)]
+        pub const fn set_addr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Fetchaddr {
+        #[inline(always)]
+        fn default() -> Fetchaddr {
+            Fetchaddr(0)
+        }
+    }
+    impl core::fmt::Debug for Fetchaddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fetchaddr").field("addr", &self.addr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fetchaddr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Fetchaddr {{ addr: {=u32:?} }}", self.addr())
+        }
+    }
+    #[doc = "Fetcher: Length of data block. In direct mode, this register is written by the software. In scatter-gather mode, this register is not used."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Fetchlen(pub u32);
+    impl Fetchlen {
+        #[doc = "Length of data block."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn length(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x0fff_ffff;
+            val as u32
+        }
+        #[doc = "Length of data block."]
+        #[inline(always)]
+        pub const fn set_length(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x0fff_ffff << 0usize)) | (((val as u32) & 0x0fff_ffff) << 0usize);
+        }
+        #[doc = "Constant address."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn constaddr(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Constant address."]
+        #[inline(always)]
+        pub const fn set_constaddr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "Realign lengh."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn realign(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Realign lengh."]
+        #[inline(always)]
+        pub const fn set_realign(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+    }
+    impl Default for Fetchlen {
+        #[inline(always)]
+        fn default() -> Fetchlen {
+            Fetchlen(0)
+        }
+    }
+    impl core::fmt::Debug for Fetchlen {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fetchlen")
+                .field("length", &self.length())
+                .field("constaddr", &self.constaddr())
+                .field("realign", &self.realign())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fetchlen {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Fetchlen {{ length: {=u32:?}, constaddr: {=bool:?}, realign: {=bool:?} }}",
+                self.length(),
+                self.constaddr(),
+                self.realign()
+            )
+        }
+    }
+    #[doc = "Fetcher: User tag. In direct mode, this register is written by the software. In scatter-gather mode, this register is not used."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Fetchtag(pub u32);
+    impl Fetchtag {
+        #[doc = "User tag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tag(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "User tag."]
+        #[inline(always)]
+        pub const fn set_tag(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Fetchtag {
+        #[inline(always)]
+        fn default() -> Fetchtag {
+            Fetchtag(0)
+        }
+    }
+    impl core::fmt::Debug for Fetchtag {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fetchtag").field("tag", &self.tag()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fetchtag {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Fetchtag {{ tag: {=u32:?} }}", self.tag())
+        }
+    }
+    #[doc = "Interrupt enable."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ien(pub u32);
+    impl Ien {
+        #[doc = "End of block interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherendofblock(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "End of block interrupt enable."]
+        #[inline(always)]
+        pub const fn set_fetcherendofblock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Stopped interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherstopped(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stopped interrupt enable."]
+        #[inline(always)]
+        pub const fn set_fetcherstopped(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetchererror(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_fetchererror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "End of block interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherendofblock(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "End of block interrupt enable."]
+        #[inline(always)]
+        pub const fn set_pusherendofblock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Stopped interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherstopped(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stopped interrupt enable."]
+        #[inline(always)]
+        pub const fn set_pusherstopped(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pushererror(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_pushererror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for Ien {
+        #[inline(always)]
+        fn default() -> Ien {
+            Ien(0)
+        }
+    }
+    impl core::fmt::Debug for Ien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ien")
+                .field("fetcherendofblock", &self.fetcherendofblock())
+                .field("fetcherstopped", &self.fetcherstopped())
+                .field("fetchererror", &self.fetchererror())
+                .field("pusherendofblock", &self.pusherendofblock())
+                .field("pusherstopped", &self.pusherstopped())
+                .field("pushererror", &self.pushererror())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ien {{ fetcherendofblock: {=bool:?}, fetcherstopped: {=bool:?}, fetchererror: {=bool:?}, pusherendofblock: {=bool:?}, pusherstopped: {=bool:?}, pushererror: {=bool:?} }}",
+                self.fetcherendofblock(),
+                self.fetcherstopped(),
+                self.fetchererror(),
+                self.pusherendofblock(),
+                self.pusherstopped(),
+                self.pushererror()
+            )
+        }
+    }
+    #[doc = "Interrupt flag register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct If(pub u32);
+    impl If {
+        #[doc = "End of block interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherendofblock(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "End of block interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fetcherendofblock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Stopped interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherstopped(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stopped interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fetcherstopped(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Error interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetchererror(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fetchererror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "End of block interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherendofblock(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "End of block interrupt flag."]
+        #[inline(always)]
+        pub const fn set_pusherendofblock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Stopped interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherstopped(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stopped interrupt flag."]
+        #[inline(always)]
+        pub const fn set_pusherstopped(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Error interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pushererror(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt flag."]
+        #[inline(always)]
+        pub const fn set_pushererror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for If {
+        #[inline(always)]
+        fn default() -> If {
+            If(0)
+        }
+    }
+    impl core::fmt::Debug for If {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("If")
+                .field("fetcherendofblock", &self.fetcherendofblock())
+                .field("fetcherstopped", &self.fetcherstopped())
+                .field("fetchererror", &self.fetchererror())
+                .field("pusherendofblock", &self.pusherendofblock())
+                .field("pusherstopped", &self.pusherstopped())
+                .field("pushererror", &self.pushererror())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for If {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "If {{ fetcherendofblock: {=bool:?}, fetcherstopped: {=bool:?}, fetchererror: {=bool:?}, pusherendofblock: {=bool:?}, pusherstopped: {=bool:?}, pushererror: {=bool:?} }}",
+                self.fetcherendofblock(),
+                self.fetcherstopped(),
+                self.fetchererror(),
+                self.pusherendofblock(),
+                self.pusherstopped(),
+                self.pushererror()
+            )
+        }
+    }
+    #[doc = "Writing a '1' clears the interrupt status. Writing a '0' has no effect."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct IfClr(pub u32);
+    impl IfClr {
+        #[doc = "End of block interrupt flag clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherendofblock(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "End of block interrupt flag clear."]
+        #[inline(always)]
+        pub const fn set_fetcherendofblock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Stopped interrupt flag clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherstopped(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stopped interrupt flag clear."]
+        #[inline(always)]
+        pub const fn set_fetcherstopped(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Error interrupt flag clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetchererror(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt flag clear."]
+        #[inline(always)]
+        pub const fn set_fetchererror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "FETCHERENDOFBLOCKIFC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherendofblock(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FETCHERENDOFBLOCKIFC."]
+        #[inline(always)]
+        pub const fn set_pusherendofblock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "FETCHERSTOPPEDIFC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherstopped(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FETCHERSTOPPEDIFC."]
+        #[inline(always)]
+        pub const fn set_pusherstopped(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "FETCHERERRORIFC."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pushererror(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FETCHERERRORIFC."]
+        #[inline(always)]
+        pub const fn set_pushererror(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for IfClr {
+        #[inline(always)]
+        fn default() -> IfClr {
+            IfClr(0)
+        }
+    }
+    impl core::fmt::Debug for IfClr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("IfClr")
+                .field("fetcherendofblock", &self.fetcherendofblock())
+                .field("fetcherstopped", &self.fetcherstopped())
+                .field("fetchererror", &self.fetchererror())
+                .field("pusherendofblock", &self.pusherendofblock())
+                .field("pusherstopped", &self.pusherstopped())
+                .field("pushererror", &self.pushererror())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for IfClr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "IfClr {{ fetcherendofblock: {=bool:?}, fetcherstopped: {=bool:?}, fetchererror: {=bool:?}, pusherendofblock: {=bool:?}, pusherstopped: {=bool:?}, pushererror: {=bool:?} }}",
+                self.fetcherendofblock(),
+                self.fetcherstopped(),
+                self.fetchererror(),
+                self.pusherendofblock(),
+                self.pusherstopped(),
+                self.pushererror()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct InclIpsHwCfg(pub u32);
+    impl InclIpsHwCfg {
+        #[doc = "Generic g_IncludeAES value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_aes(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeAES value."]
+        #[inline(always)]
+        pub const fn set_g_include_aes(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Generic g_IncludeAESGCM value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_aesgcm(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeAESGCM value."]
+        #[inline(always)]
+        pub const fn set_g_include_aesgcm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Generic g_IncludeAESXTS value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_aesxts(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeAESXTS value."]
+        #[inline(always)]
+        pub const fn set_g_include_aesxts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Generic g_IncludeDES value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_des(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeDES value."]
+        #[inline(always)]
+        pub const fn set_g_include_des(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Generic g_IncludeHASH value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_hash(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeHASH value."]
+        #[inline(always)]
+        pub const fn set_g_include_hash(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Generic g_IncludeChachaPoly value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_chacha_poly(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeChachaPoly value."]
+        #[inline(always)]
+        pub const fn set_g_include_chacha_poly(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Generic g_IncludeSHA3 value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_sha3(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeSHA3 value."]
+        #[inline(always)]
+        pub const fn set_g_include_sha3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Generic g_IncludeZUC value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_zuc(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeZUC value."]
+        #[inline(always)]
+        pub const fn set_g_include_zuc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Generic g_IncludeSM4 value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_sm4(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeSM4 value."]
+        #[inline(always)]
+        pub const fn set_g_include_sm4(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Generic g_IncludePKE value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_pke(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludePKE value."]
+        #[inline(always)]
+        pub const fn set_g_include_pke(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "Generic g_IncludeNDRNG value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn g_include_ndrng(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Generic g_IncludeNDRNG value."]
+        #[inline(always)]
+        pub const fn set_g_include_ndrng(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+    }
+    impl Default for InclIpsHwCfg {
+        #[inline(always)]
+        fn default() -> InclIpsHwCfg {
+            InclIpsHwCfg(0)
+        }
+    }
+    impl core::fmt::Debug for InclIpsHwCfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("InclIpsHwCfg")
+                .field("g_include_aes", &self.g_include_aes())
+                .field("g_include_aesgcm", &self.g_include_aesgcm())
+                .field("g_include_aesxts", &self.g_include_aesxts())
+                .field("g_include_des", &self.g_include_des())
+                .field("g_include_hash", &self.g_include_hash())
+                .field("g_include_chacha_poly", &self.g_include_chacha_poly())
+                .field("g_include_sha3", &self.g_include_sha3())
+                .field("g_include_zuc", &self.g_include_zuc())
+                .field("g_include_sm4", &self.g_include_sm4())
+                .field("g_include_pke", &self.g_include_pke())
+                .field("g_include_ndrng", &self.g_include_ndrng())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for InclIpsHwCfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "InclIpsHwCfg {{ g_include_aes: {=bool:?}, g_include_aesgcm: {=bool:?}, g_include_aesxts: {=bool:?}, g_include_des: {=bool:?}, g_include_hash: {=bool:?}, g_include_chacha_poly: {=bool:?}, g_include_sha3: {=bool:?}, g_include_zuc: {=bool:?}, g_include_sm4: {=bool:?}, g_include_pke: {=bool:?}, g_include_ndrng: {=bool:?} }}",
+                self.g_include_aes(),
+                self.g_include_aesgcm(),
+                self.g_include_aesxts(),
+                self.g_include_des(),
+                self.g_include_hash(),
+                self.g_include_chacha_poly(),
+                self.g_include_sha3(),
+                self.g_include_zuc(),
+                self.g_include_sm4(),
+                self.g_include_pke(),
+                self.g_include_ndrng()
+            )
+        }
+    }
+    #[doc = "Pusher: Start address of data block (LSB). In direct mode, this register is written by the software. In scatter-gather mode, this register is updated after each processed descriptor."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pushaddr(pub u32);
+    impl Pushaddr {
+        #[doc = "Start address of data block."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn addr(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Start address of data block."]
+        #[inline(always)]
+        pub const fn set_addr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Pushaddr {
+        #[inline(always)]
+        fn default() -> Pushaddr {
+            Pushaddr(0)
+        }
+    }
+    impl core::fmt::Debug for Pushaddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pushaddr").field("addr", &self.addr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pushaddr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Pushaddr {{ addr: {=u32:?} }}", self.addr())
+        }
+    }
+    #[doc = "Pusher: Length of data block. In direct mode, this register is written by the software. In scatter-gather mode, this register is not used."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pushlen(pub u32);
+    impl Pushlen {
+        #[doc = "Start address of data block."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn length(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x0fff_ffff;
+            val as u32
+        }
+        #[doc = "Start address of data block."]
+        #[inline(always)]
+        pub const fn set_length(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x0fff_ffff << 0usize)) | (((val as u32) & 0x0fff_ffff) << 0usize);
+        }
+        #[doc = "Constant address."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn constaddr(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Constant address."]
+        #[inline(always)]
+        pub const fn set_constaddr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "Realign length."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn realign(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Realign length."]
+        #[inline(always)]
+        pub const fn set_realign(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "Discard data."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn discard(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Discard data."]
+        #[inline(always)]
+        pub const fn set_discard(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+    }
+    impl Default for Pushlen {
+        #[inline(always)]
+        fn default() -> Pushlen {
+            Pushlen(0)
+        }
+    }
+    impl core::fmt::Debug for Pushlen {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pushlen")
+                .field("length", &self.length())
+                .field("constaddr", &self.constaddr())
+                .field("realign", &self.realign())
+                .field("discard", &self.discard())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pushlen {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Pushlen {{ length: {=u32:?}, constaddr: {=bool:?}, realign: {=bool:?}, discard: {=bool:?} }}",
+                self.length(),
+                self.constaddr(),
+                self.realign(),
+                self.discard()
+            )
+        }
+    }
+    #[doc = "Status register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Status(pub u32);
+    impl Status {
+        #[doc = "Fetcher busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fetcherbsy(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Fetcher busy."]
+        #[inline(always)]
+        pub const fn set_fetcherbsy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Pusher busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pusherbsy(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Pusher busy."]
+        #[inline(always)]
+        pub const fn set_pusherbsy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Not empty flag from input FIFO (fetcher)."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn notempty(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Not empty flag from input FIFO (fetcher)."]
+        #[inline(always)]
+        pub const fn set_notempty(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Pusher waiting for FIFO."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn waiting(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Pusher waiting for FIFO."]
+        #[inline(always)]
+        pub const fn set_waiting(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Software reset busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn softrstbsy(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software reset busy."]
+        #[inline(always)]
+        pub const fn set_softrstbsy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Number of data in output FIFO."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fifodatanum(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Number of data in output FIFO."]
+        #[inline(always)]
+        pub const fn set_fifodatanum(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        }
+    }
+    impl Default for Status {
+        #[inline(always)]
+        fn default() -> Status {
+            Status(0)
+        }
+    }
+    impl core::fmt::Debug for Status {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Status")
+                .field("fetcherbsy", &self.fetcherbsy())
+                .field("pusherbsy", &self.pusherbsy())
+                .field("notempty", &self.notempty())
+                .field("waiting", &self.waiting())
+                .field("softrstbsy", &self.softrstbsy())
+                .field("fifodatanum", &self.fifodatanum())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Status {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Status {{ fetcherbsy: {=bool:?}, pusherbsy: {=bool:?}, notempty: {=bool:?}, waiting: {=bool:?}, softrstbsy: {=bool:?}, fifodatanum: {=u16:?} }}",
+                self.fetcherbsy(),
+                self.pusherbsy(),
+                self.notempty(),
+                self.waiting(),
+                self.softrstbsy(),
+                self.fifodatanum()
+            )
+        }
+    }
+}

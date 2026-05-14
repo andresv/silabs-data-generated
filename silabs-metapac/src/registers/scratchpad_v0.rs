@@ -1,1 +1,130 @@
-# [doc = "SCRATCHPAD peripheral."] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Scratchpad { ptr : * mut u8 } unsafe impl Send for Scratchpad { } unsafe impl Sync for Scratchpad { } impl Scratchpad { # [inline (always)] pub const unsafe fn from_ptr (ptr : * mut ()) -> Self { Self { ptr : ptr as _ , } } # [inline (always)] pub const fn as_ptr (& self) -> * mut () { self . ptr as _ } # [doc = "Used for SIMCTRL Pointer in Verification Environment."] # [inline (always)] pub const fn sreg0 (self) -> crate :: common :: Reg < regs :: Sreg0 , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x0usize) as _) } } # [doc = "Used for SIMCTRL Data Access in Verification Environment."] # [inline (always)] pub const fn sreg1 (self) -> crate :: common :: Reg < regs :: Sreg1 , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x04usize) as _) } } } pub mod regs { # [doc = "Used for SIMCTRL Pointer in Verification Environment."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Sreg0 (pub u32) ; impl Sreg0 { # [doc = "Scratch Pad Register."] # [must_use] # [inline (always)] pub const fn scratch (& self) -> u32 { let val = (self . 0 >> 0usize) & 0xffff_ffff ; val as u32 } # [doc = "Scratch Pad Register."] # [inline (always)] pub const fn set_scratch (& mut self , val : u32) { self . 0 = (self . 0 & ! (0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize) ; } } impl Default for Sreg0 { # [inline (always)] fn default () -> Sreg0 { Sreg0 (0) } } impl core :: fmt :: Debug for Sreg0 { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("Sreg0") . field ("scratch" , & self . scratch ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for Sreg0 { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "Sreg0 {{ scratch: {=u32:?} }}" , self . scratch ()) } } # [doc = "Used for SIMCTRL Data Access in Verification Environment."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Sreg1 (pub u32) ; impl Sreg1 { # [doc = "Scratch Register."] # [must_use] # [inline (always)] pub const fn scratch (& self) -> u32 { let val = (self . 0 >> 0usize) & 0xffff_ffff ; val as u32 } # [doc = "Scratch Register."] # [inline (always)] pub const fn set_scratch (& mut self , val : u32) { self . 0 = (self . 0 & ! (0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize) ; } } impl Default for Sreg1 { # [inline (always)] fn default () -> Sreg1 { Sreg1 (0) } } impl core :: fmt :: Debug for Sreg1 { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("Sreg1") . field ("scratch" , & self . scratch ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for Sreg1 { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "Sreg1 {{ scratch: {=u32:?} }}" , self . scratch ()) } } }
+use crate::metadata::ir::*;
+
+pub static REGISTERS: IR = IR {
+    blocks: &[Block {
+        name: "Scratchpad",
+        extends: None,
+        description: Some("SCRATCHPAD peripheral."),
+        items: &[
+            BlockItem {
+                name: "sreg0",
+                description: Some("Used for SIMCTRL Pointer in Verification Environment."),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sreg0"),
+                }),
+            },
+            BlockItem {
+                name: "sreg1",
+                description: Some("Used for SIMCTRL Data Access in Verification Environment."),
+                array: None,
+                byte_offset: 4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sreg1"),
+                }),
+            },
+            BlockItem {
+                name: "sreg0_set",
+                description: Some("Used for SIMCTRL Pointer in Verification Environment. (write-1-to-set alias)"),
+                array: None,
+                byte_offset: 4096,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Sreg0"),
+                }),
+            },
+            BlockItem {
+                name: "sreg0_clr",
+                description: Some("Used for SIMCTRL Pointer in Verification Environment. (write-1-to-clr alias)"),
+                array: None,
+                byte_offset: 8192,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Sreg0"),
+                }),
+            },
+            BlockItem {
+                name: "sreg0_tgl",
+                description: Some("Used for SIMCTRL Pointer in Verification Environment. (write-1-to-tgl alias)"),
+                array: None,
+                byte_offset: 12288,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Sreg0"),
+                }),
+            },
+            BlockItem {
+                name: "sreg1_set",
+                description: Some("Used for SIMCTRL Data Access in Verification Environment. (write-1-to-set alias)"),
+                array: None,
+                byte_offset: 4100,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Sreg1"),
+                }),
+            },
+            BlockItem {
+                name: "sreg1_clr",
+                description: Some("Used for SIMCTRL Data Access in Verification Environment. (write-1-to-clr alias)"),
+                array: None,
+                byte_offset: 8196,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Sreg1"),
+                }),
+            },
+            BlockItem {
+                name: "sreg1_tgl",
+                description: Some("Used for SIMCTRL Data Access in Verification Environment. (write-1-to-tgl alias)"),
+                array: None,
+                byte_offset: 12292,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Sreg1"),
+                }),
+            },
+        ],
+    }],
+    fieldsets: &[
+        FieldSet {
+            name: "Sreg0",
+            extends: None,
+            description: Some("Used for SIMCTRL Pointer in Verification Environment."),
+            bit_size: 32,
+            fields: &[Field {
+                name: "scratch",
+                description: Some("Scratch Pad Register."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Sreg1",
+            extends: None,
+            description: Some("Used for SIMCTRL Data Access in Verification Environment."),
+            bit_size: 32,
+            fields: &[Field {
+                name: "scratch",
+                description: Some("Scratch Register."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+    ],
+    enums: &[],
+};

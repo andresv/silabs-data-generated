@@ -1,1 +1,226 @@
-# [doc = "ULFRCO peripheral."] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Ulfrco { ptr : * mut u8 } unsafe impl Send for Ulfrco { } unsafe impl Sync for Ulfrco { } impl Ulfrco { # [inline (always)] pub const unsafe fn from_ptr (ptr : * mut ()) -> Self { Self { ptr : ptr as _ , } } # [inline (always)] pub const fn as_ptr (& self) -> * mut () { self . ptr as _ } # [doc = "No Description."] # [inline (always)] pub const fn ipversion (self) -> crate :: common :: Reg < regs :: Ipversion , crate :: common :: R > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x0usize) as _) } } # [doc = "No Description."] # [inline (always)] pub const fn status (self) -> crate :: common :: Reg < regs :: Status , crate :: common :: R > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x08usize) as _) } } # [doc = "No Description."] # [inline (always)] pub const fn if_ (self) -> crate :: common :: Reg < regs :: If , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x14usize) as _) } } # [doc = "No Description."] # [inline (always)] pub const fn ien (self) -> crate :: common :: Reg < regs :: Ien , crate :: common :: RW > { unsafe { crate :: common :: Reg :: from_ptr (self . ptr . wrapping_add (0x18usize) as _) } } } pub mod regs { # [doc = "No Description."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Ien (pub u32) ; impl Ien { # [doc = "Enable Ready Interrupt."] # [must_use] # [inline (always)] pub const fn rdy (& self) -> bool { let val = (self . 0 >> 0usize) & 0x01 ; val != 0 } # [doc = "Enable Ready Interrupt."] # [inline (always)] pub const fn set_rdy (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize) ; } # [doc = "Enable Positive Edge Interrupt."] # [must_use] # [inline (always)] pub const fn posedge (& self) -> bool { let val = (self . 0 >> 1usize) & 0x01 ; val != 0 } # [doc = "Enable Positive Edge Interrupt."] # [inline (always)] pub const fn set_posedge (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize) ; } # [doc = "Enable Negative Edge Interrupt."] # [must_use] # [inline (always)] pub const fn negedge (& self) -> bool { let val = (self . 0 >> 2usize) & 0x01 ; val != 0 } # [doc = "Enable Negative Edge Interrupt."] # [inline (always)] pub const fn set_negedge (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize) ; } } impl Default for Ien { # [inline (always)] fn default () -> Ien { Ien (0) } } impl core :: fmt :: Debug for Ien { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("Ien") . field ("rdy" , & self . rdy ()) . field ("posedge" , & self . posedge ()) . field ("negedge" , & self . negedge ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for Ien { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "Ien {{ rdy: {=bool:?}, posedge: {=bool:?}, negedge: {=bool:?} }}" , self . rdy () , self . posedge () , self . negedge ()) } } # [doc = "No Description."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct If (pub u32) ; impl If { # [doc = "Ready Interrupt Flag."] # [must_use] # [inline (always)] pub const fn rdy (& self) -> bool { let val = (self . 0 >> 0usize) & 0x01 ; val != 0 } # [doc = "Ready Interrupt Flag."] # [inline (always)] pub const fn set_rdy (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize) ; } # [doc = "Positive Edge Interrupt Flag."] # [must_use] # [inline (always)] pub const fn posedge (& self) -> bool { let val = (self . 0 >> 1usize) & 0x01 ; val != 0 } # [doc = "Positive Edge Interrupt Flag."] # [inline (always)] pub const fn set_posedge (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize) ; } # [doc = "Negative Edge Interrupt Flag."] # [must_use] # [inline (always)] pub const fn negedge (& self) -> bool { let val = (self . 0 >> 2usize) & 0x01 ; val != 0 } # [doc = "Negative Edge Interrupt Flag."] # [inline (always)] pub const fn set_negedge (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize) ; } } impl Default for If { # [inline (always)] fn default () -> If { If (0) } } impl core :: fmt :: Debug for If { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("If") . field ("rdy" , & self . rdy ()) . field ("posedge" , & self . posedge ()) . field ("negedge" , & self . negedge ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for If { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "If {{ rdy: {=bool:?}, posedge: {=bool:?}, negedge: {=bool:?} }}" , self . rdy () , self . posedge () , self . negedge ()) } } # [doc = "No Description."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Ipversion (pub u32) ; impl Ipversion { # [doc = "ULFRCO IP version."] # [must_use] # [inline (always)] pub const fn ipversion (& self) -> u32 { let val = (self . 0 >> 0usize) & 0xffff_ffff ; val as u32 } # [doc = "ULFRCO IP version."] # [inline (always)] pub const fn set_ipversion (& mut self , val : u32) { self . 0 = (self . 0 & ! (0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize) ; } } impl Default for Ipversion { # [inline (always)] fn default () -> Ipversion { Ipversion (0) } } impl core :: fmt :: Debug for Ipversion { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("Ipversion") . field ("ipversion" , & self . ipversion ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for Ipversion { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "Ipversion {{ ipversion: {=u32:?} }}" , self . ipversion ()) } } # [doc = "No Description."] # [repr (transparent)] # [derive (Copy , Clone , Eq , PartialEq)] pub struct Status (pub u32) ; impl Status { # [doc = "Ready Status."] # [must_use] # [inline (always)] pub const fn rdy (& self) -> bool { let val = (self . 0 >> 0usize) & 0x01 ; val != 0 } # [doc = "Ready Status."] # [inline (always)] pub const fn set_rdy (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize) ; } # [doc = "Enable Status."] # [must_use] # [inline (always)] pub const fn ens (& self) -> bool { let val = (self . 0 >> 16usize) & 0x01 ; val != 0 } # [doc = "Enable Status."] # [inline (always)] pub const fn set_ens (& mut self , val : bool) { self . 0 = (self . 0 & ! (0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize) ; } } impl Default for Status { # [inline (always)] fn default () -> Status { Status (0) } } impl core :: fmt :: Debug for Status { fn fmt (& self , f : & mut core :: fmt :: Formatter) -> core :: fmt :: Result { f . debug_struct ("Status") . field ("rdy" , & self . rdy ()) . field ("ens" , & self . ens ()) . finish () } } # [cfg (feature = "defmt")] impl defmt :: Format for Status { fn format (& self , f : defmt :: Formatter) { defmt :: write ! (f , "Status {{ rdy: {=bool:?}, ens: {=bool:?} }}" , self . rdy () , self . ens ()) } } }
+use crate::metadata::ir::*;
+
+pub static REGISTERS: IR = IR {
+    blocks: &[Block {
+        name: "Ulfrco",
+        extends: None,
+        description: Some("ULFRCO peripheral."),
+        items: &[
+            BlockItem {
+                name: "ipversion",
+                description: Some("No Description."),
+                array: None,
+                byte_offset: 0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Ipversion"),
+                }),
+            },
+            BlockItem {
+                name: "status",
+                description: Some("No Description."),
+                array: None,
+                byte_offset: 8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("Status"),
+                }),
+            },
+            BlockItem {
+                name: "if_",
+                description: Some("No Description."),
+                array: None,
+                byte_offset: 20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("If"),
+                }),
+            },
+            BlockItem {
+                name: "ien",
+                description: Some("No Description."),
+                array: None,
+                byte_offset: 24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Ien"),
+                }),
+            },
+            BlockItem {
+                name: "if_set",
+                description: Some("No Description. (write-1-to-set alias)"),
+                array: None,
+                byte_offset: 4116,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("If"),
+                }),
+            },
+            BlockItem {
+                name: "if_clr",
+                description: Some("No Description. (write-1-to-clr alias)"),
+                array: None,
+                byte_offset: 8212,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("If"),
+                }),
+            },
+            BlockItem {
+                name: "if_tgl",
+                description: Some("No Description. (write-1-to-tgl alias)"),
+                array: None,
+                byte_offset: 12308,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("If"),
+                }),
+            },
+            BlockItem {
+                name: "ien_set",
+                description: Some("No Description. (write-1-to-set alias)"),
+                array: None,
+                byte_offset: 4120,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Ien"),
+                }),
+            },
+            BlockItem {
+                name: "ien_clr",
+                description: Some("No Description. (write-1-to-clr alias)"),
+                array: None,
+                byte_offset: 8216,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Ien"),
+                }),
+            },
+            BlockItem {
+                name: "ien_tgl",
+                description: Some("No Description. (write-1-to-tgl alias)"),
+                array: None,
+                byte_offset: 12312,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Write,
+                    bit_size: 32,
+                    fieldset: Some("Ien"),
+                }),
+            },
+        ],
+    }],
+    fieldsets: &[
+        FieldSet {
+            name: "Ien",
+            extends: None,
+            description: Some("No Description."),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdy",
+                    description: Some("Enable Ready Interrupt."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "posedge",
+                    description: Some("Enable Positive Edge Interrupt."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "negedge",
+                    description: Some("Enable Negative Edge Interrupt."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "If",
+            extends: None,
+            description: Some("No Description."),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdy",
+                    description: Some("Ready Interrupt Flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "posedge",
+                    description: Some("Positive Edge Interrupt Flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "negedge",
+                    description: Some("Negative Edge Interrupt Flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ipversion",
+            extends: None,
+            description: Some("No Description."),
+            bit_size: 32,
+            fields: &[Field {
+                name: "ipversion",
+                description: Some("ULFRCO IP version."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
+            name: "Status",
+            extends: None,
+            description: Some("No Description."),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdy",
+                    description: Some("Ready Status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ens",
+                    description: Some("Enable Status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[],
+};

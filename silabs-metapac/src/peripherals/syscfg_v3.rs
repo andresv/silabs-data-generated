@@ -1,0 +1,2126 @@
+#[doc = "SYSCFG peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Syscfg {
+    ptr: *mut u8,
+}
+unsafe impl Send for Syscfg {}
+unsafe impl Sync for Syscfg {}
+impl Syscfg {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ipversion(self) -> crate::common::Reg<regs::Ipversion, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "Read to get system status."]
+    #[inline(always)]
+    pub const fn if_(self) -> crate::common::Reg<regs::If, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "Write to enable interrupts."]
+    #[inline(always)]
+    pub const fn ien(self) -> crate::common::Reg<regs::Ien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "Read to get the hard-wired chip revision."]
+    #[inline(always)]
+    pub const fn chiprevhw(self) -> crate::common::Reg<regs::Chiprevhw, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "Read to get the chip revision programmed by feature configuration."]
+    #[inline(always)]
+    pub const fn chiprev(self) -> crate::common::Reg<regs::Chiprev, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "Configure the source of the system tick for the M33."]
+    #[inline(always)]
+    pub const fn cfgsystic(self) -> crate::common::Reg<regs::Cfgsystic, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM configuration."]
+    #[inline(always)]
+    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM retention configuration."]
+    #[inline(always)]
+    pub const fn dmem0retnctrl(self) -> crate::common::Reg<regs::Dmem0retnctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0208usize) as _) }
+    }
+    #[doc = "Configure RAM bias configure bits."]
+    #[inline(always)]
+    pub const fn rambiasconf(self) -> crate::common::Reg<regs::Rambiasconf, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x030cusize) as _) }
+    }
+    #[doc = "Configure SEQRAM Retention controls."]
+    #[inline(always)]
+    pub const fn radioramretnctrl(self) -> crate::common::Reg<regs::Radioramretnctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0400usize) as _) }
+    }
+    #[doc = "Configure to set RAM ECC control."]
+    #[inline(always)]
+    pub const fn radioeccctrl(self) -> crate::common::Reg<regs::Radioeccctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0408usize) as _) }
+    }
+    #[doc = "Read to get status of the SEQRAM ECC error address."]
+    #[inline(always)]
+    pub const fn seqrameccaddr(self) -> crate::common::Reg<regs::Seqrameccaddr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0410usize) as _) }
+    }
+    #[doc = "Read to get status of the FRCRAM ECC error address."]
+    #[inline(always)]
+    pub const fn frcrameccaddr(self) -> crate::common::Reg<regs::Frcrameccaddr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0414usize) as _) }
+    }
+    #[doc = "Configure Host ICACHERAM retention configuration."]
+    #[inline(always)]
+    pub const fn icacheramretnctrl(self) -> crate::common::Reg<regs::Icacheramretnctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0418usize) as _) }
+    }
+    #[doc = "Configure DMEM0 port remap selection."]
+    #[inline(always)]
+    pub const fn dmem0portmapsel(self) -> crate::common::Reg<regs::Dmem0portmapsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x041cusize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem."]
+    #[inline(always)]
+    pub const fn rootdata0(self) -> crate::common::Reg<regs::Rootdata0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0600usize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem."]
+    #[inline(always)]
+    pub const fn rootdata1(self) -> crate::common::Reg<regs::Rootdata1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0604usize) as _) }
+    }
+    #[doc = "This register returns the status of the SE managed locks."]
+    #[inline(always)]
+    pub const fn rootlockstatus(self) -> crate::common::Reg<regs::Rootlockstatus, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0608usize) as _) }
+    }
+    #[doc = "SE Software version."]
+    #[inline(always)]
+    pub const fn rootseswversion(self) -> crate::common::Reg<regs::Rootseswversion, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x060cusize) as _) }
+    }
+    #[doc = "Read to get system status. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn if_set(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1008usize) as _) }
+    }
+    #[doc = "Write to enable interrupts. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ien_set(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x100cusize) as _) }
+    }
+    #[doc = "Read to get the hard-wired chip revision. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn chiprevhw_set(self) -> crate::common::Reg<regs::Chiprevhw, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1014usize) as _) }
+    }
+    #[doc = "Read to get the chip revision programmed by feature configuration. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn chiprev_set(self) -> crate::common::Reg<regs::Chiprev, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1018usize) as _) }
+    }
+    #[doc = "Configure the source of the system tick for the M33. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cfgsystic_set(self) -> crate::common::Reg<regs::Cfgsystic, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1024usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM configuration. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ctrl_set(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1200usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM retention configuration. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dmem0retnctrl_set(self) -> crate::common::Reg<regs::Dmem0retnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1208usize) as _) }
+    }
+    #[doc = "Configure RAM bias configure bits. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn rambiasconf_set(self) -> crate::common::Reg<regs::Rambiasconf, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x130cusize) as _) }
+    }
+    #[doc = "Configure SEQRAM Retention controls. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn radioramretnctrl_set(self) -> crate::common::Reg<regs::Radioramretnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1400usize) as _) }
+    }
+    #[doc = "Configure to set RAM ECC control. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn radioeccctrl_set(self) -> crate::common::Reg<regs::Radioeccctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1408usize) as _) }
+    }
+    #[doc = "Configure Host ICACHERAM retention configuration. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn icacheramretnctrl_set(self) -> crate::common::Reg<regs::Icacheramretnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1418usize) as _) }
+    }
+    #[doc = "Configure DMEM0 port remap selection. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dmem0portmapsel_set(self) -> crate::common::Reg<regs::Dmem0portmapsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x141cusize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn rootdata0_set(self) -> crate::common::Reg<regs::Rootdata0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1600usize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn rootdata1_set(self) -> crate::common::Reg<regs::Rootdata1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1604usize) as _) }
+    }
+    #[doc = "SE Software version. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn rootseswversion_set(self) -> crate::common::Reg<regs::Rootseswversion, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x160cusize) as _) }
+    }
+    #[doc = "Read to get system status. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn if_clr(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize) as _) }
+    }
+    #[doc = "Write to enable interrupts. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ien_clr(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x200cusize) as _) }
+    }
+    #[doc = "Read to get the hard-wired chip revision. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn chiprevhw_clr(self) -> crate::common::Reg<regs::Chiprevhw, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2014usize) as _) }
+    }
+    #[doc = "Read to get the chip revision programmed by feature configuration. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn chiprev_clr(self) -> crate::common::Reg<regs::Chiprev, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2018usize) as _) }
+    }
+    #[doc = "Configure the source of the system tick for the M33. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cfgsystic_clr(self) -> crate::common::Reg<regs::Cfgsystic, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2024usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM configuration. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ctrl_clr(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2200usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM retention configuration. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dmem0retnctrl_clr(self) -> crate::common::Reg<regs::Dmem0retnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2208usize) as _) }
+    }
+    #[doc = "Configure RAM bias configure bits. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn rambiasconf_clr(self) -> crate::common::Reg<regs::Rambiasconf, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x230cusize) as _) }
+    }
+    #[doc = "Configure SEQRAM Retention controls. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn radioramretnctrl_clr(self) -> crate::common::Reg<regs::Radioramretnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2400usize) as _) }
+    }
+    #[doc = "Configure to set RAM ECC control. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn radioeccctrl_clr(self) -> crate::common::Reg<regs::Radioeccctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2408usize) as _) }
+    }
+    #[doc = "Configure Host ICACHERAM retention configuration. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn icacheramretnctrl_clr(self) -> crate::common::Reg<regs::Icacheramretnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2418usize) as _) }
+    }
+    #[doc = "Configure DMEM0 port remap selection. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dmem0portmapsel_clr(self) -> crate::common::Reg<regs::Dmem0portmapsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x241cusize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn rootdata0_clr(self) -> crate::common::Reg<regs::Rootdata0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2600usize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn rootdata1_clr(self) -> crate::common::Reg<regs::Rootdata1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2604usize) as _) }
+    }
+    #[doc = "SE Software version. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn rootseswversion_clr(self) -> crate::common::Reg<regs::Rootseswversion, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x260cusize) as _) }
+    }
+    #[doc = "Read to get system status. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn if_tgl(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3008usize) as _) }
+    }
+    #[doc = "Write to enable interrupts. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ien_tgl(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x300cusize) as _) }
+    }
+    #[doc = "Read to get the hard-wired chip revision. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn chiprevhw_tgl(self) -> crate::common::Reg<regs::Chiprevhw, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3014usize) as _) }
+    }
+    #[doc = "Read to get the chip revision programmed by feature configuration. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn chiprev_tgl(self) -> crate::common::Reg<regs::Chiprev, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3018usize) as _) }
+    }
+    #[doc = "Configure the source of the system tick for the M33. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cfgsystic_tgl(self) -> crate::common::Reg<regs::Cfgsystic, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3024usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM configuration. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ctrl_tgl(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3200usize) as _) }
+    }
+    #[doc = "Configure to provide general RAM retention configuration. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dmem0retnctrl_tgl(self) -> crate::common::Reg<regs::Dmem0retnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3208usize) as _) }
+    }
+    #[doc = "Configure RAM bias configure bits. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn rambiasconf_tgl(self) -> crate::common::Reg<regs::Rambiasconf, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x330cusize) as _) }
+    }
+    #[doc = "Configure SEQRAM Retention controls. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn radioramretnctrl_tgl(self) -> crate::common::Reg<regs::Radioramretnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3400usize) as _) }
+    }
+    #[doc = "Configure to set RAM ECC control. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn radioeccctrl_tgl(self) -> crate::common::Reg<regs::Radioeccctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3408usize) as _) }
+    }
+    #[doc = "Configure Host ICACHERAM retention configuration. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn icacheramretnctrl_tgl(self) -> crate::common::Reg<regs::Icacheramretnctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3418usize) as _) }
+    }
+    #[doc = "Configure DMEM0 port remap selection. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dmem0portmapsel_tgl(self) -> crate::common::Reg<regs::Dmem0portmapsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x341cusize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn rootdata0_tgl(self) -> crate::common::Reg<regs::Rootdata0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3600usize) as _) }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn rootdata1_tgl(self) -> crate::common::Reg<regs::Rootdata1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3604usize) as _) }
+    }
+    #[doc = "SE Software version. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn rootseswversion_tgl(self) -> crate::common::Reg<regs::Rootseswversion, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x360cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "Configure the source of the system tick for the M33."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cfgsystic(pub u32);
+    impl Cfgsystic {
+        #[doc = "SysTick External Clock Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn systicextclken(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SysTick External Clock Enable."]
+        #[inline(always)]
+        pub const fn set_systicextclken(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Cfgsystic {
+        #[inline(always)]
+        fn default() -> Cfgsystic {
+            Cfgsystic(0)
+        }
+    }
+    impl core::fmt::Debug for Cfgsystic {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfgsystic")
+                .field("systicextclken", &self.systicextclken())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfgsystic {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cfgsystic {{ systicextclken: {=bool:?} }}", self.systicextclken())
+        }
+    }
+    #[doc = "Read to get the chip revision programmed by feature configuration."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Chiprev(pub u32);
+    impl Chiprev {
+        #[doc = "Chip Revision Major value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn major(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Chip Revision Major value."]
+        #[inline(always)]
+        pub const fn set_major(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+        }
+        #[doc = "Chip Family value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn family(&self) -> super::vals::Family {
+            let val = (self.0 >> 6usize) & 0x3f;
+            super::vals::Family::from_bits(val as u8)
+        }
+        #[doc = "Chip Family value."]
+        #[inline(always)]
+        pub const fn set_family(&mut self, val: super::vals::Family) {
+            self.0 = (self.0 & !(0x3f << 6usize)) | (((val.to_bits() as u32) & 0x3f) << 6usize);
+        }
+        #[doc = "Chip Revision Minor value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn minor(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Chip Revision Minor value."]
+        #[inline(always)]
+        pub const fn set_minor(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 12usize)) | (((val as u32) & 0xff) << 12usize);
+        }
+    }
+    impl Default for Chiprev {
+        #[inline(always)]
+        fn default() -> Chiprev {
+            Chiprev(0)
+        }
+    }
+    impl core::fmt::Debug for Chiprev {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Chiprev")
+                .field("major", &self.major())
+                .field("family", &self.family())
+                .field("minor", &self.minor())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Chiprev {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Chiprev {{ major: {=u8:?}, family: {:?}, minor: {=u8:?} }}",
+                self.major(),
+                self.family(),
+                self.minor()
+            )
+        }
+    }
+    #[doc = "Read to get the hard-wired chip revision."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Chiprevhw(pub u32);
+    impl Chiprevhw {
+        #[doc = "Hardwired Chip Revision Major value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn major(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Hardwired Chip Revision Major value."]
+        #[inline(always)]
+        pub const fn set_major(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
+        }
+        #[doc = "Hardwired Chip Family value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn family(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Hardwired Chip Family value."]
+        #[inline(always)]
+        pub const fn set_family(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 6usize)) | (((val as u32) & 0x3f) << 6usize);
+        }
+        #[doc = "Hardwired Chip Revision Minor value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn minor(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Hardwired Chip Revision Minor value."]
+        #[inline(always)]
+        pub const fn set_minor(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 12usize)) | (((val as u32) & 0xff) << 12usize);
+        }
+    }
+    impl Default for Chiprevhw {
+        #[inline(always)]
+        fn default() -> Chiprevhw {
+            Chiprevhw(0)
+        }
+    }
+    impl core::fmt::Debug for Chiprevhw {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Chiprevhw")
+                .field("major", &self.major())
+                .field("family", &self.family())
+                .field("minor", &self.minor())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Chiprevhw {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Chiprevhw {{ major: {=u8:?}, family: {=u8:?}, minor: {=u8:?} }}",
+                self.major(),
+                self.family(),
+                self.minor()
+            )
+        }
+    }
+    #[doc = "Configure to provide general RAM configuration."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl(pub u32);
+    impl Ctrl {
+        #[doc = "Invalid Address Bus Fault Response Enabl."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn addrfaulten(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Invalid Address Bus Fault Response Enabl."]
+        #[inline(always)]
+        pub const fn set_addrfaulten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Disabled Clkbus Bus Fault Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clkdisfaulten(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disabled Clkbus Bus Fault Enable."]
+        #[inline(always)]
+        pub const fn set_clkdisfaulten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Two bit ECC error bus fault response ena."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rameccerrfaulten(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Two bit ECC error bus fault response ena."]
+        #[inline(always)]
+        pub const fn set_rameccerrfaulten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for Ctrl {
+        #[inline(always)]
+        fn default() -> Ctrl {
+            Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl")
+                .field("addrfaulten", &self.addrfaulten())
+                .field("clkdisfaulten", &self.clkdisfaulten())
+                .field("rameccerrfaulten", &self.rameccerrfaulten())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ctrl {{ addrfaulten: {=bool:?}, clkdisfaulten: {=bool:?}, rameccerrfaulten: {=bool:?} }}",
+                self.addrfaulten(),
+                self.clkdisfaulten(),
+                self.rameccerrfaulten()
+            )
+        }
+    }
+    #[doc = "Configure DMEM0 port remap selection."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dmem0portmapsel(pub u32);
+    impl Dmem0portmapsel {
+        #[doc = "LDMA portmap selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldmaportsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "LDMA portmap selection."]
+        #[inline(always)]
+        pub const fn set_ldmaportsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "SRWAES portmap selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn srwaesportsel(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "SRWAES portmap selection."]
+        #[inline(always)]
+        pub const fn set_srwaesportsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "AHBSRW portmap selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ahbsrwportsel(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "AHBSRW portmap selection."]
+        #[inline(always)]
+        pub const fn set_ahbsrwportsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "SRWECA0 portmap selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn srweca0portsel(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "SRWECA0 portmap selection."]
+        #[inline(always)]
+        pub const fn set_srweca0portsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+        #[doc = "SRWECA1 portmap selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn srweca1portsel(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "SRWECA1 portmap selection."]
+        #[inline(always)]
+        pub const fn set_srweca1portsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+    }
+    impl Default for Dmem0portmapsel {
+        #[inline(always)]
+        fn default() -> Dmem0portmapsel {
+            Dmem0portmapsel(0)
+        }
+    }
+    impl core::fmt::Debug for Dmem0portmapsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmem0portmapsel")
+                .field("ldmaportsel", &self.ldmaportsel())
+                .field("srwaesportsel", &self.srwaesportsel())
+                .field("ahbsrwportsel", &self.ahbsrwportsel())
+                .field("srweca0portsel", &self.srweca0portsel())
+                .field("srweca1portsel", &self.srweca1portsel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmem0portmapsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dmem0portmapsel {{ ldmaportsel: {=u8:?}, srwaesportsel: {=u8:?}, ahbsrwportsel: {=u8:?}, srweca0portsel: {=u8:?}, srweca1portsel: {=u8:?} }}",
+                self.ldmaportsel(),
+                self.srwaesportsel(),
+                self.ahbsrwportsel(),
+                self.srweca0portsel(),
+                self.srweca1portsel()
+            )
+        }
+    }
+    #[doc = "Configure to provide general RAM retention configuration."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dmem0retnctrl(pub u32);
+    impl Dmem0retnctrl {
+        #[doc = "DMEM0 blockset retention control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ramretnctrl(&self) -> super::vals::Dmem0retnctrlRamretnctrl {
+            let val = (self.0 >> 0usize) & 0x7fff;
+            super::vals::Dmem0retnctrlRamretnctrl::from_bits(val as u16)
+        }
+        #[doc = "DMEM0 blockset retention control."]
+        #[inline(always)]
+        pub const fn set_ramretnctrl(&mut self, val: super::vals::Dmem0retnctrlRamretnctrl) {
+            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val.to_bits() as u32) & 0x7fff) << 0usize);
+        }
+    }
+    impl Default for Dmem0retnctrl {
+        #[inline(always)]
+        fn default() -> Dmem0retnctrl {
+            Dmem0retnctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Dmem0retnctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dmem0retnctrl")
+                .field("ramretnctrl", &self.ramretnctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmem0retnctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Dmem0retnctrl {{ ramretnctrl: {:?} }}", self.ramretnctrl())
+        }
+    }
+    #[doc = "Read to get status of the FRCRAM ECC error address."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Frcrameccaddr(pub u32);
+    impl Frcrameccaddr {
+        #[doc = "FRCRAM ECC Error Address."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcrameccaddr(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "FRCRAM ECC Error Address."]
+        #[inline(always)]
+        pub const fn set_frcrameccaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Frcrameccaddr {
+        #[inline(always)]
+        fn default() -> Frcrameccaddr {
+            Frcrameccaddr(0)
+        }
+    }
+    impl core::fmt::Debug for Frcrameccaddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Frcrameccaddr")
+                .field("frcrameccaddr", &self.frcrameccaddr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Frcrameccaddr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Frcrameccaddr {{ frcrameccaddr: {=u32:?} }}", self.frcrameccaddr())
+        }
+    }
+    #[doc = "Configure Host ICACHERAM retention configuration."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Icacheramretnctrl(pub u32);
+    impl Icacheramretnctrl {
+        #[doc = "ICACHERAM Retention control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ramretnctrl(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICACHERAM Retention control."]
+        #[inline(always)]
+        pub const fn set_ramretnctrl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Icacheramretnctrl {
+        #[inline(always)]
+        fn default() -> Icacheramretnctrl {
+            Icacheramretnctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Icacheramretnctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icacheramretnctrl")
+                .field("ramretnctrl", &self.ramretnctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icacheramretnctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Icacheramretnctrl {{ ramretnctrl: {=bool:?} }}", self.ramretnctrl())
+        }
+    }
+    #[doc = "Write to enable interrupts."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ien(pub u32);
+    impl Ien {
+        #[doc = "Software Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_sw0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_sw1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw2(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_sw2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw3(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_sw3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "FPU Invalid Operation Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpioc(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Invalid Operation Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_fpioc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "FPU Divide by zero Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpdzc(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Divide by zero Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_fpdzc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "FPU Underflow Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpufc(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Underflow Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_fpufc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "FPU Overflow Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpofc(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Overflow Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_fpofc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "FPU Input denormal Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpidc(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Input denormal Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_fpidc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "FPU Inexact Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpixc(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Inexact Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_fpixc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "HOST2SRWBUSERRIEN Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn host2srwbuserr(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "HOST2SRWBUSERRIEN Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_host2srwbuserr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "SRW2HOSTBUSERRIEN Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn srw2hostbuserr(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SRW2HOSTBUSERRIEN Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_srw2hostbuserr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "SEQRAM Error 1-bit Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqramerr1b(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SEQRAM Error 1-bit Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_seqramerr1b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "SEQRAM Error 2-bit Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqramerr2b(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SEQRAM Error 2-bit Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_seqramerr2b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "FRCRAM Error 1-bit Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcramerr1b(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM Error 1-bit Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_frcramerr1b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "FRCRAM Error 2-bit Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcramerr2b(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM Error 2-bit Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_frcramerr2b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+    }
+    impl Default for Ien {
+        #[inline(always)]
+        fn default() -> Ien {
+            Ien(0)
+        }
+    }
+    impl core::fmt::Debug for Ien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ien")
+                .field("sw0", &self.sw0())
+                .field("sw1", &self.sw1())
+                .field("sw2", &self.sw2())
+                .field("sw3", &self.sw3())
+                .field("fpioc", &self.fpioc())
+                .field("fpdzc", &self.fpdzc())
+                .field("fpufc", &self.fpufc())
+                .field("fpofc", &self.fpofc())
+                .field("fpidc", &self.fpidc())
+                .field("fpixc", &self.fpixc())
+                .field("host2srwbuserr", &self.host2srwbuserr())
+                .field("srw2hostbuserr", &self.srw2hostbuserr())
+                .field("seqramerr1b", &self.seqramerr1b())
+                .field("seqramerr2b", &self.seqramerr2b())
+                .field("frcramerr1b", &self.frcramerr1b())
+                .field("frcramerr2b", &self.frcramerr2b())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ien {{ sw0: {=bool:?}, sw1: {=bool:?}, sw2: {=bool:?}, sw3: {=bool:?}, fpioc: {=bool:?}, fpdzc: {=bool:?}, fpufc: {=bool:?}, fpofc: {=bool:?}, fpidc: {=bool:?}, fpixc: {=bool:?}, host2srwbuserr: {=bool:?}, srw2hostbuserr: {=bool:?}, seqramerr1b: {=bool:?}, seqramerr2b: {=bool:?}, frcramerr1b: {=bool:?}, frcramerr2b: {=bool:?} }}",
+                self.sw0(),
+                self.sw1(),
+                self.sw2(),
+                self.sw3(),
+                self.fpioc(),
+                self.fpdzc(),
+                self.fpufc(),
+                self.fpofc(),
+                self.fpidc(),
+                self.fpixc(),
+                self.host2srwbuserr(),
+                self.srw2hostbuserr(),
+                self.seqramerr1b(),
+                self.seqramerr2b(),
+                self.frcramerr1b(),
+                self.frcramerr2b()
+            )
+        }
+    }
+    #[doc = "Read to get system status."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct If(pub u32);
+    impl If {
+        #[doc = "Software Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_sw0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_sw1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw2(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_sw2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sw3(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_sw3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "FPU Invalid Operation interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpioc(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Invalid Operation interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fpioc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "FPU Divide by zero interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpdzc(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Divide by zero interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fpdzc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "FPU Underflow interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpufc(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Underflow interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fpufc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "FPU Overflow interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpofc(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Overflow interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fpofc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "FPU Input denormal interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpidc(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Input denormal interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fpidc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "FPU Inexact interrupt flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fpixc(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FPU Inexact interrupt flag."]
+        #[inline(always)]
+        pub const fn set_fpixc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "HOST2SRWBUSERRIF Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn host2srwbuserr(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "HOST2SRWBUSERRIF Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_host2srwbuserr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "SRW2HOSTBUSERRIF Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn srw2hostbuserr(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SRW2HOSTBUSERRIF Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_srw2hostbuserr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "SEQRAM Error 1-bit Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqramerr1b(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SEQRAM Error 1-bit Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_seqramerr1b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "SEQRAM Error 2-bit Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqramerr2b(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SEQRAM Error 2-bit Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_seqramerr2b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "FRCRAM Error 1-bit Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcramerr1b(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM Error 1-bit Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_frcramerr1b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "FRCRAM Error 2-bit Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcramerr2b(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM Error 2-bit Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_frcramerr2b(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+    }
+    impl Default for If {
+        #[inline(always)]
+        fn default() -> If {
+            If(0)
+        }
+    }
+    impl core::fmt::Debug for If {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("If")
+                .field("sw0", &self.sw0())
+                .field("sw1", &self.sw1())
+                .field("sw2", &self.sw2())
+                .field("sw3", &self.sw3())
+                .field("fpioc", &self.fpioc())
+                .field("fpdzc", &self.fpdzc())
+                .field("fpufc", &self.fpufc())
+                .field("fpofc", &self.fpofc())
+                .field("fpidc", &self.fpidc())
+                .field("fpixc", &self.fpixc())
+                .field("host2srwbuserr", &self.host2srwbuserr())
+                .field("srw2hostbuserr", &self.srw2hostbuserr())
+                .field("seqramerr1b", &self.seqramerr1b())
+                .field("seqramerr2b", &self.seqramerr2b())
+                .field("frcramerr1b", &self.frcramerr1b())
+                .field("frcramerr2b", &self.frcramerr2b())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for If {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "If {{ sw0: {=bool:?}, sw1: {=bool:?}, sw2: {=bool:?}, sw3: {=bool:?}, fpioc: {=bool:?}, fpdzc: {=bool:?}, fpufc: {=bool:?}, fpofc: {=bool:?}, fpidc: {=bool:?}, fpixc: {=bool:?}, host2srwbuserr: {=bool:?}, srw2hostbuserr: {=bool:?}, seqramerr1b: {=bool:?}, seqramerr2b: {=bool:?}, frcramerr1b: {=bool:?}, frcramerr2b: {=bool:?} }}",
+                self.sw0(),
+                self.sw1(),
+                self.sw2(),
+                self.sw3(),
+                self.fpioc(),
+                self.fpdzc(),
+                self.fpufc(),
+                self.fpofc(),
+                self.fpidc(),
+                self.fpixc(),
+                self.host2srwbuserr(),
+                self.srw2hostbuserr(),
+                self.seqramerr1b(),
+                self.seqramerr2b(),
+                self.frcramerr1b(),
+                self.frcramerr2b()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ipversion(pub u32);
+    impl Ipversion {
+        #[doc = "New BitField."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ipversion(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "New BitField."]
+        #[inline(always)]
+        pub const fn set_ipversion(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ipversion {
+        #[inline(always)]
+        fn default() -> Ipversion {
+            Ipversion(0)
+        }
+    }
+    impl core::fmt::Debug for Ipversion {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ipversion")
+                .field("ipversion", &self.ipversion())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ipversion {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ipversion {{ ipversion: {=u32:?} }}", self.ipversion())
+        }
+    }
+    #[doc = "Configure to set RAM ECC control."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Radioeccctrl(pub u32);
+    impl Radioeccctrl {
+        #[doc = "SEQRAM ECC Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqrameccen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SEQRAM ECC Enable."]
+        #[inline(always)]
+        pub const fn set_seqrameccen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "SEQRAM ECC Error Writeback Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqrameccewen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SEQRAM ECC Error Writeback Enable."]
+        #[inline(always)]
+        pub const fn set_seqrameccewen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "FRCRAM ECC Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcrameccen(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM ECC Enable."]
+        #[inline(always)]
+        pub const fn set_frcrameccen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "FRCRAM ECC Error Writeback Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcrameccewen(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM ECC Error Writeback Enable."]
+        #[inline(always)]
+        pub const fn set_frcrameccewen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+    }
+    impl Default for Radioeccctrl {
+        #[inline(always)]
+        fn default() -> Radioeccctrl {
+            Radioeccctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Radioeccctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Radioeccctrl")
+                .field("seqrameccen", &self.seqrameccen())
+                .field("seqrameccewen", &self.seqrameccewen())
+                .field("frcrameccen", &self.frcrameccen())
+                .field("frcrameccewen", &self.frcrameccewen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Radioeccctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Radioeccctrl {{ seqrameccen: {=bool:?}, seqrameccewen: {=bool:?}, frcrameccen: {=bool:?}, frcrameccewen: {=bool:?} }}",
+                self.seqrameccen(),
+                self.seqrameccewen(),
+                self.frcrameccen(),
+                self.frcrameccewen()
+            )
+        }
+    }
+    #[doc = "Configure SEQRAM Retention controls."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Radioramretnctrl(pub u32);
+    impl Radioramretnctrl {
+        #[doc = "SEQRAM Retention Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqramretnctrl(&self) -> super::vals::Seqramretnctrl {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Seqramretnctrl::from_bits(val as u8)
+        }
+        #[doc = "SEQRAM Retention Control."]
+        #[inline(always)]
+        pub const fn set_seqramretnctrl(&mut self, val: super::vals::Seqramretnctrl) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "FRCRAM Retention Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frcramretnctrl(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FRCRAM Retention Control."]
+        #[inline(always)]
+        pub const fn set_frcramretnctrl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+    }
+    impl Default for Radioramretnctrl {
+        #[inline(always)]
+        fn default() -> Radioramretnctrl {
+            Radioramretnctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Radioramretnctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Radioramretnctrl")
+                .field("seqramretnctrl", &self.seqramretnctrl())
+                .field("frcramretnctrl", &self.frcramretnctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Radioramretnctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Radioramretnctrl {{ seqramretnctrl: {:?}, frcramretnctrl: {=bool:?} }}",
+                self.seqramretnctrl(),
+                self.frcramretnctrl()
+            )
+        }
+    }
+    #[doc = "Configure RAM bias configure bits."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rambiasconf(pub u32);
+    impl Rambiasconf {
+        #[doc = "RAM Bias Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rambiasctrl(&self) -> super::vals::Rambiasctrl {
+            let val = (self.0 >> 0usize) & 0x0f;
+            super::vals::Rambiasctrl::from_bits(val as u8)
+        }
+        #[doc = "RAM Bias Control."]
+        #[inline(always)]
+        pub const fn set_rambiasctrl(&mut self, val: super::vals::Rambiasctrl) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
+        }
+    }
+    impl Default for Rambiasconf {
+        #[inline(always)]
+        fn default() -> Rambiasconf {
+            Rambiasconf(0)
+        }
+    }
+    impl core::fmt::Debug for Rambiasconf {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rambiasconf")
+                .field("rambiasctrl", &self.rambiasctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rambiasconf {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rambiasconf {{ rambiasctrl: {:?} }}", self.rambiasctrl())
+        }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rootdata0(pub u32);
+    impl Rootdata0 {
+        #[doc = "Data."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn data(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Data."]
+        #[inline(always)]
+        pub const fn set_data(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Rootdata0 {
+        #[inline(always)]
+        fn default() -> Rootdata0 {
+            Rootdata0(0)
+        }
+    }
+    impl core::fmt::Debug for Rootdata0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rootdata0").field("data", &self.data()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rootdata0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rootdata0 {{ data: {=u32:?} }}", self.data())
+        }
+    }
+    #[doc = "Generic data space for user to pass to root, e.g., address of struct in mem."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rootdata1(pub u32);
+    impl Rootdata1 {
+        #[doc = "Data."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn data(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Data."]
+        #[inline(always)]
+        pub const fn set_data(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Rootdata1 {
+        #[inline(always)]
+        fn default() -> Rootdata1 {
+            Rootdata1(0)
+        }
+    }
+    impl core::fmt::Debug for Rootdata1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rootdata1").field("data", &self.data()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rootdata1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rootdata1 {{ data: {=u32:?} }}", self.data())
+        }
+    }
+    #[doc = "This register returns the status of the SE managed locks."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rootlockstatus(pub u32);
+    impl Rootlockstatus {
+        #[doc = "Bus Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn buslock(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bus Lock."]
+        #[inline(always)]
+        pub const fn set_buslock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Register Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn reglock(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Register Lock."]
+        #[inline(always)]
+        pub const fn set_reglock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Manufacture Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mfrlock(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Manufacture Lock."]
+        #[inline(always)]
+        pub const fn set_mfrlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Root Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rootdbglock(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Root Debug Lock."]
+        #[inline(always)]
+        pub const fn set_rootdbglock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "User Debug Access Port Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn userdbgaplock(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "User Debug Access Port Lock."]
+        #[inline(always)]
+        pub const fn set_userdbgaplock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "User Invasive Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn userdbglock(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "User Invasive Debug Lock."]
+        #[inline(always)]
+        pub const fn set_userdbglock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "User Non-invasive Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usernidlock(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "User Non-invasive Debug Lock."]
+        #[inline(always)]
+        pub const fn set_usernidlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "User Secure Invasive Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn userspidlock(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "User Secure Invasive Debug Lock."]
+        #[inline(always)]
+        pub const fn set_userspidlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "User Secure Non-invasive Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn userspnidlock(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "User Secure Non-invasive Debug Lock."]
+        #[inline(always)]
+        pub const fn set_userspnidlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Radio Invasive Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn radioidbglock(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Radio Invasive Debug Lock."]
+        #[inline(always)]
+        pub const fn set_radioidbglock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "Radio Non-invasive Debug Lock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn radionidbglock(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Radio Non-invasive Debug Lock."]
+        #[inline(always)]
+        pub const fn set_radionidbglock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "E-Fuse Unlocked."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn efuseunlocked(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "E-Fuse Unlocked."]
+        #[inline(always)]
+        pub const fn set_efuseunlocked(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Rootlockstatus {
+        #[inline(always)]
+        fn default() -> Rootlockstatus {
+            Rootlockstatus(0)
+        }
+    }
+    impl core::fmt::Debug for Rootlockstatus {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rootlockstatus")
+                .field("buslock", &self.buslock())
+                .field("reglock", &self.reglock())
+                .field("mfrlock", &self.mfrlock())
+                .field("rootdbglock", &self.rootdbglock())
+                .field("userdbgaplock", &self.userdbgaplock())
+                .field("userdbglock", &self.userdbglock())
+                .field("usernidlock", &self.usernidlock())
+                .field("userspidlock", &self.userspidlock())
+                .field("userspnidlock", &self.userspnidlock())
+                .field("radioidbglock", &self.radioidbglock())
+                .field("radionidbglock", &self.radionidbglock())
+                .field("efuseunlocked", &self.efuseunlocked())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rootlockstatus {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Rootlockstatus {{ buslock: {=bool:?}, reglock: {=bool:?}, mfrlock: {=bool:?}, rootdbglock: {=bool:?}, userdbgaplock: {=bool:?}, userdbglock: {=bool:?}, usernidlock: {=bool:?}, userspidlock: {=bool:?}, userspnidlock: {=bool:?}, radioidbglock: {=bool:?}, radionidbglock: {=bool:?}, efuseunlocked: {=bool:?} }}",
+                self.buslock(),
+                self.reglock(),
+                self.mfrlock(),
+                self.rootdbglock(),
+                self.userdbgaplock(),
+                self.userdbglock(),
+                self.usernidlock(),
+                self.userspidlock(),
+                self.userspnidlock(),
+                self.radioidbglock(),
+                self.radionidbglock(),
+                self.efuseunlocked()
+            )
+        }
+    }
+    #[doc = "SE Software version."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rootseswversion(pub u32);
+    impl Rootseswversion {
+        #[doc = "SW Version."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swversion(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "SW Version."]
+        #[inline(always)]
+        pub const fn set_swversion(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Rootseswversion {
+        #[inline(always)]
+        fn default() -> Rootseswversion {
+            Rootseswversion(0)
+        }
+    }
+    impl core::fmt::Debug for Rootseswversion {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rootseswversion")
+                .field("swversion", &self.swversion())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rootseswversion {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rootseswversion {{ swversion: {=u32:?} }}", self.swversion())
+        }
+    }
+    #[doc = "Read to get status of the SEQRAM ECC error address."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Seqrameccaddr(pub u32);
+    impl Seqrameccaddr {
+        #[doc = "SEQRAM ECC Address."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn seqrameccaddr(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "SEQRAM ECC Address."]
+        #[inline(always)]
+        pub const fn set_seqrameccaddr(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Seqrameccaddr {
+        #[inline(always)]
+        fn default() -> Seqrameccaddr {
+            Seqrameccaddr(0)
+        }
+    }
+    impl core::fmt::Debug for Seqrameccaddr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seqrameccaddr")
+                .field("seqrameccaddr", &self.seqrameccaddr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seqrameccaddr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Seqrameccaddr {{ seqrameccaddr: {=u32:?} }}", self.seqrameccaddr())
+        }
+    }
+}
+pub mod vals {
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Dmem0retnctrlRamretnctrl(u16);
+    impl Dmem0retnctrlRamretnctrl {
+        #[doc = "None of the RAM blocks powered down."]
+        pub const Allon: Self = Self(0x0);
+        #[doc = "Power down RAM block 15 (address range 0x2003C000-0x20040000)."]
+        pub const Blk15: Self = Self(0x4000);
+        #[doc = "Power down RAM blocks 14 and above (address range 0x20038000-0x20040000)."]
+        pub const Blk14to15: Self = Self(0x6000);
+        #[doc = "Power down RAM blocks 13 and above (address range 0x20034000-0x20040000)."]
+        pub const Blk13to15: Self = Self(0x7000);
+        #[doc = "Power down RAM blocks 12 and above (address range 0x20030000-0x20040000)."]
+        pub const Blk12to15: Self = Self(0x7800);
+        #[doc = "Power down RAM blocks 11 and above (address range 0x2002C000-0x20040000)."]
+        pub const Blk11to15: Self = Self(0x7c00);
+        #[doc = "Power down RAM blocks 10 and above (address range 0x20028000-0x20040000)."]
+        pub const Blk10to15: Self = Self(0x7e00);
+        #[doc = "Power down RAM blocks 9 and above (address range 0x20024000-0x20040000)."]
+        pub const Blk9to15: Self = Self(0x7f00);
+        #[doc = "Power down RAM blocks 8 and above (address range 0x20020000-0x20040000)."]
+        pub const Blk8to15: Self = Self(0x7f80);
+        #[doc = "Power down RAM blocks 7 and above (address range 0x2001C000-0x20040000)."]
+        pub const Blk7to15: Self = Self(0x7fc0);
+        #[doc = "Power down RAM blocks 6 and above (address range 0x20018000-0x20040000)."]
+        pub const Blk6to15: Self = Self(0x7fe0);
+        #[doc = "Power down RAM blocks 5 and above (address range 0x20014000-0x20040000)."]
+        pub const Blk5to15: Self = Self(0x7ff0);
+        #[doc = "Power down RAM blocks 4 and above (address range 0x20010000-0x20040000)."]
+        pub const Blk4to15: Self = Self(0x7ff8);
+        #[doc = "Power down RAM blocks 3 and above (address range 0x2000C000-0x20040000)."]
+        pub const Blk3to15: Self = Self(0x7ffc);
+        #[doc = "Power down RAM blocks 2 and above (address range 0x20008000-0x20040000)."]
+        pub const Blk2to15: Self = Self(0x7ffe);
+        #[doc = "Power down RAM blocks 1 and above (address range 0x20004000-0x20040000)."]
+        pub const Blk1to15: Self = Self(0x7fff);
+    }
+    impl Dmem0retnctrlRamretnctrl {
+        pub const fn from_bits(val: u16) -> Dmem0retnctrlRamretnctrl {
+            Self(val & 0x7fff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Dmem0retnctrlRamretnctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0 => f.write_str("Allon"),
+                0x4000 => f.write_str("Blk15"),
+                0x6000 => f.write_str("Blk14to15"),
+                0x7000 => f.write_str("Blk13to15"),
+                0x7800 => f.write_str("Blk12to15"),
+                0x7c00 => f.write_str("Blk11to15"),
+                0x7e00 => f.write_str("Blk10to15"),
+                0x7f00 => f.write_str("Blk9to15"),
+                0x7f80 => f.write_str("Blk8to15"),
+                0x7fc0 => f.write_str("Blk7to15"),
+                0x7fe0 => f.write_str("Blk6to15"),
+                0x7ff0 => f.write_str("Blk5to15"),
+                0x7ff8 => f.write_str("Blk4to15"),
+                0x7ffc => f.write_str("Blk3to15"),
+                0x7ffe => f.write_str("Blk2to15"),
+                0x7fff => f.write_str("Blk1to15"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dmem0retnctrlRamretnctrl {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0 => defmt::write!(f, "Allon"),
+                0x4000 => defmt::write!(f, "Blk15"),
+                0x6000 => defmt::write!(f, "Blk14to15"),
+                0x7000 => defmt::write!(f, "Blk13to15"),
+                0x7800 => defmt::write!(f, "Blk12to15"),
+                0x7c00 => defmt::write!(f, "Blk11to15"),
+                0x7e00 => defmt::write!(f, "Blk10to15"),
+                0x7f00 => defmt::write!(f, "Blk9to15"),
+                0x7f80 => defmt::write!(f, "Blk8to15"),
+                0x7fc0 => defmt::write!(f, "Blk7to15"),
+                0x7fe0 => defmt::write!(f, "Blk6to15"),
+                0x7ff0 => defmt::write!(f, "Blk5to15"),
+                0x7ff8 => defmt::write!(f, "Blk4to15"),
+                0x7ffc => defmt::write!(f, "Blk3to15"),
+                0x7ffe => defmt::write!(f, "Blk2to15"),
+                0x7fff => defmt::write!(f, "Blk1to15"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Dmem0retnctrlRamretnctrl {
+        #[inline(always)]
+        fn from(val: u16) -> Dmem0retnctrlRamretnctrl {
+            Dmem0retnctrlRamretnctrl::from_bits(val)
+        }
+    }
+    impl From<Dmem0retnctrlRamretnctrl> for u16 {
+        #[inline(always)]
+        fn from(val: Dmem0retnctrlRamretnctrl) -> u16 {
+            Dmem0retnctrlRamretnctrl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Family {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+        _RESERVED_10 = 0x10,
+        _RESERVED_11 = 0x11,
+        _RESERVED_12 = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
+        _RESERVED_18 = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
+        _RESERVED_20 = 0x20,
+        _RESERVED_21 = 0x21,
+        _RESERVED_22 = 0x22,
+        _RESERVED_23 = 0x23,
+        _RESERVED_24 = 0x24,
+        _RESERVED_25 = 0x25,
+        _RESERVED_26 = 0x26,
+        _RESERVED_27 = 0x27,
+        _RESERVED_28 = 0x28,
+        _RESERVED_29 = 0x29,
+        _RESERVED_2a = 0x2a,
+        _RESERVED_2b = 0x2b,
+        _RESERVED_2c = 0x2c,
+        _RESERVED_2d = 0x2d,
+        _RESERVED_2e = 0x2e,
+        _RESERVED_2f = 0x2f,
+        _RESERVED_30 = 0x30,
+        _RESERVED_31 = 0x31,
+        _RESERVED_32 = 0x32,
+        _RESERVED_33 = 0x33,
+        _RESERVED_34 = 0x34,
+        _RESERVED_35 = 0x35,
+        _RESERVED_36 = 0x36,
+        _RESERVED_37 = 0x37,
+        _RESERVED_38 = 0x38,
+        _RESERVED_39 = 0x39,
+        _RESERVED_3a = 0x3a,
+        _RESERVED_3b = 0x3b,
+        #[doc = "Product is in MG24 family."]
+        Mg24 = 0x3c,
+        #[doc = "Product is in BG24 family."]
+        Bg24 = 0x3d,
+        _RESERVED_3e = 0x3e,
+        _RESERVED_3f = 0x3f,
+    }
+    impl Family {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Family {
+            unsafe { core::mem::transmute(val & 0x3f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Family {
+        #[inline(always)]
+        fn from(val: u8) -> Family {
+            Family::from_bits(val)
+        }
+    }
+    impl From<Family> for u8 {
+        #[inline(always)]
+        fn from(val: Family) -> u8 {
+            Family::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Rambiasctrl {
+        #[doc = "None."]
+        No = 0x0,
+        #[doc = "Voltage Source Bias 100mV."]
+        Vsb100 = 0x01,
+        #[doc = "Voltage Source Bias 200mV."]
+        Vsb200 = 0x02,
+        _RESERVED_3 = 0x03,
+        #[doc = "Voltage Source Bias 300mV."]
+        Vsb300 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        #[doc = "Voltage Source Bias 400mV."]
+        Vsb400 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Rambiasctrl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Rambiasctrl {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Rambiasctrl {
+        #[inline(always)]
+        fn from(val: u8) -> Rambiasctrl {
+            Rambiasctrl::from_bits(val)
+        }
+    }
+    impl From<Rambiasctrl> for u8 {
+        #[inline(always)]
+        fn from(val: Rambiasctrl) -> u8 {
+            Rambiasctrl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Seqramretnctrl {
+        #[doc = "SEQRAM not powered down."]
+        Allon = 0x0,
+        #[doc = "Power down SEQRAM block 0."]
+        Blk0 = 0x01,
+        #[doc = "Power down SEQRAM block 1."]
+        Blk1 = 0x02,
+        #[doc = "Power down all SEQRAM blocks."]
+        Alloff = 0x03,
+    }
+    impl Seqramretnctrl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Seqramretnctrl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Seqramretnctrl {
+        #[inline(always)]
+        fn from(val: u8) -> Seqramretnctrl {
+            Seqramretnctrl::from_bits(val)
+        }
+    }
+    impl From<Seqramretnctrl> for u8 {
+        #[inline(always)]
+        fn from(val: Seqramretnctrl) -> u8 {
+            Seqramretnctrl::to_bits(val)
+        }
+    }
+}

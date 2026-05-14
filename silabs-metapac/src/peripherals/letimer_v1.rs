@@ -1,0 +1,1792 @@
+#[doc = "LETIMER peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Letimer {
+    ptr: *mut u8,
+}
+unsafe impl Send for Letimer {}
+unsafe impl Sync for Letimer {}
+impl Letimer {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ipversion(self) -> crate::common::Reg<regs::Ipversion, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn en(self) -> crate::common::Reg<regs::En, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn swrst(self) -> crate::common::Reg<regs::Swrst, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cmd(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn status(self) -> crate::common::Reg<regs::Status, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cnt(self) -> crate::common::Reg<regs::Cnt, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn comp0(self) -> crate::common::Reg<regs::Comp0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn comp1(self) -> crate::common::Reg<regs::Comp1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn top(self) -> crate::common::Reg<regs::Top, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn topbuff(self) -> crate::common::Reg<regs::Topbuff, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn rep0(self) -> crate::common::Reg<regs::Rep0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn rep1(self) -> crate::common::Reg<regs::Rep1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn if_(self) -> crate::common::Reg<regs::If, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ien(self) -> crate::common::Reg<regs::Ien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn lock(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn syncbusy(self) -> crate::common::Reg<regs::Syncbusy, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn prsmode(self) -> crate::common::Reg<regs::Prsmode, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn en_set(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn swrst_set(self) -> crate::common::Reg<regs::Swrst, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ctrl_set(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x100cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cmd_set(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cnt_set(self) -> crate::common::Reg<regs::Cnt, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn comp0_set(self) -> crate::common::Reg<regs::Comp0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x101cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn comp1_set(self) -> crate::common::Reg<regs::Comp1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1020usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn top_set(self) -> crate::common::Reg<regs::Top, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn topbuff_set(self) -> crate::common::Reg<regs::Topbuff, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1028usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn rep0_set(self) -> crate::common::Reg<regs::Rep0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x102cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn rep1_set(self) -> crate::common::Reg<regs::Rep1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn if_set(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1034usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ien_set(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1038usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn lock_set(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x103cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn prsmode_set(self) -> crate::common::Reg<regs::Prsmode, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1050usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn en_clr(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn swrst_clr(self) -> crate::common::Reg<regs::Swrst, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ctrl_clr(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x200cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cmd_clr(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cnt_clr(self) -> crate::common::Reg<regs::Cnt, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn comp0_clr(self) -> crate::common::Reg<regs::Comp0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x201cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn comp1_clr(self) -> crate::common::Reg<regs::Comp1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2020usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn top_clr(self) -> crate::common::Reg<regs::Top, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn topbuff_clr(self) -> crate::common::Reg<regs::Topbuff, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2028usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn rep0_clr(self) -> crate::common::Reg<regs::Rep0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x202cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn rep1_clr(self) -> crate::common::Reg<regs::Rep1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn if_clr(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2034usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ien_clr(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2038usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn lock_clr(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x203cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn prsmode_clr(self) -> crate::common::Reg<regs::Prsmode, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2050usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn en_tgl(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn swrst_tgl(self) -> crate::common::Reg<regs::Swrst, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ctrl_tgl(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x300cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cmd_tgl(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cnt_tgl(self) -> crate::common::Reg<regs::Cnt, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn comp0_tgl(self) -> crate::common::Reg<regs::Comp0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x301cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn comp1_tgl(self) -> crate::common::Reg<regs::Comp1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3020usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn top_tgl(self) -> crate::common::Reg<regs::Top, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn topbuff_tgl(self) -> crate::common::Reg<regs::Topbuff, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3028usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn rep0_tgl(self) -> crate::common::Reg<regs::Rep0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x302cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn rep1_tgl(self) -> crate::common::Reg<regs::Rep1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn if_tgl(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3034usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ien_tgl(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3038usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn lock_tgl(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x303cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn prsmode_tgl(self) -> crate::common::Reg<regs::Prsmode, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3050usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cmd(pub u32);
+    impl Cmd {
+        #[doc = "Start LETIMER."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn start(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start LETIMER."]
+        #[inline(always)]
+        pub const fn set_start(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Stop LETIMER."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stop(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stop LETIMER."]
+        #[inline(always)]
+        pub const fn set_stop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Clear LETIMER."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clear(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear LETIMER."]
+        #[inline(always)]
+        pub const fn set_clear(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Clear Toggle Output 0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cto0(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear Toggle Output 0."]
+        #[inline(always)]
+        pub const fn set_cto0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Clear Toggle Output 1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cto1(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear Toggle Output 1."]
+        #[inline(always)]
+        pub const fn set_cto1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Cmd {
+        #[inline(always)]
+        fn default() -> Cmd {
+            Cmd(0)
+        }
+    }
+    impl core::fmt::Debug for Cmd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmd")
+                .field("start", &self.start())
+                .field("stop", &self.stop())
+                .field("clear", &self.clear())
+                .field("cto0", &self.cto0())
+                .field("cto1", &self.cto1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmd {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cmd {{ start: {=bool:?}, stop: {=bool:?}, clear: {=bool:?}, cto0: {=bool:?}, cto1: {=bool:?} }}",
+                self.start(),
+                self.stop(),
+                self.clear(),
+                self.cto0(),
+                self.cto1()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cnt(pub u32);
+    impl Cnt {
+        #[doc = "Counter Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cnt(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
+            val as u32
+        }
+        #[doc = "Counter Value."]
+        #[inline(always)]
+        pub const fn set_cnt(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Cnt {
+        #[inline(always)]
+        fn default() -> Cnt {
+            Cnt(0)
+        }
+    }
+    impl core::fmt::Debug for Cnt {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cnt").field("cnt", &self.cnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cnt {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cnt {{ cnt: {=u32:?} }}", self.cnt())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Comp0(pub u32);
+    impl Comp0 {
+        #[doc = "Compare Value 0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comp0(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
+            val as u32
+        }
+        #[doc = "Compare Value 0."]
+        #[inline(always)]
+        pub const fn set_comp0(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Comp0 {
+        #[inline(always)]
+        fn default() -> Comp0 {
+            Comp0(0)
+        }
+    }
+    impl core::fmt::Debug for Comp0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Comp0").field("comp0", &self.comp0()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Comp0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Comp0 {{ comp0: {=u32:?} }}", self.comp0())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Comp1(pub u32);
+    impl Comp1 {
+        #[doc = "Compare Value 1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comp1(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
+            val as u32
+        }
+        #[doc = "Compare Value 1."]
+        #[inline(always)]
+        pub const fn set_comp1(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Comp1 {
+        #[inline(always)]
+        fn default() -> Comp1 {
+            Comp1(0)
+        }
+    }
+    impl core::fmt::Debug for Comp1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Comp1").field("comp1", &self.comp1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Comp1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Comp1 {{ comp1: {=u32:?} }}", self.comp1())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl(pub u32);
+    impl Ctrl {
+        #[doc = "Repeat Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn repmode(&self) -> super::vals::Repmode {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Repmode::from_bits(val as u8)
+        }
+        #[doc = "Repeat Mode."]
+        #[inline(always)]
+        pub const fn set_repmode(&mut self, val: super::vals::Repmode) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Underflow Output Action 0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ufoa0(&self) -> super::vals::Ufoa0 {
+            let val = (self.0 >> 2usize) & 0x03;
+            super::vals::Ufoa0::from_bits(val as u8)
+        }
+        #[doc = "Underflow Output Action 0."]
+        #[inline(always)]
+        pub const fn set_ufoa0(&mut self, val: super::vals::Ufoa0) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
+        }
+        #[doc = "Underflow Output Action 1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ufoa1(&self) -> super::vals::Ufoa1 {
+            let val = (self.0 >> 4usize) & 0x03;
+            super::vals::Ufoa1::from_bits(val as u8)
+        }
+        #[doc = "Underflow Output Action 1."]
+        #[inline(always)]
+        pub const fn set_ufoa1(&mut self, val: super::vals::Ufoa1) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
+        }
+        #[doc = "Output 0 Polarity."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opol0(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output 0 Polarity."]
+        #[inline(always)]
+        pub const fn set_opol0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Output 1 Polarity."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opol1(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output 1 Polarity."]
+        #[inline(always)]
+        pub const fn set_opol1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Buffered Top."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn buftop(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Buffered Top."]
+        #[inline(always)]
+        pub const fn set_buftop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Compare Value 0 Is Top Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cnttopen(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Value 0 Is Top Value."]
+        #[inline(always)]
+        pub const fn set_cnttopen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "Debug Mode Run Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn debugrun(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Debug Mode Run Enable."]
+        #[inline(always)]
+        pub const fn set_debugrun(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Counter prescaler value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cntpresc(&self) -> super::vals::Cntpresc {
+            let val = (self.0 >> 16usize) & 0x0f;
+            super::vals::Cntpresc::from_bits(val as u8)
+        }
+        #[doc = "Counter prescaler value."]
+        #[inline(always)]
+        pub const fn set_cntpresc(&mut self, val: super::vals::Cntpresc) {
+            self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
+        }
+    }
+    impl Default for Ctrl {
+        #[inline(always)]
+        fn default() -> Ctrl {
+            Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl")
+                .field("repmode", &self.repmode())
+                .field("ufoa0", &self.ufoa0())
+                .field("ufoa1", &self.ufoa1())
+                .field("opol0", &self.opol0())
+                .field("opol1", &self.opol1())
+                .field("buftop", &self.buftop())
+                .field("cnttopen", &self.cnttopen())
+                .field("debugrun", &self.debugrun())
+                .field("cntpresc", &self.cntpresc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ctrl {{ repmode: {:?}, ufoa0: {:?}, ufoa1: {:?}, opol0: {=bool:?}, opol1: {=bool:?}, buftop: {=bool:?}, cnttopen: {=bool:?}, debugrun: {=bool:?}, cntpresc: {:?} }}",
+                self.repmode(),
+                self.ufoa0(),
+                self.ufoa1(),
+                self.opol0(),
+                self.opol1(),
+                self.buftop(),
+                self.cnttopen(),
+                self.debugrun(),
+                self.cntpresc()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct En(pub u32);
+    impl En {
+        #[doc = "module en."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "module en."]
+        #[inline(always)]
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Disablement busy status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn disabling(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disablement busy status."]
+        #[inline(always)]
+        pub const fn set_disabling(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for En {
+        #[inline(always)]
+        fn default() -> En {
+            En(0)
+        }
+    }
+    impl core::fmt::Debug for En {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("En")
+                .field("en", &self.en())
+                .field("disabling", &self.disabling())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for En {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "En {{ en: {=bool:?}, disabling: {=bool:?} }}",
+                self.en(),
+                self.disabling()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ien(pub u32);
+    impl Ien {
+        #[doc = "Compare Match 0 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comp0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Match 0 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_comp0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Compare Match 1 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comp1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Match 1 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_comp1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Underflow Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn uf(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Underflow Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_uf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Repeat Counter 0 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep0(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Repeat Counter 0 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_rep0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Repeat Counter 1 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep1(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Repeat Counter 1 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_rep1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Ien {
+        #[inline(always)]
+        fn default() -> Ien {
+            Ien(0)
+        }
+    }
+    impl core::fmt::Debug for Ien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ien")
+                .field("comp0", &self.comp0())
+                .field("comp1", &self.comp1())
+                .field("uf", &self.uf())
+                .field("rep0", &self.rep0())
+                .field("rep1", &self.rep1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ien {{ comp0: {=bool:?}, comp1: {=bool:?}, uf: {=bool:?}, rep0: {=bool:?}, rep1: {=bool:?} }}",
+                self.comp0(),
+                self.comp1(),
+                self.uf(),
+                self.rep0(),
+                self.rep1()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct If(pub u32);
+    impl If {
+        #[doc = "Compare Match 0 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comp0(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Match 0 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_comp0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Compare Match 1 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn comp1(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Match 1 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_comp1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Underflow Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn uf(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Underflow Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_uf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Repeat Counter 0 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep0(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Repeat Counter 0 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_rep0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Repeat Counter 1 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep1(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Repeat Counter 1 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_rep1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for If {
+        #[inline(always)]
+        fn default() -> If {
+            If(0)
+        }
+    }
+    impl core::fmt::Debug for If {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("If")
+                .field("comp0", &self.comp0())
+                .field("comp1", &self.comp1())
+                .field("uf", &self.uf())
+                .field("rep0", &self.rep0())
+                .field("rep1", &self.rep1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for If {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "If {{ comp0: {=bool:?}, comp1: {=bool:?}, uf: {=bool:?}, rep0: {=bool:?}, rep1: {=bool:?} }}",
+                self.comp0(),
+                self.comp1(),
+                self.uf(),
+                self.rep0(),
+                self.rep1()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ipversion(pub u32);
+    impl Ipversion {
+        #[doc = "IP Version."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ipversion(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "IP Version."]
+        #[inline(always)]
+        pub const fn set_ipversion(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ipversion {
+        #[inline(always)]
+        fn default() -> Ipversion {
+            Ipversion(0)
+        }
+    }
+    impl core::fmt::Debug for Ipversion {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ipversion")
+                .field("ipversion", &self.ipversion())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ipversion {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ipversion {{ ipversion: {=u32:?} }}", self.ipversion())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Lock(pub u32);
+    impl Lock {
+        #[doc = "Configuration Lock Key."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn letimerlockkey(&self) -> super::vals::Letimerlockkey {
+            let val = (self.0 >> 0usize) & 0xffff;
+            super::vals::Letimerlockkey::from_bits(val as u16)
+        }
+        #[doc = "Configuration Lock Key."]
+        #[inline(always)]
+        pub const fn set_letimerlockkey(&mut self, val: super::vals::Letimerlockkey) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Lock {
+        #[inline(always)]
+        fn default() -> Lock {
+            Lock(0)
+        }
+    }
+    impl core::fmt::Debug for Lock {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lock")
+                .field("letimerlockkey", &self.letimerlockkey())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lock {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Lock {{ letimerlockkey: {:?} }}", self.letimerlockkey())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Prsmode(pub u32);
+    impl Prsmode {
+        #[doc = "PRS Start Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prsstartmode(&self) -> super::vals::Prsstartmode {
+            let val = (self.0 >> 18usize) & 0x03;
+            super::vals::Prsstartmode::from_bits(val as u8)
+        }
+        #[doc = "PRS Start Mode."]
+        #[inline(always)]
+        pub const fn set_prsstartmode(&mut self, val: super::vals::Prsstartmode) {
+            self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
+        }
+        #[doc = "PRS Stop Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prsstopmode(&self) -> super::vals::Prsstopmode {
+            let val = (self.0 >> 22usize) & 0x03;
+            super::vals::Prsstopmode::from_bits(val as u8)
+        }
+        #[doc = "PRS Stop Mode."]
+        #[inline(always)]
+        pub const fn set_prsstopmode(&mut self, val: super::vals::Prsstopmode) {
+            self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
+        }
+        #[doc = "PRS Clear Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prsclearmode(&self) -> super::vals::Prsclearmode {
+            let val = (self.0 >> 26usize) & 0x03;
+            super::vals::Prsclearmode::from_bits(val as u8)
+        }
+        #[doc = "PRS Clear Mode."]
+        #[inline(always)]
+        pub const fn set_prsclearmode(&mut self, val: super::vals::Prsclearmode) {
+            self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
+        }
+    }
+    impl Default for Prsmode {
+        #[inline(always)]
+        fn default() -> Prsmode {
+            Prsmode(0)
+        }
+    }
+    impl core::fmt::Debug for Prsmode {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Prsmode")
+                .field("prsstartmode", &self.prsstartmode())
+                .field("prsstopmode", &self.prsstopmode())
+                .field("prsclearmode", &self.prsclearmode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Prsmode {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Prsmode {{ prsstartmode: {:?}, prsstopmode: {:?}, prsclearmode: {:?} }}",
+                self.prsstartmode(),
+                self.prsstopmode(),
+                self.prsclearmode()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rep0(pub u32);
+    impl Rep0 {
+        #[doc = "Repeat Counter 0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep0(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Repeat Counter 0."]
+        #[inline(always)]
+        pub const fn set_rep0(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Rep0 {
+        #[inline(always)]
+        fn default() -> Rep0 {
+            Rep0(0)
+        }
+    }
+    impl core::fmt::Debug for Rep0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rep0").field("rep0", &self.rep0()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rep0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rep0 {{ rep0: {=u8:?} }}", self.rep0())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rep1(pub u32);
+    impl Rep1 {
+        #[doc = "Repeat Counter 1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep1(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Repeat Counter 1."]
+        #[inline(always)]
+        pub const fn set_rep1(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Rep1 {
+        #[inline(always)]
+        fn default() -> Rep1 {
+            Rep1(0)
+        }
+    }
+    impl core::fmt::Debug for Rep1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rep1").field("rep1", &self.rep1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rep1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rep1 {{ rep1: {=u8:?} }}", self.rep1())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Status(pub u32);
+    impl Status {
+        #[doc = "LETIMER Running."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn running(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LETIMER Running."]
+        #[inline(always)]
+        pub const fn set_running(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "LETIMER Lock Status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn letimerlockstatus(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LETIMER Lock Status."]
+        #[inline(always)]
+        pub const fn set_letimerlockstatus(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Status {
+        #[inline(always)]
+        fn default() -> Status {
+            Status(0)
+        }
+    }
+    impl core::fmt::Debug for Status {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Status")
+                .field("running", &self.running())
+                .field("letimerlockstatus", &self.letimerlockstatus())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Status {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Status {{ running: {=bool:?}, letimerlockstatus: {=bool:?} }}",
+                self.running(),
+                self.letimerlockstatus()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Swrst(pub u32);
+    impl Swrst {
+        #[doc = "Software reset command."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swrst(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software reset command."]
+        #[inline(always)]
+        pub const fn set_swrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Software reset busy status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn resetting(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software reset busy status."]
+        #[inline(always)]
+        pub const fn set_resetting(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Swrst {
+        #[inline(always)]
+        fn default() -> Swrst {
+            Swrst(0)
+        }
+    }
+    impl core::fmt::Debug for Swrst {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Swrst")
+                .field("swrst", &self.swrst())
+                .field("resetting", &self.resetting())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Swrst {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Swrst {{ swrst: {=bool:?}, resetting: {=bool:?} }}",
+                self.swrst(),
+                self.resetting()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Syncbusy(pub u32);
+    impl Syncbusy {
+        #[doc = "Sync busy for CNT."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cnt(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for CNT."]
+        #[inline(always)]
+        pub const fn set_cnt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Sync busy for TOP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn top(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for TOP."]
+        #[inline(always)]
+        pub const fn set_top(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Sync busy for REP0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep0(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for REP0."]
+        #[inline(always)]
+        pub const fn set_rep0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Sync busy for REP1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rep1(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for REP1."]
+        #[inline(always)]
+        pub const fn set_rep1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Sync busy for START."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn start(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for START."]
+        #[inline(always)]
+        pub const fn set_start(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Sync busy for STOP."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stop(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for STOP."]
+        #[inline(always)]
+        pub const fn set_stop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Sync busy for CLEAR."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clear(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for CLEAR."]
+        #[inline(always)]
+        pub const fn set_clear(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Sync busy for CTO0."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cto0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for CTO0."]
+        #[inline(always)]
+        pub const fn set_cto0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Sync busy for CTO1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cto1(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync busy for CTO1."]
+        #[inline(always)]
+        pub const fn set_cto1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+    }
+    impl Default for Syncbusy {
+        #[inline(always)]
+        fn default() -> Syncbusy {
+            Syncbusy(0)
+        }
+    }
+    impl core::fmt::Debug for Syncbusy {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Syncbusy")
+                .field("cnt", &self.cnt())
+                .field("top", &self.top())
+                .field("rep0", &self.rep0())
+                .field("rep1", &self.rep1())
+                .field("start", &self.start())
+                .field("stop", &self.stop())
+                .field("clear", &self.clear())
+                .field("cto0", &self.cto0())
+                .field("cto1", &self.cto1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Syncbusy {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Syncbusy {{ cnt: {=bool:?}, top: {=bool:?}, rep0: {=bool:?}, rep1: {=bool:?}, start: {=bool:?}, stop: {=bool:?}, clear: {=bool:?}, cto0: {=bool:?}, cto1: {=bool:?} }}",
+                self.cnt(),
+                self.top(),
+                self.rep0(),
+                self.rep1(),
+                self.start(),
+                self.stop(),
+                self.clear(),
+                self.cto0(),
+                self.cto1()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Top(pub u32);
+    impl Top {
+        #[doc = "Counter TOP Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn top(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
+            val as u32
+        }
+        #[doc = "Counter TOP Value."]
+        #[inline(always)]
+        pub const fn set_top(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Top {
+        #[inline(always)]
+        fn default() -> Top {
+            Top(0)
+        }
+    }
+    impl core::fmt::Debug for Top {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Top").field("top", &self.top()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Top {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Top {{ top: {=u32:?} }}", self.top())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Topbuff(pub u32);
+    impl Topbuff {
+        #[doc = "Buffered Counter TOP Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn topbuff(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
+            val as u32
+        }
+        #[doc = "Buffered Counter TOP Value."]
+        #[inline(always)]
+        pub const fn set_topbuff(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Topbuff {
+        #[inline(always)]
+        fn default() -> Topbuff {
+            Topbuff(0)
+        }
+    }
+    impl core::fmt::Debug for Topbuff {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Topbuff").field("topbuff", &self.topbuff()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Topbuff {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Topbuff {{ topbuff: {=u32:?} }}", self.topbuff())
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cntpresc {
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/1."]
+        Div1 = 0x0,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/2."]
+        Div2 = 0x01,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/4."]
+        Div4 = 0x02,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/8."]
+        Div8 = 0x03,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/16."]
+        Div16 = 0x04,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/32."]
+        Div32 = 0x05,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/64."]
+        Div64 = 0x06,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/128."]
+        Div128 = 0x07,
+        #[doc = "CLK_CNT = (LETIMER LF CLK)/256."]
+        Div256 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Cntpresc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cntpresc {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cntpresc {
+        #[inline(always)]
+        fn from(val: u8) -> Cntpresc {
+            Cntpresc::from_bits(val)
+        }
+    }
+    impl From<Cntpresc> for u8 {
+        #[inline(always)]
+        fn from(val: Cntpresc) -> u8 {
+            Cntpresc::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Letimerlockkey(u16);
+    impl Letimerlockkey {
+        #[doc = "Write to unock LETIMER lockable registers."]
+        pub const Unlock: Self = Self(0xccfc);
+    }
+    impl Letimerlockkey {
+        pub const fn from_bits(val: u16) -> Letimerlockkey {
+            Self(val & 0xffff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Letimerlockkey {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0xccfc => f.write_str("Unlock"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Letimerlockkey {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0xccfc => defmt::write!(f, "Unlock"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Letimerlockkey {
+        #[inline(always)]
+        fn from(val: u16) -> Letimerlockkey {
+            Letimerlockkey::from_bits(val)
+        }
+    }
+    impl From<Letimerlockkey> for u16 {
+        #[inline(always)]
+        fn from(val: Letimerlockkey) -> u16 {
+            Letimerlockkey::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Prsclearmode {
+        #[doc = "PRS cannot clear the LETIMER."]
+        None = 0x0,
+        #[doc = "Rising edge of selected PRS input can clear the LETIMER."]
+        Rising = 0x01,
+        #[doc = "Falling edge of selected PRS input can clear the LETIMER."]
+        Falling = 0x02,
+        #[doc = "Both the rising or falling edge of the selected PRS input can clear the LETIMER."]
+        Both = 0x03,
+    }
+    impl Prsclearmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Prsclearmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Prsclearmode {
+        #[inline(always)]
+        fn from(val: u8) -> Prsclearmode {
+            Prsclearmode::from_bits(val)
+        }
+    }
+    impl From<Prsclearmode> for u8 {
+        #[inline(always)]
+        fn from(val: Prsclearmode) -> u8 {
+            Prsclearmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Prsstartmode {
+        #[doc = "PRS cannot start the LETIMER."]
+        None = 0x0,
+        #[doc = "Rising edge of selected PRS input can start the LETIMER."]
+        Rising = 0x01,
+        #[doc = "Falling edge of selected PRS input can start the LETIMER."]
+        Falling = 0x02,
+        #[doc = "Both the rising or falling edge of the selected PRS input can start the LETIMER."]
+        Both = 0x03,
+    }
+    impl Prsstartmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Prsstartmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Prsstartmode {
+        #[inline(always)]
+        fn from(val: u8) -> Prsstartmode {
+            Prsstartmode::from_bits(val)
+        }
+    }
+    impl From<Prsstartmode> for u8 {
+        #[inline(always)]
+        fn from(val: Prsstartmode) -> u8 {
+            Prsstartmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Prsstopmode {
+        #[doc = "PRS cannot stop the LETIMER."]
+        None = 0x0,
+        #[doc = "Rising edge of selected PRS input can stop the LETIMER."]
+        Rising = 0x01,
+        #[doc = "Falling edge of selected PRS input can stop the LETIMER."]
+        Falling = 0x02,
+        #[doc = "Both the rising or falling edge of the selected PRS input can stop the LETIMER."]
+        Both = 0x03,
+    }
+    impl Prsstopmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Prsstopmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Prsstopmode {
+        #[inline(always)]
+        fn from(val: u8) -> Prsstopmode {
+            Prsstopmode::from_bits(val)
+        }
+    }
+    impl From<Prsstopmode> for u8 {
+        #[inline(always)]
+        fn from(val: Prsstopmode) -> u8 {
+            Prsstopmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Repmode {
+        #[doc = "When started, the LETIMER counts down until it is stopped by software."]
+        Free = 0x0,
+        #[doc = "The counter counts REP0 times. When REP0 reaches zero, the counter stops."]
+        Oneshot = 0x01,
+        #[doc = "The counter counts REP0 times. If REP1 has been written, it is loaded into REP0 when REP0 reaches zero, otherwise the counter stops."]
+        Buffered = 0x02,
+        #[doc = "Both REP0 and REP1 are decremented when the LETIMER wraps around. The LETIMER counts until both REP0 and REP1 are zero."]
+        Double = 0x03,
+    }
+    impl Repmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Repmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Repmode {
+        #[inline(always)]
+        fn from(val: u8) -> Repmode {
+            Repmode::from_bits(val)
+        }
+    }
+    impl From<Repmode> for u8 {
+        #[inline(always)]
+        fn from(val: Repmode) -> u8 {
+            Repmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ufoa0 {
+        #[doc = "LETIMERn_OUT0 is held at its idle value as defined by OPOL0."]
+        None = 0x0,
+        #[doc = "LETIMERn_OUT0 is toggled on CNT underflow."]
+        Toggle = 0x01,
+        #[doc = "LETIMERn_OUT0 is held active for one LETIMER0 clock cycle on CNT underflow. The output then returns to its idle value as defined by OPOL0."]
+        Pulse = 0x02,
+        #[doc = "LETIMERn_OUT0 is set idle on CNT underflow, and active on compare match with COMP0."]
+        Pwm = 0x03,
+    }
+    impl Ufoa0 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ufoa0 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ufoa0 {
+        #[inline(always)]
+        fn from(val: u8) -> Ufoa0 {
+            Ufoa0::from_bits(val)
+        }
+    }
+    impl From<Ufoa0> for u8 {
+        #[inline(always)]
+        fn from(val: Ufoa0) -> u8 {
+            Ufoa0::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ufoa1 {
+        #[doc = "LETIMERn_OUT1 is held at its idle value as defined by OPOL1."]
+        None = 0x0,
+        #[doc = "LETIMERn_OUT1 is toggled on CNT underflow."]
+        Toggle = 0x01,
+        #[doc = "LETIMERn_OUT1 is held active for one LETIMER0 clock cycle on CNT underflow. The output then returns to its idle value as defined by OPOL1."]
+        Pulse = 0x02,
+        #[doc = "LETIMERn_OUT1 is set idle on CNT underflow, and active on compare match with COMP1."]
+        Pwm = 0x03,
+    }
+    impl Ufoa1 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ufoa1 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ufoa1 {
+        #[inline(always)]
+        fn from(val: u8) -> Ufoa1 {
+            Ufoa1::from_bits(val)
+        }
+    }
+    impl From<Ufoa1> for u8 {
+        #[inline(always)]
+        fn from(val: Ufoa1) -> u8 {
+            Ufoa1::to_bits(val)
+        }
+    }
+}

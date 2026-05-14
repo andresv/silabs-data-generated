@@ -1,0 +1,2939 @@
+#[doc = "LCD peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Lcd {
+    ptr: *mut u8,
+}
+unsafe impl Send for Lcd {}
+unsafe impl Sync for Lcd {}
+impl Lcd {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ipversion(self) -> crate::common::Reg<regs::Ipversion, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn en(self) -> crate::common::Reg<regs::En, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn swrst(self) -> crate::common::Reg<regs::Swrst, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cmd(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dispctrl(self) -> crate::common::Reg<regs::Dispctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn bacfg(self) -> crate::common::Reg<regs::Bacfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn bactrl(self) -> crate::common::Reg<regs::Bactrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn status(self) -> crate::common::Reg<regs::Status, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn arega(self) -> crate::common::Reg<regs::Arega, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn aregb(self) -> crate::common::Reg<regs::Aregb, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn if_(self) -> crate::common::Reg<regs::If, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ien(self) -> crate::common::Reg<regs::Ien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn biasctrl(self) -> crate::common::Reg<regs::Biasctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dispctrlx(self) -> crate::common::Reg<regs::Dispctrlx, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
+    }
+    #[doc = "SEGD0 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd0(self) -> crate::common::Reg<regs::Segd0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "SEGD0H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd0h(self) -> crate::common::Reg<regs::Segd0h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
+    }
+    #[doc = "SEGD1 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd1(self) -> crate::common::Reg<regs::Segd1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
+    }
+    #[doc = "SEGD1H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd1h(self) -> crate::common::Reg<regs::Segd1h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
+    }
+    #[doc = "SEGD2 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd2(self) -> crate::common::Reg<regs::Segd2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
+    }
+    #[doc = "SEGD2H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd2h(self) -> crate::common::Reg<regs::Segd2h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
+    }
+    #[doc = "SEGD3 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd3(self) -> crate::common::Reg<regs::Segd3, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
+    }
+    #[doc = "SEGD3H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd3h(self) -> crate::common::Reg<regs::Segd3h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x5cusize) as _) }
+    }
+    #[doc = "SEGD4 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd4(self) -> crate::common::Reg<regs::Segd4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize) as _) }
+    }
+    #[doc = "SEGD4H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd4h(self) -> crate::common::Reg<regs::Segd4h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x64usize) as _) }
+    }
+    #[doc = "SEGD5 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd5(self) -> crate::common::Reg<regs::Segd5, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
+    }
+    #[doc = "SEGD5H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd5h(self) -> crate::common::Reg<regs::Segd5h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x6cusize) as _) }
+    }
+    #[doc = "SEGD6 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd6(self) -> crate::common::Reg<regs::Segd6, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
+    }
+    #[doc = "SEGD6H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd6h(self) -> crate::common::Reg<regs::Segd6h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
+    }
+    #[doc = "SEGD7 - Register for Segments 31:0."]
+    #[inline(always)]
+    pub const fn segd7(self) -> crate::common::Reg<regs::Segd7, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x78usize) as _) }
+    }
+    #[doc = "SEGD7H - Register for Segments 39:32."]
+    #[inline(always)]
+    pub const fn segd7h(self) -> crate::common::Reg<regs::Segd7h, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x7cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn updatectrl(self) -> crate::common::Reg<regs::Updatectrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn framerate(self) -> crate::common::Reg<regs::Framerate, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn en_set(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn swrst_set(self) -> crate::common::Reg<regs::Swrst, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ctrl_set(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x100cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cmd_set(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dispctrl_set(self) -> crate::common::Reg<regs::Dispctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn bacfg_set(self) -> crate::common::Reg<regs::Bacfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn bactrl_set(self) -> crate::common::Reg<regs::Bactrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x101cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn arega_set(self) -> crate::common::Reg<regs::Arega, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn aregb_set(self) -> crate::common::Reg<regs::Aregb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1028usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn if_set(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x102cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ien_set(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn biasctrl_set(self) -> crate::common::Reg<regs::Biasctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1034usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dispctrlx_set(self) -> crate::common::Reg<regs::Dispctrlx, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1038usize) as _) }
+    }
+    #[doc = "SEGD0 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd0_set(self) -> crate::common::Reg<regs::Segd0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1040usize) as _) }
+    }
+    #[doc = "SEGD0H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd0h_set(self) -> crate::common::Reg<regs::Segd0h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1044usize) as _) }
+    }
+    #[doc = "SEGD1 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd1_set(self) -> crate::common::Reg<regs::Segd1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1048usize) as _) }
+    }
+    #[doc = "SEGD1H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd1h_set(self) -> crate::common::Reg<regs::Segd1h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x104cusize) as _) }
+    }
+    #[doc = "SEGD2 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd2_set(self) -> crate::common::Reg<regs::Segd2, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1050usize) as _) }
+    }
+    #[doc = "SEGD2H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd2h_set(self) -> crate::common::Reg<regs::Segd2h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1054usize) as _) }
+    }
+    #[doc = "SEGD3 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd3_set(self) -> crate::common::Reg<regs::Segd3, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1058usize) as _) }
+    }
+    #[doc = "SEGD3H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd3h_set(self) -> crate::common::Reg<regs::Segd3h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x105cusize) as _) }
+    }
+    #[doc = "SEGD4 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd4_set(self) -> crate::common::Reg<regs::Segd4, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1060usize) as _) }
+    }
+    #[doc = "SEGD4H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd4h_set(self) -> crate::common::Reg<regs::Segd4h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1064usize) as _) }
+    }
+    #[doc = "SEGD5 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd5_set(self) -> crate::common::Reg<regs::Segd5, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1068usize) as _) }
+    }
+    #[doc = "SEGD5H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd5h_set(self) -> crate::common::Reg<regs::Segd5h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x106cusize) as _) }
+    }
+    #[doc = "SEGD6 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd6_set(self) -> crate::common::Reg<regs::Segd6, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1070usize) as _) }
+    }
+    #[doc = "SEGD6H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd6h_set(self) -> crate::common::Reg<regs::Segd6h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1074usize) as _) }
+    }
+    #[doc = "SEGD7 - Register for Segments 31:0. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd7_set(self) -> crate::common::Reg<regs::Segd7, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1078usize) as _) }
+    }
+    #[doc = "SEGD7H - Register for Segments 39:32. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn segd7h_set(self) -> crate::common::Reg<regs::Segd7h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x107cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn updatectrl_set(self) -> crate::common::Reg<regs::Updatectrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10c0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn framerate_set(self) -> crate::common::Reg<regs::Framerate, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10f0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn en_clr(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn swrst_clr(self) -> crate::common::Reg<regs::Swrst, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ctrl_clr(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x200cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cmd_clr(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dispctrl_clr(self) -> crate::common::Reg<regs::Dispctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn bacfg_clr(self) -> crate::common::Reg<regs::Bacfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn bactrl_clr(self) -> crate::common::Reg<regs::Bactrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x201cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn arega_clr(self) -> crate::common::Reg<regs::Arega, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn aregb_clr(self) -> crate::common::Reg<regs::Aregb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2028usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn if_clr(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x202cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ien_clr(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn biasctrl_clr(self) -> crate::common::Reg<regs::Biasctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2034usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dispctrlx_clr(self) -> crate::common::Reg<regs::Dispctrlx, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2038usize) as _) }
+    }
+    #[doc = "SEGD0 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd0_clr(self) -> crate::common::Reg<regs::Segd0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2040usize) as _) }
+    }
+    #[doc = "SEGD0H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd0h_clr(self) -> crate::common::Reg<regs::Segd0h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2044usize) as _) }
+    }
+    #[doc = "SEGD1 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd1_clr(self) -> crate::common::Reg<regs::Segd1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2048usize) as _) }
+    }
+    #[doc = "SEGD1H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd1h_clr(self) -> crate::common::Reg<regs::Segd1h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x204cusize) as _) }
+    }
+    #[doc = "SEGD2 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd2_clr(self) -> crate::common::Reg<regs::Segd2, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2050usize) as _) }
+    }
+    #[doc = "SEGD2H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd2h_clr(self) -> crate::common::Reg<regs::Segd2h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2054usize) as _) }
+    }
+    #[doc = "SEGD3 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd3_clr(self) -> crate::common::Reg<regs::Segd3, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2058usize) as _) }
+    }
+    #[doc = "SEGD3H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd3h_clr(self) -> crate::common::Reg<regs::Segd3h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x205cusize) as _) }
+    }
+    #[doc = "SEGD4 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd4_clr(self) -> crate::common::Reg<regs::Segd4, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2060usize) as _) }
+    }
+    #[doc = "SEGD4H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd4h_clr(self) -> crate::common::Reg<regs::Segd4h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2064usize) as _) }
+    }
+    #[doc = "SEGD5 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd5_clr(self) -> crate::common::Reg<regs::Segd5, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2068usize) as _) }
+    }
+    #[doc = "SEGD5H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd5h_clr(self) -> crate::common::Reg<regs::Segd5h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x206cusize) as _) }
+    }
+    #[doc = "SEGD6 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd6_clr(self) -> crate::common::Reg<regs::Segd6, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2070usize) as _) }
+    }
+    #[doc = "SEGD6H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd6h_clr(self) -> crate::common::Reg<regs::Segd6h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2074usize) as _) }
+    }
+    #[doc = "SEGD7 - Register for Segments 31:0. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd7_clr(self) -> crate::common::Reg<regs::Segd7, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2078usize) as _) }
+    }
+    #[doc = "SEGD7H - Register for Segments 39:32. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn segd7h_clr(self) -> crate::common::Reg<regs::Segd7h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x207cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn updatectrl_clr(self) -> crate::common::Reg<regs::Updatectrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20c0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn framerate_clr(self) -> crate::common::Reg<regs::Framerate, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20f0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn en_tgl(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn swrst_tgl(self) -> crate::common::Reg<regs::Swrst, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ctrl_tgl(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x300cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cmd_tgl(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dispctrl_tgl(self) -> crate::common::Reg<regs::Dispctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn bacfg_tgl(self) -> crate::common::Reg<regs::Bacfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn bactrl_tgl(self) -> crate::common::Reg<regs::Bactrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x301cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn arega_tgl(self) -> crate::common::Reg<regs::Arega, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn aregb_tgl(self) -> crate::common::Reg<regs::Aregb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3028usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn if_tgl(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x302cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ien_tgl(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn biasctrl_tgl(self) -> crate::common::Reg<regs::Biasctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3034usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dispctrlx_tgl(self) -> crate::common::Reg<regs::Dispctrlx, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3038usize) as _) }
+    }
+    #[doc = "SEGD0 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd0_tgl(self) -> crate::common::Reg<regs::Segd0, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3040usize) as _) }
+    }
+    #[doc = "SEGD0H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd0h_tgl(self) -> crate::common::Reg<regs::Segd0h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3044usize) as _) }
+    }
+    #[doc = "SEGD1 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd1_tgl(self) -> crate::common::Reg<regs::Segd1, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3048usize) as _) }
+    }
+    #[doc = "SEGD1H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd1h_tgl(self) -> crate::common::Reg<regs::Segd1h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x304cusize) as _) }
+    }
+    #[doc = "SEGD2 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd2_tgl(self) -> crate::common::Reg<regs::Segd2, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3050usize) as _) }
+    }
+    #[doc = "SEGD2H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd2h_tgl(self) -> crate::common::Reg<regs::Segd2h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3054usize) as _) }
+    }
+    #[doc = "SEGD3 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd3_tgl(self) -> crate::common::Reg<regs::Segd3, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3058usize) as _) }
+    }
+    #[doc = "SEGD3H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd3h_tgl(self) -> crate::common::Reg<regs::Segd3h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x305cusize) as _) }
+    }
+    #[doc = "SEGD4 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd4_tgl(self) -> crate::common::Reg<regs::Segd4, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3060usize) as _) }
+    }
+    #[doc = "SEGD4H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd4h_tgl(self) -> crate::common::Reg<regs::Segd4h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3064usize) as _) }
+    }
+    #[doc = "SEGD5 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd5_tgl(self) -> crate::common::Reg<regs::Segd5, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3068usize) as _) }
+    }
+    #[doc = "SEGD5H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd5h_tgl(self) -> crate::common::Reg<regs::Segd5h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x306cusize) as _) }
+    }
+    #[doc = "SEGD6 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd6_tgl(self) -> crate::common::Reg<regs::Segd6, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3070usize) as _) }
+    }
+    #[doc = "SEGD6H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd6h_tgl(self) -> crate::common::Reg<regs::Segd6h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3074usize) as _) }
+    }
+    #[doc = "SEGD7 - Register for Segments 31:0. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd7_tgl(self) -> crate::common::Reg<regs::Segd7, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3078usize) as _) }
+    }
+    #[doc = "SEGD7H - Register for Segments 39:32. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn segd7h_tgl(self) -> crate::common::Reg<regs::Segd7h, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x307cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn updatectrl_tgl(self) -> crate::common::Reg<regs::Updatectrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30c0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn framerate_tgl(self) -> crate::common::Reg<regs::Framerate, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30f0usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Arega(pub u32);
+    impl Arega {
+        #[doc = "Animation Register A Data."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn arega(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Animation Register A Data."]
+        #[inline(always)]
+        pub const fn set_arega(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Arega {
+        #[inline(always)]
+        fn default() -> Arega {
+            Arega(0)
+        }
+    }
+    impl core::fmt::Debug for Arega {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Arega").field("arega", &self.arega()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Arega {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Arega {{ arega: {=u8:?} }}", self.arega())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Aregb(pub u32);
+    impl Aregb {
+        #[doc = "Animation Register B Data."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aregb(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Animation Register B Data."]
+        #[inline(always)]
+        pub const fn set_aregb(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Aregb {
+        #[inline(always)]
+        fn default() -> Aregb {
+            Aregb(0)
+        }
+    }
+    impl core::fmt::Debug for Aregb {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Aregb").field("aregb", &self.aregb()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Aregb {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Aregb {{ aregb: {=u8:?} }}", self.aregb())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Bacfg(pub u32);
+    impl Bacfg {
+        #[doc = "ASTATE top cnt."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn astatetop(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "ASTATE top cnt."]
+        #[inline(always)]
+        pub const fn set_astatetop(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "Frame Counter Prescaler."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fcpresc(&self) -> super::vals::Fcpresc {
+            let val = (self.0 >> 16usize) & 0x03;
+            super::vals::Fcpresc::from_bits(val as u8)
+        }
+        #[doc = "Frame Counter Prescaler."]
+        #[inline(always)]
+        pub const fn set_fcpresc(&mut self, val: super::vals::Fcpresc) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
+        }
+        #[doc = "Frame Counter Top."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fctop(&self) -> u8 {
+            let val = (self.0 >> 18usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Frame Counter Top."]
+        #[inline(always)]
+        pub const fn set_fctop(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 18usize)) | (((val as u32) & 0x3f) << 18usize);
+        }
+    }
+    impl Default for Bacfg {
+        #[inline(always)]
+        fn default() -> Bacfg {
+            Bacfg(0)
+        }
+    }
+    impl core::fmt::Debug for Bacfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bacfg")
+                .field("astatetop", &self.astatetop())
+                .field("fcpresc", &self.fcpresc())
+                .field("fctop", &self.fctop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bacfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Bacfg {{ astatetop: {=u8:?}, fcpresc: {:?}, fctop: {=u8:?} }}",
+                self.astatetop(),
+                self.fcpresc(),
+                self.fctop()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Bactrl(pub u32);
+    impl Bactrl {
+        #[doc = "Blink Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn blinken(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Blink Enable."]
+        #[inline(always)]
+        pub const fn set_blinken(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Blank Display."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn blank(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Blank Display."]
+        #[inline(always)]
+        pub const fn set_blank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Animation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aen(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Animation Enable."]
+        #[inline(always)]
+        pub const fn set_aen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Animate Register A Shift Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aregasc(&self) -> super::vals::Aregasc {
+            let val = (self.0 >> 3usize) & 0x03;
+            super::vals::Aregasc::from_bits(val as u8)
+        }
+        #[doc = "Animate Register A Shift Control."]
+        #[inline(always)]
+        pub const fn set_aregasc(&mut self, val: super::vals::Aregasc) {
+            self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
+        }
+        #[doc = "Animate Register B Shift Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aregbsc(&self) -> super::vals::Aregbsc {
+            let val = (self.0 >> 5usize) & 0x03;
+            super::vals::Aregbsc::from_bits(val as u8)
+        }
+        #[doc = "Animate Register B Shift Control."]
+        #[inline(always)]
+        pub const fn set_aregbsc(&mut self, val: super::vals::Aregbsc) {
+            self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
+        }
+        #[doc = "Animate Logic Function Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn alogsel(&self) -> super::vals::Alogsel {
+            let val = (self.0 >> 7usize) & 0x01;
+            super::vals::Alogsel::from_bits(val as u8)
+        }
+        #[doc = "Animate Logic Function Select."]
+        #[inline(always)]
+        pub const fn set_alogsel(&mut self, val: super::vals::Alogsel) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Frame Counter Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fcen(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Frame Counter Enable."]
+        #[inline(always)]
+        pub const fn set_fcen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Display Counter Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn displaycnten(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Display Counter Enable."]
+        #[inline(always)]
+        pub const fn set_displaycnten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "Animation Location."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn aloc(&self) -> super::vals::Aloc {
+            let val = (self.0 >> 28usize) & 0x01;
+            super::vals::Aloc::from_bits(val as u8)
+        }
+        #[doc = "Animation Location."]
+        #[inline(always)]
+        pub const fn set_aloc(&mut self, val: super::vals::Aloc) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        }
+    }
+    impl Default for Bactrl {
+        #[inline(always)]
+        fn default() -> Bactrl {
+            Bactrl(0)
+        }
+    }
+    impl core::fmt::Debug for Bactrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bactrl")
+                .field("blinken", &self.blinken())
+                .field("blank", &self.blank())
+                .field("aen", &self.aen())
+                .field("aregasc", &self.aregasc())
+                .field("aregbsc", &self.aregbsc())
+                .field("alogsel", &self.alogsel())
+                .field("fcen", &self.fcen())
+                .field("displaycnten", &self.displaycnten())
+                .field("aloc", &self.aloc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bactrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Bactrl {{ blinken: {=bool:?}, blank: {=bool:?}, aen: {=bool:?}, aregasc: {:?}, aregbsc: {:?}, alogsel: {:?}, fcen: {=bool:?}, displaycnten: {=bool:?}, aloc: {:?} }}",
+                self.blinken(),
+                self.blank(),
+                self.aen(),
+                self.aregasc(),
+                self.aregbsc(),
+                self.alogsel(),
+                self.fcen(),
+                self.displaycnten(),
+                self.aloc()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Biasctrl(pub u32);
+    impl Biasctrl {
+        #[doc = "Resistor strength."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn resistor(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Resistor strength."]
+        #[inline(always)]
+        pub const fn set_resistor(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Buffer Drive Strength."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bufdrv(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Buffer Drive Strength."]
+        #[inline(always)]
+        pub const fn set_bufdrv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "Buffer Bias Setting."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bufbias(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Buffer Bias Setting."]
+        #[inline(always)]
+        pub const fn set_bufbias(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+        #[doc = "Mode Setting."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> super::vals::Mode {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Mode::from_bits(val as u8)
+        }
+        #[doc = "Mode Setting."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: super::vals::Mode) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "VLCD voltage level."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn vlcd(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "VLCD voltage level."]
+        #[inline(always)]
+        pub const fn set_vlcd(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
+        }
+        #[doc = "VDDX select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn vddxsel(&self) -> super::vals::Vddxsel {
+            let val = (self.0 >> 22usize) & 0x01;
+            super::vals::Vddxsel::from_bits(val as u8)
+        }
+        #[doc = "VDDX select."]
+        #[inline(always)]
+        pub const fn set_vddxsel(&mut self, val: super::vals::Vddxsel) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        }
+        #[doc = "LCD Gate."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lcdgate(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD Gate."]
+        #[inline(always)]
+        pub const fn set_lcdgate(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "DMA Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dmamode(&self) -> super::vals::Dmamode {
+            let val = (self.0 >> 30usize) & 0x03;
+            super::vals::Dmamode::from_bits(val as u8)
+        }
+        #[doc = "DMA Mode."]
+        #[inline(always)]
+        pub const fn set_dmamode(&mut self, val: super::vals::Dmamode) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
+        }
+    }
+    impl Default for Biasctrl {
+        #[inline(always)]
+        fn default() -> Biasctrl {
+            Biasctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Biasctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Biasctrl")
+                .field("resistor", &self.resistor())
+                .field("bufdrv", &self.bufdrv())
+                .field("bufbias", &self.bufbias())
+                .field("mode", &self.mode())
+                .field("vlcd", &self.vlcd())
+                .field("vddxsel", &self.vddxsel())
+                .field("lcdgate", &self.lcdgate())
+                .field("dmamode", &self.dmamode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Biasctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Biasctrl {{ resistor: {=u8:?}, bufdrv: {=u8:?}, bufbias: {=u8:?}, mode: {:?}, vlcd: {=u8:?}, vddxsel: {:?}, lcdgate: {=bool:?}, dmamode: {:?} }}",
+                self.resistor(),
+                self.bufdrv(),
+                self.bufbias(),
+                self.mode(),
+                self.vlcd(),
+                self.vddxsel(),
+                self.lcdgate(),
+                self.dmamode()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cmd(pub u32);
+    impl Cmd {
+        #[doc = "Load command."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn load(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Load command."]
+        #[inline(always)]
+        pub const fn set_load(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Clear command."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clear(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear command."]
+        #[inline(always)]
+        pub const fn set_clear(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Cmd {
+        #[inline(always)]
+        fn default() -> Cmd {
+            Cmd(0)
+        }
+    }
+    impl core::fmt::Debug for Cmd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmd")
+                .field("load", &self.load())
+                .field("clear", &self.clear())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmd {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cmd {{ load: {=bool:?}, clear: {=bool:?} }}",
+                self.load(),
+                self.clear()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl(pub u32);
+    impl Ctrl {
+        #[doc = "Update Data Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn udctrl(&self) -> super::vals::Udctrl {
+            let val = (self.0 >> 1usize) & 0x03;
+            super::vals::Udctrl::from_bits(val as u8)
+        }
+        #[doc = "Update Data Control."]
+        #[inline(always)]
+        pub const fn set_udctrl(&mut self, val: super::vals::Udctrl) {
+            self.0 = (self.0 & !(0x03 << 1usize)) | (((val.to_bits() as u32) & 0x03) << 1usize);
+        }
+        #[doc = "Direct Segment Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dsc(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Direct Segment Control."]
+        #[inline(always)]
+        pub const fn set_dsc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Warmup Delay."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn warmupdly(&self) -> super::vals::Warmupdly {
+            let val = (self.0 >> 18usize) & 0x07;
+            super::vals::Warmupdly::from_bits(val as u8)
+        }
+        #[doc = "Warmup Delay."]
+        #[inline(always)]
+        pub const fn set_warmupdly(&mut self, val: super::vals::Warmupdly) {
+            self.0 = (self.0 & !(0x07 << 18usize)) | (((val.to_bits() as u32) & 0x07) << 18usize);
+        }
+        #[doc = "Presclae."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prescale(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Presclae."]
+        #[inline(always)]
+        pub const fn set_prescale(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
+        }
+    }
+    impl Default for Ctrl {
+        #[inline(always)]
+        fn default() -> Ctrl {
+            Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl")
+                .field("udctrl", &self.udctrl())
+                .field("dsc", &self.dsc())
+                .field("warmupdly", &self.warmupdly())
+                .field("prescale", &self.prescale())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ctrl {{ udctrl: {:?}, dsc: {=bool:?}, warmupdly: {:?}, prescale: {=u8:?} }}",
+                self.udctrl(),
+                self.dsc(),
+                self.warmupdly(),
+                self.prescale()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dispctrl(pub u32);
+    impl Dispctrl {
+        #[doc = "Mux Configuration."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mux(&self) -> super::vals::Mux {
+            let val = (self.0 >> 0usize) & 0x07;
+            super::vals::Mux::from_bits(val as u8)
+        }
+        #[doc = "Mux Configuration."]
+        #[inline(always)]
+        pub const fn set_mux(&mut self, val: super::vals::Mux) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+        }
+        #[doc = "Waveform Selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wave(&self) -> super::vals::Wave {
+            let val = (self.0 >> 4usize) & 0x01;
+            super::vals::Wave::from_bits(val as u8)
+        }
+        #[doc = "Waveform Selection."]
+        #[inline(always)]
+        pub const fn set_wave(&mut self, val: super::vals::Wave) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Charge Redistribution Cycles."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn chgrdst(&self) -> super::vals::Chgrdst {
+            let val = (self.0 >> 20usize) & 0x07;
+            super::vals::Chgrdst::from_bits(val as u8)
+        }
+        #[doc = "Charge Redistribution Cycles."]
+        #[inline(always)]
+        pub const fn set_chgrdst(&mut self, val: super::vals::Chgrdst) {
+            self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
+        }
+        #[doc = "Bias Configuration."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bias(&self) -> super::vals::Bias {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Bias::from_bits(val as u8)
+        }
+        #[doc = "Bias Configuration."]
+        #[inline(always)]
+        pub const fn set_bias(&mut self, val: super::vals::Bias) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+    }
+    impl Default for Dispctrl {
+        #[inline(always)]
+        fn default() -> Dispctrl {
+            Dispctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Dispctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dispctrl")
+                .field("mux", &self.mux())
+                .field("wave", &self.wave())
+                .field("chgrdst", &self.chgrdst())
+                .field("bias", &self.bias())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dispctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dispctrl {{ mux: {:?}, wave: {:?}, chgrdst: {:?}, bias: {:?} }}",
+                self.mux(),
+                self.wave(),
+                self.chgrdst(),
+                self.bias()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dispctrlx(pub u32);
+    impl Dispctrlx {
+        #[doc = "Display Divider."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn displaydiv(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x03ff;
+            val as u16
+        }
+        #[doc = "Display Divider."]
+        #[inline(always)]
+        pub const fn set_displaydiv(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
+        }
+    }
+    impl Default for Dispctrlx {
+        #[inline(always)]
+        fn default() -> Dispctrlx {
+            Dispctrlx(0)
+        }
+    }
+    impl core::fmt::Debug for Dispctrlx {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dispctrlx")
+                .field("displaydiv", &self.displaydiv())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dispctrlx {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Dispctrlx {{ displaydiv: {=u16:?} }}", self.displaydiv())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct En(pub u32);
+    impl En {
+        #[doc = "Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable."]
+        #[inline(always)]
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Disablement busy status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn disabling(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disablement busy status."]
+        #[inline(always)]
+        pub const fn set_disabling(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for En {
+        #[inline(always)]
+        fn default() -> En {
+            En(0)
+        }
+    }
+    impl core::fmt::Debug for En {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("En")
+                .field("en", &self.en())
+                .field("disabling", &self.disabling())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for En {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "En {{ en: {=bool:?}, disabling: {=bool:?} }}",
+                self.en(),
+                self.disabling()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Framerate(pub u32);
+    impl Framerate {
+        #[doc = "Frame Rate Divider."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn frdiv(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x01ff;
+            val as u16
+        }
+        #[doc = "Frame Rate Divider."]
+        #[inline(always)]
+        pub const fn set_frdiv(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        }
+    }
+    impl Default for Framerate {
+        #[inline(always)]
+        fn default() -> Framerate {
+            Framerate(0)
+        }
+    }
+    impl core::fmt::Debug for Framerate {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Framerate").field("frdiv", &self.frdiv()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Framerate {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Framerate {{ frdiv: {=u16:?} }}", self.frdiv())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ien(pub u32);
+    impl Ien {
+        #[doc = "Frame Counter."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fc(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Frame Counter."]
+        #[inline(always)]
+        pub const fn set_fc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Display Update Event."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn display(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Display Update Event."]
+        #[inline(always)]
+        pub const fn set_display(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Sync Busy Done."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syncbusydone(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync Busy Done."]
+        #[inline(always)]
+        pub const fn set_syncbusydone(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Ien {
+        #[inline(always)]
+        fn default() -> Ien {
+            Ien(0)
+        }
+    }
+    impl core::fmt::Debug for Ien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ien")
+                .field("fc", &self.fc())
+                .field("display", &self.display())
+                .field("syncbusydone", &self.syncbusydone())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ien {{ fc: {=bool:?}, display: {=bool:?}, syncbusydone: {=bool:?} }}",
+                self.fc(),
+                self.display(),
+                self.syncbusydone()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct If(pub u32);
+    impl If {
+        #[doc = "Frame Counter."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fc(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Frame Counter."]
+        #[inline(always)]
+        pub const fn set_fc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Display Update Event."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn display(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Display Update Event."]
+        #[inline(always)]
+        pub const fn set_display(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Synchronization is Done."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syncbusydone(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Synchronization is Done."]
+        #[inline(always)]
+        pub const fn set_syncbusydone(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for If {
+        #[inline(always)]
+        fn default() -> If {
+            If(0)
+        }
+    }
+    impl core::fmt::Debug for If {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("If")
+                .field("fc", &self.fc())
+                .field("display", &self.display())
+                .field("syncbusydone", &self.syncbusydone())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for If {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "If {{ fc: {=bool:?}, display: {=bool:?}, syncbusydone: {=bool:?} }}",
+                self.fc(),
+                self.display(),
+                self.syncbusydone()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ipversion(pub u32);
+    impl Ipversion {
+        #[doc = "IPVERSION."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ipversion(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "IPVERSION."]
+        #[inline(always)]
+        pub const fn set_ipversion(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ipversion {
+        #[inline(always)]
+        fn default() -> Ipversion {
+            Ipversion(0)
+        }
+    }
+    impl core::fmt::Debug for Ipversion {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ipversion")
+                .field("ipversion", &self.ipversion())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ipversion {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ipversion {{ ipversion: {=u32:?} }}", self.ipversion())
+        }
+    }
+    #[doc = "SEGD0 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd0(pub u32);
+    impl Segd0 {
+        #[doc = "COM0 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd0(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM0 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd0(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd0 {
+        #[inline(always)]
+        fn default() -> Segd0 {
+            Segd0(0)
+        }
+    }
+    impl core::fmt::Debug for Segd0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd0").field("segd0", &self.segd0()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd0 {{ segd0: {=u32:?} }}", self.segd0())
+        }
+    }
+    #[doc = "SEGD0H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd0h(pub u32);
+    impl Segd0h {
+        #[doc = "COM0 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd0h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM0 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd0h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd0h {
+        #[inline(always)]
+        fn default() -> Segd0h {
+            Segd0h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd0h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd0h").field("segd0h", &self.segd0h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd0h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd0h {{ segd0h: {=u8:?} }}", self.segd0h())
+        }
+    }
+    #[doc = "SEGD1 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd1(pub u32);
+    impl Segd1 {
+        #[doc = "COM1 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd1(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM1 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd1(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd1 {
+        #[inline(always)]
+        fn default() -> Segd1 {
+            Segd1(0)
+        }
+    }
+    impl core::fmt::Debug for Segd1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd1").field("segd1", &self.segd1()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd1 {{ segd1: {=u32:?} }}", self.segd1())
+        }
+    }
+    #[doc = "SEGD1H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd1h(pub u32);
+    impl Segd1h {
+        #[doc = "COM1 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd1h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM1 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd1h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd1h {
+        #[inline(always)]
+        fn default() -> Segd1h {
+            Segd1h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd1h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd1h").field("segd1h", &self.segd1h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd1h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd1h {{ segd1h: {=u8:?} }}", self.segd1h())
+        }
+    }
+    #[doc = "SEGD2 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd2(pub u32);
+    impl Segd2 {
+        #[doc = "COM2 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd2(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM2 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd2(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd2 {
+        #[inline(always)]
+        fn default() -> Segd2 {
+            Segd2(0)
+        }
+    }
+    impl core::fmt::Debug for Segd2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd2").field("segd2", &self.segd2()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd2 {{ segd2: {=u32:?} }}", self.segd2())
+        }
+    }
+    #[doc = "SEGD2H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd2h(pub u32);
+    impl Segd2h {
+        #[doc = "COM2 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd2h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM2 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd2h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd2h {
+        #[inline(always)]
+        fn default() -> Segd2h {
+            Segd2h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd2h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd2h").field("segd2h", &self.segd2h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd2h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd2h {{ segd2h: {=u8:?} }}", self.segd2h())
+        }
+    }
+    #[doc = "SEGD3 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd3(pub u32);
+    impl Segd3 {
+        #[doc = "COM3 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd3(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM3 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd3(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd3 {
+        #[inline(always)]
+        fn default() -> Segd3 {
+            Segd3(0)
+        }
+    }
+    impl core::fmt::Debug for Segd3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd3").field("segd3", &self.segd3()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd3 {{ segd3: {=u32:?} }}", self.segd3())
+        }
+    }
+    #[doc = "SEGD3H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd3h(pub u32);
+    impl Segd3h {
+        #[doc = "COM3 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd3h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM3 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd3h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd3h {
+        #[inline(always)]
+        fn default() -> Segd3h {
+            Segd3h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd3h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd3h").field("segd3h", &self.segd3h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd3h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd3h {{ segd3h: {=u8:?} }}", self.segd3h())
+        }
+    }
+    #[doc = "SEGD4 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd4(pub u32);
+    impl Segd4 {
+        #[doc = "COM4 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd4(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM4 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd4(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd4 {
+        #[inline(always)]
+        fn default() -> Segd4 {
+            Segd4(0)
+        }
+    }
+    impl core::fmt::Debug for Segd4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd4").field("segd4", &self.segd4()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd4 {{ segd4: {=u32:?} }}", self.segd4())
+        }
+    }
+    #[doc = "SEGD4H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd4h(pub u32);
+    impl Segd4h {
+        #[doc = "COM4 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd4h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM4 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd4h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd4h {
+        #[inline(always)]
+        fn default() -> Segd4h {
+            Segd4h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd4h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd4h").field("segd4h", &self.segd4h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd4h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd4h {{ segd4h: {=u8:?} }}", self.segd4h())
+        }
+    }
+    #[doc = "SEGD5 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd5(pub u32);
+    impl Segd5 {
+        #[doc = "COM5 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd5(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM5 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd5(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd5 {
+        #[inline(always)]
+        fn default() -> Segd5 {
+            Segd5(0)
+        }
+    }
+    impl core::fmt::Debug for Segd5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd5").field("segd5", &self.segd5()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd5 {{ segd5: {=u32:?} }}", self.segd5())
+        }
+    }
+    #[doc = "SEGD5H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd5h(pub u32);
+    impl Segd5h {
+        #[doc = "COM5 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd5h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM5 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd5h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd5h {
+        #[inline(always)]
+        fn default() -> Segd5h {
+            Segd5h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd5h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd5h").field("segd5h", &self.segd5h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd5h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd5h {{ segd5h: {=u8:?} }}", self.segd5h())
+        }
+    }
+    #[doc = "SEGD6 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd6(pub u32);
+    impl Segd6 {
+        #[doc = "COM6 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd6(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM6 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd6(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd6 {
+        #[inline(always)]
+        fn default() -> Segd6 {
+            Segd6(0)
+        }
+    }
+    impl core::fmt::Debug for Segd6 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd6").field("segd6", &self.segd6()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd6 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd6 {{ segd6: {=u32:?} }}", self.segd6())
+        }
+    }
+    #[doc = "SEGD6H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd6h(pub u32);
+    impl Segd6h {
+        #[doc = "COM6 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd6h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM6 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd6h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd6h {
+        #[inline(always)]
+        fn default() -> Segd6h {
+            Segd6h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd6h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd6h").field("segd6h", &self.segd6h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd6h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd6h {{ segd6h: {=u8:?} }}", self.segd6h())
+        }
+    }
+    #[doc = "SEGD7 - Register for Segments 31:0."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd7(pub u32);
+    impl Segd7 {
+        #[doc = "COM7 Segment Data Low."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd7(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "COM7 Segment Data Low."]
+        #[inline(always)]
+        pub const fn set_segd7(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Segd7 {
+        #[inline(always)]
+        fn default() -> Segd7 {
+            Segd7(0)
+        }
+    }
+    impl core::fmt::Debug for Segd7 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd7").field("segd7", &self.segd7()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd7 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd7 {{ segd7: {=u32:?} }}", self.segd7())
+        }
+    }
+    #[doc = "SEGD7H - Register for Segments 39:32."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Segd7h(pub u32);
+    impl Segd7h {
+        #[doc = "COM7 Segment Data High."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn segd7h(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "COM7 Segment Data High."]
+        #[inline(always)]
+        pub const fn set_segd7h(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Segd7h {
+        #[inline(always)]
+        fn default() -> Segd7h {
+            Segd7h(0)
+        }
+    }
+    impl core::fmt::Debug for Segd7h {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Segd7h").field("segd7h", &self.segd7h()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Segd7h {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Segd7h {{ segd7h: {=u8:?} }}", self.segd7h())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Status(pub u32);
+    impl Status {
+        #[doc = "Current Animation State."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn astate(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Current Animation State."]
+        #[inline(always)]
+        pub const fn set_astate(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Blink State."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn blink(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Blink State."]
+        #[inline(always)]
+        pub const fn set_blink(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Load Synchronization is busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn loadbusy(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Load Synchronization is busy."]
+        #[inline(always)]
+        pub const fn set_loadbusy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+    }
+    impl Default for Status {
+        #[inline(always)]
+        fn default() -> Status {
+            Status(0)
+        }
+    }
+    impl core::fmt::Debug for Status {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Status")
+                .field("astate", &self.astate())
+                .field("blink", &self.blink())
+                .field("loadbusy", &self.loadbusy())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Status {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Status {{ astate: {=u8:?}, blink: {=bool:?}, loadbusy: {=bool:?} }}",
+                self.astate(),
+                self.blink(),
+                self.loadbusy()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Swrst(pub u32);
+    impl Swrst {
+        #[doc = "Software reset command."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn swrst(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software reset command."]
+        #[inline(always)]
+        pub const fn set_swrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Software reset busy status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn resetting(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Software reset busy status."]
+        #[inline(always)]
+        pub const fn set_resetting(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Swrst {
+        #[inline(always)]
+        fn default() -> Swrst {
+            Swrst(0)
+        }
+    }
+    impl core::fmt::Debug for Swrst {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Swrst")
+                .field("swrst", &self.swrst())
+                .field("resetting", &self.resetting())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Swrst {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Swrst {{ swrst: {=bool:?}, resetting: {=bool:?} }}",
+                self.swrst(),
+                self.resetting()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Updatectrl(pub u32);
+    impl Updatectrl {
+        #[doc = "Auto Load."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn autoload(&self) -> super::vals::Autoload {
+            let val = (self.0 >> 8usize) & 0x01;
+            super::vals::Autoload::from_bits(val as u8)
+        }
+        #[doc = "Auto Load."]
+        #[inline(always)]
+        pub const fn set_autoload(&mut self, val: super::vals::Autoload) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Load Address."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn loadaddr(&self) -> super::vals::Loadaddr {
+            let val = (self.0 >> 13usize) & 0x1f;
+            super::vals::Loadaddr::from_bits(val as u8)
+        }
+        #[doc = "Load Address."]
+        #[inline(always)]
+        pub const fn set_loadaddr(&mut self, val: super::vals::Loadaddr) {
+            self.0 = (self.0 & !(0x1f << 13usize)) | (((val.to_bits() as u32) & 0x1f) << 13usize);
+        }
+    }
+    impl Default for Updatectrl {
+        #[inline(always)]
+        fn default() -> Updatectrl {
+            Updatectrl(0)
+        }
+    }
+    impl core::fmt::Debug for Updatectrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Updatectrl")
+                .field("autoload", &self.autoload())
+                .field("loadaddr", &self.loadaddr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Updatectrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Updatectrl {{ autoload: {:?}, loadaddr: {:?} }}",
+                self.autoload(),
+                self.loadaddr()
+            )
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Aloc {
+        #[doc = "Animation appears on segments 0 to 7."]
+        Seg0to7 = 0x0,
+        #[doc = "Animation appears on segments 8 to 15."]
+        Seg8to15 = 0x01,
+    }
+    impl Aloc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Aloc {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Aloc {
+        #[inline(always)]
+        fn from(val: u8) -> Aloc {
+            Aloc::from_bits(val)
+        }
+    }
+    impl From<Aloc> for u8 {
+        #[inline(always)]
+        fn from(val: Aloc) -> u8 {
+            Aloc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Alogsel {
+        #[doc = "AREGA and AREGB AND'ed."]
+        And = 0x0,
+        #[doc = "AREGA and AREGB OR'ed."]
+        Or = 0x01,
+    }
+    impl Alogsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Alogsel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Alogsel {
+        #[inline(always)]
+        fn from(val: u8) -> Alogsel {
+            Alogsel::from_bits(val)
+        }
+    }
+    impl From<Alogsel> for u8 {
+        #[inline(always)]
+        fn from(val: Alogsel) -> u8 {
+            Alogsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Aregasc {
+        #[doc = "No Shift operation on Animation Register A."]
+        Noshift = 0x0,
+        #[doc = "Animation Register A is shifted left."]
+        Shiftleft = 0x01,
+        #[doc = "Animation Register A is shifted right."]
+        Shiftright = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Aregasc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Aregasc {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Aregasc {
+        #[inline(always)]
+        fn from(val: u8) -> Aregasc {
+            Aregasc::from_bits(val)
+        }
+    }
+    impl From<Aregasc> for u8 {
+        #[inline(always)]
+        fn from(val: Aregasc) -> u8 {
+            Aregasc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Aregbsc {
+        #[doc = "No Shift operation on Animation Register B."]
+        Noshift = 0x0,
+        #[doc = "Animation Register B is shifted left."]
+        Shiftleft = 0x01,
+        #[doc = "Animation Register B is shifted right."]
+        Shiftright = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Aregbsc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Aregbsc {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Aregbsc {
+        #[inline(always)]
+        fn from(val: u8) -> Aregbsc {
+            Aregbsc::from_bits(val)
+        }
+    }
+    impl From<Aregbsc> for u8 {
+        #[inline(always)]
+        fn from(val: Aregbsc) -> u8 {
+            Aregbsc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Autoload {
+        #[doc = "CLK_BUS register to CLK_PER register loads must be done manually with a write to CMD.LOAD."]
+        Manual = 0x0,
+        #[doc = "CLK_BUS register to CLK_PER register loads will be started automatically after a write to the register in UPDATECTRL.LOADADDR is detected."]
+        Auto = 0x01,
+    }
+    impl Autoload {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Autoload {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Autoload {
+        #[inline(always)]
+        fn from(val: u8) -> Autoload {
+            Autoload::from_bits(val)
+        }
+    }
+    impl From<Autoload> for u8 {
+        #[inline(always)]
+        fn from(val: Autoload) -> u8 {
+            Autoload::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Bias {
+        #[doc = "Static."]
+        Static = 0x0,
+        #[doc = "1/2 Bias."]
+        Onehalf = 0x01,
+        #[doc = "1/3 Bias."]
+        Onethird = 0x02,
+        #[doc = "1/4 Bias."]
+        Onefourth = 0x03,
+    }
+    impl Bias {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Bias {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Bias {
+        #[inline(always)]
+        fn from(val: u8) -> Bias {
+            Bias::from_bits(val)
+        }
+    }
+    impl From<Bias> for u8 {
+        #[inline(always)]
+        fn from(val: Bias) -> u8 {
+            Bias::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Chgrdst {
+        #[doc = "Disable charge redistribution."]
+        Disable = 0x0,
+        #[doc = "Use 1 prescaled low frequency clock cycle for charge redistribution."]
+        One = 0x01,
+        #[doc = "Use 2 prescaled low frequency clock cycles for charge redistribution."]
+        Two = 0x02,
+        #[doc = "Use 3 prescaled low frequency clock cycles for charge redistribution."]
+        Three = 0x03,
+        #[doc = "Use 4 prescaled low frequency clock cycles for charge redistribution."]
+        Four = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Chgrdst {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Chgrdst {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Chgrdst {
+        #[inline(always)]
+        fn from(val: u8) -> Chgrdst {
+            Chgrdst::from_bits(val)
+        }
+    }
+    impl From<Chgrdst> for u8 {
+        #[inline(always)]
+        fn from(val: Chgrdst) -> u8 {
+            Chgrdst::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Dmamode {
+        #[doc = "No DMA requests are generated."]
+        Dmadisable = 0x0,
+        #[doc = "DMA request on frame counter event. This will also start a DMA transfer during EM23."]
+        Dmafc = 0x01,
+        #[doc = "DMA request on display counter event. This will also start a DMA transfer during EM23."]
+        Dmadisplay = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Dmamode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dmamode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dmamode {
+        #[inline(always)]
+        fn from(val: u8) -> Dmamode {
+            Dmamode::from_bits(val)
+        }
+    }
+    impl From<Dmamode> for u8 {
+        #[inline(always)]
+        fn from(val: Dmamode) -> u8 {
+            Dmamode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Fcpresc {
+        #[doc = "every frame clock."]
+        Div1 = 0x0,
+        #[doc = "every 2nd frame clock."]
+        Div2 = 0x01,
+        #[doc = "every 4th frame clock."]
+        Div4 = 0x02,
+        #[doc = "every 8th frame clock."]
+        Div8 = 0x03,
+    }
+    impl Fcpresc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Fcpresc {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Fcpresc {
+        #[inline(always)]
+        fn from(val: u8) -> Fcpresc {
+            Fcpresc::from_bits(val)
+        }
+    }
+    impl From<Fcpresc> for u8 {
+        #[inline(always)]
+        fn from(val: Fcpresc) -> u8 {
+            Fcpresc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Loadaddr {
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to BACTRL. Use with UPDATECTRL.AUTOLOAD."]
+        Bactrlwr = 0x0,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to AREGA. Use with UPDATECTRL.AUTOLOAD."]
+        Aregawr = 0x01,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to AREGB. Use with UPDATECTRL.AUTOLOAD."]
+        Aregbwr = 0x02,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD0. Use with UPDATECTRL.AUTOLOAD."]
+        Segd0wr = 0x03,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD1. Use with UPDATECTRL.AUTOLOAD."]
+        Segd1wr = 0x04,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD2. Use with UPDATECTRL.AUTOLOAD."]
+        Segd2wr = 0x05,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD3. Use with UPDATECTRL.AUTOLOAD."]
+        Segd3wr = 0x06,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD4. Use with UPDATECTRL.AUTOLOAD."]
+        Segd4wr = 0x07,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD5. Use with UPDATECTRL.AUTOLOAD."]
+        Segd5wr = 0x08,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD6. Use with UPDATECTRL.AUTOLOAD."]
+        Segd6wr = 0x09,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD7. Use with UPDATECTRL.AUTOLOAD."]
+        Segd7wr = 0x0a,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD0H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd0hwr = 0x0b,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD1H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd1hwr = 0x0c,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD2H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd2hwr = 0x0d,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD3H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd3hwr = 0x0e,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD4H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd4hwr = 0x0f,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD5H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd5hwr = 0x10,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD6H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd6hwr = 0x11,
+        #[doc = "Starts synchronizing registers from CLK_BUS to CLK_PER after a write to SEGD7H. Use with UPDATECTRL.AUTOLOAD."]
+        Segd7hwr = 0x12,
+        _RESERVED_13 = 0x13,
+        _RESERVED_14 = 0x14,
+        _RESERVED_15 = 0x15,
+        _RESERVED_16 = 0x16,
+        _RESERVED_17 = 0x17,
+        _RESERVED_18 = 0x18,
+        _RESERVED_19 = 0x19,
+        _RESERVED_1a = 0x1a,
+        _RESERVED_1b = 0x1b,
+        _RESERVED_1c = 0x1c,
+        _RESERVED_1d = 0x1d,
+        _RESERVED_1e = 0x1e,
+        _RESERVED_1f = 0x1f,
+    }
+    impl Loadaddr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Loadaddr {
+            unsafe { core::mem::transmute(val & 0x1f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Loadaddr {
+        #[inline(always)]
+        fn from(val: u8) -> Loadaddr {
+            Loadaddr::from_bits(val)
+        }
+    }
+    impl From<Loadaddr> for u8 {
+        #[inline(always)]
+        fn from(val: Loadaddr) -> u8 {
+            Loadaddr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Mode {
+        #[doc = "Use step down control with VLCD less than VDDX. Use VLCD\\[4:0\\] to control VLCD level, and use SPEED to adjust VLCD drive strength."]
+        Stepdown = 0x0,
+        #[doc = "Use the charge pump to pump VLCD above VDDX."]
+        Chargepump = 0x01,
+    }
+    impl Mode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mode {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mode {
+        #[inline(always)]
+        fn from(val: u8) -> Mode {
+            Mode::from_bits(val)
+        }
+    }
+    impl From<Mode> for u8 {
+        #[inline(always)]
+        fn from(val: Mode) -> u8 {
+            Mode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Mux {
+        #[doc = "Static."]
+        Static = 0x0,
+        #[doc = "Duplex."]
+        Duplex = 0x01,
+        #[doc = "Triplex."]
+        Triplex = 0x02,
+        #[doc = "Quadruplex."]
+        Quadruplex = 0x03,
+        _RESERVED_4 = 0x04,
+        #[doc = "Sextaplex."]
+        Sextaplex = 0x05,
+        _RESERVED_6 = 0x06,
+        #[doc = "Octaplex."]
+        Octaplex = 0x07,
+    }
+    impl Mux {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mux {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mux {
+        #[inline(always)]
+        fn from(val: u8) -> Mux {
+            Mux::from_bits(val)
+        }
+    }
+    impl From<Mux> for u8 {
+        #[inline(always)]
+        fn from(val: Mux) -> u8 {
+            Mux::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Udctrl {
+        #[doc = "The data transfer is controlled by SW. Transfer is performed as soon as possible on the next CTRL.PRESCALE clock. This is primarily available for debug only since only some of the new SEGMENT data may be ready by the time of the UPDATE. This should not be used with interrupts since partially updating SEGMENT data may have indeterminant results."]
+        Regular = 0x0,
+        #[doc = "Data is loaded continuously at every frame start."]
+        Framestart = 0x01,
+        #[doc = "The data transfer is done at the next Frame Counter event."]
+        Fcevent = 0x02,
+        #[doc = "The data transfer is done at the next Display Counter event."]
+        Displayevent = 0x03,
+    }
+    impl Udctrl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Udctrl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Udctrl {
+        #[inline(always)]
+        fn from(val: u8) -> Udctrl {
+            Udctrl::from_bits(val)
+        }
+    }
+    impl From<Udctrl> for u8 {
+        #[inline(always)]
+        fn from(val: Udctrl) -> u8 {
+            Udctrl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Vddxsel {
+        #[doc = "Connect charge pump to digital DVDD supply."]
+        Dvdd = 0x0,
+        #[doc = "Connect charge pump to analog AVDD supply."]
+        Avdd = 0x01,
+    }
+    impl Vddxsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Vddxsel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Vddxsel {
+        #[inline(always)]
+        fn from(val: u8) -> Vddxsel {
+            Vddxsel::from_bits(val)
+        }
+    }
+    impl From<Vddxsel> for u8 {
+        #[inline(always)]
+        fn from(val: Vddxsel) -> u8 {
+            Vddxsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Warmupdly {
+        #[doc = "1mswarm up."]
+        Warmup1 = 0x0,
+        #[doc = "31ms warm up."]
+        Warmup31 = 0x01,
+        #[doc = "62ms warm up."]
+        Warmup63 = 0x02,
+        #[doc = "125ms warm up."]
+        Warmup125 = 0x03,
+        #[doc = "250ms warm up."]
+        Warmup250 = 0x04,
+        #[doc = "500ms warm up."]
+        Warmup500 = 0x05,
+        #[doc = "1000ms warm up."]
+        Warmup1000 = 0x06,
+        #[doc = "2000ms warm up."]
+        Warmup2000 = 0x07,
+    }
+    impl Warmupdly {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Warmupdly {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Warmupdly {
+        #[inline(always)]
+        fn from(val: u8) -> Warmupdly {
+            Warmupdly::from_bits(val)
+        }
+    }
+    impl From<Warmupdly> for u8 {
+        #[inline(always)]
+        fn from(val: Warmupdly) -> u8 {
+            Warmupdly::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wave {
+        #[doc = "Type B waveform."]
+        Typeb = 0x0,
+        #[doc = "Type A waveform."]
+        Typea = 0x01,
+    }
+    impl Wave {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wave {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wave {
+        #[inline(always)]
+        fn from(val: u8) -> Wave {
+            Wave::from_bits(val)
+        }
+    }
+    impl From<Wave> for u8 {
+        #[inline(always)]
+        fn from(val: Wave) -> u8 {
+            Wave::to_bits(val)
+        }
+    }
+}

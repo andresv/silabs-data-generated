@@ -47,5 +47,14 @@ fn main() {
         chip_name,
     );
 
+    // Mirror stm32-metapac's env-var-driven include pattern: emit the
+    // selected chip's pac.rs / metadata.rs paths so `lib.rs` can collapse
+    // 66 cfg-gated `include!`s into a single `include!(env!(...))`.
+    println!("cargo:rustc-env=SILABS_METAPAC_PAC_PATH=chips/{}/pac.rs", chip_name);
+    println!(
+        "cargo:rustc-env=SILABS_METAPAC_METADATA_PATH=chips/{}/metadata.rs",
+        chip_name
+    );
+
     println!("cargo:rerun-if-changed=build.rs");
 }

@@ -3,7 +3,7 @@
 
 [package]
 name = "silabs-metapac"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Generated Silicon Labs PAC. Do not edit by hand — regenerate via silabs-metapac-gen."
@@ -16,8 +16,23 @@ cortex-m-rt = { version = "0.7", features = ["device"], optional = true }
 defmt = { version = "0.3", optional = true }
 
 [features]
-default = []
+default = ["pac"]
+
+# Build the actual PAC. Set by default.
+# If you just want the metadata, unset it with `default-features = false`.
+pac = []
+
+# Build the chip metadata.
+# If set, a `silabs_metapac::metadata::METADATA` static will be exported,
+# containing all the metadata for the currently selected chip.
+metadata = []
+
+# Implement the `defmt::Format` trait for many types.
+defmt = ["dep:defmt"]
+
 rt = ["cortex-m-rt"]
+
+# Chip-selection features
 efr32mg24a010f1024im40 = []
 efr32mg24a010f1024im48 = []
 efr32mg24a010f1536gm40 = []

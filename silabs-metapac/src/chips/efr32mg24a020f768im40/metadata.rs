@@ -10,6 +10,7 @@ pub static METADATA: Metadata = Metadata {
     fpu: false,
     mpu: false,
     trustzone: false,
+    series: Series::Series2(4),
     memory: &[
         MemoryRegion { name: "IROM1", address: 0x08000000, size: 0x000C0000, access: "rx" },
         MemoryRegion { name: "IRAM1", address: 0x20000000, size: 0x00010000, access: "rwx" },

@@ -3,7 +3,7 @@
 
 [package]
 name = "silabs-metapac"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Generated Silicon Labs PAC. Do not edit by hand — regenerate via silabs-metapac-gen."
@@ -33,6 +33,20 @@ defmt = ["dep:defmt"]
 rt = ["cortex-m-rt"]
 
 # Chip-selection features
+efr32fg25a021f256im56 = []
+efr32fg25a021f512im56 = []
+efr32fg25a111f1152im56 = []
+efr32fg25a121f1152im56 = []
+efr32fg25a211f1152im56 = []
+efr32fg25a211f1920im56 = []
+efr32fg25a221f1152im56 = []
+efr32fg25a221f1920im56 = []
+efr32fg25b111f1152im56 = []
+efr32fg25b121f1152im56 = []
+efr32fg25b211f1920im56 = []
+efr32fg25b212f1920im56 = []
+efr32fg25b221f1920im56 = []
+efr32fg25b222f1920im56 = []
 efr32mg24a010f1024im40 = []
 efr32mg24a010f1024im48 = []
 efr32mg24a010f1536gm40 = []

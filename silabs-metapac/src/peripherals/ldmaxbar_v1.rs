@@ -1,0 +1,619 @@
+#[doc = "LDMAXBAR peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Ldmaxbar {
+    ptr: *mut u8,
+}
+unsafe impl Send for Ldmaxbar {}
+unsafe impl Sync for Ldmaxbar {}
+impl Ldmaxbar {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch0_reqsel(self) -> crate::common::Reg<regs::Ch0Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch1_reqsel(self) -> crate::common::Reg<regs::Ch1Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch2_reqsel(self) -> crate::common::Reg<regs::Ch2Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch3_reqsel(self) -> crate::common::Reg<regs::Ch3Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch4_reqsel(self) -> crate::common::Reg<regs::Ch4Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch5_reqsel(self) -> crate::common::Reg<regs::Ch5Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch6_reqsel(self) -> crate::common::Reg<regs::Ch6Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ch7_reqsel(self) -> crate::common::Reg<regs::Ch7Reqsel, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch0_reqsel_set(self) -> crate::common::Reg<regs::Ch0Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1000usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch1_reqsel_set(self) -> crate::common::Reg<regs::Ch1Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch2_reqsel_set(self) -> crate::common::Reg<regs::Ch2Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch3_reqsel_set(self) -> crate::common::Reg<regs::Ch3Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x100cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch4_reqsel_set(self) -> crate::common::Reg<regs::Ch4Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch5_reqsel_set(self) -> crate::common::Reg<regs::Ch5Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch6_reqsel_set(self) -> crate::common::Reg<regs::Ch6Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ch7_reqsel_set(self) -> crate::common::Reg<regs::Ch7Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x101cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch0_reqsel_clr(self) -> crate::common::Reg<regs::Ch0Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2000usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch1_reqsel_clr(self) -> crate::common::Reg<regs::Ch1Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch2_reqsel_clr(self) -> crate::common::Reg<regs::Ch2Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch3_reqsel_clr(self) -> crate::common::Reg<regs::Ch3Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x200cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch4_reqsel_clr(self) -> crate::common::Reg<regs::Ch4Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch5_reqsel_clr(self) -> crate::common::Reg<regs::Ch5Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch6_reqsel_clr(self) -> crate::common::Reg<regs::Ch6Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ch7_reqsel_clr(self) -> crate::common::Reg<regs::Ch7Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x201cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch0_reqsel_tgl(self) -> crate::common::Reg<regs::Ch0Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3000usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch1_reqsel_tgl(self) -> crate::common::Reg<regs::Ch1Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch2_reqsel_tgl(self) -> crate::common::Reg<regs::Ch2Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch3_reqsel_tgl(self) -> crate::common::Reg<regs::Ch3Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x300cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch4_reqsel_tgl(self) -> crate::common::Reg<regs::Ch4Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch5_reqsel_tgl(self) -> crate::common::Reg<regs::Ch5Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch6_reqsel_tgl(self) -> crate::common::Reg<regs::Ch6Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ch7_reqsel_tgl(self) -> crate::common::Reg<regs::Ch7Reqsel, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x301cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch0Reqsel(pub u32);
+    impl Ch0Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch0Reqsel {
+        #[inline(always)]
+        fn default() -> Ch0Reqsel {
+            Ch0Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch0Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch0Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch0Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch0Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch1Reqsel(pub u32);
+    impl Ch1Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch1Reqsel {
+        #[inline(always)]
+        fn default() -> Ch1Reqsel {
+            Ch1Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch1Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch1Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch1Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch1Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch2Reqsel(pub u32);
+    impl Ch2Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch2Reqsel {
+        #[inline(always)]
+        fn default() -> Ch2Reqsel {
+            Ch2Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch2Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch2Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch2Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch2Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch3Reqsel(pub u32);
+    impl Ch3Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch3Reqsel {
+        #[inline(always)]
+        fn default() -> Ch3Reqsel {
+            Ch3Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch3Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch3Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch3Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch3Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch4Reqsel(pub u32);
+    impl Ch4Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch4Reqsel {
+        #[inline(always)]
+        fn default() -> Ch4Reqsel {
+            Ch4Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch4Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch4Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch4Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch4Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch5Reqsel(pub u32);
+    impl Ch5Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch5Reqsel {
+        #[inline(always)]
+        fn default() -> Ch5Reqsel {
+            Ch5Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch5Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch5Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch5Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch5Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch6Reqsel(pub u32);
+    impl Ch6Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch6Reqsel {
+        #[inline(always)]
+        fn default() -> Ch6Reqsel {
+            Ch6Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch6Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch6Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch6Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch6Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ch7Reqsel(pub u32);
+    impl Ch7Reqsel {
+        #[doc = "Signal Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sigsel(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Signal Select."]
+        #[inline(always)]
+        pub const fn set_sigsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
+        }
+        #[doc = "Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sourcesel(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Source Select."]
+        #[inline(always)]
+        pub const fn set_sourcesel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Ch7Reqsel {
+        #[inline(always)]
+        fn default() -> Ch7Reqsel {
+            Ch7Reqsel(0)
+        }
+    }
+    impl core::fmt::Debug for Ch7Reqsel {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ch7Reqsel")
+                .field("sigsel", &self.sigsel())
+                .field("sourcesel", &self.sourcesel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ch7Reqsel {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ch7Reqsel {{ sigsel: {=u8:?}, sourcesel: {=u8:?} }}",
+                self.sigsel(),
+                self.sourcesel()
+            )
+        }
+    }
+}

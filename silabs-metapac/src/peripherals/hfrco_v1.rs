@@ -1,0 +1,642 @@
+#[doc = "HFRCO peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Hfrco {
+    ptr: *mut u8,
+}
+unsafe impl Send for Hfrco {}
+unsafe impl Sync for Hfrco {}
+impl Hfrco {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ipversion(self) -> crate::common::Reg<regs::Ipversion, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cal(self) -> crate::common::Reg<regs::Cal, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn status(self) -> crate::common::Reg<regs::Status, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn if_(self) -> crate::common::Reg<regs::If, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ien(self) -> crate::common::Reg<regs::Ien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn lock(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ctrl_set(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cal_set(self) -> crate::common::Reg<regs::Cal, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn if_set(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ien_set(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn lock_set(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x101cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ctrl_clr(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cal_clr(self) -> crate::common::Reg<regs::Cal, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn if_clr(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ien_clr(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn lock_clr(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x201cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ctrl_tgl(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cal_tgl(self) -> crate::common::Reg<regs::Cal, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn if_tgl(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3010usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ien_tgl(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn lock_tgl(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x301cusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cal(pub u32);
+    impl Cal {
+        #[doc = "Tuning Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tuning(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Tuning Value."]
+        #[inline(always)]
+        pub const fn set_tuning(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "Fine Tuning Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn finetuning(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Fine Tuning Value."]
+        #[inline(always)]
+        pub const fn set_finetuning(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
+        }
+        #[doc = "LDO High Power Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldohp(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LDO High Power Mode."]
+        #[inline(always)]
+        pub const fn set_ldohp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "Frequency Range."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn freqrange(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "Frequency Range."]
+        #[inline(always)]
+        pub const fn set_freqrange(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
+        }
+        #[doc = "Comparator Bias Current."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmpbias(&self) -> u8 {
+            let val = (self.0 >> 21usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Comparator Bias Current."]
+        #[inline(always)]
+        pub const fn set_cmpbias(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 21usize)) | (((val as u32) & 0x07) << 21usize);
+        }
+        #[doc = "Locally Divide HFRCO Clock Output."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clkdiv(&self) -> super::vals::Clkdiv {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Clkdiv::from_bits(val as u8)
+        }
+        #[doc = "Locally Divide HFRCO Clock Output."]
+        #[inline(always)]
+        pub const fn set_clkdiv(&mut self, val: super::vals::Clkdiv) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+        #[doc = "Comparator Load Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmpsel(&self) -> u8 {
+            let val = (self.0 >> 26usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Comparator Load Select."]
+        #[inline(always)]
+        pub const fn set_cmpsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 26usize)) | (((val as u32) & 0x03) << 26usize);
+        }
+        #[doc = "Tempco Trim on Comparator Current."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ireftc(&self) -> u8 {
+            let val = (self.0 >> 28usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "Tempco Trim on Comparator Current."]
+        #[inline(always)]
+        pub const fn set_ireftc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
+        }
+    }
+    impl Default for Cal {
+        #[inline(always)]
+        fn default() -> Cal {
+            Cal(0)
+        }
+    }
+    impl core::fmt::Debug for Cal {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cal")
+                .field("tuning", &self.tuning())
+                .field("finetuning", &self.finetuning())
+                .field("ldohp", &self.ldohp())
+                .field("freqrange", &self.freqrange())
+                .field("cmpbias", &self.cmpbias())
+                .field("clkdiv", &self.clkdiv())
+                .field("cmpsel", &self.cmpsel())
+                .field("ireftc", &self.ireftc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cal {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cal {{ tuning: {=u8:?}, finetuning: {=u8:?}, ldohp: {=bool:?}, freqrange: {=u8:?}, cmpbias: {=u8:?}, clkdiv: {:?}, cmpsel: {=u8:?}, ireftc: {=u8:?} }}",
+                self.tuning(),
+                self.finetuning(),
+                self.ldohp(),
+                self.freqrange(),
+                self.cmpbias(),
+                self.clkdiv(),
+                self.cmpsel(),
+                self.ireftc()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl(pub u32);
+    impl Ctrl {
+        #[doc = "Force Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn forceen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Force Enable."]
+        #[inline(always)]
+        pub const fn set_forceen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Disable On-demand."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn disondemand(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disable On-demand."]
+        #[inline(always)]
+        pub const fn set_disondemand(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Ctrl {
+        #[inline(always)]
+        fn default() -> Ctrl {
+            Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl")
+                .field("forceen", &self.forceen())
+                .field("disondemand", &self.disondemand())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ctrl {{ forceen: {=bool:?}, disondemand: {=bool:?} }}",
+                self.forceen(),
+                self.disondemand()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ien(pub u32);
+    impl Ien {
+        #[doc = "RDY Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rdy(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RDY Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_rdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Ien {
+        #[inline(always)]
+        fn default() -> Ien {
+            Ien(0)
+        }
+    }
+    impl core::fmt::Debug for Ien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ien").field("rdy", &self.rdy()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ien {{ rdy: {=bool:?} }}", self.rdy())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct If(pub u32);
+    impl If {
+        #[doc = "Ready Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rdy(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Ready Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_rdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for If {
+        #[inline(always)]
+        fn default() -> If {
+            If(0)
+        }
+    }
+    impl core::fmt::Debug for If {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("If").field("rdy", &self.rdy()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for If {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "If {{ rdy: {=bool:?} }}", self.rdy())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ipversion(pub u32);
+    impl Ipversion {
+        #[doc = "IP Version."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ipversion(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "IP Version."]
+        #[inline(always)]
+        pub const fn set_ipversion(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ipversion {
+        #[inline(always)]
+        fn default() -> Ipversion {
+            Ipversion(0)
+        }
+    }
+    impl core::fmt::Debug for Ipversion {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ipversion")
+                .field("ipversion", &self.ipversion())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ipversion {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ipversion {{ ipversion: {=u32:?} }}", self.ipversion())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Lock(pub u32);
+    impl Lock {
+        #[doc = "Lock Key."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lockkey(&self) -> super::vals::Lockkey {
+            let val = (self.0 >> 0usize) & 0xffff;
+            super::vals::Lockkey::from_bits(val as u16)
+        }
+        #[doc = "Lock Key."]
+        #[inline(always)]
+        pub const fn set_lockkey(&mut self, val: super::vals::Lockkey) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Lock {
+        #[inline(always)]
+        fn default() -> Lock {
+            Lock(0)
+        }
+    }
+    impl core::fmt::Debug for Lock {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lock").field("lockkey", &self.lockkey()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lock {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Lock {{ lockkey: {:?} }}", self.lockkey())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Status(pub u32);
+    impl Status {
+        #[doc = "Ready."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rdy(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Ready."]
+        #[inline(always)]
+        pub const fn set_rdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Frequency Updating Busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn freqbsy(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Frequency Updating Busy."]
+        #[inline(always)]
+        pub const fn set_freqbsy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Synchronization Busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syncbusy(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Synchronization Busy."]
+        #[inline(always)]
+        pub const fn set_syncbusy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Enable Status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ens(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable Status."]
+        #[inline(always)]
+        pub const fn set_ens(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Lock Status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lock(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Lock Status."]
+        #[inline(always)]
+        pub const fn set_lock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Status {
+        #[inline(always)]
+        fn default() -> Status {
+            Status(0)
+        }
+    }
+    impl core::fmt::Debug for Status {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Status")
+                .field("rdy", &self.rdy())
+                .field("freqbsy", &self.freqbsy())
+                .field("syncbusy", &self.syncbusy())
+                .field("ens", &self.ens())
+                .field("lock", &self.lock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Status {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Status {{ rdy: {=bool:?}, freqbsy: {=bool:?}, syncbusy: {=bool:?}, ens: {=bool:?}, lock: {=bool:?} }}",
+                self.rdy(),
+                self.freqbsy(),
+                self.syncbusy(),
+                self.ens(),
+                self.lock()
+            )
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Clkdiv {
+        #[doc = "Divide by 1."]
+        Div1 = 0x0,
+        #[doc = "Divide by 2."]
+        Div2 = 0x01,
+        #[doc = "Divide by 4."]
+        Div4 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Clkdiv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Clkdiv {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Clkdiv {
+        #[inline(always)]
+        fn from(val: u8) -> Clkdiv {
+            Clkdiv::from_bits(val)
+        }
+    }
+    impl From<Clkdiv> for u8 {
+        #[inline(always)]
+        fn from(val: Clkdiv) -> u8 {
+            Clkdiv::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Lockkey(u16);
+    impl Lockkey {
+        #[doc = "Unlock code."]
+        pub const Unlock: Self = Self(0x8195);
+    }
+    impl Lockkey {
+        pub const fn from_bits(val: u16) -> Lockkey {
+            Self(val & 0xffff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Lockkey {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x8195 => f.write_str("Unlock"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lockkey {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x8195 => defmt::write!(f, "Unlock"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Lockkey {
+        #[inline(always)]
+        fn from(val: u16) -> Lockkey {
+            Lockkey::from_bits(val)
+        }
+    }
+    impl From<Lockkey> for u16 {
+        #[inline(always)]
+        fn from(val: Lockkey) -> u16 {
+            Lockkey::to_bits(val)
+        }
+    }
+}

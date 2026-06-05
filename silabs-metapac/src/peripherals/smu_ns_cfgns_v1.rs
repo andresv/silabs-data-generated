@@ -1,0 +1,1121 @@
+#[doc = "SMU_NS_CFGNS peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct SmuNsCfgns {
+    ptr: *mut u8,
+}
+unsafe impl Send for SmuNsCfgns {}
+unsafe impl Sync for SmuNsCfgns {}
+impl SmuNsCfgns {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "Register for status flags."]
+    #[inline(always)]
+    pub const fn nsstatus(self) -> crate::common::Reg<regs::Nsstatus, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "Register used to lock/unlock access to the register file."]
+    #[inline(always)]
+    pub const fn nslock(self) -> crate::common::Reg<regs::Nslock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "Register for interrupt status flags."]
+    #[inline(always)]
+    pub const fn nsif(self) -> crate::common::Reg<regs::Nsif, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "Register used for enabling/disabling interrupts."]
+    #[inline(always)]
+    pub const fn nsien(self) -> crate::common::Reg<regs::Nsien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "Set peripheral bits to 1 to mark as privileged access only."]
+    #[inline(always)]
+    pub const fn ppunspatd0(self) -> crate::common::Reg<regs::Ppunspatd0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    }
+    #[doc = "Set peripheral bits to 1 to mark as privileged access only."]
+    #[inline(always)]
+    pub const fn ppunspatd1(self) -> crate::common::Reg<regs::Ppunspatd1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
+    }
+    #[doc = "Read this register to query the fault status."]
+    #[inline(always)]
+    pub const fn ppunsfs(self) -> crate::common::Reg<regs::Ppunsfs, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0140usize) as _) }
+    }
+    #[doc = "Write to set BMPU priveledged attributes."]
+    #[inline(always)]
+    pub const fn bmpunspatd0(self) -> crate::common::Reg<regs::Bmpunspatd0, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0150usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "Write to set BMPU priveledged attributes."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Bmpunspatd0(pub u32);
+    impl Bmpunspatd0 {
+        #[doc = "RADIO AES DMA privileged mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn radioaes(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RADIO AES DMA privileged mode."]
+        #[inline(always)]
+        pub const fn set_radioaes(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "CRYPTOACC DMA privileged mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cryptoacc(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CRYPTOACC DMA privileged mode."]
+        #[inline(always)]
+        pub const fn set_cryptoacc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "RADIO subsystem manager privileged mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn radiosubsystem(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RADIO subsystem manager privileged mode."]
+        #[inline(always)]
+        pub const fn set_radiosubsystem(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "RADIO IFADC debug privileged mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn radioifadcdebug(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RADIO IFADC debug privileged mode."]
+        #[inline(always)]
+        pub const fn set_radioifadcdebug(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "MCU LDMA privileged mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldma(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "MCU LDMA privileged mode."]
+        #[inline(always)]
+        pub const fn set_ldma(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Bmpunspatd0 {
+        #[inline(always)]
+        fn default() -> Bmpunspatd0 {
+            Bmpunspatd0(0)
+        }
+    }
+    impl core::fmt::Debug for Bmpunspatd0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bmpunspatd0")
+                .field("radioaes", &self.radioaes())
+                .field("cryptoacc", &self.cryptoacc())
+                .field("radiosubsystem", &self.radiosubsystem())
+                .field("radioifadcdebug", &self.radioifadcdebug())
+                .field("ldma", &self.ldma())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bmpunspatd0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Bmpunspatd0 {{ radioaes: {=bool:?}, cryptoacc: {=bool:?}, radiosubsystem: {=bool:?}, radioifadcdebug: {=bool:?}, ldma: {=bool:?} }}",
+                self.radioaes(),
+                self.cryptoacc(),
+                self.radiosubsystem(),
+                self.radioifadcdebug(),
+                self.ldma()
+            )
+        }
+    }
+    #[doc = "Register used for enabling/disabling interrupts."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Nsien(pub u32);
+    impl Nsien {
+        #[doc = "PPUNS Privilege Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ppunspriv(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PPUNS Privilege Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_ppunspriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "PPUNS Instruction Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ppunsinst(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PPUNS Instruction Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_ppunsinst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Nsien {
+        #[inline(always)]
+        fn default() -> Nsien {
+            Nsien(0)
+        }
+    }
+    impl core::fmt::Debug for Nsien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nsien")
+                .field("ppunspriv", &self.ppunspriv())
+                .field("ppunsinst", &self.ppunsinst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nsien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Nsien {{ ppunspriv: {=bool:?}, ppunsinst: {=bool:?} }}",
+                self.ppunspriv(),
+                self.ppunsinst()
+            )
+        }
+    }
+    #[doc = "Register for interrupt status flags."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Nsif(pub u32);
+    impl Nsif {
+        #[doc = "PPUNS Privilege Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ppunspriv(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PPUNS Privilege Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_ppunspriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "PPUNS Instruction Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ppunsinst(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PPUNS Instruction Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_ppunsinst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Nsif {
+        #[inline(always)]
+        fn default() -> Nsif {
+            Nsif(0)
+        }
+    }
+    impl core::fmt::Debug for Nsif {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nsif")
+                .field("ppunspriv", &self.ppunspriv())
+                .field("ppunsinst", &self.ppunsinst())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nsif {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Nsif {{ ppunspriv: {=bool:?}, ppunsinst: {=bool:?} }}",
+                self.ppunspriv(),
+                self.ppunsinst()
+            )
+        }
+    }
+    #[doc = "Register used to lock/unlock access to the register file."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Nslock(pub u32);
+    impl Nslock {
+        #[doc = "SMU Non-Secure Lock/Key."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smunslockkey(&self) -> super::vals::Smunslockkey {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
+            super::vals::Smunslockkey::from_bits(val as u32)
+        }
+        #[doc = "SMU Non-Secure Lock/Key."]
+        #[inline(always)]
+        pub const fn set_smunslockkey(&mut self, val: super::vals::Smunslockkey) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val.to_bits() as u32) & 0x00ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Nslock {
+        #[inline(always)]
+        fn default() -> Nslock {
+            Nslock(0)
+        }
+    }
+    impl core::fmt::Debug for Nslock {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nslock")
+                .field("smunslockkey", &self.smunslockkey())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nslock {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Nslock {{ smunslockkey: {:?} }}", self.smunslockkey())
+        }
+    }
+    #[doc = "Register for status flags."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Nsstatus(pub u32);
+    impl Nsstatus {
+        #[doc = "SMUNS Lock Status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smunslock(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SMUNS Lock Status."]
+        #[inline(always)]
+        pub const fn set_smunslock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for Nsstatus {
+        #[inline(always)]
+        fn default() -> Nsstatus {
+            Nsstatus(0)
+        }
+    }
+    impl core::fmt::Debug for Nsstatus {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Nsstatus")
+                .field("smunslock", &self.smunslock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Nsstatus {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Nsstatus {{ smunslock: {=bool:?} }}", self.smunslock())
+        }
+    }
+    #[doc = "Read this register to query the fault status."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ppunsfs(pub u32);
+    impl Ppunsfs {
+        #[doc = "Peripheral ID."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ppufsperiphid(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Peripheral ID."]
+        #[inline(always)]
+        pub const fn set_ppufsperiphid(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for Ppunsfs {
+        #[inline(always)]
+        fn default() -> Ppunsfs {
+            Ppunsfs(0)
+        }
+    }
+    impl core::fmt::Debug for Ppunsfs {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ppunsfs")
+                .field("ppufsperiphid", &self.ppufsperiphid())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ppunsfs {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ppunsfs {{ ppufsperiphid: {=u8:?} }}", self.ppufsperiphid())
+        }
+    }
+    #[doc = "Set peripheral bits to 1 to mark as privileged access only."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ppunspatd0(pub u32);
+    impl Ppunspatd0 {
+        #[doc = "EMU Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn emu(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "EMU Privileged Access."]
+        #[inline(always)]
+        pub const fn set_emu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "CMU Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmu(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CMU Privileged Access."]
+        #[inline(always)]
+        pub const fn set_cmu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "HFXO0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hfxo0(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "HFXO0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_hfxo0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "HFRCO0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hfrco0(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "HFRCO0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_hfrco0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "FSRCO Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fsrco(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FSRCO Privileged Access."]
+        #[inline(always)]
+        pub const fn set_fsrco(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "DPLL0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dpll0(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DPLL0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_dpll0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "LFXO Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lfxo(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LFXO Privileged Access."]
+        #[inline(always)]
+        pub const fn set_lfxo(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "LFRCO Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lfrco(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LFRCO Privileged Access."]
+        #[inline(always)]
+        pub const fn set_lfrco(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "ULFRCO Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ulfrco(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ULFRCO Privileged Access."]
+        #[inline(always)]
+        pub const fn set_ulfrco(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "MSC Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn msc(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "MSC Privileged Access."]
+        #[inline(always)]
+        pub const fn set_msc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "ICACHE0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icache0(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICACHE0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_icache0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "PRS Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prs(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PRS Privileged Access."]
+        #[inline(always)]
+        pub const fn set_prs(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "GPIO Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpio(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "GPIO Privileged Access."]
+        #[inline(always)]
+        pub const fn set_gpio(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "LDMA Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldma(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LDMA Privileged Access."]
+        #[inline(always)]
+        pub const fn set_ldma(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "LDMAXBAR Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldmaxbar(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LDMAXBAR Privileged Access."]
+        #[inline(always)]
+        pub const fn set_ldmaxbar(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "TIMER0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timer0(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIMER0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_timer0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "TIMER1 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timer1(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIMER1 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_timer1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "TIMER2 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timer2(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIMER2 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_timer2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "TIMER3 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timer3(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIMER3 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_timer3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "TIMER4 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timer4(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIMER4 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_timer4(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "USART0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart0(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USART0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_usart0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "USART1 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart1(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USART1 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_usart1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "BURTC Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn burtc(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "BURTC Privileged Access."]
+        #[inline(always)]
+        pub const fn set_burtc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
+        #[doc = "I2C1 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c1(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C1 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_i2c1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "CHIPTESTCTRL Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn chiptestctrl(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CHIPTESTCTRL Privileged Access."]
+        #[inline(always)]
+        pub const fn set_chiptestctrl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "SYSCFGCFGNS Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syscfgcfgns(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SYSCFGCFGNS Privileged Access."]
+        #[inline(always)]
+        pub const fn set_syscfgcfgns(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "SYSCFG Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syscfg(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SYSCFG Privileged Access."]
+        #[inline(always)]
+        pub const fn set_syscfg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+        #[doc = "BURAM Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn buram(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "BURAM Privileged Access."]
+        #[inline(always)]
+        pub const fn set_buram(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "IFADCDEBUG Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ifadcdebug(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IFADCDEBUG Privileged Access."]
+        #[inline(always)]
+        pub const fn set_ifadcdebug(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "GPCRC Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn gpcrc(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "GPCRC Privileged Access."]
+        #[inline(always)]
+        pub const fn set_gpcrc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "DCI Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dci(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DCI Privileged Access."]
+        #[inline(always)]
+        pub const fn set_dci(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Ppunspatd0 {
+        #[inline(always)]
+        fn default() -> Ppunspatd0 {
+            Ppunspatd0(0)
+        }
+    }
+    impl core::fmt::Debug for Ppunspatd0 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ppunspatd0")
+                .field("emu", &self.emu())
+                .field("cmu", &self.cmu())
+                .field("hfxo0", &self.hfxo0())
+                .field("hfrco0", &self.hfrco0())
+                .field("fsrco", &self.fsrco())
+                .field("dpll0", &self.dpll0())
+                .field("lfxo", &self.lfxo())
+                .field("lfrco", &self.lfrco())
+                .field("ulfrco", &self.ulfrco())
+                .field("msc", &self.msc())
+                .field("icache0", &self.icache0())
+                .field("prs", &self.prs())
+                .field("gpio", &self.gpio())
+                .field("ldma", &self.ldma())
+                .field("ldmaxbar", &self.ldmaxbar())
+                .field("timer0", &self.timer0())
+                .field("timer1", &self.timer1())
+                .field("timer2", &self.timer2())
+                .field("timer3", &self.timer3())
+                .field("timer4", &self.timer4())
+                .field("usart0", &self.usart0())
+                .field("usart1", &self.usart1())
+                .field("burtc", &self.burtc())
+                .field("i2c1", &self.i2c1())
+                .field("chiptestctrl", &self.chiptestctrl())
+                .field("syscfgcfgns", &self.syscfgcfgns())
+                .field("syscfg", &self.syscfg())
+                .field("buram", &self.buram())
+                .field("ifadcdebug", &self.ifadcdebug())
+                .field("gpcrc", &self.gpcrc())
+                .field("dci", &self.dci())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ppunspatd0 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ppunspatd0 {{ emu: {=bool:?}, cmu: {=bool:?}, hfxo0: {=bool:?}, hfrco0: {=bool:?}, fsrco: {=bool:?}, dpll0: {=bool:?}, lfxo: {=bool:?}, lfrco: {=bool:?}, ulfrco: {=bool:?}, msc: {=bool:?}, icache0: {=bool:?}, prs: {=bool:?}, gpio: {=bool:?}, ldma: {=bool:?}, ldmaxbar: {=bool:?}, timer0: {=bool:?}, timer1: {=bool:?}, timer2: {=bool:?}, timer3: {=bool:?}, timer4: {=bool:?}, usart0: {=bool:?}, usart1: {=bool:?}, burtc: {=bool:?}, i2c1: {=bool:?}, chiptestctrl: {=bool:?}, syscfgcfgns: {=bool:?}, syscfg: {=bool:?}, buram: {=bool:?}, ifadcdebug: {=bool:?}, gpcrc: {=bool:?}, dci: {=bool:?} }}",
+                self.emu(),
+                self.cmu(),
+                self.hfxo0(),
+                self.hfrco0(),
+                self.fsrco(),
+                self.dpll0(),
+                self.lfxo(),
+                self.lfrco(),
+                self.ulfrco(),
+                self.msc(),
+                self.icache0(),
+                self.prs(),
+                self.gpio(),
+                self.ldma(),
+                self.ldmaxbar(),
+                self.timer0(),
+                self.timer1(),
+                self.timer2(),
+                self.timer3(),
+                self.timer4(),
+                self.usart0(),
+                self.usart1(),
+                self.burtc(),
+                self.i2c1(),
+                self.chiptestctrl(),
+                self.syscfgcfgns(),
+                self.syscfg(),
+                self.buram(),
+                self.ifadcdebug(),
+                self.gpcrc(),
+                self.dci()
+            )
+        }
+    }
+    #[doc = "Set peripheral bits to 1 to mark as privileged access only."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ppunspatd1(pub u32);
+    impl Ppunspatd1 {
+        #[doc = "DCDC Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dcdc(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DCDC Privileged Access."]
+        #[inline(always)]
+        pub const fn set_dcdc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "PDM Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pdm(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PDM Privileged Access."]
+        #[inline(always)]
+        pub const fn set_pdm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "RFSENSE Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rfsense(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RFSENSE Privileged Access."]
+        #[inline(always)]
+        pub const fn set_rfsense(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "RADIOAES Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn radioaes(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RADIOAES Privileged Access."]
+        #[inline(always)]
+        pub const fn set_radioaes(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "SMU Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smu(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SMU Privileged Access."]
+        #[inline(always)]
+        pub const fn set_smu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "SMUCFGNS Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn smucfgns(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SMUCFGNS Privileged Access."]
+        #[inline(always)]
+        pub const fn set_smucfgns(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "RTCC Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtcc(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RTCC Privileged Access."]
+        #[inline(always)]
+        pub const fn set_rtcc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "LETIMER0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn letimer0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LETIMER0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_letimer0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "IADC0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn iadc0(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IADC0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_iadc0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "I2C0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c0(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_i2c0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "WDOG0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wdog0(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "WDOG0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_wdog0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "AMUXCP0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn amuxcp0(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "AMUXCP0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_amuxcp0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "EUART0 Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn euart0(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "EUART0 Privileged Access."]
+        #[inline(always)]
+        pub const fn set_euart0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "CRYPTOACC Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cryptoacc(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CRYPTOACC Privileged Access."]
+        #[inline(always)]
+        pub const fn set_cryptoacc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "AHBRADIO Privileged Access."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ahbradio(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "AHBRADIO Privileged Access."]
+        #[inline(always)]
+        pub const fn set_ahbradio(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Ppunspatd1 {
+        #[inline(always)]
+        fn default() -> Ppunspatd1 {
+            Ppunspatd1(0)
+        }
+    }
+    impl core::fmt::Debug for Ppunspatd1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ppunspatd1")
+                .field("dcdc", &self.dcdc())
+                .field("pdm", &self.pdm())
+                .field("rfsense", &self.rfsense())
+                .field("radioaes", &self.radioaes())
+                .field("smu", &self.smu())
+                .field("smucfgns", &self.smucfgns())
+                .field("rtcc", &self.rtcc())
+                .field("letimer0", &self.letimer0())
+                .field("iadc0", &self.iadc0())
+                .field("i2c0", &self.i2c0())
+                .field("wdog0", &self.wdog0())
+                .field("amuxcp0", &self.amuxcp0())
+                .field("euart0", &self.euart0())
+                .field("cryptoacc", &self.cryptoacc())
+                .field("ahbradio", &self.ahbradio())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ppunspatd1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ppunspatd1 {{ dcdc: {=bool:?}, pdm: {=bool:?}, rfsense: {=bool:?}, radioaes: {=bool:?}, smu: {=bool:?}, smucfgns: {=bool:?}, rtcc: {=bool:?}, letimer0: {=bool:?}, iadc0: {=bool:?}, i2c0: {=bool:?}, wdog0: {=bool:?}, amuxcp0: {=bool:?}, euart0: {=bool:?}, cryptoacc: {=bool:?}, ahbradio: {=bool:?} }}",
+                self.dcdc(),
+                self.pdm(),
+                self.rfsense(),
+                self.radioaes(),
+                self.smu(),
+                self.smucfgns(),
+                self.rtcc(),
+                self.letimer0(),
+                self.iadc0(),
+                self.i2c0(),
+                self.wdog0(),
+                self.amuxcp0(),
+                self.euart0(),
+                self.cryptoacc(),
+                self.ahbradio()
+            )
+        }
+    }
+}
+pub mod vals {
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Smunslockkey(u32);
+    impl Smunslockkey {
+        #[doc = "Unlocks Registers."]
+        pub const Unlock: Self = Self(0x00ac_ce55);
+    }
+    impl Smunslockkey {
+        pub const fn from_bits(val: u32) -> Smunslockkey {
+            Self(val & 0x00ff_ffff)
+        }
+        pub const fn to_bits(self) -> u32 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Smunslockkey {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x00ac_ce55 => f.write_str("Unlock"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Smunslockkey {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x00ac_ce55 => defmt::write!(f, "Unlock"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u32> for Smunslockkey {
+        #[inline(always)]
+        fn from(val: u32) -> Smunslockkey {
+            Smunslockkey::from_bits(val)
+        }
+    }
+    impl From<Smunslockkey> for u32 {
+        #[inline(always)]
+        fn from(val: Smunslockkey) -> u32 {
+            Smunslockkey::to_bits(val)
+        }
+    }
+}

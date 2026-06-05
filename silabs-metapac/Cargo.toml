@@ -3,7 +3,7 @@
 
 [package]
 name = "silabs-metapac"
-version = "0.3.0"
+version = "0.4.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Generated Silicon Labs PAC. Do not edit by hand — regenerate via silabs-metapac-gen."
@@ -47,6 +47,12 @@ efr32fg25b211f1920im56 = []
 efr32fg25b212f1920im56 = []
 efr32fg25b221f1920im56 = []
 efr32fg25b222f1920im56 = []
+efr32mg22a224f512im40 = []
+efr32mg22c224f512gn32 = []
+efr32mg22c224f512im32 = []
+efr32mg22c224f512im40 = []
+efr32mg22e224f512im32 = []
+efr32mg22e224f512im40 = []
 efr32mg24a010f1024im40 = []
 efr32mg24a010f1024im48 = []
 efr32mg24a010f1536gm40 = []

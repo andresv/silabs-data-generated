@@ -8,68 +8,77 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 ## Peripheral support by family
 
-| Peripheral | FG25 | MG24 | MG26 |
-|------------|--------|--------|--------|
-| [ACMP](#acmp) | v3 | v2 | v2 |
-| [AMUXCP](#amuxcp) | | | v2 |
-| [BUFC](#bufc) | v3 | | |
-| [BURAM](#buram) | v0 | v0 | v0 |
-| [BURTC](#burtc) | v1 | v1 | v1 |
-| [CMU](#cmu) | v4 | v3 | v7 |
-| [DCDC](#dcdc) | v4 | v2 | v2 |
-| [DEVINFO](#devinfo) | v18 | v0_mg24 | v0_mg26 |
-| [DMEM](#dmem) | v2, v2_fg25 | v2, v2_ws | v2 |
-| [DPLL](#dpll) | v1 | v1 | v1 |
-| [EMU](#emu) | v4 | v3 | v3 |
-| [ETAMPDET](#etampdet) | v1 | | |
-| [EUSART](#eusart) | v2, v2_lf | v2, v2_lf | v2, v2_lf |
-| [FSRCO](#fsrco) | v0 | v0 | v0 |
-| [GPCRC](#gpcrc) | v0 | v0 | v0 |
-| [GPIO](#gpio) | v4 | v3 | v7 |
-| [HFRCO](#hfrco) | v2 | v2 | v2 |
-| [HFRCOEM](#hfrcoem) | v2 | v2 | v2 |
-| [HFXO](#hfxo) | v4 | v3 | v3 |
-| [HOSTMAILBOX](#hostmailbox) | v0 | v0 | v0 |
-| [I2C](#i2c) | v0 | v0 | v0 |
-| [IADC](#iadc) | v3, v3_fg25 | v3, v3_ha | v3, v3_ha |
-| [ICACHE](#icache) | v0 | v0 | v0 |
-| [KEYSCAN](#keyscan) | | v1 | v1 |
-| [LCD](#lcd) | | | v3 |
-| [LCDRF](#lcdrf) | | | v0 |
-| [LDMA](#ldma) | v1 | v0 | v0 |
-| [LDMAXBAR](#ldmaxbar) | v4 | v3 | v7 |
-| [LESENSE](#lesense) | v1 | | |
-| [LETIMER](#letimer) | v1 | v1 | v1 |
-| [LFRCO](#lfrco) | v0 | v2 | v2 |
-| [LFXO](#lfxo) | v1 | v1 | v1 |
-| [MPAHBRAM](#mpahbram) | v2 | | |
-| [MSC](#msc) | v4 | v3 | v9 |
-| [MVP](#mvp) | | v1 | v2 |
-| [PCNT](#pcnt) | v1 | v1 | v1 |
-| [PFMXPPRF](#pfmxpprf) | v0 | | |
-| [PRS](#prs) | v4 | v3 | v6 |
-| [RADIOAES](#radioaes) | v1 | v1 | v1 |
-| [RFFPLL](#rffpll) | v1 | | |
-| [SCRATCHPAD](#scratchpad) | v0 | v0 | |
-| [SEMAILBOX_NS_HOST](#semailbox_ns_host) | v1 | v1 | v1 |
-| [SEMAILBOX_S_HOST](#semailbox_s_host) | v1 | v1 | v1 |
-| [SMU](#smu) | v4 | v3, v3_mvp | v7, v7_mvp |
-| [SMU_NS_CFGNS](#smu_ns_cfgns) | v4 | v3, v3_mvp | v7, v7_mvp |
-| [SMU_S_CFGNS](#smu_s_cfgns) | v4 | v3, v3_mvp | v7, v7_mvp |
-| [SYSCFG](#syscfg) | v4 | v3, v3_mvp | v9, v9_mvp |
-| [SYSCFG_NS_CFGNS](#syscfg_ns_cfgns) | v4 | v3 | v9 |
-| [SYSCFG_S_CFGNS](#syscfg_s_cfgns) | v4 | v3 | v9 |
-| [SYSRTC](#sysrtc) | v1 | v1 | v1 |
-| [TIMER](#timer) | v1, v1_w | v1, v1_w | v1, v1_w |
-| [ULFRCO](#ulfrco) | v1 | v1 | v1 |
-| [USART](#usart) | | v0 | v0 |
-| [USBAHB_NS_AHBS](#usbahb_ns_ahbs) | v1 | | |
-| [USBAHB_S_AHBS](#usbahb_s_ahbs) | v1 | | |
-| [USBPLL](#usbpll) | v1 | | |
-| [USB_NS_APBS](#usb_ns_apbs) | v1 | | |
-| [USB_S_APBS](#usb_s_apbs) | v1 | | |
-| [VDAC](#vdac) | v2, v2_fg25 | v2 | v2 |
-| [WDOG](#wdog) | v1 | v1 | v1 |
+| Peripheral | FG25 | MG22 | MG24 | MG26 |
+|------------|--------|--------|--------|--------|
+| [ACMP](#acmp) | v3 | | v2 | v2 |
+| [AMUXCP](#amuxcp) | | | | v2 |
+| [BUFC](#bufc) | v3 | | | |
+| [BURAM](#buram) | v0 | v0 | v0 | v0 |
+| [BURTC](#burtc) | v1 | v0 | v1 | v1 |
+| [CMU](#cmu) | v4 | v1 | v3 | v7 |
+| [CRYPTOACC](#cryptoacc) | | v1 | | |
+| [CRYPTOACC_NS_PKCTRL](#cryptoacc_ns_pkctrl) | | v1 | | |
+| [CRYPTOACC_NS_RNGCTRL](#cryptoacc_ns_rngctrl) | | v1 | | |
+| [CRYPTOACC_S_PKCTRL](#cryptoacc_s_pkctrl) | | v1 | | |
+| [CRYPTOACC_S_RNGCTRL](#cryptoacc_s_rngctrl) | | v1 | | |
+| [DCDC](#dcdc) | v4 | v0 | v2 | v2 |
+| [DEVINFO](#devinfo) | v18 | v1 | v0_mg24 | v0_mg26 |
+| [DMEM](#dmem) | v2, v2_fg25 | | v2, v2_ws | v2 |
+| [DPLL](#dpll) | v1 | v0 | v1 | v1 |
+| [EMU](#emu) | v4 | v8 | v3 | v3 |
+| [ETAMPDET](#etampdet) | v1 | | | |
+| [EUART](#euart) | | v0 | | |
+| [EUSART](#eusart) | v2, v2_lf | | v2, v2_lf | v2, v2_lf |
+| [FSRCO](#fsrco) | v0 | v1 | v0 | v0 |
+| [GPCRC](#gpcrc) | v0 | v0 | v0 | v0 |
+| [GPIO](#gpio) | v4 | v1 | v3 | v7 |
+| [HFRCO](#hfrco) | v2 | v1 | v2 | v2 |
+| [HFRCOEM](#hfrcoem) | v2 | | v2 | v2 |
+| [HFXO](#hfxo) | v4 | v2 | v3 | v3 |
+| [HOSTMAILBOX](#hostmailbox) | v0 | | v0 | v0 |
+| [I2C](#i2c) | v0 | v0 | v0 | v0 |
+| [IADC](#iadc) | v3, v3_fg25 | v1 | v3, v3_ha | v3, v3_ha |
+| [ICACHE](#icache) | v0 | v0 | v0 | v0 |
+| [KEYSCAN](#keyscan) | | | v1 | v1 |
+| [LCD](#lcd) | | | | v3 |
+| [LCDRF](#lcdrf) | | | | v0 |
+| [LDMA](#ldma) | v1 | v0 | v0 | v0 |
+| [LDMAXBAR](#ldmaxbar) | v4 | v1 | v3 | v7 |
+| [LESENSE](#lesense) | v1 | | | |
+| [LETIMER](#letimer) | v1 | v0 | v1 | v1 |
+| [LFRCO](#lfrco) | v0 | v3 | v2 | v2 |
+| [LFXO](#lfxo) | v1 | v0 | v1 | v1 |
+| [MPAHBRAM](#mpahbram) | v2 | | | |
+| [MSC](#msc) | v4 | v8 | v3 | v9 |
+| [MVP](#mvp) | | | v1 | v2 |
+| [PCNT](#pcnt) | v1 | | v1 | v1 |
+| [PDM](#pdm) | | v0 | | |
+| [PFMXPPRF](#pfmxpprf) | v0 | | | |
+| [PRORTC](#prortc) | | v1 | | |
+| [PRS](#prs) | v4 | v1 | v3 | v6 |
+| [RADIOAES](#radioaes) | v1 | v1 | v1 | v1 |
+| [RFFPLL](#rffpll) | v1 | | | |
+| [RTCC](#rtcc) | | v1 | | |
+| [SCRATCHPAD](#scratchpad) | v0 | | v0 | |
+| [SEMAILBOX_NS_HOST](#semailbox_ns_host) | v1 | | v1 | v1 |
+| [SEMAILBOX_S_HOST](#semailbox_s_host) | v1 | | v1 | v1 |
+| [SMU](#smu) | v4 | v1 | v3, v3_mvp | v7, v7_mvp |
+| [SMU_NS_CFGNS](#smu_ns_cfgns) | v4 | v1 | v3, v3_mvp | v7, v7_mvp |
+| [SMU_S_CFGNS](#smu_s_cfgns) | v4 | v1 | v3, v3_mvp | v7, v7_mvp |
+| [SYSCFG](#syscfg) | v4 | v8 | v3, v3_mvp | v9, v9_mvp |
+| [SYSCFG_NS_CFGNS](#syscfg_ns_cfgns) | v4 | v8 | v3 | v9 |
+| [SYSCFG_S_CFGNS](#syscfg_s_cfgns) | v4 | v8 | v3 | v9 |
+| [SYSRTC](#sysrtc) | v1 | | v1 | v1 |
+| [TIMER](#timer) | v1, v1_w | v0, v0_w | v1, v1_w | v1, v1_w |
+| [ULFRCO](#ulfrco) | v1 | v0 | v1 | v1 |
+| [USART](#usart) | | v0 | v0 | v0 |
+| [USBAHB_NS_AHBS](#usbahb_ns_ahbs) | v1 | | | |
+| [USBAHB_S_AHBS](#usbahb_s_ahbs) | v1 | | | |
+| [USBPLL](#usbpll) | v1 | | | |
+| [USB_NS_APBS](#usb_ns_apbs) | v1 | | | |
+| [USB_S_APBS](#usb_s_apbs) | v1 | | | |
+| [VDAC](#vdac) | v2, v2_fg25 | | v2 | v2 |
+| [WDOG](#wdog) | v1 | v0 | v1 | v1 |
 
 ## Detailed peripheral information
 
@@ -96,26 +105,59 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
-- **v0**: FG25, MG24, MG26
+- **v0**: FG25, MG22, MG24, MG26
 
 ### BURTC
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v1**: FG25, MG24, MG26
 
 ### CMU
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v4**: FG25
 - **v7**: MG26
+
+### CRYPTOACC
+
+**Versions by family:**
+
+- **v1**: MG22
+
+### CRYPTOACC_NS_PKCTRL
+
+**Versions by family:**
+
+- **v1**: MG22
+
+### CRYPTOACC_NS_RNGCTRL
+
+**Versions by family:**
+
+- **v1**: MG22
+
+### CRYPTOACC_S_PKCTRL
+
+**Versions by family:**
+
+- **v1**: MG22
+
+### CRYPTOACC_S_RNGCTRL
+
+**Versions by family:**
+
+- **v1**: MG22
 
 ### DCDC
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v2**: MG24, MG26
 - **v4**: FG25
 
@@ -125,6 +167,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v0_mg24**: MG24
 - **v0_mg26**: MG26
+- **v1**: MG22
 - **v18**: FG25
 
 ### DMEM
@@ -139,6 +182,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v1**: FG25, MG24, MG26
 
 ### EMU
@@ -147,12 +191,19 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v3**: MG24, MG26
 - **v4**: FG25
+- **v8**: MG22
 
 ### ETAMPDET
 
 **Versions by family:**
 
 - **v1**: FG25
+
+### EUART
+
+**Versions by family:**
+
+- **v0**: MG22
 
 ### EUSART
 
@@ -166,17 +217,19 @@ The following table shows which peripheral versions are supported across EFR32 /
 **Versions by family:**
 
 - **v0**: FG25, MG24, MG26
+- **v1**: MG22
 
 ### GPCRC
 
 **Versions by family:**
 
-- **v0**: FG25, MG24, MG26
+- **v0**: FG25, MG22, MG24, MG26
 
 ### GPIO
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v4**: FG25
 - **v7**: MG26
@@ -185,6 +238,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v2**: FG25, MG24, MG26
 
 ### HFRCOEM
@@ -197,6 +251,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v2**: MG22
 - **v3**: MG24, MG26
 - **v4**: FG25
 
@@ -210,12 +265,13 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
-- **v0**: FG25, MG24, MG26
+- **v0**: FG25, MG22, MG24, MG26
 
 ### IADC
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: FG25, MG24, MG26
 - **v3_fg25**: FG25
 - **v3_ha**: MG24, MG26
@@ -224,7 +280,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
-- **v0**: FG25, MG24, MG26
+- **v0**: FG25, MG22, MG24, MG26
 
 ### KEYSCAN
 
@@ -248,13 +304,14 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
-- **v0**: MG24, MG26
+- **v0**: MG22, MG24, MG26
 - **v1**: FG25
 
 ### LDMAXBAR
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v4**: FG25
 - **v7**: MG26
@@ -269,6 +326,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v1**: FG25, MG24, MG26
 
 ### LFRCO
@@ -277,11 +335,13 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v0**: FG25
 - **v2**: MG24, MG26
+- **v3**: MG22
 
 ### LFXO
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v1**: FG25, MG24, MG26
 
 ### MPAHBRAM
@@ -296,6 +356,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v3**: MG24
 - **v4**: FG25
+- **v8**: MG22
 - **v9**: MG26
 
 ### MVP
@@ -311,16 +372,29 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v1**: FG25, MG24, MG26
 
+### PDM
+
+**Versions by family:**
+
+- **v0**: MG22
+
 ### PFMXPPRF
 
 **Versions by family:**
 
 - **v0**: FG25
 
+### PRORTC
+
+**Versions by family:**
+
+- **v1**: MG22
+
 ### PRS
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v4**: FG25
 - **v6**: MG26
@@ -329,13 +403,19 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
-- **v1**: FG25, MG24, MG26
+- **v1**: FG25, MG22, MG24, MG26
 
 ### RFFPLL
 
 **Versions by family:**
 
 - **v1**: FG25
+
+### RTCC
+
+**Versions by family:**
+
+- **v1**: MG22
 
 ### SCRATCHPAD
 
@@ -359,6 +439,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v3_mvp**: MG24
 - **v4**: FG25
@@ -369,6 +450,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v3_mvp**: MG24
 - **v4**: FG25
@@ -379,6 +461,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v1**: MG22
 - **v3**: MG24
 - **v3_mvp**: MG24
 - **v4**: FG25
@@ -392,6 +475,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 - **v3**: MG24
 - **v3_mvp**: MG24
 - **v4**: FG25
+- **v8**: MG22
 - **v9**: MG26
 - **v9_mvp**: MG26
 
@@ -401,6 +485,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v3**: MG24
 - **v4**: FG25
+- **v8**: MG22
 - **v9**: MG26
 
 ### SYSCFG_S_CFGNS
@@ -409,6 +494,7 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 - **v3**: MG24
 - **v4**: FG25
+- **v8**: MG22
 - **v9**: MG26
 
 ### SYSRTC
@@ -421,6 +507,8 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v0**: MG22
+- **v0_w**: MG22
 - **v1**: FG25, MG24, MG26
 - **v1_w**: FG25, MG24, MG26
 
@@ -428,13 +516,14 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v1**: FG25, MG24, MG26
 
 ### USART
 
 **Versions by family:**
 
-- **v0**: MG24, MG26
+- **v0**: MG22, MG24, MG26
 
 ### USBAHB_NS_AHBS
 
@@ -477,5 +566,6 @@ The following table shows which peripheral versions are supported across EFR32 /
 
 **Versions by family:**
 
+- **v0**: MG22
 - **v1**: FG25, MG24, MG26
 

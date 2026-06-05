@@ -1,0 +1,5022 @@
+#[doc = "TIMER peripheral."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Timer {
+    ptr: *mut u8,
+}
+unsafe impl Send for Timer {}
+unsafe impl Sync for Timer {}
+impl Timer {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ipversion(self) -> crate::common::Reg<regs::Ipversion, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cfg(self) -> crate::common::Reg<regs::Cfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cmd(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn status(self) -> crate::common::Reg<regs::Status, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn if_(self) -> crate::common::Reg<regs::If, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn ien(self) -> crate::common::Reg<regs::Ien, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn top(self) -> crate::common::Reg<regs::Top, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn topb(self) -> crate::common::Reg<regs::Topb, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cnt(self) -> crate::common::Reg<regs::Cnt, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn lock(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn en(self) -> crate::common::Reg<regs::En, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc0_cfg(self) -> crate::common::Reg<regs::Cc0Cfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc0_ctrl(self) -> crate::common::Reg<regs::Cc0Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x64usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc0_oc(self) -> crate::common::Reg<regs::Cc0Oc, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc0_ocb(self) -> crate::common::Reg<regs::Cc0Ocb, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc0_icf(self) -> crate::common::Reg<regs::Cc0Icf, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc0_icof(self) -> crate::common::Reg<regs::Cc0Icof, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x78usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc1_cfg(self) -> crate::common::Reg<regs::Cc1Cfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc1_ctrl(self) -> crate::common::Reg<regs::Cc1Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc1_oc(self) -> crate::common::Reg<regs::Cc1Oc, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc1_ocb(self) -> crate::common::Reg<regs::Cc1Ocb, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc1_icf(self) -> crate::common::Reg<regs::Cc1Icf, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc1_icof(self) -> crate::common::Reg<regs::Cc1Icof, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x98usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc2_cfg(self) -> crate::common::Reg<regs::Cc2Cfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc2_ctrl(self) -> crate::common::Reg<regs::Cc2Ctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa4usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc2_oc(self) -> crate::common::Reg<regs::Cc2Oc, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa8usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc2_ocb(self) -> crate::common::Reg<regs::Cc2Ocb, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc2_icf(self) -> crate::common::Reg<regs::Cc2Icf, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb4usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn cc2_icof(self) -> crate::common::Reg<regs::Cc2Icof, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb8usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtcfg(self) -> crate::common::Reg<regs::Dtcfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dttimecfg(self) -> crate::common::Reg<regs::Dttimecfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe4usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtfcfg(self) -> crate::common::Reg<regs::Dtfcfg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe8usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtctrl(self) -> crate::common::Reg<regs::Dtctrl, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xecusize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtogen(self) -> crate::common::Reg<regs::Dtogen, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf0usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtfault(self) -> crate::common::Reg<regs::Dtfault, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf4usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtfaultc(self) -> crate::common::Reg<regs::Dtfaultc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize) as _) }
+    }
+    #[doc = "No Description."]
+    #[inline(always)]
+    pub const fn dtlock(self) -> crate::common::Reg<regs::Dtlock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xfcusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cfg_set(self) -> crate::common::Reg<regs::Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ctrl_set(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cmd_set(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x100cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn if_set(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn ien_set(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn top_set(self) -> crate::common::Reg<regs::Top, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x101cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn topb_set(self) -> crate::common::Reg<regs::Topb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1020usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cnt_set(self) -> crate::common::Reg<regs::Cnt, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn lock_set(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x102cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn en_set(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc0_cfg_set(self) -> crate::common::Reg<regs::Cc0Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1060usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc0_ctrl_set(self) -> crate::common::Reg<regs::Cc0Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1064usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc0_oc_set(self) -> crate::common::Reg<regs::Cc0Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1068usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc0_ocb_set(self) -> crate::common::Reg<regs::Cc0Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1070usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc1_cfg_set(self) -> crate::common::Reg<regs::Cc1Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1080usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc1_ctrl_set(self) -> crate::common::Reg<regs::Cc1Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1084usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc1_oc_set(self) -> crate::common::Reg<regs::Cc1Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1088usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc1_ocb_set(self) -> crate::common::Reg<regs::Cc1Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1090usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc2_cfg_set(self) -> crate::common::Reg<regs::Cc2Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10a0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc2_ctrl_set(self) -> crate::common::Reg<regs::Cc2Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10a4usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc2_oc_set(self) -> crate::common::Reg<regs::Cc2Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10a8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn cc2_ocb_set(self) -> crate::common::Reg<regs::Cc2Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10b0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dtcfg_set(self) -> crate::common::Reg<regs::Dtcfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10e0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dttimecfg_set(self) -> crate::common::Reg<regs::Dttimecfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10e4usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dtfcfg_set(self) -> crate::common::Reg<regs::Dtfcfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10e8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dtctrl_set(self) -> crate::common::Reg<regs::Dtctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10ecusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dtogen_set(self) -> crate::common::Reg<regs::Dtogen, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10f0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dtfaultc_set(self) -> crate::common::Reg<regs::Dtfaultc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10f8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-set alias)"]
+    #[inline(always)]
+    pub const fn dtlock_set(self) -> crate::common::Reg<regs::Dtlock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10fcusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cfg_clr(self) -> crate::common::Reg<regs::Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ctrl_clr(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cmd_clr(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x200cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn if_clr(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn ien_clr(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn top_clr(self) -> crate::common::Reg<regs::Top, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x201cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn topb_clr(self) -> crate::common::Reg<regs::Topb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2020usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cnt_clr(self) -> crate::common::Reg<regs::Cnt, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn lock_clr(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x202cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn en_clr(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc0_cfg_clr(self) -> crate::common::Reg<regs::Cc0Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2060usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc0_ctrl_clr(self) -> crate::common::Reg<regs::Cc0Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2064usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc0_oc_clr(self) -> crate::common::Reg<regs::Cc0Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2068usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc0_ocb_clr(self) -> crate::common::Reg<regs::Cc0Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2070usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc1_cfg_clr(self) -> crate::common::Reg<regs::Cc1Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2080usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc1_ctrl_clr(self) -> crate::common::Reg<regs::Cc1Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2084usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc1_oc_clr(self) -> crate::common::Reg<regs::Cc1Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2088usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc1_ocb_clr(self) -> crate::common::Reg<regs::Cc1Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2090usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc2_cfg_clr(self) -> crate::common::Reg<regs::Cc2Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20a0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc2_ctrl_clr(self) -> crate::common::Reg<regs::Cc2Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20a4usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc2_oc_clr(self) -> crate::common::Reg<regs::Cc2Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20a8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn cc2_ocb_clr(self) -> crate::common::Reg<regs::Cc2Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20b0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dtcfg_clr(self) -> crate::common::Reg<regs::Dtcfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20e0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dttimecfg_clr(self) -> crate::common::Reg<regs::Dttimecfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20e4usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dtfcfg_clr(self) -> crate::common::Reg<regs::Dtfcfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20e8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dtctrl_clr(self) -> crate::common::Reg<regs::Dtctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20ecusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dtogen_clr(self) -> crate::common::Reg<regs::Dtogen, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20f0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dtfaultc_clr(self) -> crate::common::Reg<regs::Dtfaultc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20f8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-clr alias)"]
+    #[inline(always)]
+    pub const fn dtlock_clr(self) -> crate::common::Reg<regs::Dtlock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20fcusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cfg_tgl(self) -> crate::common::Reg<regs::Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3004usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ctrl_tgl(self) -> crate::common::Reg<regs::Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3008usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cmd_tgl(self) -> crate::common::Reg<regs::Cmd, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x300cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn if_tgl(self) -> crate::common::Reg<regs::If, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3014usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn ien_tgl(self) -> crate::common::Reg<regs::Ien, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3018usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn top_tgl(self) -> crate::common::Reg<regs::Top, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x301cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn topb_tgl(self) -> crate::common::Reg<regs::Topb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3020usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cnt_tgl(self) -> crate::common::Reg<regs::Cnt, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3024usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn lock_tgl(self) -> crate::common::Reg<regs::Lock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x302cusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn en_tgl(self) -> crate::common::Reg<regs::En, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3030usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc0_cfg_tgl(self) -> crate::common::Reg<regs::Cc0Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3060usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc0_ctrl_tgl(self) -> crate::common::Reg<regs::Cc0Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3064usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc0_oc_tgl(self) -> crate::common::Reg<regs::Cc0Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3068usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc0_ocb_tgl(self) -> crate::common::Reg<regs::Cc0Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3070usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc1_cfg_tgl(self) -> crate::common::Reg<regs::Cc1Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3080usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc1_ctrl_tgl(self) -> crate::common::Reg<regs::Cc1Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3084usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc1_oc_tgl(self) -> crate::common::Reg<regs::Cc1Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3088usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc1_ocb_tgl(self) -> crate::common::Reg<regs::Cc1Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3090usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc2_cfg_tgl(self) -> crate::common::Reg<regs::Cc2Cfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30a0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc2_ctrl_tgl(self) -> crate::common::Reg<regs::Cc2Ctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30a4usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc2_oc_tgl(self) -> crate::common::Reg<regs::Cc2Oc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30a8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn cc2_ocb_tgl(self) -> crate::common::Reg<regs::Cc2Ocb, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30b0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dtcfg_tgl(self) -> crate::common::Reg<regs::Dtcfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30e0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dttimecfg_tgl(self) -> crate::common::Reg<regs::Dttimecfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30e4usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dtfcfg_tgl(self) -> crate::common::Reg<regs::Dtfcfg, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30e8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dtctrl_tgl(self) -> crate::common::Reg<regs::Dtctrl, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30ecusize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dtogen_tgl(self) -> crate::common::Reg<regs::Dtogen, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30f0usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dtfaultc_tgl(self) -> crate::common::Reg<regs::Dtfaultc, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30f8usize) as _) }
+    }
+    #[doc = "No Description. (write-1-to-tgl alias)"]
+    #[inline(always)]
+    pub const fn dtlock_tgl(self) -> crate::common::Reg<regs::Dtlock, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30fcusize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc0Cfg(pub u32);
+    impl Cc0Cfg {
+        #[doc = "CC Channel Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> super::vals::Cc0CfgMode {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Cc0CfgMode::from_bits(val as u8)
+        }
+        #[doc = "CC Channel Mode."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: super::vals::Cc0CfgMode) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Compare Output Initial State."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn coist(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Output Initial State."]
+        #[inline(always)]
+        pub const fn set_coist(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Input Selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn insel(&self) -> super::vals::Cc0CfgInsel {
+            let val = (self.0 >> 17usize) & 0x03;
+            super::vals::Cc0CfgInsel::from_bits(val as u8)
+        }
+        #[doc = "Input Selection."]
+        #[inline(always)]
+        pub const fn set_insel(&mut self, val: super::vals::Cc0CfgInsel) {
+            self.0 = (self.0 & !(0x03 << 17usize)) | (((val.to_bits() as u32) & 0x03) << 17usize);
+        }
+        #[doc = "PRS Configuration."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prsconf(&self) -> super::vals::Cc0CfgPrsconf {
+            let val = (self.0 >> 19usize) & 0x01;
+            super::vals::Cc0CfgPrsconf::from_bits(val as u8)
+        }
+        #[doc = "PRS Configuration."]
+        #[inline(always)]
+        pub const fn set_prsconf(&mut self, val: super::vals::Cc0CfgPrsconf) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        }
+        #[doc = "Digital Filter."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn filt(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Digital Filter."]
+        #[inline(always)]
+        pub const fn set_filt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Input Capture FIFO watermark level."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwl(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture FIFO watermark level."]
+        #[inline(always)]
+        pub const fn set_icfwl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+    }
+    impl Default for Cc0Cfg {
+        #[inline(always)]
+        fn default() -> Cc0Cfg {
+            Cc0Cfg(0)
+        }
+    }
+    impl core::fmt::Debug for Cc0Cfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc0Cfg")
+                .field("mode", &self.mode())
+                .field("coist", &self.coist())
+                .field("insel", &self.insel())
+                .field("prsconf", &self.prsconf())
+                .field("filt", &self.filt())
+                .field("icfwl", &self.icfwl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc0Cfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cc0Cfg {{ mode: {:?}, coist: {=bool:?}, insel: {:?}, prsconf: {:?}, filt: {=bool:?}, icfwl: {=bool:?} }}",
+                self.mode(),
+                self.coist(),
+                self.insel(),
+                self.prsconf(),
+                self.filt(),
+                self.icfwl()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc0Ctrl(pub u32);
+    impl Cc0Ctrl {
+        #[doc = "Output Invert."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn outinv(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output Invert."]
+        #[inline(always)]
+        pub const fn set_outinv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Compare Match Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmoa(&self) -> super::vals::Cc0CtrlCmoa {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Cc0CtrlCmoa::from_bits(val as u8)
+        }
+        #[doc = "Compare Match Output Action."]
+        #[inline(always)]
+        pub const fn set_cmoa(&mut self, val: super::vals::Cc0CtrlCmoa) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "Counter Overflow Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cofoa(&self) -> super::vals::Cc0CtrlCofoa {
+            let val = (self.0 >> 10usize) & 0x03;
+            super::vals::Cc0CtrlCofoa::from_bits(val as u8)
+        }
+        #[doc = "Counter Overflow Output Action."]
+        #[inline(always)]
+        pub const fn set_cofoa(&mut self, val: super::vals::Cc0CtrlCofoa) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
+        }
+        #[doc = "Counter Underflow Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cufoa(&self) -> super::vals::Cc0CtrlCufoa {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::Cc0CtrlCufoa::from_bits(val as u8)
+        }
+        #[doc = "Counter Underflow Output Action."]
+        #[inline(always)]
+        pub const fn set_cufoa(&mut self, val: super::vals::Cc0CtrlCufoa) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "Input Capture Edge Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icedge(&self) -> super::vals::Cc0CtrlIcedge {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Cc0CtrlIcedge::from_bits(val as u8)
+        }
+        #[doc = "Input Capture Edge Select."]
+        #[inline(always)]
+        pub const fn set_icedge(&mut self, val: super::vals::Cc0CtrlIcedge) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+        #[doc = "Input Capture Event Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icevctrl(&self) -> super::vals::Cc0CtrlIcevctrl {
+            let val = (self.0 >> 26usize) & 0x03;
+            super::vals::Cc0CtrlIcevctrl::from_bits(val as u8)
+        }
+        #[doc = "Input Capture Event Control."]
+        #[inline(always)]
+        pub const fn set_icevctrl(&mut self, val: super::vals::Cc0CtrlIcevctrl) {
+            self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
+        }
+    }
+    impl Default for Cc0Ctrl {
+        #[inline(always)]
+        fn default() -> Cc0Ctrl {
+            Cc0Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Cc0Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc0Ctrl")
+                .field("outinv", &self.outinv())
+                .field("cmoa", &self.cmoa())
+                .field("cofoa", &self.cofoa())
+                .field("cufoa", &self.cufoa())
+                .field("icedge", &self.icedge())
+                .field("icevctrl", &self.icevctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc0Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cc0Ctrl {{ outinv: {=bool:?}, cmoa: {:?}, cofoa: {:?}, cufoa: {:?}, icedge: {:?}, icevctrl: {:?} }}",
+                self.outinv(),
+                self.cmoa(),
+                self.cofoa(),
+                self.cufoa(),
+                self.icedge(),
+                self.icevctrl()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc0Icf(pub u32);
+    impl Cc0Icf {
+        #[doc = "Input Capture FIFO."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icf(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Input Capture FIFO."]
+        #[inline(always)]
+        pub const fn set_icf(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc0Icf {
+        #[inline(always)]
+        fn default() -> Cc0Icf {
+            Cc0Icf(0)
+        }
+    }
+    impl core::fmt::Debug for Cc0Icf {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc0Icf").field("icf", &self.icf()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc0Icf {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc0Icf {{ icf: {=u16:?} }}", self.icf())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc0Icof(pub u32);
+    impl Cc0Icof {
+        #[doc = "Input Capture FIFO Overflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icof(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Input Capture FIFO Overflow."]
+        #[inline(always)]
+        pub const fn set_icof(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc0Icof {
+        #[inline(always)]
+        fn default() -> Cc0Icof {
+            Cc0Icof(0)
+        }
+    }
+    impl core::fmt::Debug for Cc0Icof {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc0Icof").field("icof", &self.icof()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc0Icof {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc0Icof {{ icof: {=u16:?} }}", self.icof())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc0Oc(pub u32);
+    impl Cc0Oc {
+        #[doc = "Output Compare Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn oc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Output Compare Value."]
+        #[inline(always)]
+        pub const fn set_oc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc0Oc {
+        #[inline(always)]
+        fn default() -> Cc0Oc {
+            Cc0Oc(0)
+        }
+    }
+    impl core::fmt::Debug for Cc0Oc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc0Oc").field("oc", &self.oc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc0Oc {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc0Oc {{ oc: {=u16:?} }}", self.oc())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc0Ocb(pub u32);
+    impl Cc0Ocb {
+        #[doc = "Output Compare Value Buffer."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ocb(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Output Compare Value Buffer."]
+        #[inline(always)]
+        pub const fn set_ocb(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc0Ocb {
+        #[inline(always)]
+        fn default() -> Cc0Ocb {
+            Cc0Ocb(0)
+        }
+    }
+    impl core::fmt::Debug for Cc0Ocb {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc0Ocb").field("ocb", &self.ocb()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc0Ocb {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc0Ocb {{ ocb: {=u16:?} }}", self.ocb())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc1Cfg(pub u32);
+    impl Cc1Cfg {
+        #[doc = "CC Channel Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> super::vals::Cc1CfgMode {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Cc1CfgMode::from_bits(val as u8)
+        }
+        #[doc = "CC Channel Mode."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: super::vals::Cc1CfgMode) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Compare Output Initial State."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn coist(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Output Initial State."]
+        #[inline(always)]
+        pub const fn set_coist(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Input Selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn insel(&self) -> super::vals::Cc1CfgInsel {
+            let val = (self.0 >> 17usize) & 0x03;
+            super::vals::Cc1CfgInsel::from_bits(val as u8)
+        }
+        #[doc = "Input Selection."]
+        #[inline(always)]
+        pub const fn set_insel(&mut self, val: super::vals::Cc1CfgInsel) {
+            self.0 = (self.0 & !(0x03 << 17usize)) | (((val.to_bits() as u32) & 0x03) << 17usize);
+        }
+        #[doc = "PRS Configuration."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prsconf(&self) -> super::vals::Cc1CfgPrsconf {
+            let val = (self.0 >> 19usize) & 0x01;
+            super::vals::Cc1CfgPrsconf::from_bits(val as u8)
+        }
+        #[doc = "PRS Configuration."]
+        #[inline(always)]
+        pub const fn set_prsconf(&mut self, val: super::vals::Cc1CfgPrsconf) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        }
+        #[doc = "Digital Filter."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn filt(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Digital Filter."]
+        #[inline(always)]
+        pub const fn set_filt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Input Capture FIFO watermark level."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwl(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture FIFO watermark level."]
+        #[inline(always)]
+        pub const fn set_icfwl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+    }
+    impl Default for Cc1Cfg {
+        #[inline(always)]
+        fn default() -> Cc1Cfg {
+            Cc1Cfg(0)
+        }
+    }
+    impl core::fmt::Debug for Cc1Cfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc1Cfg")
+                .field("mode", &self.mode())
+                .field("coist", &self.coist())
+                .field("insel", &self.insel())
+                .field("prsconf", &self.prsconf())
+                .field("filt", &self.filt())
+                .field("icfwl", &self.icfwl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc1Cfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cc1Cfg {{ mode: {:?}, coist: {=bool:?}, insel: {:?}, prsconf: {:?}, filt: {=bool:?}, icfwl: {=bool:?} }}",
+                self.mode(),
+                self.coist(),
+                self.insel(),
+                self.prsconf(),
+                self.filt(),
+                self.icfwl()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc1Ctrl(pub u32);
+    impl Cc1Ctrl {
+        #[doc = "Output Invert."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn outinv(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output Invert."]
+        #[inline(always)]
+        pub const fn set_outinv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Compare Match Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmoa(&self) -> super::vals::Cc1CtrlCmoa {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Cc1CtrlCmoa::from_bits(val as u8)
+        }
+        #[doc = "Compare Match Output Action."]
+        #[inline(always)]
+        pub const fn set_cmoa(&mut self, val: super::vals::Cc1CtrlCmoa) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "Counter Overflow Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cofoa(&self) -> super::vals::Cc1CtrlCofoa {
+            let val = (self.0 >> 10usize) & 0x03;
+            super::vals::Cc1CtrlCofoa::from_bits(val as u8)
+        }
+        #[doc = "Counter Overflow Output Action."]
+        #[inline(always)]
+        pub const fn set_cofoa(&mut self, val: super::vals::Cc1CtrlCofoa) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
+        }
+        #[doc = "Counter Underflow Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cufoa(&self) -> super::vals::Cc1CtrlCufoa {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::Cc1CtrlCufoa::from_bits(val as u8)
+        }
+        #[doc = "Counter Underflow Output Action."]
+        #[inline(always)]
+        pub const fn set_cufoa(&mut self, val: super::vals::Cc1CtrlCufoa) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "Input Capture Edge Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icedge(&self) -> super::vals::Cc1CtrlIcedge {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Cc1CtrlIcedge::from_bits(val as u8)
+        }
+        #[doc = "Input Capture Edge Select."]
+        #[inline(always)]
+        pub const fn set_icedge(&mut self, val: super::vals::Cc1CtrlIcedge) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+        #[doc = "Input Capture Event Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icevctrl(&self) -> super::vals::Cc1CtrlIcevctrl {
+            let val = (self.0 >> 26usize) & 0x03;
+            super::vals::Cc1CtrlIcevctrl::from_bits(val as u8)
+        }
+        #[doc = "Input Capture Event Control."]
+        #[inline(always)]
+        pub const fn set_icevctrl(&mut self, val: super::vals::Cc1CtrlIcevctrl) {
+            self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
+        }
+    }
+    impl Default for Cc1Ctrl {
+        #[inline(always)]
+        fn default() -> Cc1Ctrl {
+            Cc1Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Cc1Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc1Ctrl")
+                .field("outinv", &self.outinv())
+                .field("cmoa", &self.cmoa())
+                .field("cofoa", &self.cofoa())
+                .field("cufoa", &self.cufoa())
+                .field("icedge", &self.icedge())
+                .field("icevctrl", &self.icevctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc1Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cc1Ctrl {{ outinv: {=bool:?}, cmoa: {:?}, cofoa: {:?}, cufoa: {:?}, icedge: {:?}, icevctrl: {:?} }}",
+                self.outinv(),
+                self.cmoa(),
+                self.cofoa(),
+                self.cufoa(),
+                self.icedge(),
+                self.icevctrl()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc1Icf(pub u32);
+    impl Cc1Icf {
+        #[doc = "Input Capture FIFO."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icf(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Input Capture FIFO."]
+        #[inline(always)]
+        pub const fn set_icf(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc1Icf {
+        #[inline(always)]
+        fn default() -> Cc1Icf {
+            Cc1Icf(0)
+        }
+    }
+    impl core::fmt::Debug for Cc1Icf {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc1Icf").field("icf", &self.icf()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc1Icf {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc1Icf {{ icf: {=u16:?} }}", self.icf())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc1Icof(pub u32);
+    impl Cc1Icof {
+        #[doc = "Input Capture FIFO Overflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icof(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Input Capture FIFO Overflow."]
+        #[inline(always)]
+        pub const fn set_icof(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc1Icof {
+        #[inline(always)]
+        fn default() -> Cc1Icof {
+            Cc1Icof(0)
+        }
+    }
+    impl core::fmt::Debug for Cc1Icof {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc1Icof").field("icof", &self.icof()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc1Icof {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc1Icof {{ icof: {=u16:?} }}", self.icof())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc1Oc(pub u32);
+    impl Cc1Oc {
+        #[doc = "Output Compare Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn oc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Output Compare Value."]
+        #[inline(always)]
+        pub const fn set_oc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc1Oc {
+        #[inline(always)]
+        fn default() -> Cc1Oc {
+            Cc1Oc(0)
+        }
+    }
+    impl core::fmt::Debug for Cc1Oc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc1Oc").field("oc", &self.oc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc1Oc {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc1Oc {{ oc: {=u16:?} }}", self.oc())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc1Ocb(pub u32);
+    impl Cc1Ocb {
+        #[doc = "Output Compare Value Buffer."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ocb(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Output Compare Value Buffer."]
+        #[inline(always)]
+        pub const fn set_ocb(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc1Ocb {
+        #[inline(always)]
+        fn default() -> Cc1Ocb {
+            Cc1Ocb(0)
+        }
+    }
+    impl core::fmt::Debug for Cc1Ocb {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc1Ocb").field("ocb", &self.ocb()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc1Ocb {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc1Ocb {{ ocb: {=u16:?} }}", self.ocb())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc2Cfg(pub u32);
+    impl Cc2Cfg {
+        #[doc = "CC Channel Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> super::vals::Cc2CfgMode {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Cc2CfgMode::from_bits(val as u8)
+        }
+        #[doc = "CC Channel Mode."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: super::vals::Cc2CfgMode) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Compare Output Initial State."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn coist(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Compare Output Initial State."]
+        #[inline(always)]
+        pub const fn set_coist(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Input Selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn insel(&self) -> super::vals::Cc2CfgInsel {
+            let val = (self.0 >> 17usize) & 0x03;
+            super::vals::Cc2CfgInsel::from_bits(val as u8)
+        }
+        #[doc = "Input Selection."]
+        #[inline(always)]
+        pub const fn set_insel(&mut self, val: super::vals::Cc2CfgInsel) {
+            self.0 = (self.0 & !(0x03 << 17usize)) | (((val.to_bits() as u32) & 0x03) << 17usize);
+        }
+        #[doc = "PRS Configuration."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prsconf(&self) -> super::vals::Cc2CfgPrsconf {
+            let val = (self.0 >> 19usize) & 0x01;
+            super::vals::Cc2CfgPrsconf::from_bits(val as u8)
+        }
+        #[doc = "PRS Configuration."]
+        #[inline(always)]
+        pub const fn set_prsconf(&mut self, val: super::vals::Cc2CfgPrsconf) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        }
+        #[doc = "Digital Filter."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn filt(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Digital Filter."]
+        #[inline(always)]
+        pub const fn set_filt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Input Capture FIFO watermark level."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwl(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture FIFO watermark level."]
+        #[inline(always)]
+        pub const fn set_icfwl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+    }
+    impl Default for Cc2Cfg {
+        #[inline(always)]
+        fn default() -> Cc2Cfg {
+            Cc2Cfg(0)
+        }
+    }
+    impl core::fmt::Debug for Cc2Cfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc2Cfg")
+                .field("mode", &self.mode())
+                .field("coist", &self.coist())
+                .field("insel", &self.insel())
+                .field("prsconf", &self.prsconf())
+                .field("filt", &self.filt())
+                .field("icfwl", &self.icfwl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc2Cfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cc2Cfg {{ mode: {:?}, coist: {=bool:?}, insel: {:?}, prsconf: {:?}, filt: {=bool:?}, icfwl: {=bool:?} }}",
+                self.mode(),
+                self.coist(),
+                self.insel(),
+                self.prsconf(),
+                self.filt(),
+                self.icfwl()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc2Ctrl(pub u32);
+    impl Cc2Ctrl {
+        #[doc = "Output Invert."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn outinv(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output Invert."]
+        #[inline(always)]
+        pub const fn set_outinv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Compare Match Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cmoa(&self) -> super::vals::Cc2CtrlCmoa {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Cc2CtrlCmoa::from_bits(val as u8)
+        }
+        #[doc = "Compare Match Output Action."]
+        #[inline(always)]
+        pub const fn set_cmoa(&mut self, val: super::vals::Cc2CtrlCmoa) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "Counter Overflow Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cofoa(&self) -> super::vals::Cc2CtrlCofoa {
+            let val = (self.0 >> 10usize) & 0x03;
+            super::vals::Cc2CtrlCofoa::from_bits(val as u8)
+        }
+        #[doc = "Counter Overflow Output Action."]
+        #[inline(always)]
+        pub const fn set_cofoa(&mut self, val: super::vals::Cc2CtrlCofoa) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
+        }
+        #[doc = "Counter Underflow Output Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cufoa(&self) -> super::vals::Cc2CtrlCufoa {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::Cc2CtrlCufoa::from_bits(val as u8)
+        }
+        #[doc = "Counter Underflow Output Action."]
+        #[inline(always)]
+        pub const fn set_cufoa(&mut self, val: super::vals::Cc2CtrlCufoa) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "Input Capture Edge Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icedge(&self) -> super::vals::Cc2CtrlIcedge {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Cc2CtrlIcedge::from_bits(val as u8)
+        }
+        #[doc = "Input Capture Edge Select."]
+        #[inline(always)]
+        pub const fn set_icedge(&mut self, val: super::vals::Cc2CtrlIcedge) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+        #[doc = "Input Capture Event Control."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icevctrl(&self) -> super::vals::Cc2CtrlIcevctrl {
+            let val = (self.0 >> 26usize) & 0x03;
+            super::vals::Cc2CtrlIcevctrl::from_bits(val as u8)
+        }
+        #[doc = "Input Capture Event Control."]
+        #[inline(always)]
+        pub const fn set_icevctrl(&mut self, val: super::vals::Cc2CtrlIcevctrl) {
+            self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
+        }
+    }
+    impl Default for Cc2Ctrl {
+        #[inline(always)]
+        fn default() -> Cc2Ctrl {
+            Cc2Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Cc2Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc2Ctrl")
+                .field("outinv", &self.outinv())
+                .field("cmoa", &self.cmoa())
+                .field("cofoa", &self.cofoa())
+                .field("cufoa", &self.cufoa())
+                .field("icedge", &self.icedge())
+                .field("icevctrl", &self.icevctrl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc2Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cc2Ctrl {{ outinv: {=bool:?}, cmoa: {:?}, cofoa: {:?}, cufoa: {:?}, icedge: {:?}, icevctrl: {:?} }}",
+                self.outinv(),
+                self.cmoa(),
+                self.cofoa(),
+                self.cufoa(),
+                self.icedge(),
+                self.icevctrl()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc2Icf(pub u32);
+    impl Cc2Icf {
+        #[doc = "Input Capture FIFO."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icf(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Input Capture FIFO."]
+        #[inline(always)]
+        pub const fn set_icf(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc2Icf {
+        #[inline(always)]
+        fn default() -> Cc2Icf {
+            Cc2Icf(0)
+        }
+    }
+    impl core::fmt::Debug for Cc2Icf {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc2Icf").field("icf", &self.icf()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc2Icf {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc2Icf {{ icf: {=u16:?} }}", self.icf())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc2Icof(pub u32);
+    impl Cc2Icof {
+        #[doc = "Input Capture FIFO Overflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icof(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Input Capture FIFO Overflow."]
+        #[inline(always)]
+        pub const fn set_icof(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc2Icof {
+        #[inline(always)]
+        fn default() -> Cc2Icof {
+            Cc2Icof(0)
+        }
+    }
+    impl core::fmt::Debug for Cc2Icof {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc2Icof").field("icof", &self.icof()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc2Icof {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc2Icof {{ icof: {=u16:?} }}", self.icof())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc2Oc(pub u32);
+    impl Cc2Oc {
+        #[doc = "Output Compare Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn oc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Output Compare Value."]
+        #[inline(always)]
+        pub const fn set_oc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc2Oc {
+        #[inline(always)]
+        fn default() -> Cc2Oc {
+            Cc2Oc(0)
+        }
+    }
+    impl core::fmt::Debug for Cc2Oc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc2Oc").field("oc", &self.oc()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc2Oc {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc2Oc {{ oc: {=u16:?} }}", self.oc())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cc2Ocb(pub u32);
+    impl Cc2Ocb {
+        #[doc = "Output Compare Value Buffer."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ocb(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Output Compare Value Buffer."]
+        #[inline(always)]
+        pub const fn set_ocb(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cc2Ocb {
+        #[inline(always)]
+        fn default() -> Cc2Ocb {
+            Cc2Ocb(0)
+        }
+    }
+    impl core::fmt::Debug for Cc2Ocb {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cc2Ocb").field("ocb", &self.ocb()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cc2Ocb {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cc2Ocb {{ ocb: {=u16:?} }}", self.ocb())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cfg(pub u32);
+    impl Cfg {
+        #[doc = "Timer Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> super::vals::CfgMode {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::CfgMode::from_bits(val as u8)
+        }
+        #[doc = "Timer Mode."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: super::vals::CfgMode) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Timer Start/Stop/Reload Synchronization."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sync(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Timer Start/Stop/Reload Synchronization."]
+        #[inline(always)]
+        pub const fn set_sync(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "One-shot Mode Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn osmen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "One-shot Mode Enable."]
+        #[inline(always)]
+        pub const fn set_osmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Quadrature Decoder Mode Selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn qdm(&self) -> super::vals::Qdm {
+            let val = (self.0 >> 5usize) & 0x01;
+            super::vals::Qdm::from_bits(val as u8)
+        }
+        #[doc = "Quadrature Decoder Mode Selection."]
+        #[inline(always)]
+        pub const fn set_qdm(&mut self, val: super::vals::Qdm) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Debug Mode Run Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn debugrun(&self) -> super::vals::Debugrun {
+            let val = (self.0 >> 6usize) & 0x01;
+            super::vals::Debugrun::from_bits(val as u8)
+        }
+        #[doc = "Debug Mode Run Enable."]
+        #[inline(always)]
+        pub const fn set_debugrun(&mut self, val: super::vals::Debugrun) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        }
+        #[doc = "DMA Request Clear on Active."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dmaclract(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DMA Request Clear on Active."]
+        #[inline(always)]
+        pub const fn set_dmaclract(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Clock Source Select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn clksel(&self) -> super::vals::Clksel {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Clksel::from_bits(val as u8)
+        }
+        #[doc = "Clock Source Select."]
+        #[inline(always)]
+        pub const fn set_clksel(&mut self, val: super::vals::Clksel) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "PWM output retimed enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn retimeen(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PWM output retimed enable."]
+        #[inline(always)]
+        pub const fn set_retimeen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "Disable Timer Start/Stop/Reload output."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dissyncout(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disable Timer Start/Stop/Reload output."]
+        #[inline(always)]
+        pub const fn set_dissyncout(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "PWM output retime select."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn retimesel(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PWM output retime select."]
+        #[inline(always)]
+        pub const fn set_retimesel(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Always Track Inputs."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ati(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Always Track Inputs."]
+        #[inline(always)]
+        pub const fn set_ati(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Reload-Start Sets COIST."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsscoist(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Reload-Start Sets COIST."]
+        #[inline(always)]
+        pub const fn set_rsscoist(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Prescaler Setting."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn presc(&self) -> super::vals::Presc {
+            let val = (self.0 >> 18usize) & 0x03ff;
+            super::vals::Presc::from_bits(val as u16)
+        }
+        #[doc = "Prescaler Setting."]
+        #[inline(always)]
+        pub const fn set_presc(&mut self, val: super::vals::Presc) {
+            self.0 = (self.0 & !(0x03ff << 18usize)) | (((val.to_bits() as u32) & 0x03ff) << 18usize);
+        }
+    }
+    impl Default for Cfg {
+        #[inline(always)]
+        fn default() -> Cfg {
+            Cfg(0)
+        }
+    }
+    impl core::fmt::Debug for Cfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfg")
+                .field("mode", &self.mode())
+                .field("sync", &self.sync())
+                .field("osmen", &self.osmen())
+                .field("qdm", &self.qdm())
+                .field("debugrun", &self.debugrun())
+                .field("dmaclract", &self.dmaclract())
+                .field("clksel", &self.clksel())
+                .field("retimeen", &self.retimeen())
+                .field("dissyncout", &self.dissyncout())
+                .field("retimesel", &self.retimesel())
+                .field("ati", &self.ati())
+                .field("rsscoist", &self.rsscoist())
+                .field("presc", &self.presc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cfg {{ mode: {:?}, sync: {=bool:?}, osmen: {=bool:?}, qdm: {:?}, debugrun: {:?}, dmaclract: {=bool:?}, clksel: {:?}, retimeen: {=bool:?}, dissyncout: {=bool:?}, retimesel: {=bool:?}, ati: {=bool:?}, rsscoist: {=bool:?}, presc: {:?} }}",
+                self.mode(),
+                self.sync(),
+                self.osmen(),
+                self.qdm(),
+                self.debugrun(),
+                self.dmaclract(),
+                self.clksel(),
+                self.retimeen(),
+                self.dissyncout(),
+                self.retimesel(),
+                self.ati(),
+                self.rsscoist(),
+                self.presc()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cmd(pub u32);
+    impl Cmd {
+        #[doc = "Start Timer."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn start(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start Timer."]
+        #[inline(always)]
+        pub const fn set_start(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Stop Timer."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stop(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stop Timer."]
+        #[inline(always)]
+        pub const fn set_stop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Cmd {
+        #[inline(always)]
+        fn default() -> Cmd {
+            Cmd(0)
+        }
+    }
+    impl core::fmt::Debug for Cmd {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cmd")
+                .field("start", &self.start())
+                .field("stop", &self.stop())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cmd {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cmd {{ start: {=bool:?}, stop: {=bool:?} }}",
+                self.start(),
+                self.stop()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cnt(pub u32);
+    impl Cnt {
+        #[doc = "Counter Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cnt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Counter Value."]
+        #[inline(always)]
+        pub const fn set_cnt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Cnt {
+        #[inline(always)]
+        fn default() -> Cnt {
+            Cnt(0)
+        }
+    }
+    impl core::fmt::Debug for Cnt {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cnt").field("cnt", &self.cnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cnt {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cnt {{ cnt: {=u16:?} }}", self.cnt())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ctrl(pub u32);
+    impl Ctrl {
+        #[doc = "Timer Rising Input Edge Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn risea(&self) -> super::vals::Risea {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Risea::from_bits(val as u8)
+        }
+        #[doc = "Timer Rising Input Edge Action."]
+        #[inline(always)]
+        pub const fn set_risea(&mut self, val: super::vals::Risea) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Timer Falling Input Edge Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn falla(&self) -> super::vals::Falla {
+            let val = (self.0 >> 2usize) & 0x03;
+            super::vals::Falla::from_bits(val as u8)
+        }
+        #[doc = "Timer Falling Input Edge Action."]
+        #[inline(always)]
+        pub const fn set_falla(&mut self, val: super::vals::Falla) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
+        }
+        #[doc = "2x Count Mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn x2cnt(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "2x Count Mode."]
+        #[inline(always)]
+        pub const fn set_x2cnt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Ctrl {
+        #[inline(always)]
+        fn default() -> Ctrl {
+            Ctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Ctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ctrl")
+                .field("risea", &self.risea())
+                .field("falla", &self.falla())
+                .field("x2cnt", &self.x2cnt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ctrl {{ risea: {:?}, falla: {:?}, x2cnt: {=bool:?} }}",
+                self.risea(),
+                self.falla(),
+                self.x2cnt()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtcfg(pub u32);
+    impl Dtcfg {
+        #[doc = "DTI Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dten(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Enable."]
+        #[inline(always)]
+        pub const fn set_dten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "DTI Automatic Start-up Functionality."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtdas(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Automatic Start-up Functionality."]
+        #[inline(always)]
+        pub const fn set_dtdas(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DTI Always Run."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtar(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Always Run."]
+        #[inline(always)]
+        pub const fn set_dtar(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "DTI Fault Action on Timer Stop."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtfats(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Fault Action on Timer Stop."]
+        #[inline(always)]
+        pub const fn set_dtfats(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "DTI PRS Source Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprsen(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS Source Enable."]
+        #[inline(always)]
+        pub const fn set_dtprsen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+    }
+    impl Default for Dtcfg {
+        #[inline(always)]
+        fn default() -> Dtcfg {
+            Dtcfg(0)
+        }
+    }
+    impl core::fmt::Debug for Dtcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtcfg")
+                .field("dten", &self.dten())
+                .field("dtdas", &self.dtdas())
+                .field("dtar", &self.dtar())
+                .field("dtfats", &self.dtfats())
+                .field("dtprsen", &self.dtprsen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtcfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dtcfg {{ dten: {=bool:?}, dtdas: {=bool:?}, dtar: {=bool:?}, dtfats: {=bool:?}, dtprsen: {=bool:?} }}",
+                self.dten(),
+                self.dtdas(),
+                self.dtar(),
+                self.dtfats(),
+                self.dtprsen()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtctrl(pub u32);
+    impl Dtctrl {
+        #[doc = "DTI Complementary Output Invert."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtcinv(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Complementary Output Invert."]
+        #[inline(always)]
+        pub const fn set_dtcinv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "DTI Inactive Polarity."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtipol(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Inactive Polarity."]
+        #[inline(always)]
+        pub const fn set_dtipol(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for Dtctrl {
+        #[inline(always)]
+        fn default() -> Dtctrl {
+            Dtctrl(0)
+        }
+    }
+    impl core::fmt::Debug for Dtctrl {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtctrl")
+                .field("dtcinv", &self.dtcinv())
+                .field("dtipol", &self.dtipol())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtctrl {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dtctrl {{ dtcinv: {=bool:?}, dtipol: {=bool:?} }}",
+                self.dtcinv(),
+                self.dtipol()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtfault(pub u32);
+    impl Dtfault {
+        #[doc = "DTI PRS 0 Fault."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprs0f(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS 0 Fault."]
+        #[inline(always)]
+        pub const fn set_dtprs0f(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "DTI PRS 1 Fault."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprs1f(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS 1 Fault."]
+        #[inline(always)]
+        pub const fn set_dtprs1f(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DTI Debugger Fault."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtdbgf(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Debugger Fault."]
+        #[inline(always)]
+        pub const fn set_dtdbgf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "DTI Lockup Fault."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtlockupf(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Lockup Fault."]
+        #[inline(always)]
+        pub const fn set_dtlockupf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "DTI EM23 Entry Fault."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtem23f(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI EM23 Entry Fault."]
+        #[inline(always)]
+        pub const fn set_dtem23f(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Dtfault {
+        #[inline(always)]
+        fn default() -> Dtfault {
+            Dtfault(0)
+        }
+    }
+    impl core::fmt::Debug for Dtfault {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtfault")
+                .field("dtprs0f", &self.dtprs0f())
+                .field("dtprs1f", &self.dtprs1f())
+                .field("dtdbgf", &self.dtdbgf())
+                .field("dtlockupf", &self.dtlockupf())
+                .field("dtem23f", &self.dtem23f())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtfault {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dtfault {{ dtprs0f: {=bool:?}, dtprs1f: {=bool:?}, dtdbgf: {=bool:?}, dtlockupf: {=bool:?}, dtem23f: {=bool:?} }}",
+                self.dtprs0f(),
+                self.dtprs1f(),
+                self.dtdbgf(),
+                self.dtlockupf(),
+                self.dtem23f()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtfaultc(pub u32);
+    impl Dtfaultc {
+        #[doc = "DTI PRS0 Fault Clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprs0fc(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS0 Fault Clear."]
+        #[inline(always)]
+        pub const fn set_dtprs0fc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "DTI PRS1 Fault Clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprs1fc(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS1 Fault Clear."]
+        #[inline(always)]
+        pub const fn set_dtprs1fc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DTI Debugger Fault Clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtdbgfc(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Debugger Fault Clear."]
+        #[inline(always)]
+        pub const fn set_dtdbgfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "DTI Lockup Fault Clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtlockupfc(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Lockup Fault Clear."]
+        #[inline(always)]
+        pub const fn set_dtlockupfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "DTI EM23 Fault Clear."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtem23fc(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI EM23 Fault Clear."]
+        #[inline(always)]
+        pub const fn set_dtem23fc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+    }
+    impl Default for Dtfaultc {
+        #[inline(always)]
+        fn default() -> Dtfaultc {
+            Dtfaultc(0)
+        }
+    }
+    impl core::fmt::Debug for Dtfaultc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtfaultc")
+                .field("dtprs0fc", &self.dtprs0fc())
+                .field("dtprs1fc", &self.dtprs1fc())
+                .field("dtdbgfc", &self.dtdbgfc())
+                .field("dtlockupfc", &self.dtlockupfc())
+                .field("dtem23fc", &self.dtem23fc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtfaultc {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dtfaultc {{ dtprs0fc: {=bool:?}, dtprs1fc: {=bool:?}, dtdbgfc: {=bool:?}, dtlockupfc: {=bool:?}, dtem23fc: {=bool:?} }}",
+                self.dtprs0fc(),
+                self.dtprs1fc(),
+                self.dtdbgfc(),
+                self.dtlockupfc(),
+                self.dtem23fc()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtfcfg(pub u32);
+    impl Dtfcfg {
+        #[doc = "DTI Fault Action."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtfa(&self) -> super::vals::Dtfa {
+            let val = (self.0 >> 16usize) & 0x03;
+            super::vals::Dtfa::from_bits(val as u8)
+        }
+        #[doc = "DTI Fault Action."]
+        #[inline(always)]
+        pub const fn set_dtfa(&mut self, val: super::vals::Dtfa) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
+        }
+        #[doc = "DTI PRS 0 Fault Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprs0fen(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS 0 Fault Enable."]
+        #[inline(always)]
+        pub const fn set_dtprs0fen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "DTI PRS 1 Fault Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtprs1fen(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI PRS 1 Fault Enable."]
+        #[inline(always)]
+        pub const fn set_dtprs1fen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "DTI Debugger Fault Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtdbgfen(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Debugger Fault Enable."]
+        #[inline(always)]
+        pub const fn set_dtdbgfen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "DTI Lockup Fault Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtlockupfen(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI Lockup Fault Enable."]
+        #[inline(always)]
+        pub const fn set_dtlockupfen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+        #[doc = "DTI EM23 Fault Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtem23fen(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI EM23 Fault Enable."]
+        #[inline(always)]
+        pub const fn set_dtem23fen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+    }
+    impl Default for Dtfcfg {
+        #[inline(always)]
+        fn default() -> Dtfcfg {
+            Dtfcfg(0)
+        }
+    }
+    impl core::fmt::Debug for Dtfcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtfcfg")
+                .field("dtfa", &self.dtfa())
+                .field("dtprs0fen", &self.dtprs0fen())
+                .field("dtprs1fen", &self.dtprs1fen())
+                .field("dtdbgfen", &self.dtdbgfen())
+                .field("dtlockupfen", &self.dtlockupfen())
+                .field("dtem23fen", &self.dtem23fen())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtfcfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dtfcfg {{ dtfa: {:?}, dtprs0fen: {=bool:?}, dtprs1fen: {=bool:?}, dtdbgfen: {=bool:?}, dtlockupfen: {=bool:?}, dtem23fen: {=bool:?} }}",
+                self.dtfa(),
+                self.dtprs0fen(),
+                self.dtprs1fen(),
+                self.dtdbgfen(),
+                self.dtlockupfen(),
+                self.dtem23fen()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtlock(pub u32);
+    impl Dtlock {
+        #[doc = "DTI Lock Key."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtilockkey(&self) -> super::vals::Dtilockkey {
+            let val = (self.0 >> 0usize) & 0xffff;
+            super::vals::Dtilockkey::from_bits(val as u16)
+        }
+        #[doc = "DTI Lock Key."]
+        #[inline(always)]
+        pub const fn set_dtilockkey(&mut self, val: super::vals::Dtilockkey) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Dtlock {
+        #[inline(always)]
+        fn default() -> Dtlock {
+            Dtlock(0)
+        }
+    }
+    impl core::fmt::Debug for Dtlock {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtlock")
+                .field("dtilockkey", &self.dtilockkey())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtlock {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Dtlock {{ dtilockkey: {:?} }}", self.dtilockkey())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dtogen(pub u32);
+    impl Dtogen {
+        #[doc = "DTI CCn Output Generation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtogcc0en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI CCn Output Generation Enable."]
+        #[inline(always)]
+        pub const fn set_dtogcc0en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "DTI CCn Output Generation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtogcc1en(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI CCn Output Generation Enable."]
+        #[inline(always)]
+        pub const fn set_dtogcc1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "DTI CCn Output Generation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtogcc2en(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI CCn Output Generation Enable."]
+        #[inline(always)]
+        pub const fn set_dtogcc2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "DTI CDTIn Output Generation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtogcdti0en(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI CDTIn Output Generation Enable."]
+        #[inline(always)]
+        pub const fn set_dtogcdti0en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "DTI CDTIn Output Generation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtogcdti1en(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI CDTIn Output Generation Enable."]
+        #[inline(always)]
+        pub const fn set_dtogcdti1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "DTI CDTIn Output Generation Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtogcdti2en(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI CDTIn Output Generation Enable."]
+        #[inline(always)]
+        pub const fn set_dtogcdti2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+    }
+    impl Default for Dtogen {
+        #[inline(always)]
+        fn default() -> Dtogen {
+            Dtogen(0)
+        }
+    }
+    impl core::fmt::Debug for Dtogen {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dtogen")
+                .field("dtogcc0en", &self.dtogcc0en())
+                .field("dtogcc1en", &self.dtogcc1en())
+                .field("dtogcc2en", &self.dtogcc2en())
+                .field("dtogcdti0en", &self.dtogcdti0en())
+                .field("dtogcdti1en", &self.dtogcdti1en())
+                .field("dtogcdti2en", &self.dtogcdti2en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtogen {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dtogen {{ dtogcc0en: {=bool:?}, dtogcc1en: {=bool:?}, dtogcc2en: {=bool:?}, dtogcdti0en: {=bool:?}, dtogcdti1en: {=bool:?}, dtogcdti2en: {=bool:?} }}",
+                self.dtogcc0en(),
+                self.dtogcc1en(),
+                self.dtogcc2en(),
+                self.dtogcdti0en(),
+                self.dtogcdti1en(),
+                self.dtogcdti2en()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Dttimecfg(pub u32);
+    impl Dttimecfg {
+        #[doc = "DTI Prescaler Setting."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtpresc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x03ff;
+            val as u16
+        }
+        #[doc = "DTI Prescaler Setting."]
+        #[inline(always)]
+        pub const fn set_dtpresc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
+        }
+        #[doc = "DTI Rise-time."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtriset(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "DTI Rise-time."]
+        #[inline(always)]
+        pub const fn set_dtriset(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 10usize)) | (((val as u32) & 0x3f) << 10usize);
+        }
+        #[doc = "DTI Fall-time."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtfallt(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "DTI Fall-time."]
+        #[inline(always)]
+        pub const fn set_dtfallt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for Dttimecfg {
+        #[inline(always)]
+        fn default() -> Dttimecfg {
+            Dttimecfg(0)
+        }
+    }
+    impl core::fmt::Debug for Dttimecfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Dttimecfg")
+                .field("dtpresc", &self.dtpresc())
+                .field("dtriset", &self.dtriset())
+                .field("dtfallt", &self.dtfallt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dttimecfg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Dttimecfg {{ dtpresc: {=u16:?}, dtriset: {=u8:?}, dtfallt: {=u8:?} }}",
+                self.dtpresc(),
+                self.dtriset(),
+                self.dtfallt()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct En(pub u32);
+    impl En {
+        #[doc = "Timer Module Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Timer Module Enable."]
+        #[inline(always)]
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+    }
+    impl Default for En {
+        #[inline(always)]
+        fn default() -> En {
+            En(0)
+        }
+    }
+    impl core::fmt::Debug for En {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("En").field("en", &self.en()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for En {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "En {{ en: {=bool:?} }}", self.en())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ien(pub u32);
+    impl Ien {
+        #[doc = "Overflow Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn of(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Overflow Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_of(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Underflow Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn uf(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Underflow Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_uf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Direction Change Detect Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dirchg(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Direction Change Detect Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_dirchg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "CC0 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cc0(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CC0 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_cc0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "CC1 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cc1(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CC1 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_cc1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "CC2 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cc2(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CC2 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_cc2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "ICFWLFULL0 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwlfull0(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFWLFULL0 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfwlfull0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "ICFWLFULL1 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwlfull1(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFWLFULL1 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfwlfull1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "ICFWLFULL2 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwlfull2(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFWLFULL2 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfwlfull2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "ICFOF0 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfof0(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFOF0 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfof0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "ICFOF1 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfof1(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFOF1 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfof1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "ICFOF2 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfof2(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFOF2 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfof2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "ICFUF0 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfuf0(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFUF0 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfuf0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "ICFUF1 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfuf1(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFUF1 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfuf1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "ICFUF2 Interrupt Enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfuf2(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ICFUF2 Interrupt Enable."]
+        #[inline(always)]
+        pub const fn set_icfuf2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+    }
+    impl Default for Ien {
+        #[inline(always)]
+        fn default() -> Ien {
+            Ien(0)
+        }
+    }
+    impl core::fmt::Debug for Ien {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ien")
+                .field("of", &self.of())
+                .field("uf", &self.uf())
+                .field("dirchg", &self.dirchg())
+                .field("cc0", &self.cc0())
+                .field("cc1", &self.cc1())
+                .field("cc2", &self.cc2())
+                .field("icfwlfull0", &self.icfwlfull0())
+                .field("icfwlfull1", &self.icfwlfull1())
+                .field("icfwlfull2", &self.icfwlfull2())
+                .field("icfof0", &self.icfof0())
+                .field("icfof1", &self.icfof1())
+                .field("icfof2", &self.icfof2())
+                .field("icfuf0", &self.icfuf0())
+                .field("icfuf1", &self.icfuf1())
+                .field("icfuf2", &self.icfuf2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ien {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ien {{ of: {=bool:?}, uf: {=bool:?}, dirchg: {=bool:?}, cc0: {=bool:?}, cc1: {=bool:?}, cc2: {=bool:?}, icfwlfull0: {=bool:?}, icfwlfull1: {=bool:?}, icfwlfull2: {=bool:?}, icfof0: {=bool:?}, icfof1: {=bool:?}, icfof2: {=bool:?}, icfuf0: {=bool:?}, icfuf1: {=bool:?}, icfuf2: {=bool:?} }}",
+                self.of(),
+                self.uf(),
+                self.dirchg(),
+                self.cc0(),
+                self.cc1(),
+                self.cc2(),
+                self.icfwlfull0(),
+                self.icfwlfull1(),
+                self.icfwlfull2(),
+                self.icfof0(),
+                self.icfof1(),
+                self.icfof2(),
+                self.icfuf0(),
+                self.icfuf1(),
+                self.icfuf2()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct If(pub u32);
+    impl If {
+        #[doc = "Overflow Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn of(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Overflow Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_of(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Underflow Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn uf(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Underflow Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_uf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Direction Change Detect Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dirchg(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Direction Change Detect Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_dirchg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Capture Compare Channel 0 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cc0(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture Compare Channel 0 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_cc0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Capture Compare Channel 1 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cc1(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture Compare Channel 1 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_cc1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Capture Compare Channel 2 Interrupt Flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cc2(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture Compare Channel 2 Interrupt Flag."]
+        #[inline(always)]
+        pub const fn set_cc2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Input Capture Watermark Level Full."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwlfull0(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture Watermark Level Full."]
+        #[inline(always)]
+        pub const fn set_icfwlfull0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Input Capture Watermark Level Full."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwlfull1(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture Watermark Level Full."]
+        #[inline(always)]
+        pub const fn set_icfwlfull1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Input Capture Watermark Level Full."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfwlfull2(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture Watermark Level Full."]
+        #[inline(always)]
+        pub const fn set_icfwlfull2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "Input Capture FIFO overflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfof0(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture FIFO overflow."]
+        #[inline(always)]
+        pub const fn set_icfof0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Input Capture FIFO overflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfof1(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture FIFO overflow."]
+        #[inline(always)]
+        pub const fn set_icfof1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "Input Capture FIFO overflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfof2(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input Capture FIFO overflow."]
+        #[inline(always)]
+        pub const fn set_icfof2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "Input capture FIFO underflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfuf0(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input capture FIFO underflow."]
+        #[inline(always)]
+        pub const fn set_icfuf0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
+        }
+        #[doc = "Input capture FIFO underflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfuf1(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input capture FIFO underflow."]
+        #[inline(always)]
+        pub const fn set_icfuf1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+        #[doc = "Input capture FIFO underflow."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfuf2(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input capture FIFO underflow."]
+        #[inline(always)]
+        pub const fn set_icfuf2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+    }
+    impl Default for If {
+        #[inline(always)]
+        fn default() -> If {
+            If(0)
+        }
+    }
+    impl core::fmt::Debug for If {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("If")
+                .field("of", &self.of())
+                .field("uf", &self.uf())
+                .field("dirchg", &self.dirchg())
+                .field("cc0", &self.cc0())
+                .field("cc1", &self.cc1())
+                .field("cc2", &self.cc2())
+                .field("icfwlfull0", &self.icfwlfull0())
+                .field("icfwlfull1", &self.icfwlfull1())
+                .field("icfwlfull2", &self.icfwlfull2())
+                .field("icfof0", &self.icfof0())
+                .field("icfof1", &self.icfof1())
+                .field("icfof2", &self.icfof2())
+                .field("icfuf0", &self.icfuf0())
+                .field("icfuf1", &self.icfuf1())
+                .field("icfuf2", &self.icfuf2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for If {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "If {{ of: {=bool:?}, uf: {=bool:?}, dirchg: {=bool:?}, cc0: {=bool:?}, cc1: {=bool:?}, cc2: {=bool:?}, icfwlfull0: {=bool:?}, icfwlfull1: {=bool:?}, icfwlfull2: {=bool:?}, icfof0: {=bool:?}, icfof1: {=bool:?}, icfof2: {=bool:?}, icfuf0: {=bool:?}, icfuf1: {=bool:?}, icfuf2: {=bool:?} }}",
+                self.of(),
+                self.uf(),
+                self.dirchg(),
+                self.cc0(),
+                self.cc1(),
+                self.cc2(),
+                self.icfwlfull0(),
+                self.icfwlfull1(),
+                self.icfwlfull2(),
+                self.icfof0(),
+                self.icfof1(),
+                self.icfof2(),
+                self.icfuf0(),
+                self.icfuf1(),
+                self.icfuf2()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ipversion(pub u32);
+    impl Ipversion {
+        #[doc = "IP Version ID."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ipversion(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "IP Version ID."]
+        #[inline(always)]
+        pub const fn set_ipversion(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ipversion {
+        #[inline(always)]
+        fn default() -> Ipversion {
+            Ipversion(0)
+        }
+    }
+    impl core::fmt::Debug for Ipversion {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ipversion")
+                .field("ipversion", &self.ipversion())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ipversion {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ipversion {{ ipversion: {=u32:?} }}", self.ipversion())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Lock(pub u32);
+    impl Lock {
+        #[doc = "Timer Lock Key."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lockkey(&self) -> super::vals::Lockkey {
+            let val = (self.0 >> 0usize) & 0xffff;
+            super::vals::Lockkey::from_bits(val as u16)
+        }
+        #[doc = "Timer Lock Key."]
+        #[inline(always)]
+        pub const fn set_lockkey(&mut self, val: super::vals::Lockkey) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Lock {
+        #[inline(always)]
+        fn default() -> Lock {
+            Lock(0)
+        }
+    }
+    impl core::fmt::Debug for Lock {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Lock").field("lockkey", &self.lockkey()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lock {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Lock {{ lockkey: {:?} }}", self.lockkey())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Status(pub u32);
+    impl Status {
+        #[doc = "Running."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn running(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Running."]
+        #[inline(always)]
+        pub const fn set_running(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Direction."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dir(&self) -> super::vals::Dir {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Dir::from_bits(val as u8)
+        }
+        #[doc = "Direction."]
+        #[inline(always)]
+        pub const fn set_dir(&mut self, val: super::vals::Dir) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        }
+        #[doc = "TOP Buffer Valid."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn topbv(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TOP Buffer Valid."]
+        #[inline(always)]
+        pub const fn set_topbv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Timer lock status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timerlockstatus(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Timer lock status."]
+        #[inline(always)]
+        pub const fn set_timerlockstatus(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "DTI lock status."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dtilockstatus(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTI lock status."]
+        #[inline(always)]
+        pub const fn set_dtilockstatus(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Sync Busy."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn syncbusy(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Sync Busy."]
+        #[inline(always)]
+        pub const fn set_syncbusy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Output Compare Buffer Valid."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ocbv0(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output Compare Buffer Valid."]
+        #[inline(always)]
+        pub const fn set_ocbv0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Output Compare Buffer Valid."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ocbv1(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output Compare Buffer Valid."]
+        #[inline(always)]
+        pub const fn set_ocbv1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
+        #[doc = "Output Compare Buffer Valid."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ocbv2(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Output Compare Buffer Valid."]
+        #[inline(always)]
+        pub const fn set_ocbv2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "Input capture fifo empty."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfempty0(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input capture fifo empty."]
+        #[inline(always)]
+        pub const fn set_icfempty0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Input capture fifo empty."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfempty1(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input capture fifo empty."]
+        #[inline(always)]
+        pub const fn set_icfempty1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Input capture fifo empty."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn icfempty2(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Input capture fifo empty."]
+        #[inline(always)]
+        pub const fn set_icfempty2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "Compare/Capture Polarity."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ccpol0(&self) -> super::vals::Ccpol0 {
+            let val = (self.0 >> 24usize) & 0x01;
+            super::vals::Ccpol0::from_bits(val as u8)
+        }
+        #[doc = "Compare/Capture Polarity."]
+        #[inline(always)]
+        pub const fn set_ccpol0(&mut self, val: super::vals::Ccpol0) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        }
+        #[doc = "Compare/Capture Polarity."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ccpol1(&self) -> super::vals::Ccpol1 {
+            let val = (self.0 >> 25usize) & 0x01;
+            super::vals::Ccpol1::from_bits(val as u8)
+        }
+        #[doc = "Compare/Capture Polarity."]
+        #[inline(always)]
+        pub const fn set_ccpol1(&mut self, val: super::vals::Ccpol1) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        }
+        #[doc = "Compare/Capture Polarity."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ccpol2(&self) -> super::vals::Ccpol2 {
+            let val = (self.0 >> 26usize) & 0x01;
+            super::vals::Ccpol2::from_bits(val as u8)
+        }
+        #[doc = "Compare/Capture Polarity."]
+        #[inline(always)]
+        pub const fn set_ccpol2(&mut self, val: super::vals::Ccpol2) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        }
+    }
+    impl Default for Status {
+        #[inline(always)]
+        fn default() -> Status {
+            Status(0)
+        }
+    }
+    impl core::fmt::Debug for Status {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Status")
+                .field("running", &self.running())
+                .field("dir", &self.dir())
+                .field("topbv", &self.topbv())
+                .field("timerlockstatus", &self.timerlockstatus())
+                .field("dtilockstatus", &self.dtilockstatus())
+                .field("syncbusy", &self.syncbusy())
+                .field("ocbv0", &self.ocbv0())
+                .field("ocbv1", &self.ocbv1())
+                .field("ocbv2", &self.ocbv2())
+                .field("icfempty0", &self.icfempty0())
+                .field("icfempty1", &self.icfempty1())
+                .field("icfempty2", &self.icfempty2())
+                .field("ccpol0", &self.ccpol0())
+                .field("ccpol1", &self.ccpol1())
+                .field("ccpol2", &self.ccpol2())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Status {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Status {{ running: {=bool:?}, dir: {:?}, topbv: {=bool:?}, timerlockstatus: {=bool:?}, dtilockstatus: {=bool:?}, syncbusy: {=bool:?}, ocbv0: {=bool:?}, ocbv1: {=bool:?}, ocbv2: {=bool:?}, icfempty0: {=bool:?}, icfempty1: {=bool:?}, icfempty2: {=bool:?}, ccpol0: {:?}, ccpol1: {:?}, ccpol2: {:?} }}",
+                self.running(),
+                self.dir(),
+                self.topbv(),
+                self.timerlockstatus(),
+                self.dtilockstatus(),
+                self.syncbusy(),
+                self.ocbv0(),
+                self.ocbv1(),
+                self.ocbv2(),
+                self.icfempty0(),
+                self.icfempty1(),
+                self.icfempty2(),
+                self.ccpol0(),
+                self.ccpol1(),
+                self.ccpol2()
+            )
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Top(pub u32);
+    impl Top {
+        #[doc = "Counter Top Value."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn top(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Counter Top Value."]
+        #[inline(always)]
+        pub const fn set_top(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Top {
+        #[inline(always)]
+        fn default() -> Top {
+            Top(0)
+        }
+    }
+    impl core::fmt::Debug for Top {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Top").field("top", &self.top()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Top {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Top {{ top: {=u16:?} }}", self.top())
+        }
+    }
+    #[doc = "No Description."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Topb(pub u32);
+    impl Topb {
+        #[doc = "Counter Top Buffer Register."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn topb(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Counter Top Buffer Register."]
+        #[inline(always)]
+        pub const fn set_topb(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Topb {
+        #[inline(always)]
+        fn default() -> Topb {
+            Topb(0)
+        }
+    }
+    impl core::fmt::Debug for Topb {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Topb").field("topb", &self.topb()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Topb {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Topb {{ topb: {=u16:?} }}", self.topb())
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CfgInsel {
+        #[doc = "TIMERnCCx pin is selected."]
+        Pin = 0x0,
+        #[doc = "Synchornous PRS selected."]
+        Prssync = 0x01,
+        #[doc = "Asynchronous Level PRS selected."]
+        Prsasynclevel = 0x02,
+        #[doc = "Asynchronous Pulse PRS selected."]
+        Prsasyncpulse = 0x03,
+    }
+    impl Cc0CfgInsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CfgInsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CfgInsel {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CfgInsel {
+            Cc0CfgInsel::from_bits(val)
+        }
+    }
+    impl From<Cc0CfgInsel> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CfgInsel) -> u8 {
+            Cc0CfgInsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CfgMode {
+        #[doc = "Compare/Capture channel turned off."]
+        Off = 0x0,
+        #[doc = "Input Capture."]
+        Inputcapture = 0x01,
+        #[doc = "Output Compare."]
+        Outputcompare = 0x02,
+        #[doc = "Pulse-Width Modulation."]
+        Pwm = 0x03,
+    }
+    impl Cc0CfgMode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CfgMode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CfgMode {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CfgMode {
+            Cc0CfgMode::from_bits(val)
+        }
+    }
+    impl From<Cc0CfgMode> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CfgMode) -> u8 {
+            Cc0CfgMode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CfgPrsconf {
+        #[doc = "Each CC event will generate a one EM01GRPACLK cycle high pulse."]
+        Pulse = 0x0,
+        #[doc = "The PRS channel will follow CC out."]
+        Level = 0x01,
+    }
+    impl Cc0CfgPrsconf {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CfgPrsconf {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CfgPrsconf {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CfgPrsconf {
+            Cc0CfgPrsconf::from_bits(val)
+        }
+    }
+    impl From<Cc0CfgPrsconf> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CfgPrsconf) -> u8 {
+            Cc0CfgPrsconf::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CtrlCmoa {
+        #[doc = "No action on compare match."]
+        None = 0x0,
+        #[doc = "Toggle output on compare match."]
+        Toggle = 0x01,
+        #[doc = "Clear output on compare match."]
+        Clear = 0x02,
+        #[doc = "Set output on compare match."]
+        Set = 0x03,
+    }
+    impl Cc0CtrlCmoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CtrlCmoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CtrlCmoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CtrlCmoa {
+            Cc0CtrlCmoa::from_bits(val)
+        }
+    }
+    impl From<Cc0CtrlCmoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CtrlCmoa) -> u8 {
+            Cc0CtrlCmoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CtrlCofoa {
+        #[doc = "No action on counter overflow."]
+        None = 0x0,
+        #[doc = "Toggle output on counter overflow."]
+        Toggle = 0x01,
+        #[doc = "Clear output on counter overflow."]
+        Clear = 0x02,
+        #[doc = "Set output on counter overflow."]
+        Set = 0x03,
+    }
+    impl Cc0CtrlCofoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CtrlCofoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CtrlCofoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CtrlCofoa {
+            Cc0CtrlCofoa::from_bits(val)
+        }
+    }
+    impl From<Cc0CtrlCofoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CtrlCofoa) -> u8 {
+            Cc0CtrlCofoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CtrlCufoa {
+        #[doc = "No action on counter underflow."]
+        None = 0x0,
+        #[doc = "Toggle output on counter underflow."]
+        Toggle = 0x01,
+        #[doc = "Clear output on counter underflow."]
+        Clear = 0x02,
+        #[doc = "Set output on counter underflow."]
+        Set = 0x03,
+    }
+    impl Cc0CtrlCufoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CtrlCufoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CtrlCufoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CtrlCufoa {
+            Cc0CtrlCufoa::from_bits(val)
+        }
+    }
+    impl From<Cc0CtrlCufoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CtrlCufoa) -> u8 {
+            Cc0CtrlCufoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CtrlIcedge {
+        #[doc = "Rising edges detected."]
+        Rising = 0x0,
+        #[doc = "Falling edges detected."]
+        Falling = 0x01,
+        #[doc = "Both edges detected."]
+        Both = 0x02,
+        #[doc = "No edge detection, signal is left as it is."]
+        None = 0x03,
+    }
+    impl Cc0CtrlIcedge {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CtrlIcedge {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CtrlIcedge {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CtrlIcedge {
+            Cc0CtrlIcedge::from_bits(val)
+        }
+    }
+    impl From<Cc0CtrlIcedge> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CtrlIcedge) -> u8 {
+            Cc0CtrlIcedge::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc0CtrlIcevctrl {
+        #[doc = "PRS output pulse and interrupt flag set on every capture."]
+        Everyedge = 0x0,
+        #[doc = "PRS output pulse and interrupt flag set on every second capture."]
+        Everysecondedge = 0x01,
+        #[doc = "PRS output pulse and interrupt flag set on rising edge only (if ICEDGE = BOTH)."]
+        Rising = 0x02,
+        #[doc = "PRS output pulse and interrupt flag set on falling edge only (if ICEDGE = BOTH)."]
+        Falling = 0x03,
+    }
+    impl Cc0CtrlIcevctrl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc0CtrlIcevctrl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc0CtrlIcevctrl {
+        #[inline(always)]
+        fn from(val: u8) -> Cc0CtrlIcevctrl {
+            Cc0CtrlIcevctrl::from_bits(val)
+        }
+    }
+    impl From<Cc0CtrlIcevctrl> for u8 {
+        #[inline(always)]
+        fn from(val: Cc0CtrlIcevctrl) -> u8 {
+            Cc0CtrlIcevctrl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CfgInsel {
+        #[doc = "TIMERnCCx pin is selected."]
+        Pin = 0x0,
+        #[doc = "Synchornous PRS selected."]
+        Prssync = 0x01,
+        #[doc = "Asynchronous Level PRS selected."]
+        Prsasynclevel = 0x02,
+        #[doc = "Asynchronous Pulse PRS selected."]
+        Prsasyncpulse = 0x03,
+    }
+    impl Cc1CfgInsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CfgInsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CfgInsel {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CfgInsel {
+            Cc1CfgInsel::from_bits(val)
+        }
+    }
+    impl From<Cc1CfgInsel> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CfgInsel) -> u8 {
+            Cc1CfgInsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CfgMode {
+        #[doc = "Compare/Capture channel turned off."]
+        Off = 0x0,
+        #[doc = "Input Capture."]
+        Inputcapture = 0x01,
+        #[doc = "Output Compare."]
+        Outputcompare = 0x02,
+        #[doc = "Pulse-Width Modulation."]
+        Pwm = 0x03,
+    }
+    impl Cc1CfgMode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CfgMode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CfgMode {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CfgMode {
+            Cc1CfgMode::from_bits(val)
+        }
+    }
+    impl From<Cc1CfgMode> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CfgMode) -> u8 {
+            Cc1CfgMode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CfgPrsconf {
+        #[doc = "Each CC event will generate a one EM01GRPACLK cycle high pulse."]
+        Pulse = 0x0,
+        #[doc = "The PRS channel will follow CC out."]
+        Level = 0x01,
+    }
+    impl Cc1CfgPrsconf {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CfgPrsconf {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CfgPrsconf {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CfgPrsconf {
+            Cc1CfgPrsconf::from_bits(val)
+        }
+    }
+    impl From<Cc1CfgPrsconf> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CfgPrsconf) -> u8 {
+            Cc1CfgPrsconf::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CtrlCmoa {
+        #[doc = "No action on compare match."]
+        None = 0x0,
+        #[doc = "Toggle output on compare match."]
+        Toggle = 0x01,
+        #[doc = "Clear output on compare match."]
+        Clear = 0x02,
+        #[doc = "Set output on compare match."]
+        Set = 0x03,
+    }
+    impl Cc1CtrlCmoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CtrlCmoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CtrlCmoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CtrlCmoa {
+            Cc1CtrlCmoa::from_bits(val)
+        }
+    }
+    impl From<Cc1CtrlCmoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CtrlCmoa) -> u8 {
+            Cc1CtrlCmoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CtrlCofoa {
+        #[doc = "No action on counter overflow."]
+        None = 0x0,
+        #[doc = "Toggle output on counter overflow."]
+        Toggle = 0x01,
+        #[doc = "Clear output on counter overflow."]
+        Clear = 0x02,
+        #[doc = "Set output on counter overflow."]
+        Set = 0x03,
+    }
+    impl Cc1CtrlCofoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CtrlCofoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CtrlCofoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CtrlCofoa {
+            Cc1CtrlCofoa::from_bits(val)
+        }
+    }
+    impl From<Cc1CtrlCofoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CtrlCofoa) -> u8 {
+            Cc1CtrlCofoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CtrlCufoa {
+        #[doc = "No action on counter underflow."]
+        None = 0x0,
+        #[doc = "Toggle output on counter underflow."]
+        Toggle = 0x01,
+        #[doc = "Clear output on counter underflow."]
+        Clear = 0x02,
+        #[doc = "Set output on counter underflow."]
+        Set = 0x03,
+    }
+    impl Cc1CtrlCufoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CtrlCufoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CtrlCufoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CtrlCufoa {
+            Cc1CtrlCufoa::from_bits(val)
+        }
+    }
+    impl From<Cc1CtrlCufoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CtrlCufoa) -> u8 {
+            Cc1CtrlCufoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CtrlIcedge {
+        #[doc = "Rising edges detected."]
+        Rising = 0x0,
+        #[doc = "Falling edges detected."]
+        Falling = 0x01,
+        #[doc = "Both edges detected."]
+        Both = 0x02,
+        #[doc = "No edge detection, signal is left as it is."]
+        None = 0x03,
+    }
+    impl Cc1CtrlIcedge {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CtrlIcedge {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CtrlIcedge {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CtrlIcedge {
+            Cc1CtrlIcedge::from_bits(val)
+        }
+    }
+    impl From<Cc1CtrlIcedge> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CtrlIcedge) -> u8 {
+            Cc1CtrlIcedge::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc1CtrlIcevctrl {
+        #[doc = "PRS output pulse and interrupt flag set on every capture."]
+        Everyedge = 0x0,
+        #[doc = "PRS output pulse and interrupt flag set on every second capture."]
+        Everysecondedge = 0x01,
+        #[doc = "PRS output pulse and interrupt flag set on rising edge only (if ICEDGE = BOTH)."]
+        Rising = 0x02,
+        #[doc = "PRS output pulse and interrupt flag set on falling edge only (if ICEDGE = BOTH)."]
+        Falling = 0x03,
+    }
+    impl Cc1CtrlIcevctrl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc1CtrlIcevctrl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc1CtrlIcevctrl {
+        #[inline(always)]
+        fn from(val: u8) -> Cc1CtrlIcevctrl {
+            Cc1CtrlIcevctrl::from_bits(val)
+        }
+    }
+    impl From<Cc1CtrlIcevctrl> for u8 {
+        #[inline(always)]
+        fn from(val: Cc1CtrlIcevctrl) -> u8 {
+            Cc1CtrlIcevctrl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CfgInsel {
+        #[doc = "TIMERnCCx pin is selected."]
+        Pin = 0x0,
+        #[doc = "Synchornous PRS selected."]
+        Prssync = 0x01,
+        #[doc = "Asynchronous Level PRS selected."]
+        Prsasynclevel = 0x02,
+        #[doc = "Asynchronous Pulse PRS selected."]
+        Prsasyncpulse = 0x03,
+    }
+    impl Cc2CfgInsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CfgInsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CfgInsel {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CfgInsel {
+            Cc2CfgInsel::from_bits(val)
+        }
+    }
+    impl From<Cc2CfgInsel> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CfgInsel) -> u8 {
+            Cc2CfgInsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CfgMode {
+        #[doc = "Compare/Capture channel turned off."]
+        Off = 0x0,
+        #[doc = "Input Capture."]
+        Inputcapture = 0x01,
+        #[doc = "Output Compare."]
+        Outputcompare = 0x02,
+        #[doc = "Pulse-Width Modulation."]
+        Pwm = 0x03,
+    }
+    impl Cc2CfgMode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CfgMode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CfgMode {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CfgMode {
+            Cc2CfgMode::from_bits(val)
+        }
+    }
+    impl From<Cc2CfgMode> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CfgMode) -> u8 {
+            Cc2CfgMode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CfgPrsconf {
+        #[doc = "Each CC event will generate a one EM01GRPACLK cycle high pulse."]
+        Pulse = 0x0,
+        #[doc = "The PRS channel will follow CC out."]
+        Level = 0x01,
+    }
+    impl Cc2CfgPrsconf {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CfgPrsconf {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CfgPrsconf {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CfgPrsconf {
+            Cc2CfgPrsconf::from_bits(val)
+        }
+    }
+    impl From<Cc2CfgPrsconf> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CfgPrsconf) -> u8 {
+            Cc2CfgPrsconf::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CtrlCmoa {
+        #[doc = "No action on compare match."]
+        None = 0x0,
+        #[doc = "Toggle output on compare match."]
+        Toggle = 0x01,
+        #[doc = "Clear output on compare match."]
+        Clear = 0x02,
+        #[doc = "Set output on compare match."]
+        Set = 0x03,
+    }
+    impl Cc2CtrlCmoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CtrlCmoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CtrlCmoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CtrlCmoa {
+            Cc2CtrlCmoa::from_bits(val)
+        }
+    }
+    impl From<Cc2CtrlCmoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CtrlCmoa) -> u8 {
+            Cc2CtrlCmoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CtrlCofoa {
+        #[doc = "No action on counter overflow."]
+        None = 0x0,
+        #[doc = "Toggle output on counter overflow."]
+        Toggle = 0x01,
+        #[doc = "Clear output on counter overflow."]
+        Clear = 0x02,
+        #[doc = "Set output on counter overflow."]
+        Set = 0x03,
+    }
+    impl Cc2CtrlCofoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CtrlCofoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CtrlCofoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CtrlCofoa {
+            Cc2CtrlCofoa::from_bits(val)
+        }
+    }
+    impl From<Cc2CtrlCofoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CtrlCofoa) -> u8 {
+            Cc2CtrlCofoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CtrlCufoa {
+        #[doc = "No action on counter underflow."]
+        None = 0x0,
+        #[doc = "Toggle output on counter underflow."]
+        Toggle = 0x01,
+        #[doc = "Clear output on counter underflow."]
+        Clear = 0x02,
+        #[doc = "Set output on counter underflow."]
+        Set = 0x03,
+    }
+    impl Cc2CtrlCufoa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CtrlCufoa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CtrlCufoa {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CtrlCufoa {
+            Cc2CtrlCufoa::from_bits(val)
+        }
+    }
+    impl From<Cc2CtrlCufoa> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CtrlCufoa) -> u8 {
+            Cc2CtrlCufoa::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CtrlIcedge {
+        #[doc = "Rising edges detected."]
+        Rising = 0x0,
+        #[doc = "Falling edges detected."]
+        Falling = 0x01,
+        #[doc = "Both edges detected."]
+        Both = 0x02,
+        #[doc = "No edge detection, signal is left as it is."]
+        None = 0x03,
+    }
+    impl Cc2CtrlIcedge {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CtrlIcedge {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CtrlIcedge {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CtrlIcedge {
+            Cc2CtrlIcedge::from_bits(val)
+        }
+    }
+    impl From<Cc2CtrlIcedge> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CtrlIcedge) -> u8 {
+            Cc2CtrlIcedge::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Cc2CtrlIcevctrl {
+        #[doc = "PRS output pulse and interrupt flag set on every capture."]
+        Everyedge = 0x0,
+        #[doc = "PRS output pulse and interrupt flag set on every second capture."]
+        Everysecondedge = 0x01,
+        #[doc = "PRS output pulse and interrupt flag set on rising edge only (if ICEDGE = BOTH)."]
+        Rising = 0x02,
+        #[doc = "PRS output pulse and interrupt flag set on falling edge only (if ICEDGE = BOTH)."]
+        Falling = 0x03,
+    }
+    impl Cc2CtrlIcevctrl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Cc2CtrlIcevctrl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Cc2CtrlIcevctrl {
+        #[inline(always)]
+        fn from(val: u8) -> Cc2CtrlIcevctrl {
+            Cc2CtrlIcevctrl::from_bits(val)
+        }
+    }
+    impl From<Cc2CtrlIcevctrl> for u8 {
+        #[inline(always)]
+        fn from(val: Cc2CtrlIcevctrl) -> u8 {
+            Cc2CtrlIcevctrl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ccpol0 {
+        #[doc = "CCx polarity low level/rising edge."]
+        Lowrise = 0x0,
+        #[doc = "CCx polarity high level/falling edge."]
+        Highfall = 0x01,
+    }
+    impl Ccpol0 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ccpol0 {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ccpol0 {
+        #[inline(always)]
+        fn from(val: u8) -> Ccpol0 {
+            Ccpol0::from_bits(val)
+        }
+    }
+    impl From<Ccpol0> for u8 {
+        #[inline(always)]
+        fn from(val: Ccpol0) -> u8 {
+            Ccpol0::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ccpol1 {
+        #[doc = "CCx polarity low level/rising edge."]
+        Lowrise = 0x0,
+        #[doc = "CCx polarity high level/falling edge."]
+        Highfall = 0x01,
+    }
+    impl Ccpol1 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ccpol1 {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ccpol1 {
+        #[inline(always)]
+        fn from(val: u8) -> Ccpol1 {
+            Ccpol1::from_bits(val)
+        }
+    }
+    impl From<Ccpol1> for u8 {
+        #[inline(always)]
+        fn from(val: Ccpol1) -> u8 {
+            Ccpol1::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ccpol2 {
+        #[doc = "CCx polarity low level/rising edge."]
+        Lowrise = 0x0,
+        #[doc = "CCx polarity high level/falling edge."]
+        Highfall = 0x01,
+    }
+    impl Ccpol2 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ccpol2 {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ccpol2 {
+        #[inline(always)]
+        fn from(val: u8) -> Ccpol2 {
+            Ccpol2::from_bits(val)
+        }
+    }
+    impl From<Ccpol2> for u8 {
+        #[inline(always)]
+        fn from(val: Ccpol2) -> u8 {
+            Ccpol2::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum CfgMode {
+        #[doc = "Up-count mode."]
+        Up = 0x0,
+        #[doc = "Down-count mode."]
+        Down = 0x01,
+        #[doc = "Up/down-count mode."]
+        Updown = 0x02,
+        #[doc = "Quadrature decoder mode."]
+        Qdec = 0x03,
+    }
+    impl CfgMode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> CfgMode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for CfgMode {
+        #[inline(always)]
+        fn from(val: u8) -> CfgMode {
+            CfgMode::from_bits(val)
+        }
+    }
+    impl From<CfgMode> for u8 {
+        #[inline(always)]
+        fn from(val: CfgMode) -> u8 {
+            CfgMode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Clksel {
+        #[doc = "Prescaled EM01GRPACLK."]
+        Prescem01grpaclk = 0x0,
+        #[doc = "Compare/Capture Channel 1 Input."]
+        Cc1 = 0x01,
+        #[doc = "Timer is clocked by underflow(down-count) or overflow(up-count) in the lower numbered neighbor Timer."]
+        Timerouf = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Clksel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Clksel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Clksel {
+        #[inline(always)]
+        fn from(val: u8) -> Clksel {
+            Clksel::from_bits(val)
+        }
+    }
+    impl From<Clksel> for u8 {
+        #[inline(always)]
+        fn from(val: Clksel) -> u8 {
+            Clksel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Debugrun {
+        #[doc = "Timer is halted in debug mode."]
+        Halt = 0x0,
+        #[doc = "Timer is running in debug mode."]
+        Run = 0x01,
+    }
+    impl Debugrun {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Debugrun {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Debugrun {
+        #[inline(always)]
+        fn from(val: u8) -> Debugrun {
+            Debugrun::from_bits(val)
+        }
+    }
+    impl From<Debugrun> for u8 {
+        #[inline(always)]
+        fn from(val: Debugrun) -> u8 {
+            Debugrun::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Dir {
+        #[doc = "Counting up."]
+        Up = 0x0,
+        #[doc = "Counting down."]
+        Down = 0x01,
+    }
+    impl Dir {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dir {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dir {
+        #[inline(always)]
+        fn from(val: u8) -> Dir {
+            Dir::from_bits(val)
+        }
+    }
+    impl From<Dir> for u8 {
+        #[inline(always)]
+        fn from(val: Dir) -> u8 {
+            Dir::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Dtfa {
+        #[doc = "No action on fault."]
+        None = 0x0,
+        #[doc = "Set outputs inactive."]
+        Inactive = 0x01,
+        #[doc = "Clear outputs."]
+        Clear = 0x02,
+        #[doc = "Tristate outputs."]
+        Tristate = 0x03,
+    }
+    impl Dtfa {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dtfa {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dtfa {
+        #[inline(always)]
+        fn from(val: u8) -> Dtfa {
+            Dtfa::from_bits(val)
+        }
+    }
+    impl From<Dtfa> for u8 {
+        #[inline(always)]
+        fn from(val: Dtfa) -> u8 {
+            Dtfa::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Dtilockkey(u16);
+    impl Dtilockkey {
+        #[doc = "Write to unlock TIMER DTI registers."]
+        pub const Unlock: Self = Self(0xce80);
+    }
+    impl Dtilockkey {
+        pub const fn from_bits(val: u16) -> Dtilockkey {
+            Self(val & 0xffff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Dtilockkey {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0xce80 => f.write_str("Unlock"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Dtilockkey {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0xce80 => defmt::write!(f, "Unlock"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Dtilockkey {
+        #[inline(always)]
+        fn from(val: u16) -> Dtilockkey {
+            Dtilockkey::from_bits(val)
+        }
+    }
+    impl From<Dtilockkey> for u16 {
+        #[inline(always)]
+        fn from(val: Dtilockkey) -> u16 {
+            Dtilockkey::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Falla {
+        #[doc = "No action."]
+        None = 0x0,
+        #[doc = "Start counter without reload."]
+        Start = 0x01,
+        #[doc = "Stop counter without reload."]
+        Stop = 0x02,
+        #[doc = "Reload and start counter."]
+        Reloadstart = 0x03,
+    }
+    impl Falla {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Falla {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Falla {
+        #[inline(always)]
+        fn from(val: u8) -> Falla {
+            Falla::from_bits(val)
+        }
+    }
+    impl From<Falla> for u8 {
+        #[inline(always)]
+        fn from(val: Falla) -> u8 {
+            Falla::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Lockkey(u16);
+    impl Lockkey {
+        #[doc = "Write to unlock TIMER registers."]
+        pub const Unlock: Self = Self(0xce80);
+    }
+    impl Lockkey {
+        pub const fn from_bits(val: u16) -> Lockkey {
+            Self(val & 0xffff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Lockkey {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0xce80 => f.write_str("Unlock"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Lockkey {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0xce80 => defmt::write!(f, "Unlock"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Lockkey {
+        #[inline(always)]
+        fn from(val: u16) -> Lockkey {
+            Lockkey::from_bits(val)
+        }
+    }
+    impl From<Lockkey> for u16 {
+        #[inline(always)]
+        fn from(val: Lockkey) -> u16 {
+            Lockkey::to_bits(val)
+        }
+    }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Presc(u16);
+    impl Presc {
+        #[doc = "No prescaling."]
+        pub const Div1: Self = Self(0x0);
+        #[doc = "Prescale by 2."]
+        pub const Div2: Self = Self(0x01);
+        #[doc = "Prescale by 4."]
+        pub const Div4: Self = Self(0x03);
+        #[doc = "Prescale by 8."]
+        pub const Div8: Self = Self(0x07);
+        #[doc = "Prescale by 16."]
+        pub const Div16: Self = Self(0x0f);
+        #[doc = "Prescale by 32."]
+        pub const Div32: Self = Self(0x1f);
+        #[doc = "Prescale by 64."]
+        pub const Div64: Self = Self(0x3f);
+        #[doc = "Prescale by 128."]
+        pub const Div128: Self = Self(0x7f);
+        #[doc = "Prescale by 256."]
+        pub const Div256: Self = Self(0xff);
+        #[doc = "Prescale by 512."]
+        pub const Div512: Self = Self(0x01ff);
+        #[doc = "Prescale by 1024."]
+        pub const Div1024: Self = Self(0x03ff);
+    }
+    impl Presc {
+        pub const fn from_bits(val: u16) -> Presc {
+            Self(val & 0x03ff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Presc {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x0 => f.write_str("Div1"),
+                0x01 => f.write_str("Div2"),
+                0x03 => f.write_str("Div4"),
+                0x07 => f.write_str("Div8"),
+                0x0f => f.write_str("Div16"),
+                0x1f => f.write_str("Div32"),
+                0x3f => f.write_str("Div64"),
+                0x7f => f.write_str("Div128"),
+                0xff => f.write_str("Div256"),
+                0x01ff => f.write_str("Div512"),
+                0x03ff => f.write_str("Div1024"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Presc {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x0 => defmt::write!(f, "Div1"),
+                0x01 => defmt::write!(f, "Div2"),
+                0x03 => defmt::write!(f, "Div4"),
+                0x07 => defmt::write!(f, "Div8"),
+                0x0f => defmt::write!(f, "Div16"),
+                0x1f => defmt::write!(f, "Div32"),
+                0x3f => defmt::write!(f, "Div64"),
+                0x7f => defmt::write!(f, "Div128"),
+                0xff => defmt::write!(f, "Div256"),
+                0x01ff => defmt::write!(f, "Div512"),
+                0x03ff => defmt::write!(f, "Div1024"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Presc {
+        #[inline(always)]
+        fn from(val: u16) -> Presc {
+            Presc::from_bits(val)
+        }
+    }
+    impl From<Presc> for u16 {
+        #[inline(always)]
+        fn from(val: Presc) -> u16 {
+            Presc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Qdm {
+        #[doc = "X2 mode selected."]
+        X2 = 0x0,
+        #[doc = "X4 mode selected."]
+        X4 = 0x01,
+    }
+    impl Qdm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Qdm {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Qdm {
+        #[inline(always)]
+        fn from(val: u8) -> Qdm {
+            Qdm::from_bits(val)
+        }
+    }
+    impl From<Qdm> for u8 {
+        #[inline(always)]
+        fn from(val: Qdm) -> u8 {
+            Qdm::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Risea {
+        #[doc = "No action."]
+        None = 0x0,
+        #[doc = "Start counter without reload."]
+        Start = 0x01,
+        #[doc = "Stop counter without reload."]
+        Stop = 0x02,
+        #[doc = "Reload and start counter."]
+        Reloadstart = 0x03,
+    }
+    impl Risea {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Risea {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Risea {
+        #[inline(always)]
+        fn from(val: u8) -> Risea {
+            Risea::from_bits(val)
+        }
+    }
+    impl From<Risea> for u8 {
+        #[inline(always)]
+        fn from(val: Risea) -> u8 {
+            Risea::to_bits(val)
+        }
+    }
+}

@@ -1,12 +1,25 @@
-# Standalone crate — keep it out of any enclosing workspace.
-[workspace]
-
 [package]
 name = "silabs-metapac"
 version = "0.4.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
-description = "Generated Silicon Labs PAC. Do not edit by hand — regenerate via silabs-metapac-gen."
+description = "Peripheral Access Crate (PAC) for all Silicon Labs chips, including metadata."
+repository = "https://github.com/andresv/silabs-data-generated"
+
+# cargo publish cannot infer files used through include!().
+include = [
+    "**/*.rs",
+    "**/*.x",
+    "Cargo.toml",
+    "README.md",
+    "build.rs",
+]
+
+[package.metadata.docs.rs]
+features = ["efr32mg24b210f1536im48", "pac", "metadata"]
+default-target = "thumbv8m.main-none-eabihf"
+targets = []
+rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
 cortex-m = "0.7"

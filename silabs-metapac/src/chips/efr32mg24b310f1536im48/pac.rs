@@ -22,8 +22,6 @@ pub mod cmu_v3;
 pub mod dcdc_v2;
 #[path = "../../peripherals/devinfo_v0_mg24.rs"]
 pub mod devinfo_v0_mg24;
-#[path = "../../peripherals/dmem_v2.rs"]
-pub mod dmem_v2;
 #[path = "../../peripherals/dmem_v2_ws.rs"]
 pub mod dmem_v2_ws;
 #[path = "../../peripherals/dpll_v1.rs"]
@@ -50,8 +48,6 @@ pub mod hfxo_v3;
 pub mod hostmailbox_v0;
 #[path = "../../peripherals/i2c_v0.rs"]
 pub mod i2c_v0;
-#[path = "../../peripherals/iadc_v3.rs"]
-pub mod iadc_v3;
 #[path = "../../peripherals/iadc_v3_ha.rs"]
 pub mod iadc_v3_ha;
 #[path = "../../peripherals/icache_v0.rs"]
@@ -82,24 +78,14 @@ pub mod radioaes_v1;
 pub mod scratchpad_v0;
 #[path = "../../peripherals/semailbox_ns_host_v1.rs"]
 pub mod semailbox_ns_host_v1;
-#[path = "../../peripherals/semailbox_s_host_v1.rs"]
-pub mod semailbox_s_host_v1;
-#[path = "../../peripherals/smu_v3.rs"]
-pub mod smu_v3;
 #[path = "../../peripherals/smu_v3_mvp.rs"]
 pub mod smu_v3_mvp;
 #[path = "../../peripherals/smu_ns_cfgns_v3_mvp.rs"]
 pub mod smu_ns_cfgns_v3_mvp;
-#[path = "../../peripherals/smu_s_cfgns_v3_mvp.rs"]
-pub mod smu_s_cfgns_v3_mvp;
-#[path = "../../peripherals/syscfg_v3.rs"]
-pub mod syscfg_v3;
 #[path = "../../peripherals/syscfg_v3_mvp.rs"]
 pub mod syscfg_v3_mvp;
 #[path = "../../peripherals/syscfg_ns_cfgns_v3.rs"]
 pub mod syscfg_ns_cfgns_v3;
-#[path = "../../peripherals/syscfg_s_cfgns_v3.rs"]
-pub mod syscfg_s_cfgns_v3;
 #[path = "../../peripherals/sysrtc_v1.rs"]
 pub mod sysrtc_v1;
 #[path = "../../peripherals/timer_v1.rs"]
@@ -115,6 +101,49 @@ pub mod vdac_v2;
 #[path = "../../peripherals/wdog_v1.rs"]
 pub mod wdog_v1;
 
+// Version-neutral aliases for single-version kinds.
+pub use acmp_v2 as acmp;
+pub use buram_v0 as buram;
+pub use burtc_v1 as burtc;
+pub use cmu_v3 as cmu;
+pub use dcdc_v2 as dcdc;
+pub use devinfo_v0_mg24 as devinfo;
+pub use dmem_v2_ws as dmem;
+pub use dpll_v1 as dpll;
+pub use emu_v3 as emu;
+pub use fsrco_v0 as fsrco;
+pub use gpcrc_v0 as gpcrc;
+pub use gpio_v3 as gpio;
+pub use hfrco_v2 as hfrco;
+pub use hfrcoem_v2 as hfrcoem;
+pub use hfxo_v3 as hfxo;
+pub use hostmailbox_v0 as hostmailbox;
+pub use i2c_v0 as i2c;
+pub use iadc_v3_ha as iadc;
+pub use icache_v0 as icache;
+pub use keyscan_v1 as keyscan;
+pub use ldma_v0 as ldma;
+pub use ldmaxbar_v3 as ldmaxbar;
+pub use letimer_v1 as letimer;
+pub use lfrco_v2 as lfrco;
+pub use lfxo_v1 as lfxo;
+pub use msc_v3 as msc;
+pub use mvp_v1 as mvp;
+pub use pcnt_v1 as pcnt;
+pub use prs_v3 as prs;
+pub use radioaes_v1 as radioaes;
+pub use scratchpad_v0 as scratchpad;
+pub use semailbox_ns_host_v1 as semailbox_ns_host;
+pub use smu_v3_mvp as smu;
+pub use smu_ns_cfgns_v3_mvp as smu_ns_cfgns;
+pub use syscfg_v3_mvp as syscfg;
+pub use syscfg_ns_cfgns_v3 as syscfg_ns_cfgns;
+pub use sysrtc_v1 as sysrtc;
+pub use ulfrco_v1 as ulfrco;
+pub use usart_v0 as usart;
+pub use vdac_v2 as vdac;
+pub use wdog_v1 as wdog;
+
 /// Memory map (flash/RAM regions, from the CMSIS pdsc).
 pub mod memory {
     pub const IROM1_BASE: usize = 0x08000000;
@@ -125,66 +154,112 @@ pub mod memory {
 
 /// Typed peripheral instance constants.
 ///
-/// Each peripheral is exposed once at its **non-secure** address (the alias
-/// reachable from non-secure CPU state on TrustZone-enabled images). The
-/// secure alias for any peripheral on Series 2 is `addr ^ 0x0100_0000`.
-/// Secure-state code can XOR the bit explicitly when crossing the
-/// security boundary.
+/// The canonical unsuffixed name uses the non-secure address for a paired
+/// TrustZone peripheral, and an explicit `_S` constant uses the secure SVD
+/// address. Infix vendor names such as `_NS_HOST` remain unchanged.
 pub const ACMP0: crate::acmp_v2::Acmp = unsafe { crate::acmp_v2::Acmp::from_ptr(0x59008000 as *mut ()) };
+pub const ACMP0_S: crate::acmp_v2::Acmp = unsafe { crate::acmp_v2::Acmp::from_ptr(0x49008000 as *mut ()) };
 pub const ACMP1: crate::acmp_v2::Acmp = unsafe { crate::acmp_v2::Acmp::from_ptr(0x5900C000 as *mut ()) };
+pub const ACMP1_S: crate::acmp_v2::Acmp = unsafe { crate::acmp_v2::Acmp::from_ptr(0x4900C000 as *mut ()) };
 pub const BURAM: crate::buram_v0::Buram = unsafe { crate::buram_v0::Buram::from_ptr(0x50080000 as *mut ()) };
+pub const BURAM_S: crate::buram_v0::Buram = unsafe { crate::buram_v0::Buram::from_ptr(0x40080000 as *mut ()) };
 pub const BURTC: crate::burtc_v1::Burtc = unsafe { crate::burtc_v1::Burtc::from_ptr(0x50064000 as *mut ()) };
+pub const BURTC_S: crate::burtc_v1::Burtc = unsafe { crate::burtc_v1::Burtc::from_ptr(0x40064000 as *mut ()) };
 pub const CMU: crate::cmu_v3::Cmu = unsafe { crate::cmu_v3::Cmu::from_ptr(0x50008000 as *mut ()) };
+pub const CMU_S: crate::cmu_v3::Cmu = unsafe { crate::cmu_v3::Cmu::from_ptr(0x40008000 as *mut ()) };
 pub const DCDC: crate::dcdc_v2::Dcdc = unsafe { crate::dcdc_v2::Dcdc::from_ptr(0x50094000 as *mut ()) };
+pub const DCDC_S: crate::dcdc_v2::Dcdc = unsafe { crate::dcdc_v2::Dcdc::from_ptr(0x40094000 as *mut ()) };
 pub const DEVINFO: crate::devinfo_v0_mg24::Devinfo = unsafe { crate::devinfo_v0_mg24::Devinfo::from_ptr(0x0FE08000 as *mut ()) };
 pub const DMEM: crate::dmem_v2_ws::Dmem = unsafe { crate::dmem_v2_ws::Dmem::from_ptr(0x500B4000 as *mut ()) };
+pub const DMEM_S: crate::dmem_v2_ws::Dmem = unsafe { crate::dmem_v2_ws::Dmem::from_ptr(0x400B4000 as *mut ()) };
 pub const DPLL0: crate::dpll_v1::Dpll = unsafe { crate::dpll_v1::Dpll::from_ptr(0x5001C000 as *mut ()) };
+pub const DPLL0_S: crate::dpll_v1::Dpll = unsafe { crate::dpll_v1::Dpll::from_ptr(0x4001C000 as *mut ()) };
 pub const EMU: crate::emu_v3::Emu = unsafe { crate::emu_v3::Emu::from_ptr(0x50004000 as *mut ()) };
+pub const EMU_S: crate::emu_v3::Emu = unsafe { crate::emu_v3::Emu::from_ptr(0x40004000 as *mut ()) };
 pub const EUSART0: crate::eusart_v2_lf::Eusart = unsafe { crate::eusart_v2_lf::Eusart::from_ptr(0x5B010000 as *mut ()) };
+pub const EUSART0_S: crate::eusart_v2_lf::Eusart = unsafe { crate::eusart_v2_lf::Eusart::from_ptr(0x4B010000 as *mut ()) };
 pub const EUSART1: crate::eusart_v2::Eusart = unsafe { crate::eusart_v2::Eusart::from_ptr(0x500A0000 as *mut ()) };
+pub const EUSART1_S: crate::eusart_v2::Eusart = unsafe { crate::eusart_v2::Eusart::from_ptr(0x400A0000 as *mut ()) };
 pub const FSRCO: crate::fsrco_v0::Fsrco = unsafe { crate::fsrco_v0::Fsrco::from_ptr(0x50018000 as *mut ()) };
+pub const FSRCO_S: crate::fsrco_v0::Fsrco = unsafe { crate::fsrco_v0::Fsrco::from_ptr(0x40018000 as *mut ()) };
 pub const GPCRC: crate::gpcrc_v0::Gpcrc = unsafe { crate::gpcrc_v0::Gpcrc::from_ptr(0x50088000 as *mut ()) };
+pub const GPCRC_S: crate::gpcrc_v0::Gpcrc = unsafe { crate::gpcrc_v0::Gpcrc::from_ptr(0x40088000 as *mut ()) };
 pub const GPIO: crate::gpio_v3::Gpio = unsafe { crate::gpio_v3::Gpio::from_ptr(0x5003C000 as *mut ()) };
+pub const GPIO_S: crate::gpio_v3::Gpio = unsafe { crate::gpio_v3::Gpio::from_ptr(0x4003C000 as *mut ()) };
 pub const HFRCO0: crate::hfrco_v2::Hfrco = unsafe { crate::hfrco_v2::Hfrco::from_ptr(0x50010000 as *mut ()) };
+pub const HFRCO0_S: crate::hfrco_v2::Hfrco = unsafe { crate::hfrco_v2::Hfrco::from_ptr(0x40010000 as *mut ()) };
 pub const HFRCOEM23: crate::hfrcoem_v2::Hfrcoem = unsafe { crate::hfrcoem_v2::Hfrcoem::from_ptr(0x5A000000 as *mut ()) };
+pub const HFRCOEM23_S: crate::hfrcoem_v2::Hfrcoem = unsafe { crate::hfrcoem_v2::Hfrcoem::from_ptr(0x4A000000 as *mut ()) };
 pub const HFXO0: crate::hfxo_v3::Hfxo = unsafe { crate::hfxo_v3::Hfxo::from_ptr(0x5A004000 as *mut ()) };
+pub const HFXO0_S: crate::hfxo_v3::Hfxo = unsafe { crate::hfxo_v3::Hfxo::from_ptr(0x4A004000 as *mut ()) };
 pub const HOSTMAILBOX: crate::hostmailbox_v0::Hostmailbox = unsafe { crate::hostmailbox_v0::Hostmailbox::from_ptr(0x50098000 as *mut ()) };
+pub const HOSTMAILBOX_S: crate::hostmailbox_v0::Hostmailbox = unsafe { crate::hostmailbox_v0::Hostmailbox::from_ptr(0x40098000 as *mut ()) };
 pub const I2C0: crate::i2c_v0::I2c = unsafe { crate::i2c_v0::I2c::from_ptr(0x5B000000 as *mut ()) };
+pub const I2C0_S: crate::i2c_v0::I2c = unsafe { crate::i2c_v0::I2c::from_ptr(0x4B000000 as *mut ()) };
 pub const I2C1: crate::i2c_v0::I2c = unsafe { crate::i2c_v0::I2c::from_ptr(0x50068000 as *mut ()) };
+pub const I2C1_S: crate::i2c_v0::I2c = unsafe { crate::i2c_v0::I2c::from_ptr(0x40068000 as *mut ()) };
 pub const IADC0: crate::iadc_v3_ha::Iadc = unsafe { crate::iadc_v3_ha::Iadc::from_ptr(0x59004000 as *mut ()) };
+pub const IADC0_S: crate::iadc_v3_ha::Iadc = unsafe { crate::iadc_v3_ha::Iadc::from_ptr(0x49004000 as *mut ()) };
 pub const ICACHE0: crate::icache_v0::Icache = unsafe { crate::icache_v0::Icache::from_ptr(0x50034000 as *mut ()) };
+pub const ICACHE0_S: crate::icache_v0::Icache = unsafe { crate::icache_v0::Icache::from_ptr(0x40034000 as *mut ()) };
 pub const KEYSCAN: crate::keyscan_v1::Keyscan = unsafe { crate::keyscan_v1::Keyscan::from_ptr(0x500B0000 as *mut ()) };
+pub const KEYSCAN_S: crate::keyscan_v1::Keyscan = unsafe { crate::keyscan_v1::Keyscan::from_ptr(0x400B0000 as *mut ()) };
 pub const LDMA: crate::ldma_v0::Ldma = unsafe { crate::ldma_v0::Ldma::from_ptr(0x50040000 as *mut ()) };
+pub const LDMA_S: crate::ldma_v0::Ldma = unsafe { crate::ldma_v0::Ldma::from_ptr(0x40040000 as *mut ()) };
 pub const LDMAXBAR: crate::ldmaxbar_v3::Ldmaxbar = unsafe { crate::ldmaxbar_v3::Ldmaxbar::from_ptr(0x50044000 as *mut ()) };
+pub const LDMAXBAR_S: crate::ldmaxbar_v3::Ldmaxbar = unsafe { crate::ldmaxbar_v3::Ldmaxbar::from_ptr(0x40044000 as *mut ()) };
 pub const LETIMER0: crate::letimer_v1::Letimer = unsafe { crate::letimer_v1::Letimer::from_ptr(0x59000000 as *mut ()) };
+pub const LETIMER0_S: crate::letimer_v1::Letimer = unsafe { crate::letimer_v1::Letimer::from_ptr(0x49000000 as *mut ()) };
 pub const LFRCO: crate::lfrco_v2::Lfrco = unsafe { crate::lfrco_v2::Lfrco::from_ptr(0x50024000 as *mut ()) };
+pub const LFRCO_S: crate::lfrco_v2::Lfrco = unsafe { crate::lfrco_v2::Lfrco::from_ptr(0x40024000 as *mut ()) };
 pub const LFXO: crate::lfxo_v1::Lfxo = unsafe { crate::lfxo_v1::Lfxo::from_ptr(0x50020000 as *mut ()) };
+pub const LFXO_S: crate::lfxo_v1::Lfxo = unsafe { crate::lfxo_v1::Lfxo::from_ptr(0x40020000 as *mut ()) };
 pub const MSC: crate::msc_v3::Msc = unsafe { crate::msc_v3::Msc::from_ptr(0x50030000 as *mut ()) };
+pub const MSC_S: crate::msc_v3::Msc = unsafe { crate::msc_v3::Msc::from_ptr(0x40030000 as *mut ()) };
 pub const MVP: crate::mvp_v1::Mvp = unsafe { crate::mvp_v1::Mvp::from_ptr(0x5D000000 as *mut ()) };
+pub const MVP_S: crate::mvp_v1::Mvp = unsafe { crate::mvp_v1::Mvp::from_ptr(0x4D000000 as *mut ()) };
 pub const PCNT0: crate::pcnt_v1::Pcnt = unsafe { crate::pcnt_v1::Pcnt::from_ptr(0x59030000 as *mut ()) };
+pub const PCNT0_S: crate::pcnt_v1::Pcnt = unsafe { crate::pcnt_v1::Pcnt::from_ptr(0x49030000 as *mut ()) };
 pub const PRS: crate::prs_v3::Prs = unsafe { crate::prs_v3::Prs::from_ptr(0x50038000 as *mut ()) };
+pub const PRS_S: crate::prs_v3::Prs = unsafe { crate::prs_v3::Prs::from_ptr(0x40038000 as *mut ()) };
 pub const RADIOAES: crate::radioaes_v1::Radioaes = unsafe { crate::radioaes_v1::Radioaes::from_ptr(0x54000000 as *mut ()) };
+pub const RADIOAES_S: crate::radioaes_v1::Radioaes = unsafe { crate::radioaes_v1::Radioaes::from_ptr(0x44000000 as *mut ()) };
 pub const SCRATCHPAD: crate::scratchpad_v0::Scratchpad = unsafe { crate::scratchpad_v0::Scratchpad::from_ptr(0x50000000 as *mut ()) };
+pub const SCRATCHPAD_S: crate::scratchpad_v0::Scratchpad = unsafe { crate::scratchpad_v0::Scratchpad::from_ptr(0x40000000 as *mut ()) };
 pub const SEMAILBOX_NS_HOST: crate::semailbox_ns_host_v1::SemailboxNsHost = unsafe { crate::semailbox_ns_host_v1::SemailboxNsHost::from_ptr(0x5C000000 as *mut ()) };
-pub const SEMAILBOX_S_HOST: crate::semailbox_s_host_v1::SemailboxSHost = unsafe { crate::semailbox_s_host_v1::SemailboxSHost::from_ptr(0x4C000000 as *mut ()) };
+pub const SEMAILBOX_S_HOST: crate::semailbox_ns_host_v1::SemailboxNsHost = unsafe { crate::semailbox_ns_host_v1::SemailboxNsHost::from_ptr(0x4C000000 as *mut ()) };
 pub const SMU: crate::smu_v3_mvp::Smu = unsafe { crate::smu_v3_mvp::Smu::from_ptr(0x54008000 as *mut ()) };
+pub const SMU_S: crate::smu_v3_mvp::Smu = unsafe { crate::smu_v3_mvp::Smu::from_ptr(0x44008000 as *mut ()) };
 pub const SMU_NS_CFGNS: crate::smu_ns_cfgns_v3_mvp::SmuNsCfgns = unsafe { crate::smu_ns_cfgns_v3_mvp::SmuNsCfgns::from_ptr(0x5400C000 as *mut ()) };
-pub const SMU_S_CFGNS: crate::smu_s_cfgns_v3_mvp::SmuSCfgns = unsafe { crate::smu_s_cfgns_v3_mvp::SmuSCfgns::from_ptr(0x4400C000 as *mut ()) };
+pub const SMU_S_CFGNS: crate::smu_ns_cfgns_v3_mvp::SmuNsCfgns = unsafe { crate::smu_ns_cfgns_v3_mvp::SmuNsCfgns::from_ptr(0x4400C000 as *mut ()) };
 pub const SYSCFG: crate::syscfg_v3_mvp::Syscfg = unsafe { crate::syscfg_v3_mvp::Syscfg::from_ptr(0x5007C000 as *mut ()) };
+pub const SYSCFG_S: crate::syscfg_v3_mvp::Syscfg = unsafe { crate::syscfg_v3_mvp::Syscfg::from_ptr(0x4007C000 as *mut ()) };
 pub const SYSCFG_NS_CFGNS: crate::syscfg_ns_cfgns_v3::SyscfgNsCfgns = unsafe { crate::syscfg_ns_cfgns_v3::SyscfgNsCfgns::from_ptr(0x50078000 as *mut ()) };
-pub const SYSCFG_S_CFGNS: crate::syscfg_s_cfgns_v3::SyscfgSCfgns = unsafe { crate::syscfg_s_cfgns_v3::SyscfgSCfgns::from_ptr(0x40078000 as *mut ()) };
+pub const SYSCFG_S_CFGNS: crate::syscfg_ns_cfgns_v3::SyscfgNsCfgns = unsafe { crate::syscfg_ns_cfgns_v3::SyscfgNsCfgns::from_ptr(0x40078000 as *mut ()) };
 pub const SYSRTC0: crate::sysrtc_v1::Sysrtc = unsafe { crate::sysrtc_v1::Sysrtc::from_ptr(0x500A8000 as *mut ()) };
+pub const SYSRTC0_S: crate::sysrtc_v1::Sysrtc = unsafe { crate::sysrtc_v1::Sysrtc::from_ptr(0x400A8000 as *mut ()) };
 pub const TIMER0: crate::timer_v1_w::Timer = unsafe { crate::timer_v1_w::Timer::from_ptr(0x50048000 as *mut ()) };
+pub const TIMER0_S: crate::timer_v1_w::Timer = unsafe { crate::timer_v1_w::Timer::from_ptr(0x40048000 as *mut ()) };
 pub const TIMER1: crate::timer_v1_w::Timer = unsafe { crate::timer_v1_w::Timer::from_ptr(0x5004C000 as *mut ()) };
+pub const TIMER1_S: crate::timer_v1_w::Timer = unsafe { crate::timer_v1_w::Timer::from_ptr(0x4004C000 as *mut ()) };
 pub const TIMER2: crate::timer_v1::Timer = unsafe { crate::timer_v1::Timer::from_ptr(0x50050000 as *mut ()) };
+pub const TIMER2_S: crate::timer_v1::Timer = unsafe { crate::timer_v1::Timer::from_ptr(0x40050000 as *mut ()) };
 pub const TIMER3: crate::timer_v1::Timer = unsafe { crate::timer_v1::Timer::from_ptr(0x50054000 as *mut ()) };
+pub const TIMER3_S: crate::timer_v1::Timer = unsafe { crate::timer_v1::Timer::from_ptr(0x40054000 as *mut ()) };
 pub const TIMER4: crate::timer_v1::Timer = unsafe { crate::timer_v1::Timer::from_ptr(0x50058000 as *mut ()) };
+pub const TIMER4_S: crate::timer_v1::Timer = unsafe { crate::timer_v1::Timer::from_ptr(0x40058000 as *mut ()) };
 pub const ULFRCO: crate::ulfrco_v1::Ulfrco = unsafe { crate::ulfrco_v1::Ulfrco::from_ptr(0x50028000 as *mut ()) };
+pub const ULFRCO_S: crate::ulfrco_v1::Ulfrco = unsafe { crate::ulfrco_v1::Ulfrco::from_ptr(0x40028000 as *mut ()) };
 pub const USART0: crate::usart_v0::Usart = unsafe { crate::usart_v0::Usart::from_ptr(0x5005C000 as *mut ()) };
+pub const USART0_S: crate::usart_v0::Usart = unsafe { crate::usart_v0::Usart::from_ptr(0x4005C000 as *mut ()) };
 pub const VDAC0: crate::vdac_v2::Vdac = unsafe { crate::vdac_v2::Vdac::from_ptr(0x59024000 as *mut ()) };
+pub const VDAC0_S: crate::vdac_v2::Vdac = unsafe { crate::vdac_v2::Vdac::from_ptr(0x49024000 as *mut ()) };
 pub const VDAC1: crate::vdac_v2::Vdac = unsafe { crate::vdac_v2::Vdac::from_ptr(0x59028000 as *mut ()) };
+pub const VDAC1_S: crate::vdac_v2::Vdac = unsafe { crate::vdac_v2::Vdac::from_ptr(0x49028000 as *mut ()) };
 pub const WDOG0: crate::wdog_v1::Wdog = unsafe { crate::wdog_v1::Wdog::from_ptr(0x5B004000 as *mut ()) };
+pub const WDOG0_S: crate::wdog_v1::Wdog = unsafe { crate::wdog_v1::Wdog::from_ptr(0x4B004000 as *mut ()) };
 pub const WDOG1: crate::wdog_v1::Wdog = unsafe { crate::wdog_v1::Wdog::from_ptr(0x5B008000 as *mut ()) };
+pub const WDOG1_S: crate::wdog_v1::Wdog = unsafe { crate::wdog_v1::Wdog::from_ptr(0x4B008000 as *mut ()) };
 
 /// GPIO port indices, mirroring `efr32mg<NN>_gpio.h`'s
 /// `#define GPIO_PORTA 0` etc. Use as `GPIO.p(gpio_port::PORTC)`

@@ -16,54 +16,50 @@ pub static METADATA: Metadata = Metadata {
         MemoryRegion { name: "IRAM1", address: 0x20000000, size: 0x00008000, access: "rwx" },
     ],
     peripherals: &[
-        Peripheral { name: "BURAM", address: 0x50080000, kind: "buram", version: "v0", block: "BURAM" },
-        Peripheral { name: "BURTC", address: 0x50064000, kind: "burtc", version: "v0", block: "BURTC" },
-        Peripheral { name: "CMU", address: 0x50008000, kind: "cmu", version: "v1", block: "CMU" },
-        Peripheral { name: "CRYPTOACC", address: 0x5C020000, kind: "cryptoacc", version: "v1", block: "CRYPTOACC" },
-        Peripheral { name: "CRYPTOACC_NS_PKCTRL", address: 0x5C022000, kind: "cryptoacc_ns_pkctrl", version: "v1", block: "CRYPTOACC_NS_PKCTRL" },
-        Peripheral { name: "CRYPTOACC_NS_RNGCTRL", address: 0x5C021000, kind: "cryptoacc_ns_rngctrl", version: "v1", block: "CRYPTOACC_NS_RNGCTRL" },
-        Peripheral { name: "CRYPTOACC_S_PKCTRL", address: 0x4C022000, kind: "cryptoacc_s_pkctrl", version: "v1", block: "CRYPTOACC_S_PKCTRL" },
-        Peripheral { name: "CRYPTOACC_S_RNGCTRL", address: 0x4C021000, kind: "cryptoacc_s_rngctrl", version: "v1", block: "CRYPTOACC_S_RNGCTRL" },
-        Peripheral { name: "DCDC", address: 0x50094000, kind: "dcdc", version: "v0", block: "DCDC" },
-        Peripheral { name: "DEVINFO", address: 0x0FE08000, kind: "devinfo", version: "v1", block: "DEVINFO" },
-        Peripheral { name: "DPLL0", address: 0x5001C000, kind: "dpll", version: "v0", block: "DPLL" },
-        Peripheral { name: "EMU", address: 0x50004000, kind: "emu", version: "v8", block: "EMU" },
-        Peripheral { name: "EUART0", address: 0x5A030000, kind: "euart", version: "v0", block: "EUART" },
-        Peripheral { name: "FSRCO", address: 0x50018000, kind: "fsrco", version: "v1", block: "FSRCO" },
-        Peripheral { name: "GPCRC", address: 0x50088000, kind: "gpcrc", version: "v0", block: "GPCRC" },
-        Peripheral { name: "GPIO", address: 0x5003C000, kind: "gpio", version: "v1", block: "GPIO" },
-        Peripheral { name: "HFRCO0", address: 0x50010000, kind: "hfrco", version: "v1", block: "HFRCO" },
-        Peripheral { name: "HFXO0", address: 0x5000C000, kind: "hfxo", version: "v2", block: "HFXO" },
-        Peripheral { name: "I2C0", address: 0x5A010000, kind: "i2c", version: "v0", block: "I2C" },
-        Peripheral { name: "I2C1", address: 0x50068000, kind: "i2c", version: "v0", block: "I2C" },
-        Peripheral { name: "IADC0", address: 0x5A004000, kind: "iadc", version: "v1", block: "IADC" },
-        Peripheral { name: "ICACHE0", address: 0x50034000, kind: "icache", version: "v0", block: "ICACHE" },
-        Peripheral { name: "LDMA", address: 0x50040000, kind: "ldma", version: "v0", block: "LDMA" },
-        Peripheral { name: "LDMAXBAR", address: 0x50044000, kind: "ldmaxbar", version: "v1", block: "LDMAXBAR" },
-        Peripheral { name: "LETIMER0", address: 0x5A000000, kind: "letimer", version: "v0", block: "LETIMER" },
-        Peripheral { name: "LFRCO", address: 0x50024000, kind: "lfrco", version: "v3", block: "LFRCO" },
-        Peripheral { name: "LFXO", address: 0x50020000, kind: "lfxo", version: "v0", block: "LFXO" },
-        Peripheral { name: "MSC", address: 0x50030000, kind: "msc", version: "v8", block: "MSC" },
-        Peripheral { name: "PDM", address: 0x50098000, kind: "pdm", version: "v0", block: "PDM" },
-        Peripheral { name: "PRORTC", address: 0xB8000000, kind: "prortc", version: "v1", block: "PRORTC" },
-        Peripheral { name: "PRS", address: 0x50038000, kind: "prs", version: "v1", block: "PRS" },
-        Peripheral { name: "RADIOAES", address: 0x54000000, kind: "radioaes", version: "v1", block: "RADIOAES" },
-        Peripheral { name: "RTCC", address: 0x58000000, kind: "rtcc", version: "v1", block: "RTCC" },
-        Peripheral { name: "SMU", address: 0x54008000, kind: "smu", version: "v1", block: "SMU" },
-        Peripheral { name: "SMU_NS_CFGNS", address: 0x5400C000, kind: "smu_ns_cfgns", version: "v1", block: "SMU_NS_CFGNS" },
-        Peripheral { name: "SMU_S_CFGNS", address: 0x4400C000, kind: "smu_s_cfgns", version: "v1", block: "SMU_S_CFGNS" },
-        Peripheral { name: "SYSCFG", address: 0x5007C000, kind: "syscfg", version: "v8", block: "SYSCFG" },
-        Peripheral { name: "SYSCFG_NS_CFGNS", address: 0x50078000, kind: "syscfg_ns_cfgns", version: "v8", block: "SYSCFG_NS_CFGNS" },
-        Peripheral { name: "SYSCFG_S_CFGNS", address: 0x40078000, kind: "syscfg_s_cfgns", version: "v8", block: "SYSCFG_S_CFGNS" },
-        Peripheral { name: "TIMER0", address: 0x50048000, kind: "timer", version: "v0_w", block: "TIMER" },
-        Peripheral { name: "TIMER1", address: 0x5004C000, kind: "timer", version: "v0", block: "TIMER" },
-        Peripheral { name: "TIMER2", address: 0x50050000, kind: "timer", version: "v0", block: "TIMER" },
-        Peripheral { name: "TIMER3", address: 0x50054000, kind: "timer", version: "v0", block: "TIMER" },
-        Peripheral { name: "TIMER4", address: 0x50058000, kind: "timer", version: "v0", block: "TIMER" },
-        Peripheral { name: "ULFRCO", address: 0x50028000, kind: "ulfrco", version: "v0", block: "ULFRCO" },
-        Peripheral { name: "USART0", address: 0x5005C000, kind: "usart", version: "v0", block: "USART" },
-        Peripheral { name: "USART1", address: 0x50060000, kind: "usart", version: "v0", block: "USART" },
-        Peripheral { name: "WDOG0", address: 0x5A018000, kind: "wdog", version: "v0", block: "WDOG" },
+        Peripheral { name: "BURAM", address: 0x50080000, secure_address: Some(0x40080000), kind: "buram", version: "v0", block: "BURAM" },
+        Peripheral { name: "BURTC", address: 0x50064000, secure_address: Some(0x40064000), kind: "burtc", version: "v0", block: "BURTC" },
+        Peripheral { name: "CMU", address: 0x50008000, secure_address: Some(0x40008000), kind: "cmu", version: "v1", block: "CMU" },
+        Peripheral { name: "CRYPTOACC", address: 0x5C020000, secure_address: Some(0x4C020000), kind: "cryptoacc", version: "v1", block: "CRYPTOACC" },
+        Peripheral { name: "CRYPTOACC_NS_PKCTRL", address: 0x5C022000, secure_address: Some(0x4C022000), kind: "cryptoacc_ns_pkctrl", version: "v1", block: "CRYPTOACC_NS_PKCTRL" },
+        Peripheral { name: "CRYPTOACC_NS_RNGCTRL", address: 0x5C021000, secure_address: Some(0x4C021000), kind: "cryptoacc_ns_rngctrl", version: "v1", block: "CRYPTOACC_NS_RNGCTRL" },
+        Peripheral { name: "DCDC", address: 0x50094000, secure_address: Some(0x40094000), kind: "dcdc", version: "v0", block: "DCDC" },
+        Peripheral { name: "DEVINFO", address: 0x0FE08000, secure_address: None, kind: "devinfo", version: "v1", block: "DEVINFO" },
+        Peripheral { name: "DPLL0", address: 0x5001C000, secure_address: Some(0x4001C000), kind: "dpll", version: "v0", block: "DPLL" },
+        Peripheral { name: "EMU", address: 0x50004000, secure_address: Some(0x40004000), kind: "emu", version: "v8", block: "EMU" },
+        Peripheral { name: "EUART0", address: 0x5A030000, secure_address: Some(0x4A030000), kind: "euart", version: "v0", block: "EUART" },
+        Peripheral { name: "FSRCO", address: 0x50018000, secure_address: Some(0x40018000), kind: "fsrco", version: "v1", block: "FSRCO" },
+        Peripheral { name: "GPCRC", address: 0x50088000, secure_address: Some(0x40088000), kind: "gpcrc", version: "v0", block: "GPCRC" },
+        Peripheral { name: "GPIO", address: 0x5003C000, secure_address: Some(0x4003C000), kind: "gpio", version: "v1", block: "GPIO" },
+        Peripheral { name: "HFRCO0", address: 0x50010000, secure_address: Some(0x40010000), kind: "hfrco", version: "v1", block: "HFRCO" },
+        Peripheral { name: "HFXO0", address: 0x5000C000, secure_address: Some(0x4000C000), kind: "hfxo", version: "v2", block: "HFXO" },
+        Peripheral { name: "I2C0", address: 0x5A010000, secure_address: Some(0x4A010000), kind: "i2c", version: "v0", block: "I2C" },
+        Peripheral { name: "I2C1", address: 0x50068000, secure_address: Some(0x40068000), kind: "i2c", version: "v0", block: "I2C" },
+        Peripheral { name: "IADC0", address: 0x5A004000, secure_address: Some(0x4A004000), kind: "iadc", version: "v1", block: "IADC" },
+        Peripheral { name: "ICACHE0", address: 0x50034000, secure_address: Some(0x40034000), kind: "icache", version: "v0", block: "ICACHE" },
+        Peripheral { name: "LDMA", address: 0x50040000, secure_address: Some(0x40040000), kind: "ldma", version: "v0", block: "LDMA" },
+        Peripheral { name: "LDMAXBAR", address: 0x50044000, secure_address: Some(0x40044000), kind: "ldmaxbar", version: "v1", block: "LDMAXBAR" },
+        Peripheral { name: "LETIMER0", address: 0x5A000000, secure_address: Some(0x4A000000), kind: "letimer", version: "v0", block: "LETIMER" },
+        Peripheral { name: "LFRCO", address: 0x50024000, secure_address: Some(0x40024000), kind: "lfrco", version: "v3", block: "LFRCO" },
+        Peripheral { name: "LFXO", address: 0x50020000, secure_address: Some(0x40020000), kind: "lfxo", version: "v0", block: "LFXO" },
+        Peripheral { name: "MSC", address: 0x50030000, secure_address: Some(0x40030000), kind: "msc", version: "v8", block: "MSC" },
+        Peripheral { name: "PDM", address: 0x50098000, secure_address: Some(0x40098000), kind: "pdm", version: "v0", block: "PDM" },
+        Peripheral { name: "PRORTC", address: 0xB8000000, secure_address: Some(0xA8000000), kind: "prortc", version: "v1", block: "PRORTC" },
+        Peripheral { name: "PRS", address: 0x50038000, secure_address: Some(0x40038000), kind: "prs", version: "v1", block: "PRS" },
+        Peripheral { name: "RADIOAES", address: 0x54000000, secure_address: Some(0x44000000), kind: "radioaes", version: "v1", block: "RADIOAES" },
+        Peripheral { name: "RTCC", address: 0x58000000, secure_address: Some(0x48000000), kind: "rtcc", version: "v1", block: "RTCC" },
+        Peripheral { name: "SMU", address: 0x54008000, secure_address: Some(0x44008000), kind: "smu", version: "v1", block: "SMU" },
+        Peripheral { name: "SMU_NS_CFGNS", address: 0x5400C000, secure_address: Some(0x4400C000), kind: "smu_ns_cfgns", version: "v1", block: "SMU_NS_CFGNS" },
+        Peripheral { name: "SYSCFG", address: 0x5007C000, secure_address: Some(0x4007C000), kind: "syscfg", version: "v8", block: "SYSCFG" },
+        Peripheral { name: "SYSCFG_NS_CFGNS", address: 0x50078000, secure_address: Some(0x40078000), kind: "syscfg_ns_cfgns", version: "v8", block: "SYSCFG_NS_CFGNS" },
+        Peripheral { name: "TIMER0", address: 0x50048000, secure_address: Some(0x40048000), kind: "timer", version: "v0_w", block: "TIMER" },
+        Peripheral { name: "TIMER1", address: 0x5004C000, secure_address: Some(0x4004C000), kind: "timer", version: "v0", block: "TIMER" },
+        Peripheral { name: "TIMER2", address: 0x50050000, secure_address: Some(0x40050000), kind: "timer", version: "v0", block: "TIMER" },
+        Peripheral { name: "TIMER3", address: 0x50054000, secure_address: Some(0x40054000), kind: "timer", version: "v0", block: "TIMER" },
+        Peripheral { name: "TIMER4", address: 0x50058000, secure_address: Some(0x40058000), kind: "timer", version: "v0", block: "TIMER" },
+        Peripheral { name: "ULFRCO", address: 0x50028000, secure_address: Some(0x40028000), kind: "ulfrco", version: "v0", block: "ULFRCO" },
+        Peripheral { name: "USART0", address: 0x5005C000, secure_address: Some(0x4005C000), kind: "usart", version: "v0", block: "USART" },
+        Peripheral { name: "USART1", address: 0x50060000, secure_address: Some(0x40060000), kind: "usart", version: "v0", block: "USART" },
+        Peripheral { name: "WDOG0", address: 0x5A018000, secure_address: Some(0x4A018000), kind: "wdog", version: "v0", block: "WDOG" },
     ],
     interrupts: &[
         Interrupt { name: "CRYPTOACC", number: 0 },
@@ -146,10 +142,6 @@ pub mod cryptoacc_v1;
 pub mod cryptoacc_ns_pkctrl_v1;
 #[path = "../../registers/cryptoacc_ns_rngctrl_v1.rs"]
 pub mod cryptoacc_ns_rngctrl_v1;
-#[path = "../../registers/cryptoacc_s_pkctrl_v1.rs"]
-pub mod cryptoacc_s_pkctrl_v1;
-#[path = "../../registers/cryptoacc_s_rngctrl_v1.rs"]
-pub mod cryptoacc_s_rngctrl_v1;
 #[path = "../../registers/dcdc_v0.rs"]
 pub mod dcdc_v0;
 #[path = "../../registers/devinfo_v1.rs"]
@@ -202,14 +194,10 @@ pub mod rtcc_v1;
 pub mod smu_v1;
 #[path = "../../registers/smu_ns_cfgns_v1.rs"]
 pub mod smu_ns_cfgns_v1;
-#[path = "../../registers/smu_s_cfgns_v1.rs"]
-pub mod smu_s_cfgns_v1;
 #[path = "../../registers/syscfg_v8.rs"]
 pub mod syscfg_v8;
 #[path = "../../registers/syscfg_ns_cfgns_v8.rs"]
 pub mod syscfg_ns_cfgns_v8;
-#[path = "../../registers/syscfg_s_cfgns_v8.rs"]
-pub mod syscfg_s_cfgns_v8;
 #[path = "../../registers/timer_v0.rs"]
 pub mod timer_v0;
 #[path = "../../registers/timer_v0_w.rs"]
